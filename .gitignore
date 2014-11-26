@@ -1,4 +1,5 @@
-/cygwin/home/*
-/libs/vbjaengine/*
-/samples/vbjaengine-skeleton/*
-tools/emus/mednafen-0.9.31-wip-win32/stdout
+cygwin/home/*
+libs/vbjaengine/*
+samples/vbjaengine-skeleton/*
+tools/emus/mednafen-0.9.31-wip-win32/stdout.txt
+output.vb

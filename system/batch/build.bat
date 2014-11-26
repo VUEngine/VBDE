@@ -20,10 +20,10 @@ IF EXIST output.o DEL output.o
 ::BUILD ROM
 IF EXIST makefile (
 	::allow project to have its specific makefile
-	%VBDE%\cygwin\bin\bash -l -c "mkpasswd -l > /etc/passwd &&  mkgroup -l > /etc/group && export VBDE=$(cygpath -u '%VBDE%') && make all"
+	%VBDE%\cygwin\bin\bash -l -c "make all"
 ) ELSE (
 	::otherwise use default makefile
-	%VBDE%\cygwin\bin\bash -l -c "mkpasswd -l > /etc/passwd &&  mkgroup -l > /etc/group && export VBDE=$(cygpath -u '%VBDE%') && make -f $VBDE/system/makefile SOURCE=%2"
+	%VBDE%\cygwin\bin\bash -l -c "make -f $VBDE/system/makefile SOURCE=%2"
 )
 
 ::SET ROM HEADER
