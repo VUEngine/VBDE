@@ -1,10 +1,13 @@
 ::SCRIPT INITIALIZATION
 @echo off
 SET VBDE=C:\vbde
-call %VBDE%\system\batch\init.bat
+CALL %VBDE%\system\batch\init.bat
+
+::FIND PROJECT DIRECTORY
+CALL %VBDE%\system\batch\find-project-dir.bat %1
 
 ::SWITCH TO PROJECT DIRECTORY
-PUSHD %1
+PUSHD %PROJECT_DIR%
 
 ::PRE CLEAN
 IF EXIST output.vb DEL output.vb
@@ -12,8 +15,7 @@ IF EXIST output_pad.vb DEL output_pad.vb
 IF EXIST output.o DEL output.o
 
 ::CONVERT IMAGES
-CALL %VBDE%\system\batch\grit.bat
-PUSHD %1
+::CALL %VBDE%\system\batch\launch-grit.bat
 
 ::BUILD ROM
 IF EXIST makefile (
@@ -25,7 +27,7 @@ IF EXIST makefile (
 )
 
 ::SET ROM HEADER
-IF EXIST output.vb AND EXIST header (
+IF EXIST output.vb IF EXIST header (
 	SETLocal EnableDelayedExpansion
 	FOR /f "tokens=* delims= " %%a in (header) do (
 		SET /a N+=1
@@ -35,11 +37,13 @@ IF EXIST output.vb AND EXIST header (
 )
 
 ::POST CLEAN
-IF EXIST output.o DEL output.o
+IF EXIST output.o (
+	DEL output.o
+)
 
 ::RUN IN EMULATOR IF ROM COULD BE COMPILED
-IF EXIST output.vb AND EXIST %VBDE%\system\batch\%3.bat (
-	CALL %VBDE%\system\batch\%3.bat %1
+IF EXIST output.vb IF EXIST %VBDE%\system\batch\launch-%3.bat (
+	CALL %VBDE%\system\batch\launch-%3.bat %PROJECT_DIR%
 )
 
 ::DO NOT CLOSE CMD WINDOW IF ROM COULD NOT BE COMPILED

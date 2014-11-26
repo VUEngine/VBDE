@@ -1,3 +1,7 @@
+/*******************/
+/* GAME OF LIFE VB */
+/*******************/
+
 #include <libgccvb.h>
 
 const BYTE BLOCKS[] = {

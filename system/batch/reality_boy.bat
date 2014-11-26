@@ -1,1 +1,10 @@
-start "" "C:\vbde\tools\emus\rboy_084_win\reality_boy.exe" %1/output.vb -display frame -altkbd -dspmode affine -sclscr 2
+::SCRIPT INITIALIZATION
+@echo off
+SET VBDE=C:\vbde
+CALL %VBDE%\system\batch\init.bat
+
+::FIND PROJECT DIRECTORY
+CALL %VBDE%\system\batch\find-project-dir.bat %1
+
+::LAUNCH REALITY BOY
+CALL %VBDE%\system\batch\launch-reality_boy.bat
