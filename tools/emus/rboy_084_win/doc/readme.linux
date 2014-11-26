@@ -1,0 +1,16 @@
+The Linux port follows the windows build exactly look at the windows readme.txt
+for usage instructions.
+
+You need to be running under X-Windows to run this, although you can
+rebuild it to get console support.
+
+To build you will need to install the latest version of the Allegro library's
+along with the standard build environment for your distro (gcc, g++, make, etc.)
+Just unzip the source code into a directory and run make inside the linux 
+subdirectory.
+
+to run type 'rboy_linux <rom file>'
+
+David Tucker
+david.tucker@goliathindustries.com
+http://www.goliathindustries.com/vb/

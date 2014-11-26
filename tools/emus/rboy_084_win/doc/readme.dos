@@ -1,0 +1,15 @@
+The Dos port follows the windows build exactly look at the windows readme.txt
+for usage instructions.
+
+To build the dos port you need to first install djgpp and Allegro.
+
+
+cd into the dos directory 
+run set_env.bat
+type make.
+
+to run type rboy_dos <rom file>
+
+David Tucker
+david.tucker@goliathindustries.com
+http://www.goliathindustries.com/vb/

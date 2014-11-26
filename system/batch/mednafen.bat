@@ -1,0 +1,1 @@
+start "" "C:\vbde\tools\emus\mednafen-0.9.31-wip-win32\mednafen.exe" %1/output.vb

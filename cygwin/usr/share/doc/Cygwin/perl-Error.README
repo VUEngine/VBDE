@@ -1,0 +1,69 @@
+perl-Error 0.17016-1
+------------------------------------------
+Perl module for error/exception handling in an OO-ish way.  This
+module provides two interfaces.  Firstly, 'Error' provides a
+procedural interface to exception handling.  Secondly 'Error' is a
+base class for errors/exceptions that can either be thrown, for
+subsequent catch, or can simply be recorded.
+
+Runtime requirements (these or newer):
+  cygwin-1.7.1-1
+  perl-5.10.1-2
+
+Additional build conditions (these or newer):
+  cygport-0.9.80-1
+
+Canonical homepage:
+  http://search.cpan.org/~shlomif/Error
+
+Canonical download:
+  http://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/
+
+License:
+  Artistic/GPL
+
+Language:
+  Perl
+
+------------------------------------
+
+Build instructions:
+  unpack perl-Error-0.17016-1-src.tar.bz2
+    if you use setup to install this src package, it will be
+    unpacked under /usr/src automatically
+  cd /usr/src
+  cygport perl-Error-0.17016-1 all
+
+This will create:
+  /usr/src/perl-Error-0.17016-1.tar.bz2
+  /usr/src/perl-Error-0.17016-1-src.tar.bz2
+
+Or use 'cygport perl-Error-0.17016-1 prep' to get a patched source directory
+
+To find out the files included in the binary distribution, you can use
+"cygcheck -l perl-Error", or browse the listing for the appropriate
+version at <http://cygwin.com/packages/>.
+
+------------------
+
+Port Notes:
+
+----- version 0.17016-1 -- 2010-01-19 -----
+New upstream release.
+
+----- version 0.17015-1 -- 2008-12-17 -----
+New upstream release.
+
+----- version 0.17014-1 -- 2008-07-11 -----
+New upstream release.  Update to perl 5.10.0.
+
+----- version 0.17010-1 -- 2007-12-10 -----
+Initial cygwin packaging.
+
+-------------------------
+
+For more information about this package, see the upstream documentation in
+/usr/share/doc/perl-Error/.
+
+Cygwin port maintained by: Eric Blake <ebb9@byu.net>
+Please address all questions to the Cygwin mailing list at <cygwin@cygwin.com>

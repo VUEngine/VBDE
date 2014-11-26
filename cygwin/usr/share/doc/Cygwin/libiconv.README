@@ -1,0 +1,137 @@
+libiconv
+========================================================================
+This library provides an iconv() implementation, for use on systems
+which don't have one, or whose implementation cannot convert from/to
+Unicode.
+
+Runtime requirements: (these, or newer)
+  cygwin-1.7.9-1
+  libintl8-0.18.1.1-2
+  libgcc1-4.5.3-2
+
+Build requirements:
+  cygwin-1.7.9-1
+  gettext-0.18.1.1-2
+  gettext-devel-0.18.1.1-2
+  libintl8-0.18.1.1-2
+  libgettextpo0-0.18.1.1-2
+  cygport-0.10.5-1
+  make-3.81-2
+  gcc4-core-4.5.3-2
+  binutils-2.21.53-2
+  autoconf-10-1
+  autoconf2.5-2.68-1
+  automake-4-10
+  automake1.11-1.11.1-1
+  libtool-2.4-1
+  gperf-3.0.3-1
+  groff-1.20.1-2
+
+Canonical homepage:
+  http://www.gnu.org/software/libiconv/
+
+Canonical download:
+  http://ftp.gnu.org/gnu/libiconv/
+
+Licence:
+  LGPL
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack libiconv-1.14-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libiconv-1.14-X.cygport all
+
+This will create:
+  /usr/src/libiconv-1.14-X.tar.bz2
+  /usr/src/libiconv2-1.14-X.tar.bz2
+  /usr/src/libcharset1-1.14-X.tar.bz2
+  /usr/src/libiconv-1.14-X-src.tar.bz2
+
+Or use 'cygport ./libiconv-1.14-X.cygport prep' to get a patched
+source directory
+
+To find out the files included in the binary distribution, you can
+use "cygcheck -l libiconv libiconv2 libcharset1", or browse the 
+listing for the appropriate version at <http://cygwin.com/packages/>.
+
+========================================================================
+
+Port Notes:
+Passes all tests except for GB18030, a locale that is not supported by
+Cygwin.
+
+----------  libiconv-1.14-2 -- 2011 Oct 15 -----------
+* Built using gcc-4.5
+* Incorporated patch from upstream gnulib to improve efficiency of
+  libiconv_relocate() for the --disable-relocation case.
+
+----------  libiconv-1.14-1 -- 2011 Aug 28 -----------
+* Update to latest upstream release.
+* Link against gettext-0.18.1.1.
+
+----------  libiconv-1.13.1-2 -- 2011 Jan 27 -----------
+* Rebuild against newer cygwin
+* Correct issue related to wchar_t support (Corinna Vinschen)
+* Use modern (linux-like) idioms in relocation code (Corinna Vinschen)
+
+----------  libiconv-1.13.1-1 -- 2009 Dec 23 -----------
+* Update to latest release
+* Force use of POSIX-compliant signature for iconv()
+  (see http://cygwin.com/ml/cygwin/2009-12/msg00680.html and thread)
+
+----------  libiconv-1.13-10 -- 2009 May 30 -----------
+* Update to latest release
+
+----------  libiconv-1.12-10 -- 31 Dec 2008 -----------
+* Fork for 1.7.0 development
+* Uses stock cygport-0.9.2
+
+----------  libiconv-1.12-1 -- 08 Nov 2008 -----------
+* Update to latest release
+* Removed all references to 'relocatable' from .cygport
+  so that it can be used with stock cygport-0.4.2.
+
+----------  libiconv-1.11-1 -- 18 Oct 2006 -----------
+* Update to latest release
+* switch to cygport build framework
+
+----------  libiconv-1.9.2-2 -- 10Nov2005 -----------
+* Routine update to match gettext release, and eliminate
+  charset.alias conflict with that package.
+
+----- 1.9.2-1 -----
+Update to new release -- now depends on gettext-0.14.1, which
+bumped the libintl DLL number.
+
+----- 1.9.1-3 -----
+Cygwin-1.5.2 FLAG DAY release
+
+----- 1.9.1-2 -----
+Cygwin-1.5.1 FLAG DAY release
+Documentation moved to /usr/share/*
+
+----- 1.9.1-1 -----
+Update to newest release.
+
+This is NOT built using --enable-relocatable, because Bruno sez:
+  "I hope that people will learn when to use --enable-relocatable
+   by themselves. For example, I don't think a Linux distributor 
+   should use --enable-relocatable for anything installed in 
+   /usr - it would only be bloat that makes the system slower."
+  http://mail.gnu.org/archive/html/bug-gnulib/2003-04/msg00014.html
+Since I am the defacto "Linux distributor" for libiconv-on-cygwin,
+and the package is installed into /usr, I figure this admonishment
+applies here.  So, no --enable-relocatable.
+
+----- version 1.8-1 -----
+Initial release.  Built against an iconv-less gettext.
+
+
+Cygwin port maintained by: Charles Wilson  <cygwin@cygwin.com>

@@ -1,0 +1,288 @@
+2014-04-10  Colin Watson  <cjwatson@debian.org>
+
+	* Version: 2.6.7.
+
+	* Makefile.am (EXTRA_DIST): Add gnulib/argp-domain.patch.
+
+2014-04-10  Peter Schiffer  <pschiffe@redhat.com>
+
+	Only create a cache directory tag if catpath != manpath
+
+	* src/mandb.c (mandb): Don't create CACHEDIR.TAG if the catpath is
+	equal to the manpath.
+	* src/tests/mandb-7: New file.
+	* src/tests/Makefile.am (ALL_TESTS): Add mandb-7.
+	* NEWS: Document this.
+
+2014-04-10  Colin Watson  <cjwatson@debian.org>
+
+	Make cache directory tag creation more readable
+
+	* src/mandb.c (mandb): Move cache directory tag string to ...
+	(CACHEDIR_TAG): ... here (new macro).
+
+2014-03-26  Colin Watson  <cjwatson@debian.org>
+
+	Run the pager in man's original working directory
+
+	Reported by Peng Yu.
+
+	* src/man.c (make_display_command): Set pager_cmd's working
+	directory to man's original working directory.
+	* configure.ac: Require libpipeline >= 1.3.0.
+	* NEWS: Document this.
+
+2014-03-26  Colin Watson  <cjwatson@debian.org>
+
+	Upgrade to Automake 1:1.14.1-3 (from Debian).
+
+2014-03-20  Mario Blättermann  <mario.blaettermann@gmail.com>
+
+	Update German manual page translation
+
+	* man/po4a/po/de.po: Update from Translation Project.
+	* man/THANKS: Add translator credit.
+
+2014-03-17  Robert Luberda  <robert@debian.org>
+
+	* man/po4a/po/pl.po: Update from Translation Project.
+
+2014-02-20  Colin Watson  <cjwatson@debian.org>
+
+	Move Autotools auxiliary build files from tools to build-aux.
+
+	This keeps man-db's own tools separate, reducing confusion, and
+	"build-aux" is a more conventional location for the Autotools files.
+
+2014-02-18  Colin Watson  <cjwatson@debian.org>
+
+	Upgrade to Gnulib 20140202 and Libtool 2.4.2-1.7 (from Debian).
+
+	* lib/appendstr.c (appendstr): Use size_t type for string lengths.
+
+2014-01-23  Colin Watson  <cjwatson@debian.org>
+
+	Improve compatibility with archaic shells
+
+	* src/tests/man-5: Assign and export shell variables in two steps,
+	for improved compatibility with some archaic shells.
+	* src/tests/man-7: Likewise.
+	* src/tests/man-8: Likewise.
+	* src/tests/zsoelim-1: Likewise.
+
+2014-01-23  Colin Watson  <cjwatson@debian.org>
+
+	Fix test failure with --enable-undoc
+
+	* src/man.c (gripe_no_man): Don't print "See ... for help" message
+	when MAN_TEST_DISABLE_UNDOCUMENTED is set in the environment.
+	* src/tests/man-7: Export MAN_TEST_DISABLE_UNDOCUMENTED=1.
+	* NEWS: Document this.
+
+2014-01-23  Colin Watson  <cjwatson@debian.org>
+
+	* Version: 2.6.6.
+
+	* man/po4a/Makefile.am (all-local): Make staging files writeable.
+
+	* README: Update copyright to 2014.
+
+2014-01-23  Colin Watson  <cjwatson@debian.org>
+
+	Tidy up override directory support slightly
+
+	* src/manp.c (insert_override_dir): Drop braces.
+	(get_manpath_from_path): Standardise whitespace.
+	* src/tests/Makefile.am (TESTS_ENVIRONMENT): Use Automake-generated
+	substitution rather than substituting @override_dir@ again.
+
+2014-01-23  Peter Schiffer  <pschiffe@redhat.com>
+
+	Add support for override directory in search path
+
+	* configure.ac: Add --with-override-dir option.
+	* include/manconfig.h.in (OVERRIDE_DIR): New definition.
+	* src/manp.c (insert_override_dir): New function.
+	(get_manpath_from_path): Call it before add_dir_to_list.
+	* src/tests/man-9: New file.
+	* src/tests/Makefile.am (TESTS_ENVIRONMENT): Set and export
+	OVERRIDE_DIR.
+	(ALL_TESTS): Add man-9.
+	* NEWS: Document this.
+
+2014-01-23  Colin Watson  <cjwatson@debian.org>
+
+	Upgrade to Automake 1.14.1 and Libtool 2.4.2-1.6 (from Debian).
+
+2014-01-19  Akihiro Sagawa  <sagawa.aki@gmail.com>
+
+	Fix macro and hyphenation language handling
+
+	* src/man.c (display): Don't free page_lang if it's going to be used
+	by locale_macros.
+	* src/tests/man-8: New file.
+	* src/tests/Makefile.am (ALL_TESTS): Add man-8.
+	* NEWS: Document this.
+
+2014-01-19  David Prévot  <david@tilapin.org>
+
+	* man/po4a/po/fr.po: Update from Translation Project.
+
+2014-01-18  Joe Hansen  <joedalton2@yahoo.dk>
+
+	* man/po4a/po/da.po: Update from Translation Project.
+
+2014-01-16  Yuri Kozlov  <yuray@komyakino.ru>
+
+	* man/po4a/po/ru.po: Update from Translation Project.
+
+2014-01-16  Colin Watson  <cjwatson@debian.org>
+
+	* Version: 2.6.6-pre2.
+
+2014-01-16  Мирослав Николић  <miroslavnikolic@rocketmail.com>
+
+	Add Serbian translation
+
+	* po/sr.po: New from Translation Project.
+	* po/LINGUAS: Add sr.
+	* man/THANKS: Add translator credit.
+
+2014-01-15  Colin Watson  <cjwatson@debian.org>
+
+	* man/po4a/po: Update.
+
+2014-01-15  Peter Schiffer  <pschiffe@redhat.com>
+
+	Synchronise manual pages with usage messages
+
+	* man/man1/apropos.man1 (SYNOPSIS): Replace -h with -?.
+	(OPTIONS): Likewise.  Add --usage.
+	* man/man1/lexgrog.man1 (SYNOPSIS): Add -d.  Replace -h with -?.
+	(OPTIONS): Likewise.  Add --usage.
+	* man/man1/man.man1 (SYNOPSIS): Replace -h with -?.
+	(OPTIONS): Likewise.  Add --path (alias for -w).  Add --usage.
+	* man/man1/manpath.man1 (SYNOPSIS): Replace -h with -?.
+	(OPTIONS): Likewise.  Add --usage.
+	* man/man1/whatis.man1 (SYNOPSIS): Replace -h with -?.
+	(OPTIONS): Likewise.  Add --usage.
+	* man/man8/accessdb.man8 (SYNOPSIS): Add -d.  Replace -h with -?.
+	(OPTIONS): Likewise.  Add --usage.
+	* man/man8/catman.man8 (SYNOPSIS): Replace -h with -?.
+	(OPTIONS): Likewise.  Add --usage.
+	* man/man8/mandb.man8 (SYNOPSIS): Replace -h with -?.
+	(OPTIONS): Likewise.  Add --usage.
+
+2014-01-15  Colin Watson  <cjwatson@debian.org>
+
+	Fix memory leaks related to make_filename
+
+	* src/check_mandirs.c (test_manfile): Remove now-redundant stat.
+	Free abs_filename.
+	* src/man.c (display_filesystem): Consolidate return paths.
+	Consistently free filename.
+	(display_database): Free file after using it.
+	(maybe_update_file): Likewise.
+
+2014-01-15  Peter Schiffer  <pschiffe@redhat.com>
+
+	Silence error messages for stale database entries (Fedora bug #841431)
+
+	* src/filenames.c (make_filename): Return NULL if the resulting file
+	is not readable.  Update all callers to handle NULL returns.
+	* src/tests/man-7: New file.
+	* src/tests/Makefile.am (ALL_TESTS): Add man-7.
+	* NEWS: Document this.
+
+2014-01-15  Colin Watson  <cjwatson@debian.org>
+
+	* src/tests/man-5, src/tests/man-6: Mark executable.
+
+2014-01-13  Robert Luberda  <robert@debian.org>
+
+	* man/po4a/po/pl.po: Update from Translation Project.
+
+2014-01-13  Colin Watson  <cjwatson@debian.org>
+
+	Fix domain handling in argp
+
+	* gnulib/argp-domain.patch: New file.
+	* autogen.sh: Apply gnulib/argp-domain.patch.
+	* NEWS: Document this.
+
+2014-01-12  Trần Ngọc Quân  <vnwildman@gmail.com>
+
+	* po/vi.po: Update from Translation Project.
+
+2014-01-11  David Prévot  <david@tilapin.org>
+
+	* man/po4a/po/fr.po: Update from Translation Project.
+
+2014-01-11  Yuri Kozlov  <yuray@komyakino.ru>
+
+	* man/po4a/po/ru.po: Update from Translation Project.
+
+2014-01-10  Colin Watson  <cjwatson@debian.org>
+
+	* Version: 2.6.6-pre1.
+
+2014-01-10  Colin Watson  <cjwatson@debian.org>
+
+	Don't update man/po4a/po/ when nothing has changed
+
+	* man/po4a/Makefile.am (DOMAIN): New variable.
+	(EXTRA_DIST): Use $(DOMAIN).
+	(STAGING): New variable.
+	(PO4A_ARGS): Set new "podir" variable.
+	(RUN_PO4A): New variable.
+	(all-local): Abbreviate using RUN_PO4A.  Copy POT/PO files to
+	$(STAGING) before running po4a, to avoid updating the master files.
+	(update-po): Move to ...
+	(update-po-real): ... here.  Abbreviate using RUN_PO4A.  Add
+	--force, since this target is only called when we really want to
+	update.  Copy POT/PO files to $(STAGING) before running po4a, and
+	only copy them back if the POT file has changed by more than just
+	the POT-Creation-Date.
+	(update-po): New rule.  Call update-po-real if and only if srcdir =
+	builddir.
+	(clean-local): New rule.  Remove $(STAGING).
+	* man/po4a/po4a.cfg (po4a_paths): Refer to $(podir) rather than
+	$(srcdir)/po4a/po.
+	* release.sh: Stop removing man/po4a/po/man-db-manpages.pot; this
+	should no longer be necessary.
+
+2014-01-03  victory  <victory.deb@gmail.com>
+
+	* po/ja.po: Update from Translation Project.
+
+2013-12-09  Colin Watson  <cjwatson@debian.org>
+
+	Make it easier to prove that catman option parsing is safe
+
+	* src/catman.c (parse_opt): Check sections before assigning to
+	  sections[i].  (Already always safe, but this makes it easier to
+	  prove.)
+
+2013-12-09  Colin Watson  <cjwatson@debian.org>
+
+	Update documentation for git.
+
+	* docs/HACKING (Sending patches): Suggest 'git diff'.
+	  (Revision control): Update for git.  Remove comment about
+	  ChangeLog handling for branches.
+	* NEWS: Document switch to git.
+
+2013-12-09  Colin Watson  <cjwatson@debian.org>
+
+	gnulib: Import gnupload module.
+
+2013-12-09  Colin Watson  <cjwatson@debian.org>
+
+	Automatically generate ChangeLog from git
+
+	* ChangeLog: Move to ...
+	* ChangeLog-2013: ... here.
+	* Makefile.am (EXTRA_DIST): Add ChangeLog-2013.
+	  (dist-hook): Add gen-ChangeLog.
+	  (gen-ChangeLog): New rule, based on that in coreutils.
+	* gnulib: Import gitlog-to-changelog module.

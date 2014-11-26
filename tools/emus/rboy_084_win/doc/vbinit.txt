@@ -1,0 +1,242 @@
+;----------------------------
+; VBInit code...
+;----------------------------
+;-- Zero out Program memory 0x05000000-0x0500FFFF --
+	;; mem end
+	movhi	0x501, $0, $1		;0x05010000 => $1
+	;; mem pointer
+	movhi	0x500, $0, $11		;0x05000000 => $11
+	jr	8			; jump to loop start
+	;; loop top
+	st.h	$0, 0[$11]		;Zero Memory
+	add	2, $11			;Increment mem pointer
+	;; loop start
+	cmp	$1, $11			;End of memory?
+	blt	-8			; if not goto loop top
+
+;-----------------------------------
+; Init VIP
+;-----------------------------------
+;-- Set World 31 to off with 'ovr' bit on (Write 0x0040 to 0x0003DBE0) --
+	;; set $11 to 0x00-0x1F to select world...
+	movea	0x1F, $11		;0x001F => $11
+	shl	5, $11			;0x03E0 => $11
+	movhi	4, $0, $1		;0x00040000 => $1
+	movea	0xd800, $1, $10		;0x0003D800 => $10
+	add	$11, $10		;0x0003DBE0 => $10
+	;; value to clear world to
+	movea	40, $0, $11		;0x00000040 => $11
+	st.h	$11, 0[$10]		;World n (31), OVR=1
+
+;-- Zero VIP Mem 0x00000000-0x0001FFFF (char mem) --
+	;; Mem end
+	movhi	2, $0, $1		;0x0001FFFF => $1
+	movea	0xFFFF, $1, $1			
+	;; Mem pointer
+	mov	$0, $11			;0x00000000 => $10
+	jr	8			;jump to loop start
+	;; loop top
+	st.h	$0, 0[$11]		;Zero VIP Memory
+	add	2, $11			;increment mem pointer
+	;; loop start
+	cmp	$1, $11			;end of Memory?
+	blt	-8			;if not goto loop top
+
+;-- Read DPSTTS(0x0005F820), and with 0xFFFF, or with 0x0101, and write to DPCTRL(0x0005F826) --
+	;; Pointer to top of VIP mem
+	movhi	6, $0, $1		;0x00060000 => $1
+	;; Stor DPSTTS in $11
+	ld.h	-2016[$1], $11		;[0x0005F820] => $11
+	andi	0xffff, $11, $11	;Zero High HWord (why?)
+	ori	0x0101, $11, $11	;Turn on bit 0 and 8
+	;; Store $11 in DPCTRL
+	st.h	$11, -2014[$1]		;$11 => [0x0005F822]
+
+;-- Write 0x0000 to INTENB (0x0005F802) --
+(fill in)
+;-- Write 0xE01F to INTCLR (0x0005F804) --
+(fill in)
+;-- Write 0x0001 to XPCTRL (0x0005F842) --
+(fill in)
+;-- Write 0x0001 to FRMCYC (0x0005F82E) --
+
+;-- Set Display Pallet Info --
+;  -- Write 0x000C to BRTA   (0x0005F824) --
+(fill in)
+;  -- Write 0x0028 to BRTB   (0x0005F826) --
+(fill in)
+;  -- Write 0x0030 to BRTC   (0x0005F828) --
+(fill in)
+;  -- Write 0x0000 to REST   (0x0005F82A) --
+(fill in)
+;  -- Write 0x00E4 to GPLT0   (0x0005F860) --
+(fill in)
+;  -- Write 0x0000 to GPLT1   (0x0005F862) --
+(fill in)
+;  -- Write 0x0078 to GPLT2   (0x0005F864) --
+(fill in)
+;  -- Write 0x00D8 to GPLT3   (0x0005F866) --
+(fill in)
+;  -- Write 0x00E4 to JPLT0   (0x0005F868) --
+(fill in)
+;  -- Write 0x009C to JPLT1   (0x0005F86A) --
+(fill in)
+;  -- Write 0x0078 to JPLT2   (0x0005F86C) --
+(fill in)
+;  -- Write 0x00D8 to JPLT3   (0x0005F86E) --
+(fill in)
+;  -- Write 0x0000 to BGCOL   (0x0005F870) --
+(fill in)
+
+;-- Clear SPTx pointers to 0 --
+;  -- Write 0x0000 to SPT3    (0x0005F84E) --
+(fill in)
+;  -- Write 0x0000 to SPT2    (0x0005F84C) --
+(fill in)
+;  -- Write 0x0000 to SPT1    (0x0005F84A) --
+(fill in)
+;  -- Write 0x0000 to SPT0    (0x0005F848) --
+(fill in)
+
+;-- Set World 31 to off with 'ovr' bit on (Write 0x0040 to 0x0003DBE0) --
+;(repeat again, is this nesisary?)
+	;; set $11 to 0x00-0x1F to select world...
+	movea	0x1F, $11		;0x001F => $11
+	shl	5, $11			;0x03E0 => $11
+	movhi	4, $0, $1		;0x00040000 => $1
+	movea	0xd800, $1, $10		;0x0003D800 => $10
+	add	$11, $10		;0x0003DBE0 => $10
+	;; value to clear world to
+	movea	40, $0, $11		;0x00000040 => $11
+	st.h	$11, 0[$10]		;World n (31), OVR=1
+
+;-- Zero VIP Mem 0x00000000-0x0001FFFF (char mem) --
+;(repeat again, is this nesisary?)
+	;; Mem end
+	movhi	2, $0, $1		;0x0001FFFF => $1
+	movea	0xFFFF, $1, $1			
+	;; Mem pointer
+	mov	$0, $11			;0x00000000 => $10
+	jr	8			;jump to loop start
+	;; loop top
+	st.h	$0, 0[$11]		;Zero VIP Memory
+	add	2, $11			;increment mem pointer
+	;; loop start
+	cmp	$1, $11			;end of Memory?
+	blt	-8			;if not goto loop top
+
+;-- Load Column Tables --
+(fill in)
+
+;-- Read DPSTTS until bit 6 is set --
+	;; loop top
+	ld.h	0[$14], $10		;load DSPSTTS in $10
+	andi	0xffff, $10, $10	;look at lower 16 bytes
+	andi	0x40, $10, $10		;is bit 6 on?
+	be	-12			; if not goto loop top
+
+;-----------------------------------
+; Init Processor
+;-----------------------------------
+;-- Set EIPSW to 0 and CHCW to 0x01 --
+	mov	$0, $1			;0x00000000 => $1
+	ldsr	$1, S$5			;0x00000000 => S$5  ????
+	mov	2, $1			;0x00000002 => $1
+	ldsr	$1, S$24		;0x00000002 => S$24 ????
+
+;-----------------------------------
+; Init HCReg 
+;-----------------------------------
+;-- Init Link Port (nesisary?) --
+	;; Pointer to Hardware Controll Reg
+	movhi	0x200, $0, $10		;0x02000000 => $10
+	;; Write 0x80 to LPT (data to transmit)
+	movea	0xff80, $0, $11		;0xFFFFFF80 => $11
+	st.b	$11, 8[$10]		;0x80 => [0x02000008]
+	;; Write 0x14 to LPC (ComStart, External Clock)
+	movea	0x14, $0, $11		;0x00000014 => $11
+	st.b	$11, 0[$10]		;0x14 => [0x02000000]
+	;; Write 0xFF to LPC2 (Disable Interupt, etc...)
+	mov	-1, $11			;0xFFFFFFFF => $11
+	st.b	$11, 4[$10]		;0xFF => [0x02000004]
+
+;-- Write 0x00 to TCR (Disable Timmer) --
+	;; Pointer to Hardware Controll Reg
+	movhi	0x200, $0, $10		;0x02000000 => $10
+	;; Write 0 to TCR (timmer disabled)
+	st.b	$0, 32[$10]		;0x00 => [0x02000020]
+
+;-----------------------------------
+; Init Sound, (nesisary?)
+;-----------------------------------
+;-- Set SMREG to 0x01 --
+	;; Pointer to Sound Mem
+	movhi	0x100, $0, $1		;0x01000000 => $1
+	;; Write 0x01 to SMREG
+	mov	1, $10			;0x00000001 => $10
+	st.b	$10, 0x580[$1]		;0x01 => [0x01000580]
+
+;-- Set SxCTRL and SxLEN to 0 for all 6 Sound chanels --
+	mov	$0, $10			;0x00000000 => $10
+	jr	22			;Jump to loop start
+	;; Loop top
+	mov	$10, $11		;Copy $10 to $11
+	;; $11 is pointer to Sx where x = 0-5
+	shl	6, $11			;Multiply by 128?
+	movhi	0x100, $11, $1		;Add 0x01000000 to $11
+	st.b	$0, 0x404[$1]		;Set SxLEN to 0x00
+	st.b	$0, 0x400[$1]		;Set SxCTRL to 0x00
+	add	1, $10			;Increment mem pointer
+	;; Loop start
+	cmp	6, $10			;end of loop?
+	blt	-20			;if not goto 0x0700B04C
+
+;-- Delay for 0x2000 cycles --
+	mov	$0, $10			;0x00000000 => $10
+	movea	0x2000, $0, $1		;0x00002000 => $1
+	jr	6			;Jump to LoopStart
+	;; loop top
+	add	1, $10			;increment counter
+	;; loop start
+	cmp	$1, $10			;end of loop?
+	blt	-4			;if not goto LoopTop
+
+;-- Fill in Sound Data Ram for all 6 chanels --
+(fill in)
+
+;-- Set SMREG to 0x00 --
+	;; Pointer to Sound Mem
+	movhi	0x100, $0, $1		;0x01000000 => $1
+	;; Write 0x01 to SMREG
+	st.b	$0, 0x580[$1]		;0x00 => [0x01000580]
+
+;;---------------
+;; Finish this...
+;;---------------
+;-----------------------------------
+; Fill in Display
+;-----------------------------------
+
+;-- Write 0x0001 to XPCTRL (0x0005F842) --
+;-- Write 0x0101 to DPCTRL (0x0005F822) --
+
+;-- Write 0x0000 to SPT3 (0x0005F84E) --
+;-- Write 0x03FF to SPT2 (0x0005F84C) --
+;-- Write 0x03FF to SPT1 (0x0005F84A) --
+;-- Write 0x03FF to SPT0 (0x0005F848) --
+
+;-- Load Char and BGMaps --
+
+;-- Load BRTA-C and REST --
+
+;-----------------------------------
+;-- Start Display --
+;-----------------------------------
+;-- Read XPSTTS, mask with 0xFFFF or with 0x0002, write to XPCTRL --
+;-- Read DPSTTS, mask with 0xFFFF or with 0x0302, write to DPCTRL --
+;-- Write 0x0000 to FRMCYC (0x0005F82E) --
+;-- Read INTPND, write to INTCLR --
+;-- Write 0x4018 to INTENB (0x0005F802) --
+;-- Read DSPSTTS, untill bits 2-5 are on (and with 0x003c) --
+
+;-- Wait for dspint to fire...

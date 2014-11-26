@@ -1,0 +1,22 @@
+<NotepadPlus>
+    <InternalCommands />
+    <Macros>
+        <Macro name="Trim Trailing and save" Ctrl="no" Alt="yes" Shift="yes" Key="83">
+            <Action type="2" message="0" wParam="42024" lParam="0" sParam="" />
+            <Action type="2" message="0" wParam="41006" lParam="0" sParam="" />
+        </Macro>
+    </Macros>
+    <UserDefinedCommands>
+        <Command name="Start VIDE" Ctrl="no" Alt="no" Shift="yes" Key="112">C:\vbde\system\batch\vide.bat</Command>
+        <Command name="Compile images with GRIT" Ctrl="no" Alt="no" Shift="yes" Key="113">C:\vbde\system\batch\grit.bat $(CURRENT_DIRECTORY)</Command>
+        <Command name="COMPILE with gccVB" Ctrl="no" Alt="no" Shift="yes" Key="116">C:\vbde\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART)</Command>
+        <Command name="COMPILE with gccVB and RUN in Mednafen" Ctrl="no" Alt="no" Shift="yes" Key="117">C:\vbde\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART) mednafen</Command>
+        <Command name="COMPILE with gccVB and RUN in Reality Boy" Ctrl="no" Alt="no" Shift="yes" Key="118">C:\vbde\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART) reality_boy</Command>
+        <Command name="RUN in Mednafen" Ctrl="no" Alt="no" Shift="yes" Key="120">C:\vbde\system\batch\mednafen.bat $(CURRENT_DIRECTORY)</Command>
+        <Command name="RUN in Reality Boy" Ctrl="no" Alt="no" Shift="yes" Key="121">C:\vbde\system\batch\reality_boy.bat $(CURRENT_DIRECTORY)</Command>
+        <Command name="FLASH to FlashBoy" Ctrl="no" Alt="no" Shift="yes" Key="123">C:\vbde\system\batch\flash.bat $(CURRENT_DIRECTORY)</Command>
+        <Command name="PULL latest vbJAEngine version from Git repository" Ctrl="no" Alt="no" Shift="yes" Key="125">C:\vbde\system\batch\git-pull-vbjaengine.bat</Command>
+    </UserDefinedCommands>
+    <PluginCommands />
+    <ScintillaKeys />
+</NotepadPlus>

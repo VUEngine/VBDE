@@ -1,0 +1,16 @@
+#ifdef PVB_LANGUAGES 
+#undef PVB_LANGUAGES
+#endif
+#define PVB_LANGUAGES 2
+
+//ensure this file is encoded in ansi for umlauts to work 
+
+const char* LANG_LANGUAGE[PVB_LANGUAGES] = { 
+	"ENGLISH",
+	"GERMAN"
+};
+
+const char* LANG_PRECAUTION[PVB_LANGUAGES] = { 
+	"     IMPÖRTÄNT:\n\nREAD INSTRUCTION AND\n\nPRECAUTION BOOKLETS\n\n  BEFORE OPERATING",
+	"      WICHTIG:\n\nBITTE LESEN SIE VOR\n\n  DEM SPIELEN DIE\n\nANLEITUNG SOWIE DIE\n\nSICHERHEITSHINWEISE"
+};

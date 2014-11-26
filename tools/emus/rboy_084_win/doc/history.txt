@@ -1,0 +1,182 @@
+--------
+- History
+--------
+	12/09/08 - More reorgamizations, reenabled sound and link port for win32 only.  Began port to SDL (SDL will be the basis of XBox and other ports).
+
+    11/22/08 - Began port to XBox, reorganized code for more portability.  Combined DogP's code back into main branch.  Broke DogP's code (need to reenable it)
+
+    11/11/08 - DogP - Added link port emulation over TCP socket... not complete emulation (yet?), but does work enough for simple games/demos.  It's currently pretty slow over a real network, but good for dev on the same machine connected via localhost.  Fixed various minor bugs.
+    
+    11/06/08 - DogP - Fixed a bug with Save RAM handling where all RAM would be saved, but only the first half of RAM would get filled at startup.  Added a Pause button (Tilde).  Added a stub for link port emulation to be completed later.  Added a stub for Bitstring Search functions (and cycles counts) to be completed later.
+    
+    11/04/08 - DogP - Fixed up a few things related to sound.  Added some cycles for floating point and others.  Fixed a bug with MUL instruction (wasn't casting to signed properly)... this fixed crashes and drawing in Red Alarm and 3D Tetris, and fixed the crash in Golf.
+
+    11/01/08 - DogP - Added sound emulation... not perfect, and some things not implemented, but overall sounds close to what it should.  Noise channel LFSR sounds should be checked against hardware (manual isn't specific enough on the implementation).  Also fixed some floating point flag handling (according to the NEC docs), floating point CVT and TRNC instructions, and fixed the SAR carry flag.  Also set it so emu will run in the background (since the sound paused otherwise, which was really annoying).
+    
+    10/28/08 - DogP - Added some debugging things like a breakpoint from video mode, and memory watch (very crappy, should be fixed).  Fixed a bug where the emu would crash if it was unable to open a file when writing memory to a file (from the debugger).  Fixed a bug in dump memory 'd' in debugger where it'd only display one byte of the hword.  Added bitstring cycles.  Added CPU instruction cache profiling (in reality_boyD.exe '\' displays cache stats, '/' clears cache stats).
+
+    10/22/08 - DogP - Fixed a bug in the Affine Parallax code... MP Parallax is handled funny in Affine - details in the dev manual section 27.2.  This shows the bug I see on hardware in my homebrew Mario Kart game, and also fixes the Virtual Bowling lane alignment issue.  Also fixed a couple bugs? when run in 2D mode, where instead of just drawing the left screen, it drew it without parallax (MP or GP)... was this on purpose?  Without it, it can cause some ugliness.
+    
+    11/16/05 - Fixed a bug in the BGMap code, I was seting the minimum height to 8, when it should have been 7 (doh).  Added in -more_ram flag so we can increase avalible ram form 64k to 128k.  Fixed paralel port code, busted it with a typo.
+
+    11/04/05 - Fixed overplane, works great.  The bug in Affine mode is caused by float rounding errors.  but when I try and fix the rounding I get truncation isues.  I need to reemplement the affine algorithems in fixed point math to keep the accuracy (or lack ther of).
+
+    11/03/05 - Bitstrings are just fine, at least all but the string compare instructions wich are not implemented.  As far as I know no games use them anyway?
+
+    11/02/05 - Added in paralax in affine but needs testing.  Still need to implement overplane.  There is a bug in Affine mode where each BGMap is cut out using 513 pixles instead of 512, hmm.  Also The walls still dont line up with the lanes in vbowling.  Probably related to one or both of the above.
+
+    10/31/05 - Fixed affine mode, now everyting is wraping corectly (I think), still need to implement overplane char and paralax in affine mode.  I am fairly sure that the rest of the graphics errors are caused by bad opcodes and interupt timmig issues. (except for direct screen draws, that I should be able to figure out)
+
+    10/28/05 - Rewrote BGMap handlers to properly support screen wraping.  i stillneed to implement Affine mode screen wraping but otherwise things are going great.
+
+    10/03/05 - Fixed -hstretch for all modes but scaled, scaled  does not make any sence since it breaks shutter glasses anyway.  Finished implementing -balance at least for now.  Added in preliminary paralax support for Affine mode and some small graphics fixes.
+
+    09/30/05 - I set '1' and '2' to darken/brighten the screen, and '3,4,5,6,7,8' to darken/brighten the individual red/green/blue bands.  After testing Affine mode glasses on my LCD display I can say (for my screen) the Red/Blue glasses are 99% better than red/green or red/cyan.  Aparently the red filter is great at eliminating the blue but not the green pixles.  Anyway test on your monitor as apropriate but if you have green glasses and can not get a decent image try red/blue ones.
+
+    09/24/05 - Changed -dspmode red_blue to -dspmode affine to better reflect its purpose.  Changed -pallet rbg to -pallet rc and added in yb, mg, bg pallets to finish out the posibilitys.  Added a new option -balance x where x ranges from 0.1 to 3.0 with a default of 1.0, this adjusts the relative brightness between the left and right screen, usefull for eliminating ghosts with affine mode.    
+
+    08/28/05 - Fixed a bug in the debugger build under win32, I was calling dtprintf before initializing vbout (ops) wich resulted in a nice crash.  Added a newer icon with alpha transparency.  Im not that happy with the new Icon but I dont have the time to redo it.
+
+    08/19/05 - Added in dynamic loading of inout32.dll, now it is not manditory to have it avalible on the system.
+
+    08/05/05 - Fixed Linux and dos builds, still need to implement parallel port and joystick features in Linux and dos.  Updated the icon, finally.  Wow am I not a good artist.
+
+    07/27/05 - Fixed scaling bug in debug mode, lots of debug mode fixes including hang on exit and fonts to small.  Added in support for 1280x1024, 1400x1050, 1600x1200 display modes.
+
+    06/15/05 - Fixed scaling bugs, verified that print screen works correctly, added back -bright now you can multiply the brightness by [0.1-3.0], added a hscale feature to double the width of the display (need to fix this)
+
+    05/18/05 - Released 0.82 - Alpha 1, many bugs to fix but I don't have time so hear you go...
+
+    04/30/05 - Did some more tests, Keyboard interrupt only works if you scan on every cycle.  Wee need to look into this.  Ok, I added in preliminary joystick support.  For now I hard coded in the mapping for my own Logitech wireless game pad.  Maybe some day I will try to intelligently detect the configuration.  I also added in code to limit the keyboard scanning to 1/60th of a second.  To-do, does this need to be 1/120th of  a second?
+
+    04/21/05 - Did a thorough test and found that no game uses the keyboard interupt code, so I removed it for speeds sake.  Masked out the low battery warning on the VB controller.  I still need to add in joystick support before the release.
+
+    04/14/05 - Fixed the screen scaling code along with a bunch of graphics bugs.  I need to rewrite the normal and affine world generation code so that they both support all of the wrapping flags.
+
+    04/13/05 - I got stuck going to a conference so I had lots of free time to work on reality boy.  I added in support for a parallel port VB controller, but it needs some polish.  I also began abstracting out the allegro code, I might even have it finished before I go home.  And finally I have been cleaning up the screen code, adding in a stretch option and reducing the scale factor if it is larger than the available screen real estate.
+
+    02/24/05 - Added an option to turn on the status line and added a keyboard shortcut to toggle it.  Added a flag to enable/disable speed throttling.  Cleaned up speed throttling so that it is smooth and efficient (sort of).  Could use some clean up to the code I'm fairly sure it is slowing things down a bit.  Most games run at 50FPS 80% of the time on my laptop.  So most any 2GHz system should be quite nice to play on.  I still need to fix the CPU up, I have an idea on how to do it but I'm not sure if it is worth the effort.  The big kicker is that I'm using 64 bit math to set the overflow flags and that is way slow, so If I implement a lookup table or something I might be able to get rid of that code.
+
+    02/22/05 - Now all graphics modes center the images on the screen instead of forcing them to the upper left corner.  Finally fixed CyberScope mode, does anyone actually have a cyberscope?  Added a -strscr option to upscale the screen by a fixed amount (currently 1x-4x).  This has a small bug in it, if you try to make a dialog larger than the current screen it gets rejected by the windows manager.  To-do, clip max dialog size to size of screen.
+
+    12/28/04 - Fixed DOS and Linux makefiles.
+
+    12/20/04 - Amos Bieler pointed out a key map bug,so I fixed it.
+
+    12/16/04 - Fixed some windows bugs (dialog close box works, set title bar, etc). Save frame captures in ROM directory. Removed the screen wrap fix, it broke to many other games.  I desperately need to redo the debug code to be more compatible to windows.  I finally got a fast enough computer to need speed throttling, I hacked a quick solution together.  Someday I will make it optional on the command line.
+
+    12/12/04 - I can't figure out the wrapping problem, I have a pseudo hack that is working for now, but I need to really pin it down.  I though maybe there was a second set of overplane bits somewhere but I can not find them.  I'm going to put this to rest after a thorough regression test, I cant mess with it any more today.  Anyway most games are 100% accurate now, and we only have 3 that are not playable.
+
+    12/11/04 - Fixed a screen wrap bug in Normal BGMap mode, this broke teleroboxer and VFish.  Also its horribly implemented now, need to make it smarter (and faster).  Now I don't overwrite the screen capture files, todo: save the files in the proper directory in windows. Messed with direct screen draws, a lot of work is needed here.  3D-Tetris shows off a CPU bug, vertical lines get mangled.  Now all bug fixes form Red Dragon are fully incorporated.
+
+    12/04/04 - Made a comprehensive list of graphical bugs and started whittling them down.  Most of the bugs come from not fully understanding how the objects wrap to the screen.  I am confident that given the time the graphics system will be perfect by Christmas (or nearly so).
+
+    12/01/04 - Added a new keyboard mapping and made it the default.  Cleaning things up for the official 0.8 release.
+
+    11/26/04 - Fixed rotation finally, there were several math bugs in Red_Dragon, but otherwise they had it right.  I have a small number of bugs left to fix...
+
+    11/19/04 - Small speed increases, fixed bugs from our back port of red_dragon.  Now all but 3 games are fully playable.  Mostly a code reorganization in preparation for a proper windows port.
+
+    10/31/04 - Back ported most of the fixes form Red_Dragon.  Including but not limited to: CPU bug fixes, Bitmap Scaling, and VIP/Interrupt reorganizations and improvements.  Did a quick and dirty port to win32.  Need to port the debugger over to win32, unbind the graphics from Allegro, and clean up the initialization and keyboard/joystick interfaces.
+
+    12/30/99 - Fixed bug in disassembler on LDSR/STSR instructions.  need to fix 'D' command, and all numbers should print out in Hex!
+
+    11/29/99 - Investigating 'Repeat' CTA_L/R and COL_LENGTH, looks like the lower 8 bits of FRMCYC is G_CLK (frame skip)
+
+    08/29/99 - Fixed the horizontal offset in the Affine mode, still uncertain how scaling and parallax works.  Need to figure out why Mario Tennis is still broken.
+
+    06/29/99 - Numerous changes, fixed Water World, and Jack Bros, but broke them again.  Fixed panic Bomber, but you must use the '-fixpal' option.  Managed to keep the delicate balance going without loosing all my marbles!
+
+    04/11/99 - fixed some bugs in Insmouse Mansion, now it is playable (sort of).  Began work on a faster CPU core.
+
+    03/27/99 - Transparent Blits are working again (Why?)  Finished off the command line support, added in a 'Brightness' option, support of Red/Green and Red/Blue/Green glasses (you can pass in a pallet flag) also added in support for 1024x768 screen resolutions (why, you ask =0).  Things are looking good for a new release.  Oh, I finally merged the debug and release code, no more need for 2 executables (Wee).
+
+    03/26/99 - Broke Transparent Blit (oops), added in rudimentary command line support, and the red pallet, worked on clearing out most of the debug code from the vb_*.c modules
+
+    03/08/99 - Worked on Transparent Char Blit... and fixed it
+
+    03/07/99 - Reintegrated the win32 code (still troubles in the Masked Blit fn's, why?)  And cleaned up the cache a bit (Is the cache working 100% or is it taking a needles hit?).
+
+    03/02/99 - Finally got Multi BGMap's Working (good enough for now), and fixed the screen wrap in telero boxer(NOT!, why???).  Fixed the FPU flags (I think) Now Glactic Pinball and space squash are playable!!!  I think MarioClash must be goofing on the Display Status, also it hangs (flag problems?)
+
+    02/27/99 - Tried to fix the timer up, failed miserably!  I need to fix the light effects in Telero Boxer (should not wrap).  Vtet is going full speed on a p200 with a frame skip of 0, telero boxer is running about 1/2 speed with a frame skip of 0.  InsmousHouse Works!!!, mov $0, $8 does not advance???
+
+    02/16/99 - Fixed the scrolling bg's in VTetris.
+
+    02/08/99 - Lots of changes...  Need to fix multiple BGMaps, Check FPU Flags, and figure out Scale/Rotation effects.  Added SaveRam, swapped the dir of wavygravy....
+
+    01/31/99 - Integrated Jason Nelson's code, cutting out a lot of Allegro stuff, and adding in Zip support (How does this work?)
+
+    01/25/99 - Started adding in the memory wrap stuff...  Finally normalized the pallet (Wrong place?)
+
+    01/24/99 - Completely Screwed up the code today (Fixed it I think).  Started clearing out the bugs, and making things more portable.  Need to put the 'options' into a single FN call, Kill off allegro, and put the Tracer code in separate module (Move the Debug code out of the main emu)...  Fix the Display Status (Sync it back to the screen refresh), Check over the timer Fn again...  Normalized the brightness Fn's, added in a 'Flip' option for the 3D modes (press '[' and ']' to flip the display back and forth)
+
+    01/19/99 - Mario Tennis has CPU troubles, Keep an eye on Wario Land!!!
+
+    01/17/99 - Ned to do: Normalize the brightness and add in a total brightness fn, fix bgmap scrolling, does MTennis write straight to display?, 'F1' for setup, Command line support, Kill off Allegro, support INI files...
+  
+    01/12/99 - Lots of Improvements to the display routines, fixed the OBJ's and have an Idea how to fix the BGMap scrolling bug.  Still need to add Sprite Scaling, Normalize the Brightness Functions and I think Mario Tennis is writing straight to the Video Display Memory??? (Check this out!!!)
+
+    01/04/99 - Need to Buffer the 14 BGMaps(done), Need to add BGMap Cashing (Flag sprite and BGMap writes to Invalidate cash) (done, mostly), and make sure the 'display interrupt' is always firing even if the display is not updating(done)...(is this a problem???)  Also add in a 'brightness' function for i-glass support... (brta+brtb+brtc=brtc, brta=brta, brtb=brtb)
+
+    01/02/99 - Added in a new menu option 'display mode' that defines what type of 3D support the display has...  Also began optimizing the display a bit (It needs a lot of work).
+
+    01/01/99 - Added True 3D support, need to clean up the code a bit still, and I need to finish cutting out the Allegro code.  Also some serious profiling is in order...
+
+    12/07/98 - Cleaned up the code a bit, made it truly C compliant (I took out some C++ shortcuts, so Its more portable)
+
+    11/24/98 - cleaned up the Interrupts a bit (Still confused on them).  This did not make any new games start, but at least there not going off in the weeds.  Need to Fix the Pallet, and there is always more work to be done on the display.  I added a RELEASE flag, so you can run it without dumping to the debugger (Some day Ill make this pretty.)  First Beta goes out tomorrow!
+
+    11/23/98 - Moved and Renamed a bit of the source, to try to draw the line between the V810 CPU core, and the Virtual Boy Specific stuff.  I'm trying to keep the CPU core reusable.  Summary of games: GPinball, InsMouseHouse, SpaceSquash, VFishing, MClash, and TeleroBoxer are almost playable.  VTetris is 100% playable (Wee).  VBBall, WarioLand, WaterWorld, and MarioTennis are almost booting (Beginning screens, then they get stuck waiting for some display update (Probably easy to fix)). PBomber, VForce, 3DTetris, RedAlarm, VGolf, Jbros, and Nesters Bowling all crash.  I think they cant handle an Interrupt I'm calling.  I need to track this down (Especially on PBomber and VForce, they never used to crash before I put in Interrupts)...
+
+    11/21/98 - Did some more fiddling, now GPinbal, MarioClash and Telero boxer boot, and WarioLand starts to.  I had GPinball going perfectly, but I screwed it up, and I cant get it back (I need to make more backups of my source!!!)  A lot of games are crashing, because the Interrupts are handled wrong.  I need to figure out the Interrupt mask bits a little bit better!
+
+    11/20/98 - added in a few limits on the Image Structures, and added in a screen wrap, now Insmouse House is going better (In the demo mode that is) and The BGMaps in space squash rotate around properly.  I can get Vir Fishing to display the fish properly, but not without causing extra garbage to show up on the screen (Why?).  Space squash is still not playable. the ball and the opponent are constantly blinking (Why?).  I'm still over running memory in Insmouse House, I think actually I'm 'Under Running' it, ie I'm writing to a negative value on an array!
+
+    11/17/98 - added in the FPU opcodes, I think they work (Except for the flags??).  Found a cool C trick, to cast an int to a Float without converting (Keeping the same binary bit pattern, just do this: *((float *) &MyInt)  and back *((int *) &MyFloat)  way to handy!!! (The V810 uses the same 32 bit registers for Floats and Ints, and I need to trick the Compiler into seeing my 'Word' register as a float, without trying to convert it...).  Now Space Squash is almost playable...
+
+    11/12/98 - Fixed OBJ Selection (I think), and began to Understand the Alternate BGMap modes...  Need more work...
+
+    11/11/98 - added true pallets, might need to work out some bugs hear...  I need to implement Mode2BGMaps so Mario Tennis looks better (Zooming)...
+
+    11/08/98 - Fixed the OBJ up a bit (Not perfect), added some speed ups, and fixed a KBD Error. VTetris is playable, and VFishing, SpaceSquash, and InMouseHouse are almost playable! added a display Skip option, helps speed things up...
+
+    11/02/98 - Fixed up the World display (Most of the way) and got display Interrupts going, now I need controller and timer Interrupts working right... Implemented the controller (Minus Interrupts), VFishing, Vtetris and MarioTennis are all booting (Sort of), need to Implement the Missing FPU and BITSTRING Opcodes..., NEW properly clear the KBD buffer!  and I display the BG maps from back to front, like there generated (Pictures are stored back to front...), also fixed the size of World Objects...
+
+    10/18/98 - I'm still alive...  Updated the memory map, and fixed the Interrupts (Partly), I need to update the IntPending line in the VIP registers...  Fixed up OBJ memory, but need to Implement Worlds and the real time screen updates...
+
+    07/22/98 - made some changes I cant remember...  Mostly Banging my head against the wall (Arg!!!)
+
+    07/09/98 - Added in Interrupt Support (i) # (0-16)  only the first 5 interrupts are actually used on the VB and then its patchy whether they support it.  For now I'm not checking if a given Interrupt is valid, When I can figure it out the VB has the ability to turn on and off each Interrupt so I will tie into that and not allows you to select a bogus Interrupt.  NonMascible Interrupts and Exceptions (and Traps) have no handler code in the rom's so for now I will not add support for them.  Adjusted the return values on some of the registers, I was trying to get VTetris to boot, that failed.  But I got Mario Tennis going Instead (Has a major Bug thou, the chr ram is not mapping right, I'm guessing its the mirroring...)
+
+    07/08/98 - things are slow, but I'm making progress.  Tried to implement the memory mirroring, took a guess and assumed there masking out only the significant bits, it seems to work, no guaranties thou...  figured out most of the lower memory, fixed the CHR table (Properly Mirrored). Figured out most of the Interrupts, need to Implement them.
+
+    07/02/98 - added +/- commands to the (R)om command, now you can fine tune the displaying of the rom...  Boy can you tell I'm board!  Still being board I updated the ROM func with the rest of the variables (U/D) Up/Down a page, (u/d)Up/down a line, (</>) left right 1 char(You don't need to hold shift), (+/-) up/down 1 byte, (1/2) shrink/grow the columns.  These are all the useful commands from VB_View.exe I consider this to be a full replacement for VB_View, it is now officially dead! oh(H)elp has also been added to the (R)om func...
+
+    07/01/98 - Added a new function to the (V)ideo Menu: (R)om  allows you to graphically view the ROM image (Like VB_View.exe) it only has 3 controls right now ((U)p, (D)own, screen (P)rint, and of corse <ESC> and (Q)uit).  I did some more profiling on the display.  I modified al the functions to access the ram array directly (Without going through v810_rhword(addr) this made things nice and fast.  The only 2 week spots now are the screen blit and the chr2sprite() fn.  I think i can take care of the screen blit, but chr2sprite is about as fast as It can be (Without making the code ugly!)  I can now pump out 1500 displays in about 1 minute (about 25 frames per second) this is quite acceptable for now...
+
+    6/30/98 - Did another profile and researched out the PutPixle routine, I replaced it with direct memory access to the sprite, and shaved off about 45 seconds on a 60 second run (70% faster) basically I blast 30*14 BG maps to the screen as fast as I can, (that's 420 screens) anyway it now takes 15 seconds to do that verses 65-ish.  There is still a lot of optimizing to be done, but the drawing routines will be undergoing some major transformations soon, and I don't want to waist my time optimizing if I'm only going to destroy them in the end.  I began working on a World Viewer (Viewing each individual world for now, some day we can see them all in perspective.) It seems straight forward for the BG map, but there is a lot of ambiguity about the other 3 modes (IE, the OBJ...) for now Ill wait for Ben to enlighten me more on how the worlds work (Char effects, zooming rotation. Transparency. Intensity. and how all is cast into 3d space...)  Added a (P)rint screen command in the (V)ideo menus, pressing P while viewing a screen dumps a .bmp file (named after the screen, bg_map1.bmp etc...) also 'Q' or <ESC> are the only ways out of the Video screens.  And in the BG_Map screen any key takes you to the next BG_Map and <ESC> gets you out fast.
+
+    6/29/98 - Profiled the program today, i made some obvious speed ups (Mostly in the Display code)  Some known weak spots:  In v810_dsp.cpp,  CHR_2_SPRT() this func is quite slow mainly due to the PutPixle Routine, its possible there is a blitPixle... need to investigate... (I speed it up, some, already need to reprofile to be sure but it seems to have helped)  GetChr() Also slow mainly due to v810_rbyte() I changed this to rhword, no swapping and eliminated multiplications in the loop (Actually I unrolled the loop...) seems to be better, still need to reprofile... as before  BlitScreen() used in several spots, its possible that writing direct to video ram would be even faster than screen blits, but maybe not, I need to test.  I can shave off 12 test from v810_trc() by adding a jump table to the instruction mode in stead of a case statement... but the overhead of calling another func might eliminate the advantage, its something to try (Note that most opcodes will bail out after 6 tests at max, and probably average 2-3 test... so its a tough decision...)  Its possible I can eliminate the need all together, but It would mean off loading a lot more code to the individual instructions.  Memory access and Instruction execution is quite streamlined (I could use some asm in the instruction code to make individual instructions a lot more efficient) overall I think the processor is up to par, it should be fast enough to emulate a real v810 (I can execute 2,097,152 instructions in 6 sec (that's t 200000 in case your wondering why the weird number, remember t takes hex # as a param) that's 349,525 instructions per sec, fairly decent and I only have a Pentium 90.  I think we would be lucky to double this with the best of optimizations (Unless we went to an all asm core, but then you gotta debug...)  Video is acceptable I can display 14 screens in about 2 sec, really this needs to be more like 60 screens in 1 sec but I'm thinking most of the hold up is in the blit func, but more profiling is needed, for now its updating almost as fast as you can see, that's good enough for still screens.....  But it will need to be overhauled.  I'm droning on, but I'm trying to keep a log for my own reference later, I thought the read me was as good of a place as any!  I spent some time tracing down the phantom FPU instructions, it appears that they are really FPU instructions (not some other inst, besides they are definitely 4 byte instructions) but I don't have good docs on the FPU It needs a lot of work! maybe its covered in the v810 manual, we will know when my manual arrives...
+
+    6/23/98 - Finished a simple viewer for the CHR ram OBJ ram and BG_MAP ram.  type (V)ideo in the tracer to enter Video mode then select your resolution, chose carefully if you enter an unsupported video mode, things could get ugly (I don't check!)  Once in you will be prompted to display (C)hars, (B)gmap or (O)bj map, on the bg map hit any key to cycle through all 14 planes on all others hit any key to exit, to leave graphics mode hit <ESC>  This is quite preliminary and don't expect to much, I need to add support for scrolling when the graphics don't fit on the screen, for now try 640x480 mode, this will display all but the last 4 lines of a BG_map...  I temporarily made the last ram1.bin get reloaded into memory so you can unzip vtetris.zip and view the images in the ram without the need to trace through the actual code (For debug purposes its a real pain getting VTetris to generate an OBJ list, I can only do it one out of 10 times...).  Finally added the (B)reak command just pass it a memory address and it will break on the address (If it ever makes it there =)  hit <ESC> to break out if your caught in a infinite loop...  Added <ESC> support to (T)race as well, now hitting esc breaks you out of a trace that has gone on to long (IE. t 10000000, will take about 20 minutes to execute =), added another command (M) dump Memory, dumps the memory to the HD, memory is no longer written out every time the program executes... this makes it easier to take snapshots of memory without accidentally overwriting the snapshots (Big Bummer)
+
+    6/19/98 - Began to build up a true graphics lib for the VB display,  I'm hoping to have the ability to view the CHR tbl, BGMAP tbl, OBJ tbl, and World tbl (In perspective).  For now you will only be able to hop from the debugger to the video display, the display will not update itself in real time (bummer) maybe when we get booting a little better.
+
+    6/16/98 - Fixed ASR instruction (I was always copying a one to the MSB in stead of checking for the MSB and copying it), fixed the BGT instruction I was improperly bailing out (Missing brackets).  These fixes solve the problems in VGolf and VPinball. But neither one do anything anyway... (Bummer).  Fixed up a lot of flag tests, I was missing brackets to set proper president.  Now 8 games are generating the beginnings of a display list (VBBall_J, VBBall_E, VTETRIS, WarioLand, VForce, PBomber_J, PBomber_E, & GPinball).  Water World seems to be generating a display list as well, but there is some garbage in it, this garbage is in the ROM as well, it remains to be seen if it is a bug in my CPU or If I need to re dump the ROM.
+
+    6/15/98 - Finally added Muli, In(B,H,L), Out(B,H,L), EI, and DI. Leaving only SETF and odd instructions to do.  On first analysis In and out are mapped to memory (ld and st)as near as I can tell in.b 5000 == ld.b 5000.  For now I've added the ability to separate the two, but I'm not right now.  Interesting note: Vertical Force has started to generate a proper display screen (Wohooo).  Flags are still a problem, it appears that Virtual Golf (Japanese) and Virtual Pinball (Japanese) both get into bad loops due to improper flag testing.  This needs more research thou.
+
+    6/13/98 - Added support for Mul and div (MUL, DIV, MULU, DIVU)instructions,  Updated the memory accessing routines (All memory is anded with 07FF FFFF, the VB only looks at the lower 26 bits of a memory address.).  Cleaned up memory accesses, merged mem1 and mem4 into one linear address.  Added the VB_DISP.EXE util, to display the BG maps (Currently only looks good with VTetris).  Added support for American games as well as Japanese games (memory access to the ROM needed to be mirrored.).  Once again I improved on the flags.  Still I don't trust them.
+
+    6/03/98 - fixed the flags (Several times, still bugs, I think).  Added fairly decent memory support, added most important Instructions (Missing Mul/Div/SetF).  Now writes out Ram to the drive, so you can Inspect the ram at your leisure.  Finished (for the most part) the interface.
+
+    5/21/98 - First instructions executed! Fixed the disassembler, now most opcodes are coming out right (only opcodes I don't have documentation on are failing, like Floating point opcodes, and string manipulation opcodes). added support for the first 3 opcodes...
+
+    5/20/98 - CPU core started
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+To build the windows port you need the following:
+ Allegro, and MS VC8.
+
+build the allegro library, then load the win32\reality_boy.sln
+workspace into VC8 and build it.
+
+
+David Tucker
+david.tucker@goliathindustries.com
+http://www.goliathindustries.com/vb/

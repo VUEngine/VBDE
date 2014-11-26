@@ -1,0 +1,17 @@
+2014/11/26 10:43:10 Starting cygwin install, version 2.852
+2014/11/26 10:43:10 User has backup/restore rights
+2014/11/26 10:43:10 Current Directory: C:\vbde\cygwin
+2014/11/26 10:43:10 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2014/11/26 10:43:35 source: network install
+2014/11/26 10:43:37 root: C:\vbde\cygwin system
+2014/11/26 10:43:37 Selected local directory: C:\vbde\cygwin
+2014/11/26 10:43:38 net: Direct
+Loaded cached mirror list
+get_url_to_membuf http://cygwin.com/mirrors.lst
+getUrlToStream http://cygwin.com/mirrors.lst
+2014/11/26 10:43:40 site: http://piotrkosoft.net/pub/mirrors/cygwin/
+get_url_to_membuf http://piotrkosoft.net/pub/mirrors/cygwin/x86/setup.bz2
+getUrlToStream http://piotrkosoft.net/pub/mirrors/cygwin/x86/setup.bz2
+get_url_to_membuf http://piotrkosoft.net/pub/mirrors/cygwin/x86/setup.bz2.sig
+getUrlToStream http://piotrkosoft.net/pub/mirrors/cygwin/x86/setup.bz2.sig
+2014/11/26 10:44:04 Ending cygwin install

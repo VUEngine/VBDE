@@ -1,0 +1,119 @@
+-------------------------------------------------------------
+todo:
+-------------------------------------------------------------
+
+Critical Bugs:
+   Flag/buffer clear timing causing flickery/missing graphics on direct 
+   framebuffer games
+
+Speedup:
+   Display has been rewriten to handle pixle by pixle access, maby we
+   can drop the generation of bgmaps and the whole messy bgmap cach.  
+   Also rewrite the display loop, its probably a real dog.
+
+   reset timer interrupt when tcr or trc have been written to
+   only process timer request when timer is counted down 
+   (eliminate all the test cases)
+
+   rewrite serviceDisplayInt to operate in a state table, and only 
+   call next state when enough cycles have passed....
+
+   Cash Mem_wbyte/hword/word
+
+   cache output of vRenderCharacter and inline it in BGMap2World
+   rewrite image caches
+
+   Rework cpu emulation in assembly (80% of time spent here)
+   	Remove 64 bit code and any goofy float code in the flags
+   	Reduce the number of casts to short/byte in the flags
+
+Interface:
+   Add joystick and keyboard remapping code
+   
+   Fix joystick code, locks up if you change joystick from analog to
+     digital, does not support analog joysticks at all!
+
+   Figure out why we lockup the emulator if we don't update the keyboard 
+    every cpu cycle and the keyboard interrupt is enabled (would be nice
+    to enable this)
+
+   Print the 'usage' screen to a graphical window and wait for key press
+     so we don't just flash when they mess it up.
+     
+   Save states would be nice
+
+Graphics:
+   There may still be a bad opcode (or improper rounding/truncation) somewhere causing some incorrectly drawn lines in Red Alarm
+   Make brightness more uniform, is there an external bright mode register?
+   It looks like there is a column based interupt and games can adjust the 
+   brightness on a column by column bases, see intro to warioland
+   
+Sounds:
+   Test raw sounds to see which features are actually working properly
+   Verify LFSR noise sound w/ real hardware
+   How to do repeating envelope/sweep w/ Allegro?  Does it actually repeat (properly) w/ PLAYMODE_LOOP?
+   How to do modulation w/ Allegro?
+   Add overall volume control
+
+Misc:
+   Add some more link features, and speed up link (and test COMCNT handling)
+   Timer seems to be wrong
+   Add cycles for wait states
+   Add SCH*BS* instructions
+   Port to SDL
+   Finish XBox port
+ 
+-------------------------------------------------------------
+Bugs:
+-------------------------------------------------------------
+V-Golf
+ - Direct screen draws don't clear properly
+ - Strange garbage drawn around objects
+ - title screen goes to demo WAY too quickly
+
+3D Tetris
+ - Direct screen draws don't clear properly
+
+Red Alarm
+ - Direct screen draws don't clear properly
+ - Depending on angle, some walls are short/thick instead of long/skinny
+
+V-Force
+ - Needs -vfhack switch
+ - Focus screen never appears
+
+Telero Boxer 
+ - Roundhouse punches, the hand disapears?
+
+V-Bowling
+ - pause screen does not clear cleanly
+ 
+-------------------------------------------------------------
+--Playable--
+-------------------------------------------------------------
+Water World
+Wario Land
+VFishing
+VTet
+Space Squash
+Space Invaders
+SDGundam
+MTennis
+JBrothers
+IMH
+PBommer
+GPinbal
+VBowl
+VLab
+VTet
+VBaseball
+MClash
+NFBowling
+VForce - use -vfhack
+
+-------------------------------------------------------------
+--partial--
+-------------------------------------------------------------
+Virtual Golf
+Red Alarm
+3D Tetris

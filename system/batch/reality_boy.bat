@@ -1,0 +1,1 @@
+start "" "C:\vbde\tools\emus\rboy_084_win\reality_boy.exe" %1/output.vb -display frame -altkbd -dspmode affine -sclscr 2

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <meta name="Author" content="David Tucker">
+    <meta name="Classification" content="documentation">
+    <meta name="Description" content="RBoy Frontend Documentation">
+    <meta name="KeyWords" content=
+		  "reality boy, rboy, virtual boy, virtual, boy, front end, emulator">
+    <title>RBoy Frontend Documentation</title>
+		<link rel="stylesheet" type="text/css" href="default.css" />
+		<style type="text/css">
+			<!--
+			body {
+				 background-image:url(background.gif);
+			}
+			-->
+		</style>
+  </head>
+	
+  <body>
+		<div id="header">
+      <h1>RBoy Frontend</h1>
+      <h2>A guide to the emu launcher.</h2>
+		</div>
+		<div class="content">
+				  <p>
+				  rboy_front.exe is a simple progrem that can be used to pass arguments
+					to the reality_boy emulator.  Here is a rundown of the various options
+					and there ramifications.
+					</p>
+					
+					<img SRC="scr_shot.gif" ALT="screen shot"/><br>
+					
+      		<h2>Options</h2>
+      		<ul TYPE=DISC>
+      		<li>
+					Emulator Path: The path to the reality_boy executable
+      		</li>
+					<li>
+					Rom Path: The path to the rom to run in the emulator
+      		</li>
+					<li>
+					Display mode: set the screen resolution frame (window) is the default mode
+      		</li>
+					<li>
+					3D Mode: Choos normal or a 3D display mode, Red Blue is analgraph mode.
+    			Interlaced should support mostshuter glasses, as well as I-glasses
+      		</li>
+					<li>
+					Zoom: Set the level of zoom on the display (1x-6x) or stretch to fill the window in full screen mode.
+      		</li>
+					<li>
+					Palette: Select the apropriet palette
+      		</li>
+					<li>
+					Brightness: Brighten or darken the display by a multiplicitive factor [0.1-3.0]
+					</li>
+					<li>
+					Frame Skip: Number of frames to skip before refreshing the display
+    			hit -/= while in the game to adjust this as well [0-9]
+      		</li>
+					<li>
+					Key map: Select standard or alternate keyboard mapping
+      		</li>
+					<li>
+					VB Controller: Select the paralel port that your VB controller is hooked up to.
+					</li>
+					<li>
+					Joy: Enable joystick support (dissabled).
+					</li>
+					
+					
+					<li>
+					Swap Display: flip the 3D efects (you can hit ']' while in 
+    			the game to do this as well)
+      		</li>
+					<li>
+					Horizontal 2x: double the width of the screen, usefull for interlaced 
+					mode when your glasses don't compensate for the aspect ratio.
+					</li>
+					<li>
+					No Throttle: turn off all speed throtling
+      		</li>
+					<li>
+					Status Line: display the FPS during emulation, press '0' to togle in game
+      		</li>
+					<li>
+					Long Timmer Hack: Force a longer duration to the timmer
+      		</li>
+					<li>
+					Vertical Force hack: Fixes Vertical Force, game won't run without this
+      		</li>
+					<li>
+					Debug: starts the interactive debugger, currently only works in the
+    			debug build
+      		</li>
+					<li>
+					Dissasembly: generate disasembler dump of all code executed during emulation
+      		</li>
+					<li>
+					Console Output: dump debug messages to the console instead of to a file
+      		</li>
+     			</ul>
+					
+					<h2>Keyboard Mapping</h2>
+					<img SRC="keymap.gif" ALT="keyboard map"/>
+					
+					<h2>Paralel Port interface</h2>
+					<p>
+					Hook your VB controller up to the paralel port using the folowing diagram 
+					in order to use it as an input device to reality boy.  This makes 
+					playing games on the emulator 100% better, it's highly recomended.
+ 				  </p>
+					<img SRC="vb_ctrl.gif" ALT="vb controller to parallel port"/>
+		</div>
+
+    <div id="copyright">
+      Send Mail to David Tucker, 
+			<a href="mailto:david.tucker@goliathindustries.com">
+			david.tucker@goliathindustries.com</a><br>
+
+      This page copyright 1997-2005 by David Tucker all rights reserved.
+    </div>
+		
+  </body>
+</html>

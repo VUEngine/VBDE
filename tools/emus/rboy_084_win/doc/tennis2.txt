@@ -1,0 +1,4752 @@
+;----------------------------------------------------------
+; Mario Tennis Disasm v0.25
+;  up to focus screen
+;  by David Tucker
+;
+;  generated on: 12-18-1999
+;  updated on:    2-05-2000
+;----------------------------------------------------------
+;Notes:
+;  $3 - Stack Pointer
+;  $6 - usualy the first passed in parameter to a FN
+;  29 Fn's, 59 Fn calls
+;
+; Interupts 0,1 and 2 basicaly execute a 'reti' instruction...
+;  Int3 (Link port) is for debuging only.
+;  Int4 (Display) is the main timming for the game.
+;
+; Some numbers are in hex, but none are marked, you figure out
+;  what is what =0)
+;
+; code wraped in braces
+;///////////////////////////////////
+;//
+;  Like this
+;//
+;///////////////////////////////////
+; was executed after the initial display was set up.
+;
+;----------------------------------------------------------
+
+;==========================================
+;Controller Interupt Handler (Int0)
+;==========================================
+;Push Registers $1,$31
+07000000	add	-4, $3
+07000002	st.w	$31, 0[$3]
+07000006	add	-4, $3
+07000008	st.w	$1, 0[$3]
+
+;Call the real Interupt Handler
+0700000c	jal	640	;Jump 0x0700028C, saving PC
+
+;Pop Registers $1,$31
+07000010	ld.w	0[$3], $1
+07000014	add	4, $3
+07000016	ld.w	0[$3], $31
+0700001a	add	4, $3
+
+;Pop Register $11, pushed before call...
+0700001c	ld.w	0[$3], $11
+07000020	add	4, $3
+;Return from Interupt
+07000022	reti
+
+;==========================================
+;Timmer Interupt Handler (Int1)
+;==========================================
+;Return from Interupt, bug never POP'd $11
+07000024	reti
+
+;==========================================
+;Expantion Port Interupt Handler (Int2)
+;==========================================
+;Push Registers $1,$31
+07000026	add	-4, $3
+07000028	st.w	$31, 0[$3]
+0700002c	add	-4, $3
+0700002e	st.w	$1, 0[$3]
+
+;Call the real Interupt Handler
+07000032	jal	606	;Jump 0x07000290, saving PC
+
+;Pop Registers $1,$31
+07000036	ld.w	0[$3], $1
+0700003a	add	4, $3
+0700003c	ld.w	0[$3], $31
+07000040	add	4, $3
+
+;Pop Register $11, pushed before call...
+07000042	ld.w	0[$3], $11
+07000046	add	4, $3
+;Return from Interupt
+07000048	reti
+
+;==========================================
+;Link Port Interupt Handler (Int3)
+;==========================================
+;Push Registers $1,$6-$10,$31
+0700004a	add	-4, $3
+0700004c	st.w	$31, 0[$3]
+07000050	add	-4, $3
+07000052	st.w	$10, 0[$3]
+07000056	add	-4, $3
+07000058	st.w	$9, 0[$3]
+0700005c	add	-4, $3
+0700005e	st.w	$8, 0[$3]
+07000062	add	-4, $3
+07000064	st.w	$7, 0[$3]
+07000068	add	-4, $3
+0700006a	st.w	$6, 0[$3]
+0700006e	add	-4, $3
+07000070	st.w	$1, 0[$3]
+
+;Call the real Interupt Handler
+07000074	jal	66962	;Jump 0x07010606, saving PC
+
+;Pop Registers $1,$6-$10,$31
+07000078	ld.w	0[$3], $1
+0700007c	add	4, $3
+0700007e	ld.w	0[$3], $6
+07000082	add	4, $3
+07000084	ld.w	0[$3], $7
+07000088	add	4, $3
+0700008a	ld.w	0[$3], $8
+0700008e	add	4, $3
+07000090	ld.w	0[$3], $9
+07000094	add	4, $3
+07000096	ld.w	0[$3], $10
+0700009a	add	4, $3
+0700009c	ld.w	0[$3], $31
+070000a0	add	4, $3
+
+;Pop Register $11, pushed before call...
+070000a2	ld.w	0[$3], $11
+070000a6	add	4, $3
+;Return from Interupt
+070000a8	reti
+
+;==========================================
+;Dispaly Interupt Handler (Int4)
+;==========================================
+;Push Registers $1,$6-$10,$30,$31
+070000aa	add	-4, $3
+070000ac	st.w	$31, 0[$3]
+070000b0	add	-4, $3
+070000b2	st.w	$30, 0[$3]
+070000b6	add	-4, $3
+070000b8	st.w	$10, 0[$3]
+070000bc	add	-4, $3
+070000be	st.w	$9, 0[$3]
+070000c2	add	-4, $3
+070000c4	st.w	$8, 0[$3]
+070000c8	add	-4, $3
+070000ca	st.w	$7, 0[$3]
+070000ce	add	-4, $3
+070000d0	st.w	$6, 0[$3]
+070000d4	add	-4, $3
+070000d6	st.w	$1, 0[$3]
+
+;Call the real Interupt Handler
+070000da	jal	440	;Jump 0x07000292, saving PC
+
+;Pop Registers $1,$6-$10,$30,$31
+070000de	ld.w	0[$3], $1
+070000e2	add	4, $3
+070000e4	ld.w	0[$3], $6
+070000e8	add	4, $3
+070000ea	ld.w	0[$3], $7
+070000ee	add	4, $3
+070000f0	ld.w	0[$3], $8
+070000f4	add	4, $3
+070000f6	ld.w	0[$3], $9
+070000fa	add	4, $3
+070000fc	ld.w	0[$3], $10
+07000100	add	4, $3
+07000102	ld.w	0[$3], $30
+07000106	add	4, $3
+07000108	ld.w	0[$3], $31
+0700010c	add	4, $3
+
+;Pop Register $11, pushed before call...
+0700010e	ld.w	0[$3], $11
+07000112	add	4, $3
+;Return from Interupt
+07000114	reti 
+
+;==========================================
+;Reset Vector Handler
+;==========================================
+; Initialize Stack Pointer (SP)
+07000120	movhi	500, $0, $3	;0x05003FFC => $3
+07000124	movea	3ffc, $3, $3
+
+; Program Memory pointer
+07000128	movhi	501, $0, $4	;0x05008000 => $4
+0700012c	movea	8000, $4, $4
+
+; --- Zero out Program Ram 0x05000000-0x0500FFFF ---
+07000130	movhi	500, $0, $11	;0x05000000 => $11
+07000134	movhi	fff8, $0, $1	;0xFFF80144 => $1
+07000138	movea	144, $1, $1
+0700013c	jmp	[$1]	;jump 0x07000144
+;loop top
+0700013e	st.h	$0, 0[$11]	;Zero Memory
+07000142	add	2, $11	;Increment mem pointer
+07000144	movhi	501, $0, $1	;0x05010000 => $1
+07000148	cmp	$1, $11	;End of memory?
+0700014a	blt	-12	; if not goto 0x0700013E
+
+0700014c	movhi	fff8, $0, $11	;0xFFF801B2 => $11
+07000150	movea	1b2, $11, $11
+07000154	jmp	[$11]	;jump 0x070001B2
+
+;==========================================
+; --- Function: Set SysReg ---
+;==========================================
+07000156	add	-4, $3	;Decrement PC by 4
+07000158	st.w	$1, 0[$3]	;Push $1 on stack
+0700015c	mov	$0, $1	;0x00000000 => $4
+0700015e	ldsr	5, $1	;0x00000000 => $s5
+07000160	mov	2, $1	;0x00000002 => $1
+07000162	ldsr	-8, $1	;0x00000002 => $s24
+07000164	ld.w	0[$3], $1	;Pop $1 from stack
+07000168	add	4, $3	;Increment SP
+0700016a	jmp	[$31]	;Return
+
+;==========================================
+; --- Function: Var_Wait ---
+;==========================================
+; -- read a variable var_??? (0x0500000E) untill it is not zero,
+;    than return (part of display interupt?)
+;==========================================
+0700016c	add	-4, $3	;Decrement PC by 4
+0700016e	st.w	$1, 0[$3]	;Push $1 on stack
+;0x0000 => var_???2
+07000172	st.h	$0, -32754[$4]	;0x0000 => [0x0500000E]
+;loop top
+;var_???2 => $1
+07000176	ld.h	-32754[$4], $1	;[0x0500000E] => $1
+0700017a	or	$1, $1	;Test if $1 == 0
+0700017c	be	-6	; while true goto 0x07000176
+
+0700017e	ld.w	0[$3], $1	;Pop $1 from stack
+07000182	add	4, $3	;Increment SP
+07000184	jmp	[$31]	;Return
+
+;==========================================
+; --- Function: DPSTTS_WAIT ---
+;==========================================
+; read DPSTTS untill it equals 0x3C, then return
+;==========================================
+07000186	add	-4, $3	;Decrement PC by 4
+07000188	st.w	$1, 0[$3]	;Push $1 on stack
+0700018c	add	-4, $3	;Decrement PC by 4
+0700018e	st.w	$2, 0[$3]	;Push $2 on stack
+
+07000192	movhi	6, $0, $1	;0x00060000 => $1
+;pointer to DPSTTS
+07000196	movea	f820, $1, $2	;0x0005F820 => $2
+;loop top
+;read DPSTTS into $1
+0700019a	ld.h	0[$2], $1	;[0x0005F820] => $1
+0700019e	andi	3c, $1, $1	;mask with 0x3C
+070001a2	be	-8	;while != 0x3C goto 0x0700019A
+
+070001a4	ld.w	0[$3], $2	;Pop $2 from stack
+070001a8	add	4, $3	;Increment SP
+070001aa	ld.w	0[$3], $1	;Pop $1 from stack
+070001ae	add	4, $3	;Increment SP
+070001b0	jmp	[$31]	;Return
+
+;==========================================
+; --- Function: GameStart ---
+;==========================================
+070001b2	addi	ffec, $3, $3	;Decrement SP by 20
+070001b6	movea	1f, $0, $6	;0x0000001F => $6
+070001ba	st.w	$31, 16[$3]	;push JAL return address
+; Call Funcion: Init End World
+070001be	jal	5016	;jump 0x07001556, saving PC
+
+; --- Zero VIP memory from 0x00000000 to 0x0001FFFF ---
+; (Char Mem)
+070001c2	mov	$0, $10	;0x00 => $10
+070001c4	mov	$0, $11	;0x00 => $11
+070001c6	jr	12	;jump 0x070001D2
+;loop top
+070001ca	st.h	$0, 0[$10]	;Zero VIP Memory
+070001ce	add	2, $10	;increment mem pointer
+070001d0	add	1, $11	;increment loop counter
+070001d2	movhi	1, $0, $1	;0x00010000 => $1
+070001d6	cmp	$1, $11	;end of Memory?
+070001d8	blt	-14	;if not goto 0x070001CA
+
+;Zero Variables in Program Ram
+070001da	mov	0, $6	;0x00 => $6
+070001dc	movhi	500, $0, $1	;0x05000000 => $1 (Program Ram)
+;0x0000 => var_INTPND
+070001e0	st.h	$6, 24[$1]	;0x0000 => [0x05000018]
+070001e4	movhi	500, $0, $1	;0x05000000 => $1
+;0x0000 => var_???2
+070001e8	st.h	$6, 14[$1]	;0x0000 => [0x0500000E]
+
+;$6 => var_Jump_index
+070001ec	movhi	500, $0, $1	;0x05000000 => $1
+070001f0	st.h	$6, 12[$1]	;$6 => [0x0500000C]
+
+;Test if var_Jump_index > 0x0E (14)
+; var_Jump_index => $10
+070001f4	movhi	500, $0, $1	;0x05000000 => $1
+070001f8	ld.h	12[$1], $10	;[0x0500000C] => $10
+
+070001fc	andi	f, $10, $10	;Mask lower 4 bits
+07000200	mov	$10, $30	;
+07000202	cmp	14, $30	;
+07000204	bh	-16	;If greater than goto 0x070001F4
+
+; Jump Table 1 in rom, starting at 0x07016000
+07000206	shl	2, $30	;multiply by 4 (0-56, step 4)
+07000208	movhi	fff9, $30, $1	;0x07010000+$30
+0700020c	ld.w	24576[$1], $30	;$1+0x06000
+07000210	jmp	[$30]	;Jump on JumpTable
+
+;==========================================
+; Jump Table 1, Jump 0
+;==========================================
+; Initialize sound, and link port...
+;==========================================
+07000216	jal	5930	;jump 0x07001940, saving PC
+; return to top, jumping to Jump 1
+0700021a	jr	-38	;Jump to 0x070001F4
+; Jump Table 1, Jump 1
+;Prepare to start game...
+0700021e	jal	42740	;Jump to 0x0700A912, saving PC
+07000222	jr	-46	;Jump to 0x070001F4
+; Jump Table 1, Jump 2
+07000226	jal	60692	;Jump to 0x0700EF3A, saving PC
+0700022a	jr	-54	;Jump to 0x070001F4
+; Jump Table 1, Jump 3
+0700022e	jal	67502	;Jump to 0x070109DC, saving PC
+07000232	jr	-62	;Jump to 0x070001F4
+; Jump Table 1, Jump 4
+07000236	jal	6498
+0700023a	jr	-70	;Jump to 0x070001F4
+; Jump Table 1, Jump 5
+0700023e	jal	26514
+07000242	jr	-78	;Jump to 0x070001F4
+; Jump Table 1, Jump 6
+07000246	jal	28420
+0700024a	jr	-86	;Jump to 0x070001F4
+; Jump Table 1, Jump 7
+0700024e	jal	54598
+07000252	jr	-94	;Jump to 0x070001F4
+; Jump Table 1, Jump 8
+07000256	jal	76556
+0700025a	jr	-102	;Jump to 0x070001F4
+; Jump Table 1, Jump 9
+0700025e	jal	77166
+07000262	jr	-110	;Jump to 0x070001F4
+; Jump Table 1, Jump 10
+07000266	jal	78608
+0700026a	jr	-118	;Jump to 0x070001F4
+; Jump Table 1, Jump 11
+0700026e	jal	85362
+07000272	jr	-126	;Jump to 0x070001F4
+; Jump Table 1, Jump 12
+07000276	jal	88508
+0700027a	jr	-134	;Jump to 0x070001F4
+; Jump Table 1, Jump 13/14(default?)
+0700027e	mov	4, $10	;0x00000004 => $10
+07000280	movhi	500, $0, $1	;0x05000000 => $1
+;0x0004 => var_Jump_index
+07000284	st.h	$10, 12[$1]	;0x0004 => [0x0500000C]
+07000288	jr	-148	;Jump to 0x070001F4
+
+;==========================================
+; --- Function:  ControllerInt Helper ---
+;==========================================
+0700028c	jmp	[$31]	;return
+
+;==========================================
+; --- Function:  TimmerInt Helper ??? ---
+;==========================================
+0700028e	jmp	[$31]	;return
+
+;==========================================
+; --- Function:  ExpansionPortInt Helper ---
+;==========================================
+07000290	jmp	[$31]	;return
+
+;==========================================
+; --- Function:  DisplayInt Helper ---
+;==========================================
+07000292	addi	ffe0, $3, $3	;Decrement PC by 0x20
+07000296	st.w	$31, 28[$3]	;push $31 on stack
+0700029a	st.w	$20, 24[$3]	;push $20 on stack
+
+;var_pVIP => $10
+0700029e	movhi	500, $0, $1	;0x05000000 => $1
+070002a2	ld.w	16[$1], $10	;[0x05000010] => $10
+
+;INTPND => $20
+070002a6	ld.h	0[$10], $20	[0x0005F800] => $20
+;$20 => INTCLR
+070002aa	st.h	$20, 4[$10]	$20 => [0x0005F804]
+
+;var_INTPND => $10 -- INTPND
+070002ae	movhi	500, $0, $1	;0x05000000 => $1
+070002b2	ld.h	24[$1], $10	;[0x05000018] => $10
+
+070002b6	cmp	0, $10	;if 0
+070002b8	be	6	;goto 0x070002BE
+070002ba	jr	766	;goto 0x070005B8
+
+;var_???2 => $10
+070002be	movhi	500, $0, $1	;0x05000000 => $1
+070002c2	ld.h	14[$1], $10	;[0x0500000E] => $10
+
+070002c6	cmp	0, $10	;if 0
+070002c8	be	6	;goto 0x070002CE
+070002ca	jr	750	;goto 0x070005B8
+
+;var_???3 => $10
+070002ce	movhi	500, $0, $1	;0x05000000 => $1
+070002d2	ld.h	26[$1], $10	;[0x0500001A] => $10
+
+070002d6	andi	303c, $10, $10	;Mask 10 with 0x303C
+070002da	movea	303c, $0, $1	0x0000303C => $1
+070002de	cmp	$1, $10	;are they equal?
+070002e0	be	6	;if so, goto 0x070002E6
+070002e2	jr	8	;goto 0x070002EA
+070002e6	jal	828	;goto 0x07000622
+
+;INTPND => $10
+070002ea	mov	$20, $10	;$20 => $10
+070002ec	andi	4000, $10, $10	;mask with  0x4000
+
+;$20 => var_INTPND -- INTPND
+070002f0	movhi	500, $0, $1	;0x05000000 => $1
+070002f4	st.h	$20, 24[$1]	;$20 => [0x05000018]
+
+070002f8	bne	6	;If not zero (int 0x4000) goto 0x070002FE 
+070002fa	jr	662	; else goto 0x07000590
+
+;var_pVIP => $10
+070002fe	movhi	500, $0, $1	;0x05000000 => $1
+07000302	ld.w	16[$1], $10	;[0x05000010] => $10
+
+;0x4000 => INTCLR -- clear int 0x4000
+07000306	movea	4000, $0, $11	;0x00004000 => $11
+0700030a	st.h	$11, 4[$10]	;0x4000 => [0x0005F804]
+
+0700030e	movhi	4, $0, $1	;0x00040000 => $1
+07000312	movea	e000, $1, $10	;0x0003E000 => $10
+
+;; ----------------------------------
+;; Load OBJ Table
+;;  var_OBJLoadCount is OBJ counter
+;;  (number of obj's to load into memory)
+;; ----------------------------------
+;loop top
+07000316	mov	$0, $11	;0x00000000 => $11
+07000318	jr	24	;goto 0x07000330
+
+0700031c	mov	$11, $12	;$11 => $12
+0700031e	shl	1, $12	;Multiply $12 by 2
+07000320	movhi	500, $12, $1	;0x0500xxx => $1
+;load obj from rom
+07000324	ld.h	30[$1], $12	;
+;; store obj
+07000328	st.h	$12, 0[$10]	$12 => [0x0003Exxx]
+0700032c	add	2, $10	;inc obj pointer
+0700032e	add	1, $11	;inc mem pointer
+
+;loop start
+;var_OBJLoadCount => $12
+07000330	movhi	500, $0, $1	;0x05000000 => $1
+07000334	ld.h	8222[$1], $12	;[0x0500201E] => $12
+
+07000338	cmp	$12, $11	;if $12 > $11
+0700033a	blt	-30	; goto 0x0700031C
+
+;var_???21E6 => $11
+0700033c	movhi	500, $0, $1	;0x05000000 => $1
+07000340	ld.h	8678[$1], $11	;[0x050021E6] => $11
+
+07000344	movea	ff, $0, $1	;0x000000FF => $1
+07000348	cmp	$1, $11	;if $1 > $11
+0700034a	bgt	6	; than goto 0x07000350
+0700034c	jr	116	;goto 0x070003C0
+
+;; If old OBJ pointer != New OBJ pointer, fill in END obj????
+;;  Maby battery low???
+;Obj Pointer AND var_???21E6 => $12
+07000350	andi	10, $11, $12	;
+07000354	bne	6	;If $10 != $11 got 0x0700035A
+07000356	jr	106	;goto 0x070003C0
+0700035a	andi	f7f, $11, $11	;mask $11 with 0x0F7F
+
+;$11 => var_???21E6
+0700035e	movhi	500, $0, $1	;0x05000000 => $1
+07000362	st.h	$11, 8678[$1]	;$11 => [0x050021E6]
+
+;0x013C => Obj Pointer
+07000366	movea	13c, $0, $11	;0x0000013C => $11
+0700036a	st.h	$11, 0[$10]	;0x013C => [$10]
+0700036e	add	2, $10	;inc OBJ Pointer by 2
+;0xC000 => Obj Pointer
+07000370	movea	c000, $0, $11	;0x0000C000 => $11
+07000374	st.h	$11, 0[$10]	;0xC000 => [$10]
+07000378	add	2, $10	;inc OBJ Pointer by 2
+;0x0000 => Obj Pointer
+0700037a	st.h	$0, 0[$10]	;0x0000 => [$10]
+0700037e	add	2, $10	;inc OBJ Pointer by 2
+;0xC7FE => Obj Pointer
+07000380	movea	c7fe, $0, $11	;0x0000C7FE => $11
+07000384	st.h	$11, 0[$10]	;0xC7FE => [$10]
+07000388	add	2, $10	;inc OBJ Pointer by 2
+
+;0x0144 => Obj Pointer
+0700038a	movea	144, $0, $11	;0x00000144 => $11
+0700038e	st.h	$11, 0[$10]	;0x0144 => [$10]
+07000392	add	2, $10	;inc OBJ Pointer by 2
+;0xC000 => Obj Pointer
+07000394	movea	c000, $0, $11	;0x0000C000 => $11
+07000398	st.h	$11, 0[$10]	;0xC000 => [$10]
+0700039c	add	2, $10	;inc OBJ Pointer by 2
+;0x0000 => Obj Pointer
+0700039e	st.h	$0, 0[$10]	;0x0000 => [$10]
+070003a2	add	2, $10	;inc OBJ Pointer by 2
+;0xC7FF => Obj Pointer
+070003a4	movea	c7ff, $0, $11	;0x0000C7FF => $11
+070003a8	st.h	$11, 0[$10]	;0xC7FF => [$10]
+070003ac	add	2, $10	;inc OBJ Pointer by 2
+
+;var_OBJLoadCount => $11
+070003ae	movhi	500, $0, $1	;0x05000000 => $1
+070003b2	ld.h	8222[$1], $11	;[0x0500201E] => $11
+
+070003b6	add	8, $11	;Increment count by 8
+
+;$11 => var_OBJLoadCount
+070003b8	movhi	500, $0, $1	;0x05000000 => $1
+070003bc	st.h	$11, 8222[$1]	;$11 => [0x0500201E]
+;------------------
+
+;var_pVIP => $11
+070003c0	movhi	500, $0, $1	;0x05000000 => $1
+070003c4	ld.w	16[$1], $11	;[0x05000010] => $11
+
+;var_OBJLoadCount => $12
+070003c8	movhi	500, $0, $1	;0x05000000 => $1
+070003cc	ld.h	8222[$1], $12	;[0x0500201E] => $12
+
+;; store OBJ count in SPT3
+070003d0	sar	2, $12	;Divide by 2
+070003d2	add	-1, $12	;subtract 1
+$12 => SPT3
+070003d4	st.h	$12, 78[$11]	;$12 => [0x0005F84E]
+
+;var_OBJLoadCount  => $11
+070003d8	movhi	500, $0, $1	;0x05000000 => $1
+070003dc	ld.h	8222[$1], $11	;[0x0500201E] => $11
+
+;; -- No Objs loaded, clear out the SPT pointer
+070003e0	cmp	0, $11	;if No obj's loaded
+070003e2	be	6	; goto 0x070003E8
+070003e4	jr	24	;goto 0x070003FC
+
+;var_pVIP => $11
+070003e8	movhi	500, $0, $1	;0x05000000 => $1
+070003ec	ld.w	16[$1], $11	;[0x05000010] => $11
+
+;0 => SPT3
+070003f0	st.h	$0, 78[$11]	;0x0000 => [0x0005F84E]
+070003f4	st.h	$0, 0[$10]	;??
+070003f8	st.h	$0, 2[$10]	;??
+
+;; -- Reset for next display interupt...
+;0 => var_OBJLoadCount
+070003fc	mov	0, $10	;0x0000 => $10
+070003fe	movhi	500, $0, $1	;0x05000000 => $1
+07000402	st.h	$10, 8222[$1]	;$10 => [0x0500201E]
+
+;var_Jump_index => $10
+07000406	movhi	500, $0, $1	;0x05000000 => $1
+0700040a	ld.h	12[$1], $10	;[0x0500000C] => $10
+
+0700040e	andi	f, $10, $10	;mask with 0x0F
+07000412	addi	ffff, $10, $30	;$10-1 => $30
+07000416	cmp	14, $30	;if var_Jump_index <= 14 ???
+07000418	bnh	6	;goto 0x0700041E
+0700041a	jr	120	; goto 0x07000492
+0700041e	shl	2, $30	;multiply $30 by 2
+07000420	movhi	fff9, $30, $1	;0xFFF8FFxx => $1
+07000424	ld.w	24636[$1], $30	;????
+07000428	jmp	[$30]
+
+;; -- Jump Table --
+0700042e	jal	43194
+07000432	jr	96	;goto 0x07000492
+07000436	jal	61742
+0700043a	jr	88	;goto 0x07000492
+0700043e	jal	70628
+07000442	jr	80	;goto 0x07000492
+07000446	jal	9872
+0700044a	jr	72	;goto 0x07000492
+0700044e	jal	27266
+07000452	jr	64	;goto 0x07000492
+07000456	jal	30624
+0700045a	jr	56	;goto 0x07000492
+0700045e	jal	56528
+07000462	jr	48	;goto 0x07000492
+07000466	jal	76562
+0700046a	jr	40	;goto 0x07000492
+0700046e	jal	77082
+07000472	jr	32	;goto 0x07000492
+07000476	jal	81830
+0700047a	jr	24	;goto 0x07000492
+0700047e	jal	87694
+07000482	jr	16	;goto 0x07000492
+07000486	jal	88780
+0700048a	jr	8	;goto 0x07000492
+0700048e	jal	9886
+
+;var_???21E6 => $10
+07000492	movhi	500, $0, $1	;0x05000000 => $1
+07000496	ld.h	8678[$1], $10	;[0x050021E6] => $10
+
+0700049a	movea	ff, $0, $1	;0x00FF => $1
+0700049e	cmp	$1, $10	
+070004a0	bgt	6
+070004a2	jr	100	;goto 0x07000506
+
+070004a6	andi	10, $10, $10
+070004aa	bne	6
+070004ac	jr	90	;goto 0x07000506
+070004b0	movhi	4, $0, $1
+070004b4	movea	dc00, $1, $10
+070004b8	mov	$0, $11
+070004ba	jr	68	;goto 0x070004FE
+;; loop top
+070004be	addi	ffe0, $10, $10
+070004c2	ld.h	0[$10], $12
+070004c6	andi	f000, $12, $13
+070004ca	movhi	1, $0, $1
+070004ce	movea	f000, $1, $1
+070004d2	cmp	$1, $13
+070004d4	bne	6
+070004d6	jr	48	;goto 0x07000506
+070004da	andi	40, $12, $12
+070004de	bne	6
+070004e0	jr	28	;goto 0x070004FC
+070004e4	movea	f000, $0, $11
+070004e8	st.h	$11, 0[$10]
+070004ec	addi	ffe0, $10, $11
+070004f0	movea	40, $0, $12
+070004f4	st.h	$12, 0[$11]
+070004f8	jr	14	;goto 0x07000506
+070004fc	add	1, $11
+;; Loop start
+070004fe	movea	20, $0, $1
+07000502	cmp	$1, $11
+;; goto loop top..
+07000504	blt	-70	;goto 0x070004BE
+
+;var_???2038 => $10
+07000506	movhi	500, $0, $1	;0x05000000 => $1
+0700050a	ld.b	8248[$1], $10	;[0x05002038] => $10
+
+0700050e	cmp	0, $10
+07000510	bne	6
+07000512	jr	104	;goto 0x0700057A
+07000516	mov	$0, $10	;0x00000000 =$10
+07000518	st.w	$10, 20[$3]	;push $10 on stack
+0700051c	jr	36	;goto 0x07000540
+07000520	mov	$10, $11
+07000522	shl	1, $11
+
+;var_pVIP => $12
+07000524	movhi	500, $0, $1	;0x05000000 => $1
+07000528	ld.w	16[$1], $12	;[0x05000010] => $12
+
+0700052c	add	$12, $11
+
+;var_???16 => $12
+0700052e	movhi	500, $10, $1	;0x05000000 => $1
+07000532	ld.b	8226[$1], $12	;[0x05002022] => $12
+
+07000536	st.h	$12, 96[$11]
+0700053a	add	1, $10
+0700053c	st.w	$10, 20[$3]	;repush $10 on stack (overwrite old value)
+
+07000540	cmp	8, $10
+07000542	blt	-34
+
+;var_pVIP => $10
+07000544	movhi	500, $0, $1	;0x05000000 => $1
+07000548	ld.w	16[$1], $10	;[0x05000010] => $10
+
+0700054c	st.w	$10, 16[$3]	;push $10 on stack
+07000550	ld.w	20[$3], $11
+07000554	ld.w	16[$3], $10
+07000558	shl	1, $11
+0700055a	addi	70, $11, $11
+0700055e	add	$11, $10
+
+;var_???16 => $11
+07000560	movhi	500, $0, $1	;0x05000000 => $1
+07000564	ld.b	8226[$1], $11	;[0x05002022] => $11
+
+07000568	andi	3, $11, $11
+0700056c	st.h	$11, 0[$10]
+
+07000570	mov	0, $10
+;$10 => var_???2038
+07000572	movhi	500, $0, $1	;0x05000000 => $1
+07000576	st.b	$10, 8248[$1]	;0x00 => [0x05002038]
+
+;var_???2020 => $10
+0700057a	movhi	500, $0, $1	;0x05000000 => $1
+0700057e	ld.h	8224[$1], $10	;[0x05002020] => $10
+
+07000582	andi	ffff, $10, $10
+07000586	add	1, $10
+
+;$10 => var_???2020
+07000588	movhi	500, $0, $1	;0x05000000 => $1
+0700058c	st.h	$10, 8224[$1]	;$10 => [0x05002020]
+
+; Handle interupt other than 0x4000 ???
+07000590	mov	$20, $10
+07000592	andi	8, $10, $10
+07000596	bne	6
+
+;var_pVIP => $10
+0700059c	movhi	500, $0, $1	;0x05000000 => $1
+070005a0	ld.w	16[$1], $10	;[0x05000010] => $10
+
+070005a4	mov	8, $11
+070005a6	st.h	$11, 4[$10]
+070005aa	mov	1, $10
+
+;$10 => var_???2
+070005ac	movhi	500, $0, $1	;0x05000000 => $1
+070005b0	st.h	$10, 14[$1]	;$10 => [0x0500000E]
+
+070005b4	jal	4970
+
+;Jump Point??
+070005b8	mov	$20, $10
+070005ba	andi	10, $10, $10
+070005be	bne	6
+
+;var_pVIP => $10
+070005c4	movhi	500, $0, $1	;0x05000000 => $1
+070005c8	ld.w	16[$1], $10	;[0x05000010] => $10
+
+070005cc	movea	10, $0, $11
+070005d0	st.h	$11, 4[$10]
+070005d4	jal	52792
+
+;var_???3 => $1
+070005d8	movhi	500, $0, $1	;0x05000000 => $1
+070005dc	ld.h	26[$1], $10	;[0x0500001A] => $1
+
+070005e0	andi	1, $10, $10
+070005e4	bne	6
+070005e6	jr	26
+07000600	mov	0, $10
+
+;$10 => var_???21E6
+07000602	movhi	500, $0, $1	;0x05000000 => $1
+07000606	st.h	$10, 8678[$1]	;$10 => [0x050021E6]
+0700060a	mov	0, $10
+
+;$10 => var_INTPND
+0700060c	movhi	500, $0, $1	;0x05000000 => $1
+07000610	st.h	$10, 24[$1]	;$10 => [0x05000018]
+
+07000614	ld.w	28[$3], $31	;pop $31 from stack
+07000618	ld.w	24[$3], $20	;pop $20 from stack
+0700061c	addi	20, $3, $3	;increment SP
+07000620	jmp	[$31]	;return
+
+///////////////////////////////////
+//
+;==========================================
+; --- Function: ??? ---
+;==========================================
+07000ec4	ld.h	16[$3], $10
+07000ec8	mov	$10, $11
+07000eca	shl	5, $11
+07000ecc	movhi	4, $0, $1
+07000ed0	movea	d800, $1, $10
+07000ed4	add	$11, $10
+07000ed6	ld.h	0[$9], $11
+07000eda	st.h	$11, 0[$10]
+07000ede	mov	$6, $11
+07000ee0	ld.h	4[$9], $12
+07000ee4	sub	$12, $11
+07000ee6	st.h	$11, 2[$10]
+07000eea	mov	$7, $11
+07000eec	st.h	$8, 4[$10]
+07000ef0	ld.h	6[$9], $12
+07000ef4	sub	$12, $11
+07000ef6	st.h	$11, 6[$10]
+07000efa	ld.h	8[$9], $11
+07000efe	st.h	$11, 8[$10]
+07000f02	st.h	$0, 10[$10]
+07000f06	ld.h	10[$9], $11
+07000f0a	st.h	$11, 12[$10]
+07000f0e	ld.h	12[$9], $11
+07000f12	add	-1, $11
+07000f14	st.h	$11, 14[$10]
+07000f18	ld.h	14[$9], $11
+07000f1c	add	-1, $11
+07000f1e	st.h	$11, 16[$10]
+07000f22	ld.h	2[$9], $11
+07000f26	st.h	$11, 18[$10]
+07000f2a	jmp	[$31]	;return
+//
+///////////////////////////////////
+
+;==========================================
+; --- Function: ReadPad_Handler ---
+;==========================================
+;Reads the data from the pad, storing it on the stack
+;  does not initiate the read sequence...
+;==========================================
+070012c0	add	-8, $3	;decrement SP
+070012c2	movhi	200, $0, $10	;0x02000000 => $10
+070012c6	st.w	$10, 4[$3]	;push 0x02000000 on stack
+
+;Loop untill KCR 'keyStatus' == 0 (read finished)
+;loop top
+;Pointer to KCR => $11
+070012ca	addi	28, $10, $11	;0x02000028 => $11
+;KCR => $12
+070012ce	ld.b	0[$11], $12	;[0x02000028] => $12
+070012d2	andi	2, $12, $12	;test bit1
+070012d6	bne	-12	;if on, goto 0x070012CA
+
+;KHB => $10
+070012d8	ld.b	20[$10], $10	;[0x02000014] => $10
+070012dc	andi	ff, $10, $10	;mask with 0xFF
+070012e0	shl	8, $10	;Shift to high byte
+070012e2	st.w	$10, 0[$3]	;push $10 on stack
+070012e6	ld.w	4[$3], $10	;pop 0x02000000 => $10
+;KLB => $12
+070012ea	ld.b	16[$10], $12	;[0x02000010] => $12
+070012ee	ld.w	0[$3], $10	;pop $10 from stack
+070012f2	andi	ff, $12, $12	;mask with 0xFF
+070012f6	or	$12, $10	;combine KHB and KLB
+070012f8	mov	$10, $12	;$10 => $12
+070012fa	movea	ff84, $0, $10	;0xFFFFFF84 => $10
+070012fe	shl	-16, $12	;shift left 24 bits
+;Write 0x84 => KCR (Int Disable, start hardware read)
+07001300	st.b	$10, 0[$11]	;0x84 => [0x02000028]
+07001304	sar	-16, $12	;sign extend 8 to 32 bit
+07001306	mov	$12, $10	;$12 => $10
+
+;Do What?
+07001308	ld.h	-32742[$4], $11	
+0700130c	and	$10, $11
+0700130e	xor	$10, $11
+07001310	st.h	$11, -32740[$4]
+07001314	add	8, $3	;increment SP
+07001316	st.h	$12, -32742[$4]
+;to here...
+0700131a	jmp	[$31]	;return
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700133e	andi	ffff, $8, $10
+07001342	sar	1, $10
+07001344	jr	18
+07001348	ld.h	0[$6], $11
+0700134c	st.h	$11, 0[$7]
+07001350	add	2, $6
+07001352	add	2, $7
+07001354	add	-1, $10
+07001356	cmp	0, $10
+07001358	bgt	-16
+0700135a	jmp	[$31]	;return
+
+;==========================================
+; --- Function: Fn_Decomp, RLE Decompressor?---
+;==========================================
+;takes an offset in $6, destination in $7
+;decodes compressed data from rom (offset) and places it in
+;the destination...
+;==========================================
+0700135c	add	-8, $3	;decrement SP
+0700135e	add	2, $6	;add 2 to offset
+07001360	mov	$7, $15	;$7 => $15
+07001362	ld.b	0[$6], $10	;var_??? => $10
+07001366	andi	ff, $10, $10	;mask with 0xFF
+0700136a	shl	8, $10	;Move to high byte
+0700136c	add	1, $10	;inc by 1
+0700136e	add	1, $6	;inc by 1
+07001370	ld.b	0[$6], $11	;var_??? => $11
+07001374	andi	ff, $11, $11	;mask with 0xFF
+07001378	add	$11, $10	;combine
+0700137a	add	1, $6	;inc by 1
+;outer loop top
+0700137c	ld.b	0[$6], $16	;var_??? => $16
+07001380	add	1, $6	;inc by 1
+07001382	mov	0, $14	;0x00000000 => $14
+07001384	jr	256	;jump 0x07001484
+;loop top
+07001388	ld.b	0[$6], $11	;[$6] => $11
+0700138c	add	1, $6	;inc by 1
+0700138e	andi	ff, $16, $12	;mask with 0xFF => $12
+07001392	andi	1, $12, $12	;mask with 0x01
+07001396	bne	6	;if not zero goto 0x0700139C
+07001398	jr	16	;goto 0x070013A8 (Jump1)
+0700139c	st.b	$11, 0[$7]	;$11 => $7
+070013a0	add	1, $7	;inc by 1
+070013a2	add	-1, $10	;decrement by 1
+070013a4	jr	194	;goto 0x07001466 (Jump3)
+;Jump1
+070013a8	andi	ff, $11, $11	;mask with 0xFF
+070013ac	mov	$11, $12	;$11 => $12
+070013ae	sar	4, $12	;divide by 16
+070013b0	ld.b	0[$6], $13	;[$6] => $13
+070013b4	andi	ff, $13, $13	;mask with 0xFF
+070013b8	andi	ffff, $13, $13	;duh...
+070013bc	shl	4, $13	;multiply by 16
+070013be	or	$13, $12	;combine
+070013c0	mov	$12, $13	;$12 => $13
+070013c2	shl	-16, $13	;shift left 24 bits
+070013c4	sar	-16, $13	;sign extend 8 to 32 bit
+070013c6	add	1, $6	;inc by 1
+070013c8	andi	f, $11, $12	;mask with 0x0F => $12
+070013cc	addi	3, $12, $17	;$12+3 => $17
+070013d0	mov	$17, $12	;$17 => $12
+070013d2	shl	-16, $12	;shift left 24 bits
+070013d4	sar	-16, $12	;sign extend 8 to 32 bit
+070013d6	mov	$12, $11	;$12 => $11
+070013d8	sub	$11, $10	;$10-$11 => $10
+070013da	blt	6	;if negative goto 0x070013E0
+070013dc	jr	12	;goto 0x070013E8 (jump2)
+070013e0	add	$10, $11	;$10+$11 => $11
+070013e2	mov	$11, $12	;$11 => $12
+070013e4	shl	-16, $12	;shift left 24 bits
+070013e6	sar	-16, $12	;sign extend 8 to 32 bit
+;jump2
+070013e8	mov	$7, $11
+070013ea	mov	$13, $17
+070013ec	sub	$17, $11
+070013ee	cmp	$15, $11	
+070013f0	blt	6	;if negative goto 0x070013F6
+070013f2	jr	72
+070013f6	mov	$15, $13
+070013f8	sub	$11, $13
+070013fa	mov	$13, $11
+070013fc	shl	-16, $11	;shift left 24 bits
+070013fe	sar	-16, $11	;sign extend 8 to 32 bit
+07001400	st.h	$11, 4[$3]
+07001404	mov	0, $13
+07001406	mov	$11, $17
+07001408	jr	20
+0700140c	st.b	$0, 0[$7]
+07001410	add	1, $7
+07001412	addi	1, $13, $18
+07001416	mov	$18, $13
+07001418	shl	-16, $13	;shift left 24 bits
+0700141a	sar	-16, $13	;sign extend 8 to 32 bit
+0700141c	cmp	$17, $13
+0700141e	blt	-18
+07001420	mov	$12, $11
+07001422	st.w	$11, 0[$3]
+07001426	ld.h	4[$3], $11
+0700142a	mov	$11, $12
+0700142c	ld.w	0[$3], $11
+07001430	sub	$12, $11
+07001432	mov	$11, $12
+07001434	shl	-16, $12	;shift left 24 bits
+07001436	sar	-16, $12	;sign extend 8 to 32 bit
+07001438	mov	$15, $11
+0700143a	cmp	0, $12
+0700143c	bgt	6
+0700143e	jr	40
+07001442	mov	0, $13
+07001444	mov	$12, $17
+07001446	jr	26
+0700144a	ld.b	0[$11], $13
+0700144e	st.b	$13, 0[$7]
+07001452	add	1, $11
+07001454	add	1, $7
+07001456	addi	1, $12, $18
+0700145a	mov	$18, $13
+0700145c	shl	-16, $13	;shift left 24 bits
+0700145e	sar	-16, $13	;sign extend 8 to 32 bit
+07001460	mov	$13, $12
+07001462	cmp	$17, $12
+07001464	blt	-26
+;jump3
+07001466	andi	ff, $16, $11
+0700146a	sar	1, $11
+0700146c	mov	$11, $16
+0700146e	shl	-8, $16
+07001470	sar	-8, $16
+07001472	cmp	0, $10
+07001474	bge	6
+07001476	jr	20
+0700147a	mov	$14, $11
+0700147c	add	1, $11
+0700147e	mov	$11, $14
+07001480	shl	-16, $14	;shift left 24 bits
+07001482	sar	-16, $14	;sign extend 8 to 32 bit
+;loop start
+07001484	mov	$14, $11	;$14 => $11
+07001486	cmp	8, $11	;end of loop?
+07001488	blt	-256	; if not goto 0x07001388
+
+0700148a	cmp	0, $10	;end of outer loop
+0700148c	blt	6	;if zero goto 0x07001492
+0700148e	jr	-274	;goto 0x0700137C
+07001492	add	8, $3	;increment SP
+07001494	jmp	[$31]	;return
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+;takes a parameter in $6, $7, $8, and $9
+;==========================================
+07001496	movhi	0, $0, $1	;0x00000000 => $1
+0700149a	movea	b824, $1, $10	;0xFFFFB824 => $10
+0700149e	mov	$6, $11	;$6 => $11
+070014a0	add	$10, $11	;0x07007BA24 + $6
+070014a2	ld.b	0[$11], $11	;[0x07007BA24+$6] => $11
+070014a6	mov	-4, $1	;0xFFFFFFFC => $1
+070014a8	and	$1, $11	;mask lower 2 bits
+070014aa	shl	-8, $11	;shift left 24
+070014ac	sar	-8, $11	;sign extend from 8 bit to 32 bit
+;store $11 in var_???16
+070014ae	st.b	$11, -24542[$4]	;$11 => [0x05002022]
+070014b2	mov	$7, $11	;$7 => $11
+070014b4	add	$10, $11	;0x07007BA24 + $7
+070014b6	ld.b	0[$11], $11	;[0x07007BA24+$7] => $11
+070014ba	mov	-4, $1	;0xFFFFFFFC => $1
+070014bc	and	$1, $11	;mask lower 2 bits
+070014be	shl	-8, $11	;shift left 24
+070014c0	sar	-8, $11	;sign extend from 8 bit to 32 bit
+;store $11 in var_???17
+070014c2	st.b	$11, -24541[$4]	;$11 => [0x05002023]
+070014c6	mov	$8, $11	;$8 => $11
+070014c8	add	$10, $11	;0x07007BA24 + $8
+070014ca	ld.b	0[$11], $11	;[0x07007BA24+$8] => $11
+070014ce	mov	-4, $1	;0xFFFFFFFC => $1
+070014d0	and	$1, $11	;mask lower 2 bits
+070014d2	shl	-8, $11	;shift left 24
+070014d4	sar	-8, $11	;sign extend from 8 bit to 32 bit
+;store $11 in var_???18
+070014d6	st.b	$11, -24540[$4]	;$11 => [0x05002024]
+070014da	mov	$9, $11	;$9 => $11
+070014dc	add	$10, $11	;0x07007BA24 + $9
+070014de	ld.b	0[$11], $11	;[0x07007BA24+$9] => $11
+070014e2	mov	-4, $1	;0xFFFFFFFC => $1
+070014e4	and	$1, $11	;mask lower 2 bits
+070014e6	shl	-8, $11	;shift left 24
+070014e8	sar	-8, $11	;sign extend from 8 bit to 32 bit
+;store $11 in var_???19
+070014ea	st.b	$11, -24539[$4]	;$11 => [0x05002025]
+070014ee	mov	1, $10	;0x00000001 => $10
+;store $11 in var_???20
+070014f0	st.b	$10, -24520[$4]	;0x01 => [0x05002038]
+070014f4	jmp	[$31]	;return
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+;takes a parameter in $6, $7, $8, and $9
+;==========================================
+070014f6	movhi	0, $0, $1	;0x00000000 => $1
+070014fa	movea	b824, $1, $10	;0xFFFFB824 => $10
+070014fe	mov	$6, $11	;$6 => $11
+07001500	add	$10, $11	;0x07007BA24 + $6
+07001502	ld.b	0[$11], $11	;[0x07007BA24+$6] => $11
+07001506	mov	-4, $1	;0xFFFFFFFC => $1
+07001508	and	$1, $11	;mask lower 2 bits
+0700150a	shl	-8, $11	;shift left 24
+0700150c	sar	-8, $11	;sign extend from 8 bit to 32 bit
+;store $11 in var_???21
+0700150e	st.b	$11, -24538[$4]	;$11 => [0x05002026]
+07001512	mov	$7, $11	;$7 => $11
+07001514	add	$10, $11	;0x07007BA24 + $7
+07001516	ld.b	0[$11], $11	;[0x07007BA24+$7] => $11
+0700151a	mov	-4, $1	;0xFFFFFFFC => $1
+0700151c	and	$1, $11	;mask lower 2 bits
+0700151e	shl	-8, $11	;shift left 24
+07001520	sar	-8, $11	;sign extend from 8 bit to 32 bit
+;store $11 in var_???22
+07001522	st.b	$11, -24537[$4]	;$11 => [0x05002027]
+07001526	mov	$8, $11	;$8 => $11
+07001528	add	$10, $11	;0x07007BA24 + $8
+0700152a	ld.b	0[$11], $11	;[0x07007BA24+$8] => $11
+0700152e	mov	-4, $1	;0xFFFFFFFC => $1
+07001530	and	$1, $11	;mask lower 2 bits
+07001532	shl	-8, $11	;shift left 24
+07001534	sar	-8, $11	;sign extend from 8 bit to 32 bit
+;store $11 in var_???23
+07001536	st.b	$11, -24536[$4]	;$11 => [0x05002028]
+0700153a	mov	$9, $11	;$9 => $11
+0700153c	add	$10, $11	;0x07007BA24 + $9
+0700153e	ld.b	0[$11], $11	;[0x07007BA24+$9] => $11
+07001542	mov	-4, $1	;0xFFFFFFFC => $1
+07001544	and	$1, $11	;mask lower 2 bits
+07001546	shl	-8, $11	;shift left 24
+07001548	sar	-8, $11	;sign extend from 8 bit to 32 bit
+;store $11 in var_???24
+0700154a	st.b	$11, -24535[$4]	;$11 => [0x05002029]
+0700154e	mov	1, $10	;0x00000001 => $10
+;store $11 in var_???20
+07001550	st.b	$10, -24520[$4]	;0x01 => [0x05002038]
+07001554	jmp	[$31]	;return
+
+;==========================================
+; --- Function: Init End World ---
+;==========================================
+;$6 is pased in variable, world to clear (0x00-0x1F)
+;==========================================
+07001556	mov	$6, $11	;0x001F => $11 - variable?
+07001558	shl	5, $11	;0x03E0 => $11
+0700155a	movhi	4, $0, $1	;0x00040000 => $1
+0700155e	movea	d800, $1, $10	;0x0003D800 => $10
+07001562	add	$11, $10	;0x0003DBE0 => $10
+07001564	movea	40, $0, $11	;0x00000040 => $11
+07001568	st.h	$11, 0[$10]	;World n (31), OVR=1
+0700156c	jmp	[$31]	;Return (to 0x070001C2 or 0x07001a90)
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+;takes an offset in $6, and a count in $7, and data in $8
+;==========================================
+;Fill memory 0x05000000-0x05000008 with 0xFF
+070015e4	mov	$0, $10	;0x00000000 => $10
+070015e6	jr	16
+;loop top
+070015ea	mov	-1, $11	;0xFFFFFFFF
+070015ec	movhi	500, $10, $1	;0x0500000x => $1
+070015f0	st.b	$11, 8237[$1]	;$11 => [$1+0x202D]
+070015f4	add	1, $10	;increment pointer
+;loop start
+070015f6	cmp	8, $10	;end of loop?
+070015f8	blt	-14	; if not goto 0x070015EA
+
+;Move data round in memory,
+070015fa	mov	$6, $10	;copy passed in variable to $10
+070015fc	jr	40	;goto 0x07001624
+;loop top
+07001600	movhi	500, $0, $1	;0x05000000 => $1
+07001604	movea	2022, $1, $6	;0x050007E6 => $6
+07001608	add	$10, $6	;Add offset to $6
+0700160a	ld.b	0[$6], $11	;[0x050007E6+$10] => $11
+0700160e	mov	-4, $1	;0xFFFFFFFC => $1
+07001610	and	$1, $11	; mask lower 2 bits to '00'
+07001612	shl	-8, $11	;shift left 8
+07001614	sar	-8, $11	;sign extend shift right 8
+07001616	movhi	500, $10, $1	;0x05000000+$10 => $1
+0700161a	st.b	$11, 8237[$1]	;$11 => [$1+0x202D]
+0700161e	st.b	$0, 0[$6]	;$0 => [0x050007E6+$10]
+07001622	add	1, $10	;increment loop counter
+;loop start
+07001624	cmp	$10, $7	;end of loop?
+07001626	bge	-38	; if not goto 0x07001600
+
+07001628	movea	ff80, $0, $10
+0700162c	st.b	$10, -24523[$4]
+07001630	st.b	$0, -24522[$4]
+07001634	st.b	$8, -24521[$4]
+07001638	mov	1, $10
+0700163a	st.b	$10, -24520[$4]
+0700163e	jmp	[$31]	;return
+
+///////////////////////////////////
+//
+;==========================================
+; --- Function: ??? ---
+;==========================================
+07001640	mov	$0, $10
+07001642	jr	16
+07001646	mov	-1, $11
+07001648	movhi	500, $10, $1
+0700164c	st.b	$11, 8237[$1]
+07001650	add	1, $10
+07001652	cmp	8, $10
+07001654	blt	-14
+07001656	mov	$6, $10
+07001658	jr	14
+0700165c	movhi	500, $10, $1
+07001660	st.b	$0, 8237[$1]
+07001664	add	1, $10
+07001666	cmp	$10, $7
+07001668	bge	-12
+0700166a	movea	43, $0, $10
+0700166e	st.b	$10, -24523[$4]
+07001672	st.b	$0, -24522[$4]
+07001676	st.b	$8, -24521[$4]
+0700167a	mov	1, $10
+0700167c	st.b	$10, -24520[$4]
+07001680	jmp	[$31]	;return
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+07001682	movhi	500, $0, $1	;0x05000000 => $1
+07001686	movea	2036, $1, $12
+0700168a	ld.b	0[$12], $10
+0700168e	addi	ffff, $10, $11
+07001692	shl	-8, $11
+07001694	sar	-8, $11
+07001696	cmp	0, $10
+07001698	st.b	$11, 0[$12]
+0700169c	be	6
+070016a2	ld.b	-24521[$4], $10
+070016a6	st.b	$10, 0[$12]
+070016aa	movhi	500, $0, $1	;0x05000000 => $1
+070016ae	movea	2035, $1, $10
+070016b2	ld.b	0[$10], $11
+070016b6	addi	1, $11, $12
+070016ba	mov	$12, $11
+070016bc	shl	-8, $11
+070016be	sar	-8, $11
+070016c0	st.b	$11, 0[$10]
+070016c4	mov	$11, $10
+070016c6	andi	f, $10, $12
+070016ca	mov	$12, $10
+070016cc	shl	-8, $10
+070016ce	sar	-8, $10
+070016d0	mov	$10, $11
+070016d2	cmp	3, $11
+070016d4	bgt	6
+070016d6	jr	6
+070016dc	mov	0, $11
+070016de	mov	$10, $12
+070016e0	mov	$12, $16
+070016e2	shl	2, $16
+070016e4	mov	$12, $17
+070016e6	mov	$12, $18
+070016e8	shl	4, $18
+070016ea	mov	$12, $15
+070016ec	mov	$12, $14
+070016ee	shl	6, $14
+070016f0	jr	150
+070016f4	movhi	500, $10, $1
+070016f8	ld.b	8237[$1], $13
+070016fc	cmp	-1, $13
+070016fe	bne	6
+07001700	jr	124
+07001704	mov	$13, $19
+07001706	sar	2, $19
+07001708	andi	3, $19, $19
+0700170c	cmp	$12, $19
+
+;var_???16 => $10
+0700170e	movhi	500, $10, $1	;0x05000000 => $1
+07001712	ld.b	8226[$1], $10	;[0x05002022] => $10
+
+07001716	bge	6
+0700171c	mov	-16, $13
+0700171e	and	$10, $13
+07001720	or	$16, $13
+07001722	mov	$13, $10
+07001724	shl	-8, $10
+07001726	sar	-8, $10
+07001728	mov	$11, $13
+0700172a	movhi	500, $13, $1
+0700172e	ld.b	8237[$1], $13
+07001732	sar	4, $13
+07001734	andi	3, $13, $13
+07001738	cmp	$17, $13
+0700173a	bge	6
+0700173c	jr	18
+07001740	movea	ffcc, $0, $13
+07001744	and	$10, $13
+07001746	or	$18, $13
+07001748	mov	$13, $10
+0700174a	shl	-8, $10
+0700174c	sar	-8, $10
+0700174e	mov	$11, $13
+07001750	movhi	500, $13, $1
+07001754	ld.b	8237[$1], $13
+07001758	sar	6, $13
+0700175a	andi	3, $13, $13
+0700175e	cmp	$15, $13
+07001760	bge	6
+07001762	jr	16
+07001766	andi	3c, $10, $13
+0700176a	or	$14, $13
+0700176c	mov	$13, $10
+0700176e	shl	-8, $10
+07001770	sar	-8, $10
+07001772	mov	$11, $13
+07001774	movhi	500, $13, $1
+07001778	st.b	$10, 8226[$1]
+0700177c	mov	$11, $10
+0700177e	add	1, $10
+07001780	mov	$10, $11
+07001782	shl	-16, $11	;shift left 24 bits
+07001784	sar	-16, $11	;sign extend 8 to 32 bit
+07001786	mov	$11, $10
+07001788	cmp	7, $10
+0700178a	ble	-150
+0700178c	movhi	500, $0, $1	;0x05000000 => $1
+07001790	movea	2035, $1, $10
+07001794	ld.b	0[$10], $11
+07001798	andi	f, $11, $12
+0700179c	cmp	3, $12
+0700179e	bge	6
+070017a0	jr	14
+070017a4	mov	$12, $11
+070017a6	shl	-8, $11
+070017a8	sar	-8, $11
+070017aa	st.b	$11, 0[$10]
+070017ae	ld.b	-24523[$4], $10
+070017b2	movea	ff80, $0, $1
+070017b6	and	$1, $10
+070017b8	be	6
+070017ba	jr	10
+070017be	mov	$0, $10
+070017c0	jr	6
+070017c4	mov	1, $10
+070017c6	mov	1, $11
+070017c8	st.b	$11, -24520[$4]
+070017cc	jmp	[$31]	;return 
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+070017ce	movhi	500, $0, $1	;0x05000000 => $1
+070017d2	movea	2036, $1, $11
+070017d6	ld.b	0[$11], $10
+070017da	addi	ffff, $10, $12
+070017de	shl	-8, $12
+070017e0	sar	-8, $12
+070017e2	cmp	0, $10
+070017e4	st.b	$12, 0[$11]
+070017e8	be	6
+070017ea	jr	278
+070017ee	ld.b	-24521[$4], $10
+070017f2	st.b	$10, 0[$11]
+070017f6	ld.b	-24523[$4], $11
+070017fa	cmp	0, $11
+070017fc	mov	$0, $10
+070017fe	bne	6
+07001804	mov	1, $10
+07001806	cmp	0, $10
+07001808	bne	6
+0700180e	movhi	500, $0, $1	;0x05000000 => $1
+07001812	movea	2035, $1, $10
+07001816	ld.b	0[$10], $11
+0700181a	add	-1, $11
+0700181c	shl	-8, $11
+0700181e	sar	-8, $11
+07001820	st.b	$11, 0[$10]
+07001824	ld.b	-24523[$4], $10
+07001828	andi	f, $10, $11
+0700182c	mov	$11, $10
+0700182e	shl	-16, $10	;shift left 24 bits
+07001830	sar	-16, $10	;sign extend 8 to 32 bit
+07001832	mov	0, $12
+07001834	mov	$10, $11
+07001836	mov	$11, $16
+07001838	shl	2, $16
+0700183a	mov	$11, $14
+0700183c	mov	$11, $17
+0700183e	shl	4, $17
+07001840	mov	$11, $18
+07001842	mov	$11, $15
+07001844	shl	6, $15
+07001846	jr	148
+0700184a	movhi	500, $10, $1
+0700184e	ld.b	8237[$1], $13
+07001852	cmp	-1, $13
+07001854	bne	6
+0700185a	movhi	500, $10, $1
+0700185e	ld.b	8226[$1], $13
+07001862	mov	$13, $10
+07001864	mov	$10, $13
+07001866	mov	$13, $19
+07001868	sar	2, $19
+0700186a	andi	3, $19, $19
+0700186e	cmp	$11, $19
+07001870	bgt	6
+07001872	jr	16
+07001876	mov	-16, $1
+07001878	and	$1, $13
+0700187a	or	$16, $13
+0700187c	mov	$13, $10
+0700187e	shl	-16, $10	;shift left 24 bits
+07001880	sar	-16, $10	;sign extend 8 to 32 bit
+07001882	mov	$10, $13
+07001884	mov	$13, $19
+07001886	sar	4, $19
+07001888	andi	3, $19, $19
+0700188c	cmp	$14, $19
+0700188e	bgt	6
+07001890	jr	18
+07001894	movea	ffcc, $0, $1
+07001898	and	$1, $13
+0700189a	or	$17, $13
+0700189c	mov	$13, $10
+0700189e	shl	-16, $10	;shift left 24 bits
+070018a0	sar	-16, $10	;sign extend 8 to 32 bit
+070018a2	mov	$10, $13
+070018a4	mov	$13, $19
+070018a6	sar	6, $19
+070018a8	andi	3, $19, $19
+070018ac	cmp	$18, $19
+070018ae	bgt	6
+070018b0	jr	16
+070018b4	andi	3c, $13, $13
+070018b8	or	$15, $13
+070018ba	mov	$13, $10
+070018bc	shl	-16, $10	;shift left 24 bits
+070018be	sar	-16, $10	;sign extend 8 to 32 bit
+070018c0	mov	$12, $13
+070018c2	mov	$10, $19
+070018c4	shl	-8, $19
+070018c6	sar	-8, $19
+070018c8	movhi	500, $13, $1
+070018cc	st.b	$19, 8226[$1]
+070018d0	mov	$12, $10
+070018d2	add	1, $10
+070018d4	mov	$10, $12
+070018d6	shl	-16, $12	;shift left 24 bits
+070018d8	sar	-16, $12	;sign extend 8 to 32 bit
+070018da	mov	$12, $10
+070018dc	cmp	7, $10
+070018de	ble	-148
+070018e0	movhi	500, $0, $1	;0x05000000 => $1
+070018e4	movea	2035, $1, $10
+070018e8	ld.b	0[$10], $12
+070018ec	andi	f, $12, $11
+070018f0	cmp	3, $11
+070018f2	bge	6
+070018f4	jr	12
+070018f8	shl	-8, $11
+070018fa	sar	-8, $11
+070018fc	st.b	$11, 0[$10]
+07001900	ld.b	-24523[$4], $10
+07001904	andi	40, $10, $10
+07001908	be	6
+0700190a	jr	10
+0700190e	mov	$0, $10
+07001910	jr	6
+07001914	mov	1, $10
+07001916	mov	1, $11
+07001918	st.b	$11, -24520[$4]
+0700191c	jmp	[$31]	;return
+//
+///////////////////////////////////
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700191e	ld.w	-32760[$4], $11
+07001922	movhi	41c6, $0, $1
+07001926	movea	4e6d, $1, $1
+0700192a	mul	$1, $11
+0700192c	addi	3039, $11, $10
+07001930	st.w	$10, -32760[$4]
+07001934	mov	$10, $11
+07001936	sar	-16, $11
+07001938	mov	$11, $10
+0700193a	shl	-16, $10	;shift left 24 bits
+0700193c	sar	-16, $10	;sign extend 8 to 32 bit
+0700193e	jmp	[$31]	;return
+
+;==========================================
+; --- Jump Table 1, Jump 0, Destination ---
+;==========================================
+; Initialize the display
+;==========================================
+07001940	addi	ffec, $3, $3	;Decrement SP by 20
+07001944	movhi	500, $0, $1	;0x05000000 => $1
+;Program Ram: var_pVIP
+07001948	movea	10, $1, $10	;0x05000010 => $10
+;Pointer to top of VIP mem
+0700194c	movhi	6, $0, $1	;0x00060000 => $1
+07001950	movea	f800, $1, $11	;0x0005F800 => $11
+
+07001954	st.w	$31, 16[$3]	;push JAL return address
+;IntClr Mask
+07001958	movea	e01f, $0, $12	;0xFFFFE01F => $12
+;Store VIP addr in var_pVIP
+0700195c	st.w	$11, 0[$10]	;Store VIP addr in [0x05000010]
+;Pointer to Hardware Controll Reg
+07001960	movhi	200, $0, $11	;0x02000000 => $11
+;Pointer to Program Ram
+07001964	movhi	500, $0, $1	;0x05000000 => $1
+07001968	st.w	$11, 20[$1]	;Stor HCReg Addr in var_pHCREG
+0700196c	mov	0, $11	;0x00000000 => $11
+
+; ---Read DPSTTS mask with 0xFFFF, or with 0x0101,
+;    and store in DPCTRL ---
+;Pointer to Program Ram
+0700196e	movhi	500, $0, $1	;0x05000000 => $1
+;Zero out var_???21E6
+07001972	st.h	$11, 8678[$1]	;0x0000 => [0x050021E6]
+;Pointer to top of VIP mem
+07001976	movhi	6, $0, $1	;0x00060000 => $1
+;Stor DPSTTS in $11
+0700197a	ld.h	-2016[$1], $11	;[0x0005F820] => $11
+0700197e	andi	ffff, $11, $11	;Zero High HWord
+07001982	ori	101, $11, $11	;Turn on bit 0 and 8
+;Pointer to top of VIP mem
+07001986	movhi	6, $0, $1	;0x00060000 => $1
+;Store $11 in DPCTRL
+0700198a	st.h	$11, -2014[$1]	;$11 => [0x0005F822]
+
+; --- Init registers in VIP ram ---
+;Pointer to bottom of VIP mem
+0700198e	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+07001992	movea	28, $0, $13	;0x00000028 => $13
+07001996	movea	30, $0, $14	;0x00000030 => $14
+;Clear INTENB
+0700199a	st.h	$0, 2[$11]	;$0 => [0x0005f802]
+;Pointer to bottom of VIP mem
+0700199e	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+070019a2	movea	3ff, $0, $6	;0x000003FF => $6
+;Write 0xE01F to INTCLR
+070019a6	st.h	$12, 4[$11]	;0xE01F => [0x0005F804]
+;Pointer to bottom of VIP mem
+070019aa	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+070019ae	mov	1, $12	;0x00000001 => $12
+;Write 0x0001 to XPCTRL
+070019b0	st.h	$12, 66[$11]	;0x00000001 => [0x0005F842]
+;Pointer to bottom of VIP mem
+070019b4	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+070019b8	mov	1, $12	;0x00000001 => $12
+;Write 0x0001 to FRMCYC
+070019ba	st.h	$12, 46[$11]	;0x00000001 => [0x0005F82E]
+070019be	movhi	500, $0, $1	;0x05000000 => $1
+
+; --- Load BRTx values ---
+;Save BRTx variables in mem???
+070019c2	movea	2064, $1, $11	;0x05002064 => $11
+070019c6	mov	12, $12	;0x0000000C => $12
+070019c8	st.b	$12, 0[$11]	;0x0C => [0x05002064]
+070019cc	addi	1, $11, $12	;0x05002065 => $12
+070019d0	st.b	$13, 0[$12]	;0x28 => [0x05002065]
+070019d4	addi	2, $11, $13	;0x05002066 => $13
+070019d8	st.b	$14, 0[$13]	;0x30 => [0x050020066]
+;Pointer to bottom of VIP mem
+070019dc	ld.w	0[$10], $14	;var_pVIP (0x0005F800) => $14
+070019e0	ld.b	0[$11], $15	;0x0C => $15
+;Write 0x000C in BRTA
+070019e4	st.h	$15, 36[$14]	;0x000C => [0x0005F824]
+;Pointer to bottom of VIP mem
+070019e8	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+070019ec	ld.b	0[$12], $14	;0x28 => $14
+;Write 0x0028 in BRTB
+070019f0	st.h	$14, 38[$11]	;0x0028 => [0x0005F826]
+;Pointer to bottom of VIP mem
+070019f4	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+070019f8	ld.b	0[$13], $12	;0x30 => $12
+;Write 0x0030 in BRTC
+070019fc	st.h	$12, 40[$11]	;0x0028 => [0x0005F828]
+
+;Pointer to bottom of VIP mem
+07001a00	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+07001a04	movea	e4, $0, $12	;0x000000E4 => $12
+;Write 0x0000 to REST
+07001a08	st.h	$0, 42[$11]	;0x0000 => [0x0005F82A]
+
+; --- Load GPLTx & JPLTx ---
+;Pointer to bottom of VIP mem
+07001a0c	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+;Write 0x00E4 to GPLT0
+07001a10	st.h	$12, 96[$11]	;0x00E4 => [0x0005F860]
+;Pointer to bottom of VIP mem
+07001a14	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+07001a18	movea	78, $0, $12	;0x00000078 => $12
+;Write 0x0000 to GPLT1
+07001a1c	st.h	$0, 98[$11]	;0x0000 => [0x0005F862]
+;Pointer to bottom of VIP mem
+07001a20	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+;Write 0x0078 to GPLT2
+07001a24	st.h	$12, 100[$11]	;0x0078 => [0x0005F864]
+;Pointer to bottom of VIP mem
+07001a28	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+07001a2c	movea	d8, $0, $12	;0x000000D8 => $12
+;Write 0x00D8 to GPLT3
+07001a30	st.h	$12, 102[$11]	;0x00D8 => [0x0005F866]
+;Pointer to bottom of VIP mem
+07001a34	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+07001a38	movea	e4, $0, $12	;0x000000E4 => $12
+;Write 0x00E4 to JPLT0
+07001a3c	st.h	$12, 104[$11]	;0x00E4 => [0x0005F868]
+;Pointer to bottom of VIP mem
+07001a40	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+07001a44	movea	9c, $0, $12	;0x0000009C => $12
+;Write 0x009C to JPLT1
+07001a48	st.h	$12, 106[$11]	;0x009C => [0x0005F86A]
+;Pointer to bottom of VIP mem
+07001a4c	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+07001a50	movea	78, $0, $12	;0x00000078 => $12
+;Write 0x0078 to JPLT2
+07001a54	st.h	$12, 108[$11]	;0x0078 => [0x0005F86C]
+;Pointer to bottom of VIP mem
+07001a58	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+07001a5c	movea	d8, $0, $12	;0x000000D8 => $12
+;Write 0x00D8 to JPLT3
+07001a60	st.h	$12, 110[$11]	;0x00D8 => [0x0005F86E]
+;Pointer to bottom of VIP mem
+07001a64	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+;Write 0x0000 to BGCOL
+07001a68	st.h	$0, 112[$11]	;0x0000 => [0x0005F870]
+
+; --- Clear SPTx pointers to 0 ---
+;Pointer to bottom of VIP mem
+07001a6c	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+;Write 0x0000 to SPT3
+07001a70	st.h	$0, 78[$11]	;0x0000 => [0x0005F84E]
+;Pointer to bottom of VIP mem
+07001a74	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+;Write 0x0000 to SPT2
+07001a78	st.h	$6, 76[$11]	;0x0000 => [0x0005F84C]
+;Pointer to bottom of VIP mem
+07001a7c	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+;Write 0x0000 to SPT0
+07001a80	st.h	$6, 72[$11]	;0x0000 => [0x0005F848]
+;Pointer to bottom of VIP mem
+07001a84	ld.w	0[$10], $11	;var_pVIP (0x0005F800) => $11
+;Write 0x0000 to SPT1
+07001a88	st.h	$6, 74[$11]	;0x0000 => [0x0005F84A]
+
+07001a8c	movea	1f, $0, $6	;0x0000001F => $6
+07001a90	jal	-1338	;jump 0x07001556, saving PC
+
+; --- Zero VIP memory from 0x00000000 to 0x0001FFFF ---
+; (Char Mem)
+07001a94	mov	$0, $11	;0x00000000 => $11
+07001a96	mov	$0, $10	;0x00000000 => $10
+07001a98	jr	12	;jump 0x07001AA4
+;loop top
+07001a9c	st.h	$0, 0[$11]	;Zero VIP Memory
+07001aa0	add	2, $11	;increment mem pointer
+07001aa2	add	1, $10	;increment loop counter
+;Loop Start
+07001aa4	movhi	1, $0, $1	;0x00010000 => $1
+07001aa8	cmp	$1, $10	;End of Memory?
+07001aaa	blt	-14	;if not goto 0x07001A9C
+
+; --- Load ColumnTables from rom ---
+;Column Table1
+07001aac	movhi	4, $0, $1	;0x00040000 => $1
+07001ab0	movea	dc00, $1, $11	;0x0003DC00 => $11
+;Column Table2
+07001ab4	movhi	4, $0, $1	;0x00040000 => $1
+07001ab8	movea	de00, $1, $12	;0x0003DE00 => $11
+07001abc	movhi	0, $0, $1	;0x00000000 => $1
+07001ac0	movea	b614, $1, $13	;0xFFFFB614 => $13
+07001ac4	mov	$0, $10	;0x00000000 => $10
+07001ac6	jr	24	;jump 0x07001ADE
+;loop top
+07001aca	ld.h	0[$13], $6	;load entry from rom
+07001ace	st.h	$6, 0[$12]	;store entry in CTBL2
+07001ad2	add	2, $13	;Increment rom index by 2
+07001ad4	st.h	$6, 0[$11]	;store entry in CTBL1
+07001ad8	add	2, $12	;Increment CTBL2 pointer by 2
+07001ada	add	2, $11	;Increment CTBL1 pointer by 2
+07001adc	add	1, $10	;Increment loop counter
+;loop start
+07001ade	movhi	500, $0, $1	;0x05000000 => $1
+;var_pVIP => $15
+07001ae2	ld.w	16[$1], $15	;[0x05000010] => $15
+;Pointer to DSPSTTS
+07001ae6	addi	20, $15, $14	;0x0005F820 => $14
+07001aea	movea	100, $0, $1	;0x00000100 => $1
+07001aee	cmp	$1, $10	;end of table?
+07001af0	blt	-38	; if not goto 0x07001AC
+
+;Wait for bit 6 to be set in DSPSTTS
+07001af2	ld.h	0[$14], $10	;load DSPSTTS in $10
+07001af6	andi	ffff, $10, $10	;look at lower 16 bytes
+07001afa	andi	40, $10, $10	;is bit 6 on?
+07001afe	be	-12	; if not
+
+07001b00	mov	0, $6	;0x00000000 => $6
+07001b02	movhi	500, $0, $1	;0x05000000 => $1
+07001b06	st.h	$6, 28[$1]	; Zero var_???4 (0x0500001C}
+07001b0a	movhi	500, $0, $1	;0x05000000 => $1
+;0x0000 =>  var_???3
+07001b0e	st.h	$6, 26[$1]	;0x0000 => [0x0500001A]
+
+;var_Jump_index => $10
+07001b12	movhi	500, $0, $1	;0x05000000 => $1
+07001b16	ld.h	12[$1], $10	;[0x0500000C] => $10
+
+07001b1a	add	1, $10	;increment by 1;
+
+;$10 => var_Jump_index => $10
+07001b1c	movhi	500, $0, $1	;0x05000000 => $1
+07001b20	st.h	$10, 12[$1]	;$10 => [0x0500000C]
+
+;Call Fn to set System Registers
+07001b24	jal	-6606	;jump 0x07000156, saving PC
+;Call Fn to Init Link Port
+07001b28	jal	59344	;jump 0x070102F8, saving PC
+;Pass in variable (-2,-1,0,1,...)
+07001b2c	mov	0, $6	;0x00000000 => $6
+;Call Fn_InitSound to Init sound mem, passnig in param $6
+07001b2e	jal	38124	;jump 0x0700B01A, saving PC
+
+;-- fill sound structure in program mem --
+07001b32	mov	0, $10	;0x00000000 => $10
+;0x00 => var_???2038
+07001b34	movhi	500, $0, $1	;0x05000000 => $1
+07001b38	st.b	$10, 8248[$1]	;0x00 => [0x05002038]	
+
+;zero loop counter
+07001b3c	mov	$0, $10	;0x00000000 => $10
+07001b3e	jr	56	;jump 0x07001B76
+;loop top
+07001b42	mov	$10, $12	;save loop counter
+07001b44	shl	4, $12	;multiply by 16
+;Prog Mem pointer
+07001b46	movhi	500, $0, $1	;0x05000000 => $1
+07001b4a	movea	27c8, $1, $11	;0x050027C8 => $11
+07001b4e	add	$12, $11	; Add loop counter
+07001b50	st.h	$0, 0[$11]	;zero memory
+07001b54	st.b	$0, 2[$11]	;zero memory
+07001b58	mov	1, $12	;0x00000001 => $12
+07001b5a	st.h	$12, 4[$11]	;0x00000001 => [$11+4]
+07001b5e	st.h	$0, 6[$11]	;zero memory
+07001b62	mov	3, $12	;0x00000003 => $12
+07001b64	st.h	$12, 8[$11]	;0x0003 => [$11+8]
+07001b68	mov	6, $12	;0x00000006 => $12
+07001b6a	st.h	$12, 10[$11]	;0x0006 => [$11+0xA]
+07001b6e	mov	4, $12	;0x00000004 => $12
+07001b70	st.h	$12, 12[$11]	;0x0004 => [$11+0xC]
+07001b74	add	1, $10	;Increment loop counter
+;loop start
+07001b76	cmp	4, $10	;end of loop?
+07001b78	blt	-54	;if not goto 0x07001B42
+
+07001b7a	mov	6, $10	;0x00000006 => $10
+07001b7c	movhi	500, $0, $1	;0x05000000 => $1
+07001b80	st.h	$10, 10196[$1]	;0x0006 => [0x050027D4]
+07001b84	mov	6, $10	;0x00000006 => $10
+07001b86	movhi	500, $0, $1	;0x05000000 => $1
+07001b8a	st.h	$10, 10228[$1]	;0x0006 => [0x050027F4]
+07001b8e	ld.w	16[$3], $31	; pop return addres from stack
+07001b92	addi	14, $3, $3	; increment SP
+07001b96	jmp	[$31]	; return from Fn
+
+;==========================================
+; --- Jump Table 1, Jump 1, Destination ---
+;==========================================
+;Loads the focus screen, among other things...
+;==========================================
+0700a912	addi	ffe4, $3, $3	;Decrement SP by 0x1C
+0700a916	st.w	$31, 24[$3]	;push return address
+0700a91a	st.w	$21, 16[$3]	;push $21
+;internal loop variable?
+0700a91e	mov	0, $21	;0x00000000 => $21
+0700a920	st.w	$20, 20[$3]	;push $20
+; call func_???
+0700a924	jal	3094	;jump 0x0700B53A
+0700a928	mov	0, $10	;0x00000000 => $10
+0700a92a	movhi	500, $0, $1	;0x05000000 => $1
+;0x00 => var_???
+0700a92e	st.b	$10, 8322[$1]	;0x00 => [0x05002082]
+0700a932	movhi	500, $0, $1	;0x05000000 => $1
+0700a936	movea	10, $1, $20	;0x05000010 => $20 (var_pVIP)
+;0x00 => var_???13
+0700a93a	st.b	$0, -23931[$4]	;0x00 => [0x05002285]
+0700a93e	mov	1, $11	;0x00000001 => $11
+;0x00 => var_???14
+0700a940	st.b	$0, -23932[$4]	;0x00 => [0x05002284]
+;var_pVIP => $10
+0700a944	ld.w	0[$20], $10	;0x0005F800 => $10
+0700a948	mov	0, $9	;0x00000000 => $9
+0700a94a	mov	0, $8	;0x00000000 => $8
+;store 0x0001 => XPCTRL
+0700a94c	st.h	$11, 66[$10]	;0x00000001 => [0x0005F842]
+;var_pVIP => $10
+0700a950	ld.w	0[$20], $10	;0x0005F800 => $10
+0700a954	movea	101, $0, $11	;0x00000101 => $11
+0700a958	mov	0, $7	;0x00000000 => $7
+;store 0x0101 in DPCTRL
+0700a95a	st.h	$11, 34[$10]	;0x0101 => [0x0005F822]
+0700a95e	mov	0, $6	;0x00000000 => $6
+;call Fn_???
+0700a960	jal	-38090	;goto 0x07001496, saving PC
+0700a964	mov	0, $9	;0x00000000 => $9
+0700a966	mov	0, $8	;0x00000000 => $8
+0700a968	mov	0, $7	;0x00000000 => $7
+0700a96a	mov	0, $6	;0x00000000 => $6
+;call Fn_???
+0700a96c	jal	-38006	;goto 0x070014F6, saving PC
+
+0700a970	mov	2, $8	;0x00000002 => $8
+0700a972	mov	3, $7	;0x00000003 => $7
+0700a974	mov	$0, $6	;0x00000000 => $6
+;call Fn_???
+0700a976	jal	-37778	;goto 0x070015E4, saving PC
+;var_pVIP => $10
+0700a97a	ld.w	0[$20], $10	;0x0005F800 => $10
+0700a97e	movea	3ff, $0, $6	;0x000003FF => $6
+0700a982	movea	c00, $0, $8	;0x00000C00 => $8
+;write 0x0000 to SPT3
+0700a986	st.h	$0, 78[$10]	;0x0000 => [0x0005F84E]
+;var_pVIP => $10
+0700a98a	ld.w	0[$20], $10	;0x0005F800 => $10
+;Pointer to BGMap1
+0700a98e	movhi	2, $0, $7	;0x00020000 => $7
+;write 0x03FF to SPT2
+0700a992	st.h	$6, 76[$10]	;0x03FF => [0x0005F84C]
+;var_pVIP => $10
+0700a996	ld.w	0[$20], $10	;0x0005F800 => $10
+;write 0x03FF to SPT0
+0700a99a	st.h	$6, 72[$10]	;0x03FF => [0x0005F848]
+;var_pVIP => $10
+0700a99e	ld.w	0[$20], $10	;0x0005F800 => $10
+;write 0x03FF to SPT1
+0700a9a2	st.h	$6, 74[$10]	;0x03FF => [0x0005F84A]
+0700a9a6	movhi	fffa, $0, $1	;0xFFFA0000 => $1
+0700a9aa	movea	f3e2, $1, $6	;0xFFF9F3E2 => $6
+;call Fn_Decomp, to decode BGMap1 (warning screen) $6 source, $7 dest
+0700a9ae	jal	-38482	;goto 0x0700135C, saving PC
+0700a9b2	movea	2000, $0, $8	;0x00002000 => $8 (why?)
+0700a9b6	movhi	2, $0, $1	;0x00020000 => $1
+;Pointer to BGMap 2
+0700a9ba	movea	2000, $1, $7	;0x00022000 => $7
+0700a9be	movhi	fffa, $0, $1	;0xFFFA0000 => $1
+0700a9c2	movea	e88, $1, $6	;0xFFFA0E88 => $6
+;call Fn_Decomp, to decode BGMap2 (focus screen) $6 source, $7 dest
+0700a9c6	jal	-38506	;goto 0x0700135C, saving PC
+0700a9ca	movea	700, $0, $8	;0x00000700 => $8 (why?)
+0700a9ce	movhi	8, $0, $1	;0x00080000 => $1
+;Pointer to Char Ram
+0700a9d2	movea	8000, $1, $7	;0x00078000 => $7
+0700a9d6	movhi	fffa, $0, $1	;0xFFFA0000 => $1
+0700a9da	movea	efaa, $1, $6	;0xFFF9EFAA => $6
+;call Fn_Decomp, to decode Char's $6 source, $7 dest
+0700a9de	jal	-38530	;goto 0x0700135C, saving PC
+0700a9e2	movea	700, $0, $8	;0x00000700 => $8 (why?)
+0700a9e6	movhi	8, $0, $1	;0x00080000 => $1
+;Pointer to Char Ram+0x1000
+0700a9ea	movea	9000, $1, $7	;0x00079000 => $7
+0700a9ee	movhi	fffa, $0, $1	;0xFFFA0000 => $1
+0700a9f2	movea	efaa, $1, $6	;0xFFF9EFAA => $6
+;call Fn_Decomp, to decode more Char's, $6 source, $7 dest
+0700a9f6	jal	-38554	;goto 0x0700135C, saving PC
+0700a9fa	movea	20, $0, $8	;0x00000020 => $8 (why?)
+0700a9fe	movhi	8, $0, $1	;0x00080000 => $1
+;Pointer to Char Ram+0x7FE0
+700aa02	movea	ffe0, $1, $7	;0x0007FFE0 => $7
+0700aa06	movhi	fff9, $0, $1	;0xFFF90000 => $1
+0700aa0a	movea	6200, $1, $6	;0xFFF96200 => $6
+;call Fn_Decomp, to decode low battery Char, $6 source, $7 dest
+0700aa0e	jal	-38608	;goto 0x0700135C, saving PC
+
+;var_pVIP => $10
+0700aa12	ld.w	0[$20], $10	;0x0005F800 => $10
+0700aa16	mov	12, $11	;0x0000000C => $11
+;0x00C => BRTA
+0700aa18	st.h	$11, 36[$10]	;0x000C => [0x0005F824]
+;var_pVIP => $10
+0700aa1c	ld.w	0[$20], $10	;0x0005F800 => $10
+0700aa20	movea	28, $0, $11	;0x00000028 => $11
+;0x0028 => BRTB
+0700aa24	st.h	$11, 38[$10]	;0x0028 => [0x0005F826]
+;var_pVIP => $10
+0700aa28	ld.w	0[$20], $10	;0x0005F800 => $10
+0700aa2c	movea	30, $0, $11	;0x00000030 => $11
+;0x0030 => BRTC
+0700aa30	st.h	$11, 40[$10]	;0x0030 => [0x0005F828]
+;var_pVIP => $10
+0700aa34	ld.w	0[$20], $10	;0x0005F800 => $10
+;0x0000 => REST
+0700aa38	st.h	$0, 42[$10]	;0x0000 => [0x0005F82A]
+;var_pVIP => $6
+0700aa3c	ld.w	0[$20], $6	;0x0005F800 => $6
+;XPSTTS => $10
+0700aa40	ld.h	64[$6], $10	;[0x0005F840] => $10
+0700aa44	andi	ffff, $10, $10	;mask with 0xFFFF
+0700aa48	ori	2, $10, $10	;Turn on bit 1
+;$10 => XPCTRL
+0700aa4c	st.h	$10, 66[$6]	;$10 => {0x0005F842]
+;var_pVIP => $6
+0700aa50	ld.w	0[$20], $6	;0x0005F800 => $6
+;DPSTTS => $10
+0700aa54	ld.h	32[$6], $10	;[0x0005F820] => $10
+0700aa58	andi	ffff, $10, $10	;mask with 0xFFFF
+0700aa5c	ori	302, $10, $10	;Turn on bits 1, 8 & 9
+;DPCTRL => $10
+0700aa60	st.h	$10, 34[$6]	;[0x0005F820] => $10
+;var_pVIP => $10
+0700aa64	ld.w	0[$20], $10	;0x0005F800 => $10
+;0x0000 => FRMCYC
+0700aa68	st.h	$0, 46[$10]	;0x0000 => [0x0005F82E]
+;var_pVIP => $6
+0700aa6c	ld.w	0[$20], $6	;0x0005F800 => $6
+;INTPND => $10
+0700aa70	ld.h	0[$6], $10	;[0x0005F800] => $10
+;$10 => INTCLR
+0700aa74	st.h	$10, 4[$6]	;$10 => [0x0005F804]
+;var_pVIP => $10
+0700aa78	ld.w	0[$20], $10	;0x0005F800 => $10
+0700aa7c	movea	4018, $0, $11	;0x00004018
+;0x4018 => INTENB
+0700aa80	st.h	$11, 2[$10]	;0x4018 => [0x0005F802]
+0700aa84	mov	0, $20	;0x00000000 => $20
+0700aa86	movhi	500, $0, $1	;0x05000000 => $1
+;0x0000 => var_INTPND
+0700aa8a	st.h	$20, 24[$1]	;0x0000 => [0x05000018]
+0700aa8e	movhi	500, $0, $1	;0x05000000 => $1
+;0x0000 => var_???2
+0700aa92	st.h	$20, 14[$1]	;0x0000 => [0x0500000E]
+;call Fn_DPSTTS_WAIT
+; read DPSTTS untill it equals 0x3C, then return
+0700aa96	jal	-43280	;goto 0x07000186, saving PC
+0700aa9a	mov	$21, $10	;move loop counter to $10	
+0700aa9c	cmp	0, $10	;Equals zero (first time)
+0700aa9e	bne	6	;if not goto 0x0700AAA4
+0700aaa0	jr	44	;goto 0x0700AACC
+
+///////////////////////////////////
+//
+0700aaa4	mov	0, $9	;0x00000000 => $9
+0700aaa6	mov	0, $8	;0x00000000 => $8
+0700aaa8	mov	0, $7	;0x00000000 => $7
+0700aaaa	mov	0, $6	;0x00000000 => $6
+;call Fn_???
+0700aaac	jal	-38422	;goto 0x07001496, saving PC
+
+0700aab0	mov	0, $8	;0x00000000 => $8
+0700aab2	mov	3, $7	;0x00000003 => $7
+0700aab4	mov	$0, $6	;0x00000000 => $6
+;call Fn_???
+0700aab6	jal	-38098	;goto 0x070015E4, saving PC
+
+0700aaba	jr	8	;jump 0x0700AAC6
+;Loop top
+;call Fn_Var_Wait
+; -- read a variable var_???2 (0x0500000E) untill it is not zero,
+;    than return (part of display interupt?)
+0700aabe	jal	-43346	;goto 0x0700016C, saving PC
+;call Fn_???
+0700aac2	jal	-37952	;goto 0x07001682, saving PC
+;Loop start
+0700aac6	cmp	0, $10	;end of loop
+0700aac8	bne	-10	;if not goto 0x0700AABE
+0700aaca	mov	0, $21	;0x00000000 => $21
+//
+///////////////////////////////////
+
+;call Fn_Var_Wait
+; -- read a variable var_???2 (0x0500000E) untill it is not zero,
+;    than return (part of display interupt?)
+0700aacc	jal	-43360	;goto 0x0700016C, saving PC
+;call Fn_ReadPad_Handler 
+0700aad0	jal	-38928	;goto 0x070012C0, saving PC
+;var_???13 => $6
+0700aad4	ld.b	-23931[$4], $6	;[0x05002285] => $6
+0700aad8	cmp	2, $6
+0700aada	bne	6
+
+///////////////////////////////////
+//
+0700aadc	jr	208
+//
+///////////////////////////////////
+
+0700aae0	ble	6
+0700aae6	cmp	0, $6
+0700aae8	bne	6
+0700aaea	jr	28
+
+///////////////////////////////////
+//
+0700aaee	cmp	1, $6
+0700aaf0	bne	6
+0700aaf2	jr	70
+//
+///////////////////////////////////
+
+0700ab06	mov	$20, $10
+0700ab08	movea	19, $0, $1
+0700ab0c	cmp	$1, $10
+0700ab0e	bge	6
+0700ab10	jr	26
+0700ab14	addi	1, $6, $10
+0700ab18	shl	-8, $10
+0700ab1a	sar	-8, $10
+;$10 => var_???13
+0700ab1c	st.b	$10, -23931[$4]	;$10 => [0x05002285]
+0700ab20	mov	0, $20
+0700ab22	mov	1, $21
+0700ab24	mov	7, $6
+;call Fn_???
+0700ab26	jal	1608
+0700ab2a	mov	$20, $10
+0700ab2c	add	1, $10
+0700ab2e	mov	$10, $20
+0700ab30	shl	-16, $20	;shift left 24 bits
+0700ab32	sar	-16, $20	;sign extend 8 to 32 bit
+0700ab34	jr	326
+
+///////////////////////////////////
+//
+0700ab38	mov	$20, $6
+0700ab3a	movea	64, $0, $1
+0700ab3e	cmp	$1, $6
+0700ab40	bge	6
+0700ab42	jr	92
+0700ab46	movhi	500, $0, $1	;0x05000000 => $1
+0700ab4a	ld.h	28[$1], $10
+0700ab4e	andi	303c, $10, $10
+0700ab52	bne	6
+0700ab54	jr	294
+0700ab58	mov	2, $8
+0700ab5a	mov	7, $7
+0700ab5c	mov	$0, $6
+;call Fn_???
+0700ab5e	jal	-38174
+0700ab62	jr	8
+;call Fn_???
+0700ab66	jal	-43514
+;call Fn_???
+0700ab6a	jal	-37788
+0700ab6e	cmp	0, $10
+0700ab70	bne	-10
+;var_???13 => $10
+0700ab72	ld.b	-23931[$4], $10	;[0x05002285] => $10
+0700ab76	add	1, $10
+0700ab78	shl	-8, $10
+0700ab7a	sar	-8, $10
+;$10 => var_???13
+0700ab7c	st.b	$10, -23931[$4]	;$10 => [0x05002285]
+0700ab80	mov	1, $21
+0700ab82	mov	0, $9
+0700ab84	mov	0, $8
+0700ab86	mov	0, $7
+0700ab88	mov	0, $6
+;call Fn_???
+0700ab8a	jal	-38548
+0700ab8e	movea	96, $0, $10
+0700ab92	movhi	500, $0, $1	;0x05000000 => $1
+0700ab96	st.h	$10, 8848[$1]
+0700ab9a	jr	224
+0700ab9e	addi	1, $6, $10
+0700aba2	mov	$10, $20
+0700aba4	shl	-16, $20	;shift left 24 bits
+0700aba6	sar	-16, $20	;sign extend 8 to 32 bit
+0700aba8	jr	210
+0700abac	movhi	500, $0, $1	;0x05000000 => $1
+0700abb0	ld.h	28[$1], $10
+0700abb4	andi	303c, $10, $10
+0700abb8	bne	6
+0700abba	jr	192
+//
+///////////////////////////////////
+
+;var_???13 => $10
+0700ac7a	ld.b	-23931[$4], $10	;[0x05002285] => $10
+0700ac7e	cmp	3, $10
+0700ac80	bgt	6
+0700ac82	jr	26
+0700ac9c	movhi	500, $0, $1	;0x05000000 => $1
+0700aca0	ld.b	10152[$1], $10
+0700aca4	andi	ff, $10, $10
+0700aca8	andi	1, $10, $10
+0700acac	bne	6
+0700acae	jr	-532
+0700ace8	addi	ffe8, $3, $3
+0700acec	st.w	$31, 20[$3]
+;var_???13 => $10
+0700acf0	ld.b	-23931[$4], $10	;[0x05002285] => $10
+0700acf4	cmp	2, $10
+0700acf6	bne	6
+
+///////////////////////////////////
+//
+0700acf8	jr	96
+//
+///////////////////////////////////
+
+0700acfc	ble	6
+0700ad02	cmp	0, $10
+0700ad04	bne	6
+0700ad06	jr	28
+
+///////////////////////////////////
+//
+0700ad0a	cmp	1, $10
+0700ad0c	bne	6
+0700ad0e	jr	32
+//
+///////////////////////////////////
+
+0700ad22	movea	1f, $0, $6
+;call Fn_???
+0700ad26	jal	-38864
+0700ad2a	jr	142
+
+///////////////////////////////////
+//
+0700ad2e	movea	1f, $0, $10
+0700ad32	st.w	$10, 16[$3]
+0700ad36	movhi	0, $0, $1
+0700ad3a	movea	d528, $1, $9
+0700ad3e	mov	$0, $8
+0700ad40	movea	30, $0, $7
+0700ad44	movea	58, $0, $6
+;call Fn_???
+0700ad48	jal	-40580
+0700ad4c	movea	1e, $0, $6
+;call Fn_???
+0700ad50	jal	-38906
+0700ad54	jr	100
+;call Fn_???
+0700ad58	jal	106
+0700ad5c	jr	92
+//
+///////////////////////////////////
+
+0700adb8	ld.w	20[$3], $31
+0700adbc	addi	18, $3, $3
+0700adc0	jmp	[$31]	;return
+
+///////////////////////////////////
+//
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700adc2	addi	ffe8, $3, $3
+0700adc6	movea	1f, $0, $10
+0700adca	movhi	0, $0, $1
+0700adce	movea	d558, $1, $9
+0700add2	st.w	$31, 20[$3]
+0700add6	mov	$0, $8
+0700add8	st.w	$10, 16[$3]
+0700addc	movea	40, $0, $7
+0700ade0	movea	78, $0, $6
+;call Fn_???
+0700ade4	jal	-40736
+0700ade8	movea	1e, $0, $10
+0700adec	st.w	$10, 16[$3]
+0700adf0	movhi	0, $0, $1
+0700adf4	movea	d578, $1, $9
+0700adf8	mov	$0, $8
+0700adfa	mov	$0, $7
+0700adfc	movea	170, $0, $6
+;call Fn_???
+0700ae00	jal	-40764
+0700ae04	movea	1d, $0, $10
+0700ae08	st.w	$10, 16[$3]
+0700ae0c	movhi	0, $0, $1
+0700ae10	movea	d578, $1, $9
+0700ae14	mov	$0, $8
+0700ae16	movea	d0, $0, $7
+0700ae1a	mov	$0, $6
+;call Fn_???
+0700ae1c	jal	-40792
+0700ae20	movea	1c, $0, $10
+0700ae24	st.w	$10, 16[$3]
+0700ae28	movhi	0, $0, $1
+0700ae2c	movea	d568, $1, $9
+0700ae30	mov	$0, $8
+0700ae32	mov	$0, $7
+0700ae34	mov	$0, $6
+;call Fn_???
+0700ae36	jal	-40818
+0700ae3a	movea	1b, $0, $10
+0700ae3e	st.w	$10, 16[$3]
+0700ae42	movhi	0, $0, $1
+0700ae46	movea	d568, $1, $9
+0700ae4a	mov	$0, $8
+0700ae4c	movea	d0, $0, $7
+0700ae50	movea	170, $0, $6
+;call Fn_???
+0700ae54	jal	-40848
+0700ae58	movea	1a, $0, $6
+;call Fn_???
+0700ae5c	jal	-39174
+0700ae60	ld.w	20[$3], $31
+0700ae64	addi	18, $3, $3
+0700ae68	jmp	[$31]	;return
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700ae6a	shl	5, $6
+0700ae6c	mov	$6, $30
+0700ae6e	shl	1, $30
+0700ae70	add	$30, $6
+0700ae72	mov	-1, $10
+0700ae74	movhi	500, $6, $1
+0700ae78	st.b	$10, 8921[$1]
+0700ae7c	mov	15, $10
+0700ae7e	movhi	500, $6, $1
+0700ae82	st.b	$10, 8924[$1]
+0700ae86	movhi	500, $6, $1
+0700ae8a	st.b	$0, 8923[$1]
+0700ae8e	mov	7, $10
+0700ae90	movhi	500, $6, $1
+0700ae94	st.b	$10, 8925[$1]
+0700ae98	mov	-1, $10
+0700ae9a	movhi	500, $6, $1
+0700ae9e	st.b	$10, 8926[$1]
+0700aea2	mov	-1, $10
+0700aea4	movhi	500, $6, $1
+0700aea8	st.b	$10, 8927[$1]
+0700aeac	movea	20, $0, $10
+0700aeb0	movhi	500, $6, $1
+0700aeb4	st.b	$10, 8928[$1]
+0700aeb8	movhi	500, $6, $1
+0700aebc	st.b	$0, 8929[$1]
+0700aec0	movhi	500, $6, $1
+0700aec4	st.b	$0, 8930[$1]
+0700aec8	movhi	500, $6, $1
+0700aecc	st.b	$0, 8932[$1]
+0700aed0	movhi	500, $6, $1
+0700aed4	st.b	$0, 8931[$1]
+0700aed8	movhi	500, $6, $1
+0700aedc	st.b	$0, 8935[$1]
+0700aee0	movhi	500, $6, $1
+0700aee4	st.b	$0, 8934[$1]
+0700aee8	movhi	0, $0, $1
+0700aeec	movea	d598, $1, $10
+0700aef0	movhi	500, $6, $1
+0700aef4	st.w	$10, 8944[$1]
+0700aef8	movhi	500, $6, $1
+0700aefc	st.b	$0, 8948[$1]
+0700af00	movhi	500, $6, $1
+0700af04	st.b	$0, 8949[$1]
+0700af08	movhi	500, $6, $1
+0700af0c	st.w	$0, 8952[$1]
+0700af10	movhi	500, $6, $1
+0700af14	st.w	$0, 8956[$1]
+0700af18	movhi	500, $6, $1
+0700af1c	st.w	$0, 8960[$1]
+0700af20	movhi	500, $6, $1
+0700af24	st.w	$0, 8992[$1]
+0700af28	movhi	500, $6, $1
+0700af2c	st.w	$0, 8996[$1]
+0700af30	movhi	500, $6, $1
+0700af34	st.w	$0, 9000[$1]
+0700af38	movhi	500, $6, $1
+0700af3c	st.b	$0, 8964[$1]
+0700af40	movhi	500, $6, $1
+0700af44	st.h	$0, 8974[$1]
+0700af48	movhi	500, $6, $1
+0700af4c	st.b	$0, 8984[$1]
+0700af50	jmp	[$31]	;return
+//
+///////////////////////////////////
+
+;==========================================
+; --- Funtion InitSound, initializes sound mem ---
+;==========================================
+;Takes a prameter $6, the Sounds to load up?
+;==========================================
+0700b01a	movhi	500, $0, $1	;0x05000000 => $1
+0700b01e	ld.w	20[$1], $10	;var_pHCREG => $10 (0x02000000)
+0700b022	mov	1, $12	;0x00000001 => $12
+;Write 0 to TCR (timmer disabled)
+0700b024	st.b	$0, 32[$10]	;0x00 => [0x02000020]
+0700b028	st.w	$0, -23924[$4]	;0x0000 => [0x0500228C], var_???
+0700b02c	st.w	$0, -23912[$4]	;0x0000 => [0x05002298], var_???
+; Load var_???t to $10
+0700b030	ld.w	-23928[$4], $10	;var_???12 => $10
+0700b034	ori	8, $10, $10	; turn on bit 3
+;Store result back in var_???t
+0700b038	st.w	$10, -23928[$4]	;0x0000 => var_???12
+0700b03c	mov	1, $10	;0x00000001 => $10
+;Pointer to Sound Mem
+0700b03e	movhi	100, $0, $1	;0x01000000 => $1
+;Write 0x01 to SMREG
+0700b042	st.b	$10, 1408[$1]	;0x01 => [0x01000580]
+
+; --- Set SxCTRL and SxLEN to 0 for all 6 Sound chanels ---
+0700b046	mov	$0, $10	;0x00000000 => $10
+0700b048	jr	26	;Jump 0x0700B062
+;Loop top
+0700b04c	mov	$10, $11	;Copy $10 to $11
+;$11 is pointer to Sn where n = 0-5
+0700b04e	shl	6, $11	;Multiply by 128?
+0700b050	movhi	100, $11, $1	;Add 0x01000000 to $11
+0700b054	st.b	$0, 1028[$1]	;Set SxLEN to 0x00
+0700b058	movhi	100, $11, $1	;Add 0x01000000 to $11
+0700b05c	st.b	$0, 1024[$1]	;Set SxCTRL to 0x00
+0700b060	add	1, $10	;Increment mem pointer
+;Loop start
+0700b062	cmp	6, $10	;end of loop?
+0700b064	blt	-24	;if not goto 0x0700B04C
+
+;-- Delay for 0x2000 cycles --
+0700b066	mov	$0, $10	;0x00000000 => $10
+0700b068	jr	6	;Jump 0x0700B06E
+;loop top
+0700b06c	add	1, $10	;increment counter
+;loop start
+0700b06e	movea	2000, $0, $1	;0x00002000 => $1
+0700b072	cmp	$1, $10	;end of loop?
+0700b074	blt	-8	;if not goto 0x0700B06C
+
+;Switch on passed in variable $6
+0700b076	mov	$6, $10	;$6 => $10
+0700b078	cmp	-2, $10	;Equal to -2?
+0700b07a	be	6	;if so, goto 0x0700B080
+;else jump over case -2 code...
+0700b07c	jr	24	;Jump 0x0700B094
+0700b094	cmp	-1, $10	;equal to -1?
+0700b096	be	6	;if so, goto 0x0700B09A
+;else jump over case -1 code...
+0700b098	jr	10	;jump 0x0700B0A2
+
+;Default case?
+0700b0a2	mov	6, $12	;0x00000006 => $12
+0700b0a4	mov	$6, $11	;$6 => $11
+0700b0a6	mov	$0, $10	;0x00000000 => $10
+0700b0a8	jr	24	;jump 0x0700B0C0
+
+;zero variables in memory...
+;loop top
+0700b0ac	mov	$10, $13	;$10 => $13
+0700b0ae	shl	5, $13	;multiply by 32
+0700b0b0	mov	$13, $30	;$13 => $30
+0700b0b2	shl	1, $30	;multiply by 2
+0700b0b4	add	$30, $13	;$30 +$13 => $13
+0700b0b6	movhi	500, $13, $1	;0x05000000 +$13 => $1
+0700b0ba	st.b	$0, 8908[$1]	;$0 => [$1+0x22CC]
+0700b0be	add	1, $10	;Increment counter.
+;loop start
+0700b0c0	cmp	12, $10	;end of loop?
+0700b0c2	blt	-22	; if not goto 0x0700B0AC
+
+0700b0c4	mov	$0, $10	;0x00000000 => $10
+0700b0c6	mov	$11, $13	;$6 => $13
+0700b0c8	mov	$13, $30	;$6 => $30
+0700b0ca	shl	5, $13	;multiply by 32
+0700b0cc	shl	2, $30	;multiply by 4
+0700b0ce	sub	$30, $13	;$30-$13 => $13
+0700b0d0	movhi	0, $0, $1	;0x00000000 => $1
+0700b0d4	movea	b3c8, $1, $14	;0xFFFFB3C8 => $14
+0700b0d8	add	$13, $14	;$13+$14 => $14
+0700b0da	addi	4, $14, $13	;$4+$14 => $13
+
+
+; --- Load up Sound Data Ram ---
+0700b0de	jr	76	;jump 0x0700B12A
+;Outer loop increments pointer in rom/soundmem for each
+; of the 6 Sound Data locations
+;loop top
+0700b0e2	mov	$10, $11	;$10 => $11
+0700b0e4	shl	2, $11	;multiply by 4
+0700b0e6	add	$13, $11	;$13+$11 => $11
+;offset in sound mem
+0700b0e8	mov	$10, $16	;$10 => $16
+;15 is an offset into ROM, where sound data is kept
+0700b0ea	ld.h	0[$11], $14	;read variable from mem
+0700b0ee	andi	ffff, $14, $15	;mask with 0xFFFF
+0700b0f2	ld.h	2[$11], $14	;read variable from mem
+0700b0f6	andi	ffff, $14, $14	;mask with 0xFFFF
+0700b0fa	shl	16, $14	;move to high Hword
+0700b0fc	or	$14, $15	;Combine into 15
+0700b0fe	shl	7, $16	;multiply by 128
+0700b100	mov	$0, $11	;0x00000000 => $11
+;Pointer to sound mem
+0700b102	movhi	100, $0, $14	;0x01000000 => $14
+0700b106	add	$16, $14	;add offset to sound mem pointer
+0700b108	jr	24	;jump 0x0700B120
+
+;Inner loop copys the 0x20 bytes from rom to sound data ram
+;loop2 top
+0700b10c	mov	$11, $16	;copy loop2 counter
+0700b10e	shl	2, $16	;multiply by 4
+0700b110	add	$14, $16	;add to sound pointer
+0700b112	mov	$15, $17	;save ROM pointer
+0700b114	add	$11, $17	; add loop counter
+0700b116	ld.b	0[$17], $17	;load data from rom
+0700b11a	st.b	$17, 0[$16]	;store in Sound Data Ram
+0700b11e	add	1, $11	;increment loop2 counter
+;loop2 start
+0700b120	movea	20, $0, $1	;0x00000020 => $1
+0700b124	cmp	$1, $11	;end of loop?
+0700b126	blt	-26	;if not goto 0x0700B10C
+;end loop2
+0700b128	add	1, $10	;increment loop counter
+;loop start
+0700b12a	cmp	$12, $10	;end of loop?
+0700b12c	blt	-74	;if not goto 0x0700B0E2
+;end loop
+
+;-- Write 0x00 to SMREG --
+0700b12e	mov	0, $10	;0x00000000 => $10
+;Pointer to Sound Mem 
+0700b130	movhi	100, $0, $1	;0x01000000 => $1
+;Write 0x00 to SMREG
+0700b134	st.b	$10, 1408[$1]	;0x00 => [0x01000580] 
+
+;Copy passed in variable
+0700b138	mov	$6, $10	;$6 => $10
+0700b13a	cmp	0, $10	;passed in var >0
+0700b13c	bge	6	; if true goto 0x0700B142
+
+0700b142	st.h	$0, -23874[$4]	;0x00000000 =>[0x0500226E]
+0700b146	cmp	0, $10	;is pased in var == 0
+0700b148	st.h	$0, -23872[$4]	;0x00000000 =>[0x050022C0]
+0700b14c	movea	100, $0, $11	;0x00000100 => $11
+0700b150	st.h	$11, -23882[$4]	;0x00000100 =>[0x050022B6]
+0700b154	be	6	;if zero goto 0x0700B15A
+
+///////////////////////////////////
+//
+0700b156	jr	10	;else goto 0x0700B160
+//
+///////////////////////////////////
+;initialize the variable the first time...
+0700b15a	mov	2, $10	;0x00000002 => $10
+0700b15c	st.w	$10, -23928[$4]	;$10 => var_???12
+;All but '0' jump to here
+0700b160	ld.w	-23928[$4], $10	;var_???12 => $10
+0700b164	mov	-9, $1	;0xFFFFFFF7 => $1
+0700b166	and	$1, $10	;Mask $10 with 0xFFFFFFF7
+0700b168	st.w	$10, -23928[$4]	;$10 => var_???12
+0700b16c	jmp	[$31]	;return from Fn call...
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700b16e	addi	ffe0, $3, $3
+0700b172	st.w	$31, 28[$3]
+0700b176	st.w	$20, 16[$3]
+0700b17a	mov	$6, $20
+0700b17c	st.w	$21, 20[$3]
+0700b180	st.w	$22, 24[$3]
+0700b184	ld.w	-23928[$4], $11	;var_???12 => $11
+0700b188	andi	ff, $11, $10
+0700b18c	st.w	$10, -23928[$4]	;$10 => var_???12
+0700b190	mov	$20, $11
+0700b192	shl	8, $11
+0700b194	add	8, $11
+0700b196	or	$10, $11
+0700b198	st.w	$11, -23928[$4]	;$11 => var_???12
+0700b19c	jal	-386
+
+///////////////////////////////////
+//
+; --- Function: ??? ---
+0700b1a0	mov	$20, $11
+0700b1a2	mov	$11, $30
+0700b1a4	shl	5, $11
+0700b1a6	shl	2, $30
+0700b1a8	sub	$30, $11
+0700b1aa	movhi	0, $0, $1
+0700b1ae	movea	b3c8, $1, $10
+0700b1b2	add	$11, $10
+0700b1b4	mov	$0, $21
+0700b1b6	ld.h	0[$10], $11
+0700b1ba	andi	ffff, $11, $11
+0700b1be	andi	ffff, $11, $20
+0700b1c2	ld.h	2[$10], $11
+0700b1c6	andi	ffff, $11, $11
+0700b1ca	andi	ffff, $11, $11
+0700b1ce	shl	-16, $11	;shift left 24 bits
+0700b1d0	or	$11, $20
+0700b1d2	addi	4, $20, $10
+0700b1d6	st.w	$10, -23888[$4]
+0700b1da	movea	ffc8, $0, $11
+0700b1de	st.b	$0, -23884[$4]
+0700b1e2	st.b	$0, -23883[$4]
+0700b1e6	st.b	$11, -23878[$4]
+0700b1ea	movea	20, $0, $11
+0700b1ee	st.b	$11, -23876[$4]
+0700b1f2	st.h	$0, -23874[$4]
+0700b1f6	ld.h	0[$10], $12
+0700b1fa	st.w	$0, -23864[$4]
+0700b1fe	movea	ff, $0, $10
+0700b202	st.h	$0, -23870[$4]
+0700b206	andi	ffff, $12, $22
+0700b20a	st.h	$0, -23868[$4]
+0700b20e	st.h	$10, -23920[$4]
+0700b212	jr	170
+0700b216	addi	6, $21, $6
+0700b21a	ld.h	2[$20], $10
+0700b21e	andi	ffff, $10, $11
+0700b222	mov	$22, $10
+0700b224	sub	$11, $10
+0700b226	sar	1, $10
+0700b228	add	$21, $10
+0700b22a	shl	1, $10
+0700b22c	add	$20, $10
+0700b22e	ld.h	4[$10], $13
+0700b232	andi	ffff, $13, $10
+0700b236	be	6
+0700b238	jr	26
+0700b23c	mov	$6, $10
+0700b23e	shl	5, $10
+0700b240	mov	$10, $30
+0700b242	shl	1, $30
+0700b244	add	$30, $10
+0700b246	movhi	500, $10, $1
+0700b24a	st.b	$0, 8908[$1]
+0700b24e	jr	44
+0700b252	mov	$6, $10
+0700b254	shl	5, $10
+0700b256	mov	$10, $30
+0700b258	shl	1, $30
+0700b25a	add	$30, $10
+0700b25c	mov	1, $11
+0700b25e	movhi	500, $10, $1
+0700b262	st.b	$11, 8908[$1]
+0700b266	ld.w	-23928[$4], $11	;var_???12 => $11
+0700b26a	andi	fff8, $11, $10
+0700b26e	st.w	$10, -23928[$4]	;$10 => var_???12
+0700b272	ori	1, $10, $11
+0700b276	st.w	$11, -23928[$4]	;$11 => var_???12
+0700b27a	mov	$6, $11
+0700b27c	shl	5, $11
+0700b27e	mov	$11, $30
+0700b280	shl	1, $30
+0700b282	add	$30, $11
+0700b284	movhi	500, $0, $1	;0x05000000 => $1
+0700b288	movea	22cc, $1, $10
+0700b28c	add	$11, $10
+0700b28e	addi	4, $10, $11
+0700b292	addi	4, $20, $12
+0700b296	andi	ffff, $13, $15
+0700b29a	st.w	$12, 0[$11]
+0700b29e	ld.h	2[$20], $12
+0700b2a2	st.h	$12, 2[$10]
+0700b2a6	ld.w	0[$11], $14
+0700b2aa	add	$15, $14
+0700b2ac	andi	ffff, $12, $15
+0700b2b0	sub	$15, $14
+0700b2b2	st.w	$14, 8[$10]
+0700b2b6	jal	-1100
+0700b2ba	add	1, $21
+0700b2bc	cmp	6, $21
+0700b2be	blt	-168
+0700b2c0	ld.w	-23888[$4], $10
+0700b2c4	add	2, $10
+0700b2c6	st.w	$10, -23888[$4]
+0700b2ca	ld.w	-23928[$4], $10	;var_???12 => $10
+0700b2ce	andi	fff7, $10, $10
+0700b2d2	st.w	$10, -23928[$4]	;$10 => var_???12
+0700b2d6	ld.w	28[$3], $31
+0700b2da	ld.w	16[$3], $20
+0700b2de	ld.w	20[$3], $21
+0700b2e2	ld.w	24[$3], $22
+0700b2e6	addi	20, $3, $3
+0700b2ea	jmp	[$31]	;return
+//
+///////////////////////////////////
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+;loop test memory variables, and posibly play sounds??
+0700b53a	mov	$0, $10	;0x00000000 => $10
+0700b53c	movhi	500, $0, $1	;0x05000000 => $1
+0700b540	movea	250c, $1, $11	;0x0500250C => $11
+0700b544	mov	$11, $14	;0x0500250C => $14
+0700b546	jr	80	;jump 0x0700B596
+;loop top
+0700b54a	mov	$10, $13	;move loop counter to $13
+0700b54c	shl	5, $13	;multiply by 32
+0700b54e	mov	$13, $30	;$13 => $30
+0700b550	shl	1, $30	;multiply by 2
+0700b552	add	$30, $13	;
+0700b554	mov	$11, $12	;0x0500250C => $12
+0700b556	add	$13, $12	;
+0700b558	ld.b	0[$12], $12	;
+0700b55c	andi	ff, $12, $12	;mask with 0xFF
+0700b560	bne	6	;if not zero goto 0x0700B566
+0700b562	jr	50	;goto 0x0700B594
+;--- begin unexecuted code ---
+0700b566	movhi	500, $13, $1	;0x0500xxxx => $1
+0700b56a	ld.b	8908[$1], $12	;var_???10 => $12
+0700b56e	andi	ff, $12, $12	;mask with 0xFF
+0700b572	be	6	;if zero goto 0x0700B578
+0700b574	jr	32	;goto 0x0700B594
+0700b578	mov	$10, $12	;$10 => $12
+0700b57a	shl	6, $12	;multiply by 64
+0700b57c	movhi	100, $12, $1	;0x0100xxxx => $1
+0700b580	st.b	$0, 1028[$1]
+0700b584	movhi	100, $12, $1
+0700b588	st.b	$0, 1024[$1]
+0700b58c	mov	$14, $12
+0700b58e	add	$13, $12
+0700b590	st.b	$0, 0[$12]
+;--- end unexecuted code ---
+0700b594	add	1, $10	;increment loop counter
+;loop start
+0700b596	cmp	6, $10	;end of loop?
+0700b598	blt	-78	;if not goto 0x0700B54A
+
+0700b59a	ld.w	-23928[$4], $11	;var_???12 => $11
+0700b59e	andi	fff8, $11, $10	;mask lower 3 bits
+0700b5a2	st.w	$10, -23928[$4]	;$10 => var_???12
+0700b5a6	ori	2, $10, $11		;turn on bit 1
+0700b5aa	st.w	$11, -23928[$4]	;$11 => var_???12
+0700b5ae	jmp	[$31]	;return
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700b8b4	addi	ffec, $3, $3
+0700b8b8	st.w	$31, 16[$3]
+0700b8bc	ld.h	-23880[$4], $10
+0700b8c0	cmp	0, $10
+0700b8c2	bgt	6
+0700b8c4	jr	46
+0700b8f2	cmp	0, $10
+0700b8f4	blt	6
+0700b8f6	jr	36
+0700b91a	ld.w	16[$3], $31
+0700b91e	addi	14, $3, $3
+0700b922	jmp	[$31]	;return
+
+///////////////////////////////////
+//
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700b924	addi	ffd8, $3, $3
+0700b928	mov	0, $15
+0700b92a	mov	0, $14
+0700b92c	st.w	$31, 36[$3]
+0700b930	st.w	$20, 24[$3]
+0700b934	st.w	$21, 28[$3]
+0700b938	st.w	$22, 32[$3]
+0700b93c	ld.b	-23902[$4], $10
+0700b940	shl	5, $10
+0700b942	mov	$10, $30
+0700b944	shl	1, $30
+0700b946	add	$30, $10
+0700b948	movhi	500, $10, $1
+0700b94c	ld.h	8974[$1], $16
+0700b950	movhi	500, $10, $1
+0700b954	ld.b	8928[$1], $12
+0700b958	ld.b	-23899[$4], $10
+0700b95c	andi	ff, $12, $11
+0700b960	cmp	0, $10
+0700b962	bne	6
+0700b968	mov	$11, $10
+0700b96a	ld.h	-23882[$4], $11
+0700b96e	andi	ffff, $11, $11
+0700b972	mul	$11, $10
+0700b974	sar	8, $10
+0700b976	mov	$10, $11
+0700b978	shl	-16, $11	;shift left 24 bits
+0700b97a	sar	-16, $11	;sign extend 8 to 32 bit
+0700b97c	mov	$11, $10
+0700b97e	shl	3, $10
+0700b980	mov	$10, $11
+0700b982	shl	-16, $11	;shift left 24 bits
+0700b984	sar	-16, $11	;sign extend 8 to 32 bit
+0700b986	ld.b	-23902[$4], $12
+0700b98a	shl	5, $12
+0700b98c	mov	$12, $30
+0700b98e	shl	1, $30
+0700b990	add	$30, $12
+0700b992	movhi	500, $0, $1	;0x05000000 => $1
+0700b996	movea	230e, $1, $10
+0700b99a	add	$12, $10
+0700b99c	mov	$11, $12
+0700b99e	ld.h	0[$10], $13
+0700b9a2	sub	$12, $13
+0700b9a4	st.h	$13, 0[$10]
+0700b9a8	ld.b	-23902[$4], $10
+0700b9ac	cmp	6, $10
+0700b9ae	be	6
+0700b9b0	jr	14
+0700b9b4	ld.w	-23864[$4], $10
+0700b9b8	add	$12, $10
+0700b9ba	st.w	$10, -23864[$4]
+0700b9be	ld.b	-23902[$4], $10
+0700b9c2	shl	5, $10
+0700b9c4	mov	$10, $30
+0700b9c6	shl	1, $30
+0700b9c8	add	$30, $10
+0700b9ca	movhi	500, $10, $1
+0700b9ce	ld.h	8974[$1], $12
+0700b9d2	cmp	0, $12
+0700b9d4	bgt	6
+0700b9d6	jr	130
+0700b9da	movhi	500, $0, $1	;0x05000000 => $1
+0700b9de	movea	2310, $1, $12
+0700b9e2	mov	$10, $13
+0700b9e4	add	$12, $13
+0700b9e6	ld.h	0[$13], $14
+0700b9ea	cmp	0, $14
+0700b9ec	bne	6
+0700b9ee	jr	64
+0700b9f2	movhi	500, $10, $1
+0700b9f6	ld.b	8964[$1], $10
+0700b9fa	cmp	0, $10
+0700b9fc	be	6
+0700ba02	mov	$14, $10
+0700ba04	sub	$11, $10
+0700ba06	st.h	$10, 0[$13]
+0700ba0a	ld.b	-23902[$4], $10
+0700ba0e	shl	5, $10
+0700ba10	mov	$10, $30
+0700ba12	shl	1, $30
+0700ba14	add	$30, $10
+0700ba16	add	$12, $10
+0700ba18	ld.h	0[$10], $11
+0700ba1c	cmp	0, $11
+0700ba1e	ble	6
+0700ba20	jr	14
+0700ba24	mov	2, $11
+0700ba26	st.b	$11, -23897[$4]
+0700ba2a	st.h	$0, 0[$10]
+0700ba2e	mov	$16, $10
+0700ba30	andi	7f00, $10, $10
+0700ba34	ld.b	-23902[$4], $11
+0700ba38	shl	5, $11
+0700ba3a	mov	$11, $30
+0700ba3c	shl	1, $30
+0700ba3e	add	$30, $11
+0700ba40	movhi	500, $11, $1
+0700ba44	ld.h	8974[$1], $11
+0700ba48	andi	7f00, $11, $11
+0700ba4c	cmp	$11, $10
+0700ba4e	ble	6
+0700ba50	jr	4376
+0700ba58	ld.b	-23902[$4], $11
+0700ba5c	shl	5, $11
+0700ba5e	mov	$11, $30
+0700ba60	shl	1, $30
+0700ba62	add	$30, $11
+0700ba64	movhi	500, $0, $1	;0x05000000 => $1
+0700ba68	movea	22d4, $1, $10
+0700ba6c	add	$11, $10
+0700ba6e	ld.w	0[$10], $11
+0700ba72	ld.b	0[$11], $11
+0700ba76	st.b	$11, -23898[$4]
+0700ba7a	ld.w	0[$10], $11
+0700ba7e	add	1, $11
+0700ba80	st.w	$11, 0[$10]
+0700ba84	ld.b	-23898[$4], $11
+0700ba88	andi	ff, $11, $10
+0700ba8c	st.w	$10, 20[$3]
+0700ba90	be	6
+0700ba92	jr	412
+0700ba96	ld.b	-23902[$4], $13
+0700ba9a	mov	$13, $11
+0700ba9c	shl	5, $11
+0700ba9e	mov	$11, $30
+0700baa0	shl	1, $30
+0700baa2	add	$30, $11
+0700baa4	movhi	500, $0, $1	;0x05000000 => $1
+0700baa8	movea	22cc, $1, $10
+0700baac	add	$11, $10
+0700baae	ld.w	84[$10], $12
+0700bab2	cmp	0, $12
+0700bab4	bne	6
+0700bab6	jr	56
+0700baee	ld.w	88[$10], $12
+0700baf2	cmp	0, $12
+0700baf4	bne	6
+0700baf6	jr	56
+0700bafa	addi	30, $10, $13
+0700bafe	ld.w	0[$13], $11
+0700bb02	cmp	0, $11
+0700bb04	bne	6
+0700bb06	jr	12
+0700bb0a	st.w	$12, 8[$10]
+0700bb0e	jr	8
+0700bb12	st.w	$12, 0[$13]
+0700bb16	ld.b	-23902[$4], $10
+0700bb1a	shl	5, $10
+0700bb1c	mov	$10, $30
+0700bb1e	shl	1, $30
+0700bb20	add	$30, $10
+0700bb22	movhi	500, $10, $1
+0700bb26	st.w	$0, 8996[$1]
+0700bb2a	jr	-210
+0700bb2e	ld.w	92[$10], $12
+0700bb32	cmp	0, $12
+0700bb34	bne	6
+0700bb36	jr	56
+0700bb3a	addi	34, $10, $13
+0700bb3e	ld.w	0[$13], $11
+0700bb42	cmp	0, $11
+0700bb44	bne	6
+0700bb46	jr	12
+0700bb4a	st.w	$12, 8[$10]
+0700bb4e	jr	8
+0700bb52	st.w	$12, 0[$13]
+0700bb56	ld.b	-23902[$4], $10
+0700bb5a	shl	5, $10
+0700bb5c	mov	$10, $30
+0700bb5e	shl	1, $30
+0700bb60	add	$30, $10
+0700bb62	movhi	500, $10, $1
+0700bb66	st.w	$0, 9000[$1]
+0700bb6a	jr	-274
+0700bb6e	addi	4c, $10, $12
+0700bb72	ld.b	0[$12], $11
+0700bb76	andi	ff, $11, $16
+0700bb7a	bne	6
+0700bb80	addi	ffff, $16, $10
+0700bb84	mov	$10, $11
+0700bb86	shl	-8, $11
+0700bb88	sar	-8, $11
+0700bb8a	andi	ff, $11, $10
+0700bb8e	st.b	$11, 0[$12]
+0700bb92	bne	6
+0700bb98	ld.b	-23902[$4], $11
+0700bb9c	shl	5, $11
+0700bb9e	mov	$11, $30
+0700bba0	shl	1, $30
+0700bba2	add	$30, $11
+0700bba4	movhi	500, $0, $1	;0x05000000 => $1
+0700bba8	movea	22cc, $1, $10
+0700bbac	add	$11, $10
+0700bbae	ld.w	32[$10], $11
+0700bbb2	st.w	$11, 8[$10]
+0700bbb6	jr	-350
+0700bc2e	movea	80, $0, $1
+0700bc32	cmp	$1, $10
+0700bc34	blt	6
+0700bc36	jr	28
+0700bc3a	ld.b	-23902[$4], $10
+0700bc3e	shl	5, $10
+0700bc40	mov	$10, $30
+0700bc42	shl	1, $30
+0700bc44	add	$30, $10
+0700bc46	movhi	500, $10, $1
+0700bc4a	st.b	$11, 8922[$1]
+0700bc4e	jr	-502
+0700bc52	movea	c0, $0, $1
+0700bc56	cmp	$1, $10
+0700bc58	blt	6
+0700bc5a	jr	1202
+0700bc5e	movea	bf, $0, $1
+0700bc62	cmp	$1, $10
+0700bc64	be	6
+0700bc66	jr	34
+0700bc6a	ld.b	-23902[$4], $10
+0700bc6e	shl	5, $10
+0700bc70	mov	$10, $30
+0700bc72	shl	1, $30
+0700bc74	add	$30, $10
+0700bc76	movhi	500, $10, $1
+0700bc7a	st.h	$0, 8976[$1]
+0700bc7e	mov	2, $10
+0700bc80	st.b	$10, -23897[$4]
+0700bc84	jr	1110
+0700bc88	movea	be, $0, $1
+0700bc8c	cmp	$1, $10
+0700bc8e	bne	6
+0700bc94	ld.b	-23902[$4], $10
+0700bc98	shl	5, $10
+0700bc9a	mov	$10, $30
+0700bc9c	shl	1, $30
+0700bc9e	add	$30, $10
+0700bca0	st.w	$10, 16[$3]
+0700bca4	ld.w	20[$3], $10
+0700bca8	andi	7f, $10, $11
+0700bcac	ld.w	16[$3], $10
+0700bcb0	shl	-8, $11
+0700bcb2	sar	-8, $11
+0700bcb4	movhi	500, $10, $1
+0700bcb8	st.b	$11, 8920[$1]
+0700bcbc	mov	1, $10
+0700bcbe	st.b	$10, -23895[$4]
+0700bcc2	mov	1, $10
+0700bcc4	st.b	$10, -23897[$4]
+0700bcc8	mov	1, $10
+0700bcca	st.b	$10, -23896[$4]
+0700bcce	mov	1, $10
+0700bcd0	st.b	$10, -23894[$4]
+0700bcd4	mov	1, $10
+0700bcd6	st.b	$10, -23893[$4]
+0700bcda	ld.b	-23901[$4], $10
+0700bcde	cmp	4, $10
+0700bce0	be	6
+0700bce2	jr	10
+0700bce6	mov	1, $10
+0700bce8	st.b	$10, -23892[$4]
+0700bcec	ld.b	-23902[$4], $10
+0700bcf0	shl	5, $10
+0700bcf2	mov	$10, $30
+0700bcf4	shl	1, $30
+0700bcf6	add	$30, $10
+0700bcf8	movhi	500, $0, $1	;0x05000000 => $1
+0700bcfc	movea	2308, $1, $12
+0700bd00	mov	$10, $11
+0700bd02	add	$12, $11
+0700bd04	movhi	500, $10, $1
+0700bd08	ld.w	8944[$1], $13
+0700bd0c	st.w	$13, 0[$11]
+0700bd10	ld.b	-23902[$4], $10
+0700bd14	shl	5, $10
+0700bd16	mov	$10, $30
+0700bd18	shl	1, $30
+0700bd1a	add	$30, $10
+0700bd1c	mov	$10, $11
+0700bd1e	add	$12, $11
+0700bd20	ld.w	0[$11], $11
+0700bd24	ld.b	1[$11], $11
+0700bd28	andi	ff, $11, $11
+0700bd2c	andi	7f, $11, $11
+0700bd30	shl	-8, $11
+0700bd32	sar	-8, $11
+0700bd34	movhi	500, $10, $1
+0700bd38	st.b	$11, 8972[$1]
+0700bd3c	ld.b	-23902[$4], $10
+0700bd40	shl	5, $10
+0700bd42	mov	$10, $30
+0700bd44	shl	1, $30
+0700bd46	add	$30, $10
+0700bd48	movhi	500, $10, $1
+0700bd4c	st.b	$0, 8985[$1]
+0700bd50	ld.b	-23902[$4], $10
+0700bd54	shl	5, $10
+0700bd56	mov	$10, $30
+0700bd58	shl	1, $30
+0700bd5a	add	$30, $10
+0700bd5c	movhi	500, $10, $1
+0700bd60	st.b	$0, 8987[$1]
+0700bd64	ld.b	-23902[$4], $10
+0700bd68	shl	5, $10
+0700bd6a	mov	$10, $30
+0700bd6c	shl	1, $30
+0700bd6e	add	$30, $10
+0700bd70	movhi	500, $10, $1
+0700bd74	st.b	$0, 8986[$1]
+0700bd78	ld.b	-23902[$4], $10
+0700bd7c	shl	5, $10
+0700bd7e	mov	$10, $30
+0700bd80	shl	1, $30
+0700bd82	add	$30, $10
+0700bd84	movhi	500, $10, $1
+0700bd88	st.b	$0, 8988[$1]
+0700bd8c	ld.b	-23902[$4], $10
+0700bd90	shl	5, $10
+0700bd92	mov	$10, $30
+0700bd94	shl	1, $30
+0700bd96	add	$30, $10
+0700bd98	movhi	500, $10, $1
+0700bd9c	st.b	$0, 8989[$1]
+0700bda0	jr	124
+0700be1c	ld.b	-23902[$4], $10
+0700be20	shl	5, $10
+0700be22	mov	$10, $30
+0700be24	shl	1, $30
+0700be26	add	$30, $10
+0700be28	movhi	500, $10, $1
+0700be2c	st.b	$0, 8964[$1]
+0700be30	ld.b	-23902[$4], $12
+0700be34	shl	5, $12
+0700be36	mov	$12, $30
+0700be38	shl	1, $30
+0700be3a	add	$30, $12
+0700be3c	movhi	500, $12, $1
+0700be40	ld.w	8916[$1], $10
+0700be44	movhi	500, $12, $1
+0700be48	ld.b	8984[$1], $11
+0700be4c	andi	ff, $11, $12
+0700be50	cmp	2, $12
+0700be52	bgt	6
+0700be54	jr	6
+0700be58	mov	2, $11
+0700be5a	ld.b	-23902[$4], $12
+0700be5e	shl	5, $12
+0700be60	mov	$12, $30
+0700be62	shl	1, $30
+0700be64	add	$30, $12
+0700be66	movhi	500, $12, $1
+0700be6a	ld.w	8940[$1], $13
+0700be6e	movhi	500, $12, $1
+0700be72	ld.w	8980[$1], $17
+0700be76	movhi	500, $12, $1
+0700be7a	ld.w	9000[$1], $20
+0700be7e	movhi	500, $12, $1
+0700be82	ld.w	8960[$1], $14
+0700be86	movhi	500, $12, $1
+0700be8a	ld.w	8996[$1], $8
+0700be8e	movhi	500, $12, $1
+0700be92	ld.w	8956[$1], $15
+0700be96	movhi	500, $12, $1
+0700be9a	ld.w	8992[$1], $21
+0700be9e	movhi	500, $12, $1
+0700bea2	ld.w	8952[$1], $16
+0700bea6	movhi	500, $12, $1
+0700beaa	ld.w	8912[$1], $19
+0700beae	movhi	500, $12, $1
+0700beb2	ld.h	8910[$1], $22
+0700beb6	mov	$14, $7
+0700beb8	mov	$15, $18
+0700beba	mov	$16, $9
+0700bebc	andi	ffff, $22, $6
+0700bec0	ld.b	0[$10], $12
+0700bec4	st.b	$12, -23898[$4]
+0700bec8	add	1, $10
+0700beca	andi	ff, $12, $12
+0700bece	be	6
+0700bed0	jr	44
+0700bed4	andi	ff, $11, $10
+0700bed8	bne	6
+0700beda	jr	464
+0700bede	add	-1, $10
+0700bee0	mov	$10, $11
+0700bee2	shl	-8, $11
+0700bee4	sar	-8, $11
+0700bee6	andi	ff, $11, $10
+0700beea	bne	6
+0700bef0	mov	$13, $10
+0700bef2	jr	-50
+0700befc	movea	80, $0, $1
+0700bf00	cmp	$1, $12
+0700bf02	blt	-66
+0700bf04	movea	c0, $0, $1
+0700bf08	cmp	$1, $12
+0700bf0a	bge	6
+0700bf0c	jr	12
+0700bf10	movea	f0, $0, $1
+0700bf14	cmp	$1, $12
+0700bf16	blt	-86
+0700bf18	ld.b	-23898[$4], $22
+0700bf1c	andi	ff, $22, $12
+0700bf20	movea	be, $0, $1
+0700bf24	cmp	$1, $12
+0700bf26	be	6
+0700bf28	jr	30
+0700bf46	movea	bf, $0, $1
+0700bf4a	cmp	$1, $12
+0700bf4c	bne	6
+0700bf52	movea	c0, $0, $1
+0700bf56	cmp	$1, $12
+0700bf58	bge	6
+0700bf5a	jr	336
+0700bf5e	movea	f9, $0, $1
+0700bf62	cmp	$1, $12
+0700bf64	be	6
+0700bf66	jr	48
+0700bf96	movea	f8, $0, $1
+0700bf9a	cmp	$1, $12
+0700bf9c	be	6
+0700bf9e	jr	82
+0700bff0	movea	fd, $0, $1
+0700bff4	cmp	$1, $12
+0700bff6	be	6
+0700bff8	jr	48
+0700c028	movea	fe, $0, $1
+0700c02c	cmp	$1, $12
+0700c02e	be	6
+0700c030	jr	48
+0700c034	cmp	$10, $18
+0700c036	bne	6
+0700c038	jr	20
+0700c03c	cmp	0, $15
+0700c03e	be	6
+0700c040	jr	-384
+0700c044	cmp	$10, $8
+0700c046	be	6
+0700c048	jr	-392
+0700c04c	ld.b	0[$10], $22
+0700c050	andi	ff, $22, $12
+0700c054	add	1, $10
+0700c056	cmp	0, $12
+0700c058	bne	-12
+0700c05a	add	1, $10
+0700c05c	jr	-412
+0700c060	movea	ff, $0, $1
+0700c064	cmp	$1, $12
+0700c066	be	6
+0700c068	jr	48
+0700c06c	cmp	$10, $7
+0700c06e	bne	6
+0700c070	jr	20
+0700c074	cmp	0, $14
+0700c076	be	6
+0700c078	jr	-440
+0700c084	ld.b	0[$10], $22
+0700c088	andi	ff, $22, $12
+0700c08c	add	1, $10
+0700c08e	cmp	0, $12
+0700c090	bne	-12
+0700c092	add	1, $10
+0700c094	jr	-468
+0700c098	andi	f, $12, $22
+0700c09c	movhi	0, $22, $1
+0700c0a0	ld.b	-10854[$1], $22
+0700c0a4	add	$22, $10
+0700c0a6	jr	-486
+0700c0aa	ld.b	-23902[$4], $10
+0700c0ae	shl	5, $10
+0700c0b0	mov	$10, $30
+0700c0b2	shl	1, $30
+0700c0b4	add	$30, $10
+0700c0b6	movhi	500, $10, $1
+0700c0ba	ld.b	8922[$1], $11
+0700c0be	movhi	500, $10, $1
+0700c0c2	ld.b	8921[$1], $12
+0700c0c6	andi	ff, $11, $11
+0700c0ca	andi	ff, $12, $12
+0700c0ce	add	1, $12
+0700c0d0	mul	$12, $11
+0700c0d2	movhi	500, $10, $1
+0700c0d6	st.h	$11, 8976[$1]
+0700c0da	ld.b	-23902[$4], $10
+0700c0de	shl	5, $10
+0700c0e0	mov	$10, $30
+0700c0e2	shl	1, $30
+0700c0e4	add	$30, $10
+0700c0e6	movhi	500, $0, $1	;0x05000000 => $1
+0700c0ea	movea	230e, $1, $12
+0700c0ee	add	$10, $12
+0700c0f0	ld.h	0[$12], $11
+0700c0f4	movhi	500, $10, $1
+0700c0f8	ld.b	8922[$1], $13
+0700c0fc	andi	ff, $13, $13
+0700c100	shl	8, $13
+0700c102	add	$13, $11
+0700c104	st.h	$11, 0[$12]
+0700c108	jr	2656
+0700c10c	movea	f0, $0, $1
+0700c110	cmp	$1, $10
+0700c112	blt	6
+0700c114	jr	302
+0700c118	movea	c8, $0, $1
+0700c11c	cmp	$1, $10
+0700c11e	blt	6
+0700c120	jr	52
+0700c124	ld.b	-23902[$4], $10
+0700c128	shl	5, $10
+0700c12a	mov	$10, $30
+0700c12c	shl	1, $30
+0700c12e	add	$30, $10
+0700c130	st.w	$10, 16[$3]
+0700c134	ld.w	20[$3], $10
+0700c138	andi	7, $10, $11
+0700c13c	movhi	0, $11, $1
+0700c140	ld.b	-10838[$1], $11
+0700c144	ld.w	16[$3], $10
+0700c148	movhi	500, $10, $1
+0700c14c	st.b	$11, 8921[$1]
+0700c150	jr	-1784
+0700c154	movea	d0, $0, $1
+0700c158	cmp	$1, $10
+0700c15a	blt	6
+0700c15c	jr	54
+0700c160	ld.b	-23902[$4], $10
+0700c164	shl	5, $10
+0700c166	mov	$10, $30
+0700c168	shl	1, $30
+0700c16a	add	$30, $10
+0700c16c	st.w	$10, 16[$3]
+0700c170	ld.w	20[$3], $10
+0700c174	andi	7, $10, $11
+0700c178	ld.w	16[$3], $10
+0700c17c	shl	-8, $11
+0700c17e	sar	-8, $11
+0700c180	movhi	500, $10, $1
+0700c184	st.b	$11, 8923[$1]
+0700c188	mov	1, $10
+0700c18a	st.b	$10, -23893[$4]
+0700c18e	jr	-1846
+0700c192	movea	e0, $0, $1
+0700c196	cmp	$1, $10
+0700c198	blt	6
+0700c19a	jr	54
+0700c19e	ld.b	-23902[$4], $10
+0700c1a2	shl	5, $10
+0700c1a4	mov	$10, $30
+0700c1a6	shl	1, $30
+0700c1a8	add	$30, $10
+0700c1aa	st.w	$10, 16[$3]
+0700c1ae	ld.w	20[$3], $10
+0700c1b2	andi	f, $10, $11
+0700c1b6	ld.w	16[$3], $10
+0700c1ba	shl	-8, $11
+0700c1bc	sar	-8, $11
+0700c1be	movhi	500, $10, $1
+0700c1c2	st.b	$11, 8924[$1]
+0700c1c6	mov	1, $10
+0700c1c8	st.b	$10, -23896[$4]
+0700c1cc	jr	-1908
+0700c1d0	movea	ef, $0, $1
+0700c1d4	cmp	$1, $10
+0700c1d6	blt	6
+0700c1dc	ld.b	-23902[$4], $10
+0700c1e0	shl	5, $10
+0700c1e2	mov	$10, $30
+0700c1e4	shl	1, $30
+0700c1e6	add	$30, $10
+0700c1e8	st.w	$10, 16[$3]
+0700c1ec	ld.w	20[$3], $10
+0700c1f0	andi	f, $10, $11
+0700c1f4	ld.w	16[$3], $10
+0700c1f8	shl	-8, $11
+0700c1fa	sar	-8, $11
+0700c1fc	movhi	500, $10, $1
+0700c200	st.b	$11, 8925[$1]
+0700c204	mov	1, $10
+0700c206	st.b	$10, -23896[$4]
+0700c20a	jr	-1970
+0700c242	movea	f0, $0, $1
+0700c246	cmp	$1, $10
+0700c248	be	6
+0700c24a	jr	180
+0700c24e	ld.b	-23899[$4], $10
+0700c252	cmp	0, $10
+0700c254	bne	6
+0700c25a	ld.b	-23902[$4], $11
+0700c25e	shl	5, $11
+0700c260	mov	$11, $30
+0700c262	shl	1, $30
+0700c264	add	$30, $11
+0700c266	movhi	500, $0, $1	;0x05000000 => $1
+0700c26a	movea	22d4, $1, $10
+0700c26e	add	$11, $10
+0700c270	ld.w	0[$10], $12
+0700c274	ld.b	0[$12], $11
+0700c278	andi	ff, $11, $13
+0700c27c	cmp	8, $13
+0700c27e	blt	6
+0700c280	jr	50
+0700c2b2	st.b	$11, -23878[$4]
+0700c2b6	ld.w	0[$10], $11
+0700c2ba	add	1, $11
+0700c2bc	st.w	$11, 0[$10]
+0700c2c0	jr	-2152
+0700c2fe	movea	f1, $0, $1
+0700c302	cmp	$1, $10
+0700c304	be	6
+0700c306	jr	116
+0700c30a	ld.b	-23899[$4], $10
+0700c30e	cmp	0, $10
+0700c310	bne	6
+0700c316	ld.b	-23902[$4], $11
+0700c31a	shl	5, $11
+0700c31c	mov	$11, $30
+0700c31e	shl	1, $30
+0700c320	add	$30, $11
+0700c322	movhi	500, $0, $1	;0x05000000 => $1
+0700c326	movea	22d4, $1, $10
+0700c32a	add	$11, $10
+0700c32c	ld.w	0[$10], $11
+0700c330	ld.b	0[$11], $11
+0700c334	st.b	$11, -23876[$4]
+0700c338	ld.w	0[$10], $11
+0700c33c	add	1, $11
+0700c33e	st.w	$11, 0[$10]
+0700c342	jr	-2282
+0700c37a	movea	f2, $0, $1
+0700c37e	cmp	$1, $10
+0700c380	be	6
+0700c382	jr	62
+0700c3c0	movea	f3, $0, $1
+0700c3c4	cmp	$1, $10
+0700c3c6	be	6
+0700c3c8	jr	62
+0700c3cc	ld.b	-23902[$4], $10
+0700c3d0	shl	5, $10
+0700c3d2	mov	$10, $30
+0700c3d4	shl	1, $30
+0700c3d6	add	$30, $10
+0700c3d8	movhi	500, $0, $1	;0x05000000 => $1
+0700c3dc	movea	22cc, $1, $12
+0700c3e0	add	$10, $12
+0700c3e2	addi	8, $12, $10
+0700c3e6	ld.w	0[$10], $11
+0700c3ea	ld.b	0[$11], $11
+0700c3ee	st.b	$11, 22[$12]
+0700c3f2	ld.w	0[$10], $11
+0700c3f6	add	1, $11
+0700c3f8	st.w	$11, 0[$10]
+0700c3fc	mov	1, $10
+0700c3fe	st.b	$10, -23895[$4]
+0700c402	jr	-2474
+0700c406	movea	f4, $0, $1
+0700c40a	cmp	$1, $10
+0700c40c	be	6
+0700c40e	jr	154
+0700c412	ld.b	-23902[$4], $10
+0700c416	shl	5, $10
+0700c418	mov	$10, $30
+0700c41a	shl	1, $30
+0700c41c	add	$30, $10
+0700c41e	movhi	500, $0, $1	;0x05000000 => $1
+0700c422	movea	22cc, $1, $12
+0700c426	add	$10, $12
+0700c428	addi	8, $12, $10
+0700c42c	mov	1, $14
+0700c42e	ld.w	0[$10], $11
+0700c432	ld.b	0[$11], $11
+0700c436	st.b	$11, 23[$12]
+0700c43a	ld.w	0[$10], $11
+0700c43e	add	1, $11
+0700c440	st.w	$11, 0[$10]
+0700c444	ld.b	-23902[$4], $10
+0700c448	shl	5, $10
+0700c44a	mov	$10, $30
+0700c44c	shl	1, $30
+0700c44e	add	$30, $10
+0700c450	movhi	500, $0, $1	;0x05000000 => $1
+0700c454	movea	22cc, $1, $12
+0700c458	add	$10, $12
+0700c45a	addi	8, $12, $10
+0700c45e	ld.w	0[$10], $11
+0700c462	ld.b	0[$11], $11
+0700c466	st.b	$11, 24[$12]
+0700c46a	ld.w	0[$10], $11
+0700c46e	add	1, $11
+0700c470	st.w	$11, 0[$10]
+0700c474	ld.b	-23902[$4], $10
+0700c478	shl	5, $10
+0700c47a	mov	$10, $30
+0700c47c	shl	1, $30
+0700c47e	add	$30, $10
+0700c480	movhi	500, $0, $1	;0x05000000 => $1
+0700c484	movea	22cc, $1, $12
+0700c488	add	$10, $12
+0700c48a	addi	8, $12, $10
+0700c48e	ld.w	0[$10], $11
+0700c492	ld.b	0[$11], $11
+0700c496	st.b	$11, 25[$12]
+0700c49a	ld.w	0[$10], $11
+0700c49e	add	1, $11
+0700c4a0	st.w	$11, 0[$10]
+0700c4a4	jr	-2636
+0700c4a8	movea	f5, $0, $1
+0700c4ac	cmp	$1, $10
+0700c4ae	be	6
+0700c4b0	jr	28
+
+0700c4cc	movea	f6, $0, $1
+0700c4d0	cmp	$1, $10
+0700c4d2	be	6
+0700c4d4	jr	154
+0700c56e	movea	f7, $0, $1
+0700c572	cmp	$1, $10
+0700c574	be	6
+0700c576	jr	28
+0700c592	movea	f8, $0, $1
+0700c596	cmp	$1, $10
+0700c598	be	6
+0700c59a	jr	298
+0700c59e	ld.b	-23902[$4], $11
+0700c5a2	shl	5, $11
+0700c5a4	mov	$11, $30
+0700c5a6	shl	1, $30
+0700c5a8	add	$30, $11
+0700c5aa	movhi	500, $0, $1	;0x05000000 => $1
+0700c5ae	movea	22d4, $1, $10
+0700c5b2	add	$11, $10
+0700c5b4	ld.w	0[$10], $12
+0700c5b8	ld.b	0[$12], $13
+0700c5bc	andi	ff, $13, $11
+0700c5c0	addi	1, $12, $13
+0700c5c4	st.w	$13, 0[$10]
+0700c5c8	ld.b	-23902[$4], $12
+0700c5cc	shl	5, $12
+0700c5ce	mov	$12, $30
+0700c5d0	shl	1, $30
+0700c5d2	add	$30, $12
+0700c5d4	movhi	500, $0, $1	;0x05000000 => $1
+0700c5d8	movea	22d4, $1, $10
+0700c5dc	add	$12, $10
+0700c5de	andi	ffff, $11, $13
+0700c5e2	ld.w	0[$10], $12
+0700c5e6	ld.b	0[$12], $11
+0700c5ea	andi	ff, $11, $11
+0700c5ee	shl	8, $11
+0700c5f0	shl	-16, $11	;shift left 24 bits
+0700c5f2	sar	-16, $11	;sign extend 8 to 32 bit
+0700c5f4	andi	ffff, $11, $11
+0700c5f8	or	$11, $13
+0700c5fa	mov	$13, $11
+0700c5fc	shl	-16, $11	;shift left 24 bits
+0700c5fe	sar	-16, $11	;sign extend 8 to 32 bit
+0700c600	addi	1, $12, $13
+0700c604	st.w	$13, 0[$10]
+0700c608	ld.b	-23902[$4], $12
+0700c60c	shl	5, $12
+0700c60e	mov	$12, $30
+0700c610	shl	1, $30
+0700c612	add	$30, $12
+0700c614	movhi	500, $0, $1	;0x05000000 => $1
+0700c618	movea	22cc, $1, $10
+0700c61c	add	$12, $10
+0700c61e	andi	ffff, $11, $12
+0700c622	ld.w	4[$10], $13
+0700c626	add	$12, $13
+0700c628	ld.h	2[$10], $12
+0700c62c	andi	ffff, $12, $12
+0700c630	sub	$12, $13
+0700c632	add	8, $10
+0700c634	ld.w	0[$10], $12
+0700c638	addi	1, $12, $16
+0700c63c	ld.b	0[$12], $11
+0700c640	st.w	$16, 0[$10]
+0700c644	andi	ff, $11, $10
+0700c648	bne	6
+0700c64a	jr	98
+0700c64e	ld.b	-23902[$4], $10
+0700c652	shl	5, $10
+0700c654	mov	$10, $30
+0700c656	shl	1, $30
+0700c658	add	$30, $10
+0700c65a	movhi	500, $10, $1
+0700c65e	st.b	$11, 8984[$1]
+0700c662	ld.b	-23902[$4], $11
+0700c666	shl	5, $11
+0700c668	mov	$11, $30
+0700c66a	shl	1, $30
+0700c66c	add	$30, $11
+0700c66e	movhi	500, $0, $1	;0x05000000 => $1
+0700c672	movea	22cc, $1, $10
+0700c676	add	$11, $10
+0700c678	ld.w	8[$10], $11
+0700c67c	st.w	$11, 72[$10]
+0700c680	ld.b	-23902[$4], $10
+0700c684	shl	5, $10
+0700c686	mov	$10, $30
+0700c688	shl	1, $30
+0700c68a	add	$30, $10
+0700c68c	movhi	500, $10, $1
+0700c690	st.w	$13, 8940[$1]
+0700c694	ld.b	-23902[$4], $10
+0700c698	shl	5, $10
+0700c69a	mov	$10, $30
+0700c69c	shl	1, $30
+0700c69e	add	$30, $10
+0700c6a0	movhi	500, $10, $1
+0700c6a4	st.w	$13, 8916[$1]
+0700c6a8	jr	-3152
+0700c6ac	ld.b	-23902[$4], $10
+0700c6b0	shl	5, $10
+0700c6b2	mov	$10, $30
+0700c6b4	shl	1, $30
+0700c6b6	add	$30, $10
+0700c6b8	movhi	500, $10, $1
+0700c6bc	st.w	$13, 8916[$1]
+0700c6c0	jr	-3176
+0700c6c4	movea	f9, $0, $1
+0700c6c8	cmp	$1, $10
+0700c6ca	be	6
+0700c6cc	jr	380
+0700c6d0	ld.b	-23902[$4], $11
+0700c6d4	shl	5, $11
+0700c6d6	mov	$11, $30
+0700c6d8	shl	1, $30
+0700c6da	add	$30, $11
+0700c6dc	movhi	500, $0, $1	;0x05000000 => $1
+0700c6e0	movea	22cc, $1, $10
+0700c6e4	add	$11, $10
+0700c6e6	ld.w	8[$10], $12
+0700c6ea	ld.b	0[$12], $11
+0700c6ee	andi	ff, $11, $11
+0700c6f2	bne	6
+0700c6f8	st.w	$12, 36[$10]
+0700c6fc	ld.b	-23902[$4], $11
+0700c700	shl	5, $11
+0700c702	mov	$11, $30
+0700c704	shl	1, $30
+0700c706	add	$30, $11
+0700c708	movhi	500, $0, $1	;0x05000000 => $1
+0700c70c	movea	22cc, $1, $10
+0700c710	add	$11, $10
+0700c712	ld.w	36[$10], $11
+0700c716	st.w	$11, 60[$10]
+0700c71a	ld.b	-23902[$4], $11
+0700c71e	shl	5, $11
+0700c720	mov	$11, $30
+0700c722	shl	1, $30
+0700c724	add	$30, $11
+0700c726	movhi	500, $0, $1	;0x05000000 => $1
+0700c72a	movea	22cc, $1, $10
+0700c72e	add	$11, $10
+0700c730	ld.w	60[$10], $11
+0700c734	ld.b	1[$11], $11
+0700c738	andi	ff, $11, $11
+0700c73c	andi	7f, $11, $11
+0700c740	shl	-8, $11
+0700c742	sar	-8, $11
+0700c744	st.b	$11, 64[$10]
+0700c748	mov	1, $10
+0700c74a	st.b	$10, -23894[$4]
+0700c74e	ld.b	-23902[$4], $11
+0700c752	shl	5, $11
+0700c754	mov	$11, $30
+0700c756	shl	1, $30
+0700c758	add	$30, $11
+0700c75a	movhi	500, $0, $1	;0x05000000 => $1
+0700c75e	movea	22d4, $1, $10
+0700c762	add	$11, $10
+0700c764	ld.w	0[$10], $11
+0700c768	add	1, $11
+0700c76a	st.w	$11, 0[$10]
+0700c76e	jr	44
+0700c772	addi	1, $12, $11
+0700c776	st.w	$11, 0[$10]
+0700c77a	ld.b	-23902[$4], $11
+0700c77e	shl	5, $11
+0700c780	mov	$11, $30
+0700c782	shl	1, $30
+0700c784	add	$30, $11
+0700c786	movhi	500, $0, $1	;0x05000000 => $1
+0700c78a	movea	22d4, $1, $10
+0700c78e	add	$11, $10
+0700c790	ld.w	0[$10], $11
+0700c794	add	1, $11
+0700c796	st.w	$11, 0[$10]
+0700c79a	ld.b	-23902[$4], $11
+0700c79e	shl	5, $11
+0700c7a0	mov	$11, $30
+0700c7a2	shl	1, $30
+0700c7a4	add	$30, $11
+0700c7a6	movhi	500, $0, $1	;0x05000000 => $1
+0700c7aa	movea	22d4, $1, $10
+0700c7ae	add	$11, $10
+0700c7b0	ld.w	0[$10], $12
+0700c7b4	ld.b	0[$12], $11
+0700c7b8	andi	ff, $11, $11
+0700c7bc	andi	7f, $11, $11
+0700c7c0	bne	-78
+0700c7c2	jr	98
+0700c824	ld.b	-23902[$4], $11
+0700c828	shl	5, $11
+0700c82a	mov	$11, $30
+0700c82c	shl	1, $30
+0700c82e	add	$30, $11
+0700c830	movhi	500, $0, $1	;0x05000000 => $1
+0700c834	movea	22d4, $1, $10
+0700c838	add	$11, $10
+0700c83a	ld.w	0[$10], $11
+0700c83e	add	1, $11
+0700c840	st.w	$11, 0[$10]
+0700c844	jr	-3564
+0700c848	movea	fa, $0, $1
+0700c84c	cmp	$1, $10
+0700c84e	be	6
+0700c850	jr	58
+0700c854	ld.b	-23902[$4], $10
+0700c858	shl	5, $10
+0700c85a	mov	$10, $30
+0700c85c	shl	1, $30
+0700c85e	add	$30, $10
+0700c860	movhi	500, $0, $1	;0x05000000 => $1
+0700c864	movea	22cc, $1, $12
+0700c868	add	$10, $12
+0700c86a	addi	8, $12, $10
+0700c86e	mov	1, $14
+0700c870	ld.w	0[$10], $11
+0700c874	ld.b	0[$11], $11
+0700c878	st.b	$11, 40[$12]
+0700c87c	ld.w	0[$10], $11
+0700c880	add	1, $11
+0700c882	st.w	$11, 0[$10]
+0700c886	jr	-3630
+0700c88a	movea	fb, $0, $1
+0700c88e	cmp	$1, $10
+0700c890	be	6
+0700c892	jr	114
+0700c904	movea	fc, $0, $1
+0700c908	cmp	$1, $10
+0700c90a	be	6
+0700c90c	jr	154
+0700c9a6	movea	fd, $0, $1
+0700c9aa	cmp	$1, $10
+0700c9ac	be	6
+0700c9ae	jr	142
+0700ca3c	movea	fe, $0, $1
+0700ca40	cmp	$1, $10
+0700ca42	be	6
+0700ca44	jr	142
+0700ca48	ld.b	-23902[$4], $11
+0700ca4c	shl	5, $11
+0700ca4e	mov	$11, $30
+0700ca50	shl	1, $30
+0700ca52	add	$30, $11
+0700ca54	movhi	500, $0, $1	;0x05000000 => $1
+0700ca58	movea	22cc, $1, $10
+0700ca5c	add	$11, $10
+0700ca5e	ld.w	8[$10], $12
+0700ca62	ld.w	48[$10], $13
+0700ca66	cmp	$13, $12
+0700ca68	bne	6
+0700ca6a	jr	12
+0700ca6e	cmp	0, $13
+0700ca70	be	6
+0700ca72	jr	58
+0700ca76	ld.b	-23902[$4], $10
+0700ca7a	shl	5, $10
+0700ca7c	mov	$10, $30
+0700ca7e	shl	1, $30
+0700ca80	add	$30, $10
+0700ca82	movhi	500, $10, $1
+0700ca86	st.w	$0, 8956[$1]
+0700ca8a	ld.b	-23902[$4], $11
+0700ca8e	shl	5, $11
+0700ca90	mov	$11, $30
+0700ca92	shl	1, $30
+0700ca94	add	$30, $11
+0700ca96	movhi	500, $0, $1	;0x05000000 => $1
+0700ca9a	movea	22cc, $1, $10
+0700ca9e	add	$11, $10
+0700caa0	ld.w	8[$10], $11
+0700caa4	st.w	$11, 88[$10]
+0700caa8	jr	-4176
+0700caac	st.w	$12, 88[$10]
+0700cab0	ld.b	-23902[$4], $11
+0700cab4	shl	5, $11
+0700cab6	mov	$11, $30
+0700cab8	shl	1, $30
+0700caba	add	$30, $11
+0700cabc	movhi	500, $0, $1	;0x05000000 => $1
+0700cac0	movea	22cc, $1, $10
+0700cac4	add	$11, $10
+0700cac6	ld.w	48[$10], $11
+0700caca	st.w	$11, 8[$10]
+0700cace	jr	-4214
+0700cad2	movea	ff, $0, $1
+0700cad6	cmp	$1, $10
+0700cad8	be	6
+0700cade	ld.b	-23902[$4], $11
+0700cae2	shl	5, $11
+0700cae4	mov	$11, $30
+0700cae6	shl	1, $30
+0700cae8	add	$30, $11
+0700caea	movhi	500, $0, $1	;0x05000000 => $1
+0700caee	movea	22cc, $1, $10
+0700caf2	add	$11, $10
+0700caf4	ld.w	8[$10], $12
+0700caf8	ld.w	52[$10], $13
+0700cafc	cmp	$13, $12
+0700cafe	bne	6
+0700cb00	jr	12
+0700cb04	cmp	0, $13
+0700cb06	be	6
+0700cb08	jr	58
+0700cb0c	ld.b	-23902[$4], $10
+0700cb10	shl	5, $10
+0700cb12	mov	$10, $30
+0700cb14	shl	1, $30
+0700cb16	add	$30, $10
+0700cb18	movhi	500, $10, $1
+0700cb1c	st.w	$0, 8960[$1]
+0700cb20	ld.b	-23902[$4], $11
+0700cb24	shl	5, $11
+0700cb26	mov	$11, $30
+0700cb28	shl	1, $30
+0700cb2a	add	$30, $11
+0700cb2c	movhi	500, $0, $1	;0x05000000 => $1
+0700cb30	movea	22cc, $1, $10
+0700cb34	add	$11, $10
+0700cb36	ld.w	8[$10], $11
+0700cb3a	st.w	$11, 92[$10]
+0700cb3e	jr	-4326
+0700cb42	st.w	$12, 92[$10]
+0700cb46	ld.b	-23902[$4], $11
+0700cb4a	shl	5, $11
+0700cb4c	mov	$11, $30
+0700cb4e	shl	1, $30
+0700cb50	add	$30, $11
+0700cb52	movhi	500, $0, $1	;0x05000000 => $1
+0700cb56	movea	22cc, $1, $10
+0700cb5a	add	$11, $10
+0700cb5c	ld.w	52[$10], $11
+0700cb60	st.w	$11, 8[$10]
+0700cb64	jr	-4364
+0700cb68	ld.b	-23902[$4], $10
+0700cb6c	shl	5, $10
+0700cb6e	mov	$10, $30
+0700cb70	shl	1, $30
+0700cb72	add	$30, $10
+0700cb74	movhi	500, $10, $1
+0700cb78	ld.h	8976[$1], $11
+0700cb7c	cmp	0, $11
+0700cb7e	bne	6
+0700cb80	jr	386
+0700cb84	movhi	500, $10, $1
+0700cb88	ld.b	8932[$1], $11
+0700cb8c	andi	ff, $11, $11
+0700cb90	bne	6
+0700cb92	jr	166
+0700cb96	movhi	500, $0, $1	;0x05000000 => $1
+0700cb9a	movea	2319, $1, $12
+0700cb9e	add	$10, $12
+0700cba0	ld.b	0[$12], $11
+0700cba4	andi	ff, $11, $13
+0700cba8	movhi	500, $10, $1
+0700cbac	ld.b	8931[$1], $11
+0700cbb0	andi	ff, $11, $11
+0700cbb4	cmp	$11, $13
+0700cbb6	blt	6
+0700cbb8	jr	20
+0700cbcc	movhi	500, $0, $1	;0x05000000 => $1
+0700cbd0	movea	231d, $1, $12
+0700cbd4	add	$10, $12
+0700cbd6	ld.b	0[$12], $11
+0700cbda	andi	ff, $11, $13
+0700cbde	movhi	500, $10, $1
+0700cbe2	ld.b	8948[$1], $11
+0700cbe6	andi	ff, $11, $11
+0700cbea	cmp	$11, $13
+0700cbec	blt	6
+0700cbee	jr	16
+0700cbf2	addi	1, $13, $10
+0700cbf6	shl	-8, $10
+0700cbf8	sar	-8, $10
+0700cbfa	st.b	$10, 0[$12]
+0700cbfe	ld.b	-23902[$4], $10
+0700cc02	shl	5, $10
+0700cc04	mov	$10, $30
+0700cc06	shl	1, $30
+0700cc08	add	$30, $10
+0700cc0a	movhi	500, $0, $1	;0x05000000 => $1
+0700cc0e	movea	231a, $1, $12
+0700cc12	add	$10, $12
+0700cc14	ld.b	0[$12], $11
+0700cc18	movhi	500, $10, $1
+0700cc1c	ld.b	8932[$1], $13
+0700cc20	andi	ff, $11, $11
+0700cc24	andi	ff, $13, $13
+0700cc28	add	$13, $11
+0700cc2a	shl	-8, $11
+0700cc2c	sar	-8, $11
+0700cc2e	st.b	$11, 0[$12]
+0700cc32	mov	1, $10
+0700cc34	st.b	$10, -23895[$4]
+0700cc38	ld.b	-23902[$4], $10
+0700cc3c	shl	5, $10
+0700cc3e	mov	$10, $30
+0700cc40	shl	1, $30
+0700cc42	add	$30, $10
+0700cc44	movhi	500, $0, $1	;0x05000000 => $1
+0700cc48	movea	22e7, $1, $12
+0700cc4c	mov	$10, $11
+0700cc4e	add	$12, $11
+0700cc50	ld.b	0[$11], $11
+0700cc54	andi	ff, $11, $11
+0700cc58	bne	6
+0700cc5a	jr	168
+0700cd02	ld.w	36[$3], $31
+0700cd06	ld.w	24[$3], $20
+0700cd0a	ld.w	28[$3], $21
+0700cd0e	ld.w	32[$3], $22
+0700cd12	addi	28, $3, $3
+0700cd16	jmp	[$31]	;return
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700cd18	add	-12, $3
+0700cd1a	ld.b	-23902[$4], $10
+0700cd1e	cmp	6, $10
+0700cd20	bge	6
+0700cd26	shl	5, $10
+0700cd28	mov	$10, $30
+0700cd2a	shl	1, $30
+0700cd2c	add	$30, $10
+0700cd2e	movhi	500, $10, $1
+0700cd32	ld.b	8926[$1], $10
+0700cd36	andi	ff, $10, $10
+0700cd3a	bne	6
+0700cd40	ld.w	-23924[$4], $10
+0700cd44	cmp	0, $10
+0700cd46	bne	6
+0700cd48	jr	16
+0700cd58	ld.b	-23897[$4], $10
+0700cd5c	andi	ff, $10, $10
+0700cd60	bne	6
+0700cd62	jr	18
+0700cd66	ld.b	-23901[$4], $10
+0700cd6a	shl	6, $10
+0700cd6c	movhi	100, $10, $1
+0700cd70	st.b	$0, 1024[$1]
+0700cd74	ld.b	-23895[$4], $10
+0700cd78	andi	ff, $10, $10
+0700cd7c	bne	6
+0700cd7e	jr	530
+0700cd82	ld.b	-23902[$4], $10
+0700cd86	shl	5, $10
+0700cd88	mov	$10, $30
+0700cd8a	shl	1, $30
+0700cd8c	add	$30, $10
+0700cd8e	movhi	500, $10, $1
+0700cd92	ld.b	8920[$1], $11
+0700cd96	movhi	500, $10, $1
+0700cd9a	ld.b	8929[$1], $12
+0700cd9e	andi	ff, $11, $11
+0700cda2	add	$12, $11
+0700cda4	shl	8, $11
+0700cda6	movhi	500, $10, $1
+0700cdaa	ld.b	8930[$1], $12
+0700cdae	andi	ff, $12, $12
+0700cdb2	add	$12, $11
+0700cdb4	mov	$11, $12
+0700cdb6	shl	-16, $12	;shift left 24 bits
+0700cdb8	sar	-16, $12	;sign extend 8 to 32 bit
+0700cdba	movhi	500, $10, $1
+0700cdbe	ld.b	8932[$1], $11
+0700cdc2	andi	ff, $11, $11
+0700cdc6	bne	6
+0700cdc8	jr	218
+0700cdcc	movhi	500, $10, $1
+0700cdd0	ld.b	8985[$1], $11
+0700cdd4	movhi	500, $10, $1
+0700cdd8	ld.b	8931[$1], $13
+0700cddc	andi	ff, $11, $11
+0700cde0	andi	ff, $13, $13
+0700cde4	cmp	$13, $11
+0700cde6	be	6
+0700cdec	movhi	500, $10, $1
+0700cdf0	ld.b	8986[$1], $10
+0700cdf4	andi	ff, $10, $10
+0700cdf8	addi	40, $10, $10
+0700cdfc	mov	$10, $11
+0700cdfe	shl	-8, $11
+0700ce00	sar	-8, $11
+0700ce02	andi	ff, $11, $10
+0700ce06	movea	80, $0, $1
+0700ce0a	cmp	$1, $10
+0700ce0c	st.w	$10, 8[$3]
+0700ce10	bge	6
+0700ce12	jr	28
+0700ce16	movea	ff, $0, $10
+0700ce1a	st.w	$10, 0[$3]
+0700ce1e	ld.w	8[$3], $11
+0700ce22	ld.w	0[$3], $10
+0700ce26	sub	$11, $10
+0700ce28	mov	$10, $11
+0700ce2a	shl	-8, $11
+0700ce2c	sar	-8, $11
+0700ce2e	ld.b	-23902[$4], $13
+0700ce32	shl	5, $13
+0700ce34	mov	$13, $30
+0700ce36	shl	1, $30
+0700ce38	add	$30, $13
+0700ce3a	st.w	$13, 4[$3]
+0700ce3e	movhi	500, $13, $1
+0700ce42	ld.b	8933[$1], $14
+0700ce46	movhi	500, $13, $1
+0700ce4a	ld.b	8948[$1], $15
+0700ce4e	andi	ff, $14, $10
+0700ce52	andi	ff, $15, $14
+0700ce56	bne	6
+0700ce5c	andi	ffff, $10, $13
+0700ce60	st.w	$13, 0[$3]
+0700ce64	ld.w	4[$3], $13
+0700ce68	movhi	500, $13, $1
+0700ce6c	ld.b	8989[$1], $10
+0700ce70	ld.w	0[$3], $13
+0700ce74	andi	ff, $10, $10
+0700ce78	mul	$10, $13
+0700ce7a	div	$14, $13
+0700ce7c	mov	$13, $10
+0700ce7e	shl	-16, $10	;shift left 24 bits
+0700ce80	sar	-16, $10	;sign extend 8 to 32 bit
+0700ce82	mov	$12, $13
+0700ce84	andi	ff, $11, $12
+0700ce88	addi	ffc0, $12, $12
+0700ce8c	shl	-16, $12	;shift left 24 bits
+0700ce8e	sar	-16, $12	;sign extend 8 to 32 bit
+0700ce90	shl	2, $12
+0700ce92	andi	ffff, $10, $14
+0700ce96	mul	$14, $12
+0700ce98	sar	4, $12
+0700ce9a	add	$12, $13
+0700ce9c	mov	$13, $12
+0700ce9e	shl	-16, $12	;shift left 24 bits
+0700cea0	sar	-16, $12	;sign extend 8 to 32 bit
+0700cea2	ld.b	-23902[$4], $10
+0700cea6	shl	5, $10
+0700cea8	mov	$10, $30
+0700ceaa	shl	1, $30
+0700ceac	add	$30, $10
+0700ceae	movhi	500, $10, $1
+0700ceb2	ld.b	8935[$1], $11
+0700ceb6	andi	ff, $11, $13
+0700ceba	bne	6
+0700cebc	jr	90
+0700cf16	mov	$12, $13
+0700cf18	sar	8, $13
+0700cf1a	shl	1, $13
+0700cf1c	movhi	0, $13, $1
+0700cf20	ld.h	-10800[$1], $10
+0700cf24	movhi	0, $13, $1
+0700cf28	ld.h	-10798[$1], $11
+0700cf2c	andi	ffff, $10, $10
+0700cf30	sub	$10, $11
+0700cf32	andi	ff, $12, $14
+0700cf36	mul	$14, $11
+0700cf38	sar	8, $11
+0700cf3a	mov	$11, $12
+0700cf3c	shl	-16, $12	;shift left 24 bits
+0700cf3e	sar	-16, $12	;sign extend 8 to 32 bit
+0700cf40	andi	ffff, $12, $11
+0700cf44	add	$10, $11
+0700cf46	mov	$11, $10
+0700cf48	shl	-16, $10	;shift left 24 bits
+0700cf4a	sar	-16, $10	;sign extend 8 to 32 bit
+0700cf4c	ld.b	-23901[$4], $11
+0700cf50	shl	6, $11
+0700cf52	mov	$10, $12
+0700cf54	shl	-8, $12
+0700cf56	sar	-8, $12
+0700cf58	andi	ff, $12, $12
+0700cf5c	andi	ff, $12, $12
+0700cf60	shl	-8, $12
+0700cf62	sar	-8, $12
+0700cf64	movhi	100, $11, $1
+0700cf68	st.b	$12, 1032[$1]
+0700cf6c	ld.b	-23901[$4], $11
+0700cf70	shl	6, $11
+0700cf72	andi	ffff, $10, $12
+0700cf76	sar	8, $12
+0700cf78	shl	-8, $12
+0700cf7a	sar	-8, $12
+0700cf7c	andi	ff, $12, $12
+0700cf80	andi	7, $12, $12
+0700cf84	shl	-8, $12
+0700cf86	sar	-8, $12
+0700cf88	movhi	100, $11, $1
+0700cf8c	st.b	$12, 1036[$1]
+0700cf90	ld.b	-23896[$4], $10
+0700cf94	andi	ff, $10, $10
+0700cf98	bne	6
+0700cf9a	jr	340
+0700cf9e	ld.b	-23902[$4], $12
+0700cfa2	shl	5, $12
+0700cfa4	mov	$12, $30
+0700cfa6	shl	1, $30
+0700cfa8	add	$30, $12
+0700cfaa	movhi	500, $12, $1
+0700cfae	ld.b	8924[$1], $10
+0700cfb2	andi	ff, $10, $11
+0700cfb6	movhi	500, $12, $1
+0700cfba	ld.b	8925[$1], $10
+0700cfbe	andi	ff, $10, $10
+0700cfc2	movhi	0, $10, $1
+0700cfc6	ld.b	-10830[$1], $10
+0700cfca	andi	ff, $10, $10
+0700cfce	mul	$10, $11
+0700cfd0	mov	$11, $10
+0700cfd2	shl	-16, $10	;shift left 24 bits
+0700cfd4	sar	-16, $10	;sign extend 8 to 32 bit
+0700cfd6	andi	ffff, $10, $11
+0700cfda	movhi	500, $12, $1
+0700cfde	ld.b	8926[$1], $10
+0700cfe2	andi	ff, $10, $10
+0700cfe6	andi	ffff, $10, $10
+0700cfea	add	1, $10
+0700cfec	mul	$10, $11
+0700cfee	sar	8, $11
+0700cff0	mov	$11, $10
+0700cff2	shl	-16, $10	;shift left 24 bits
+0700cff4	sar	-16, $10	;sign extend 8 to 32 bit
+0700cff6	ld.b	-23899[$4], $11
+0700cffa	cmp	0, $11
+0700cffc	bne	6
+0700d002	andi	ffff, $10, $11
+0700d006	ld.h	-23920[$4], $10
+0700d00a	add	1, $10
+0700d00c	mul	$10, $11
+0700d00e	sar	8, $11
+0700d010	mov	$11, $10
+0700d012	shl	-16, $10	;shift left 24 bits
+0700d014	sar	-16, $10	;sign extend 8 to 32 bit
+0700d016	ld.b	-23902[$4], $12
+0700d01a	shl	5, $12
+0700d01c	mov	$12, $30
+0700d01e	shl	1, $30
+0700d020	add	$30, $12
+0700d022	andi	ffff, $10, $11
+0700d026	movhi	500, $12, $1
+0700d02a	ld.b	8927[$1], $13
+0700d02e	movhi	500, $12, $1
+0700d032	ld.b	8924[$1], $10
+0700d036	andi	ff, $13, $13
+0700d03a	add	1, $13
+0700d03c	mul	$13, $11
+0700d03e	sar	12, $11
+0700d040	andi	f, $11, $13
+0700d044	mov	$13, $11
+0700d046	shl	-8, $11
+0700d048	sar	-8, $11
+0700d04a	andi	ff, $10, $13
+0700d04e	movhi	500, $12, $1
+0700d052	ld.b	8925[$1], $10
+0700d056	andi	ff, $10, $10
+0700d05a	movhi	0, $10, $1
+0700d05e	ld.b	-10815[$1], $10
+0700d062	andi	ff, $10, $10
+0700d066	mul	$10, $13
+0700d068	mov	$13, $10
+0700d06a	shl	-16, $10	;shift left 24 bits
+0700d06c	sar	-16, $10	;sign extend 8 to 32 bit
+0700d06e	andi	ffff, $10, $13
+0700d072	movhi	500, $12, $1
+0700d076	ld.b	8926[$1], $10
+0700d07a	ld.b	-23899[$4], $12
+0700d07e	andi	ff, $10, $10
+0700d082	andi	ffff, $10, $10
+0700d086	add	1, $10
+0700d088	mul	$10, $13
+0700d08a	sar	8, $13
+0700d08c	mov	$13, $10
+0700d08e	shl	-16, $10	;shift left 24 bits
+0700d090	sar	-16, $10	;sign extend 8 to 32 bit
+0700d092	cmp	0, $12
+0700d094	bne	6
+0700d09a	andi	ffff, $10, $12
+0700d09e	ld.h	-23920[$4], $10
+0700d0a2	add	1, $10
+0700d0a4	mul	$10, $12
+0700d0a6	sar	8, $12
+0700d0a8	mov	$12, $10
+0700d0aa	shl	-16, $10	;shift left 24 bits
+0700d0ac	sar	-16, $10	;sign extend 8 to 32 bit
+0700d0ae	andi	ff, $11, $12
+0700d0b2	andi	ffff, $10, $11
+0700d0b6	ld.b	-23902[$4], $13
+0700d0ba	shl	5, $13
+0700d0bc	mov	$13, $30
+0700d0be	shl	1, $30
+0700d0c0	add	$30, $13
+0700d0c2	movhi	500, $13, $1
+0700d0c6	ld.b	8927[$1], $13
+0700d0ca	ld.b	-23901[$4], $10
+0700d0ce	andi	ff, $13, $13
+0700d0d2	add	1, $13
+0700d0d4	mul	$13, $11
+0700d0d6	sar	8, $11
+0700d0d8	andi	f0, $11, $11
+0700d0dc	or	$11, $12
+0700d0de	mov	$12, $11
+0700d0e0	shl	-8, $11
+0700d0e2	sar	-8, $11
+0700d0e4	shl	6, $10
+0700d0e6	movhi	100, $10, $1
+0700d0ea	st.b	$11, 1028[$1]
+0700d0ee	ld.b	-23894[$4], $10
+0700d0f2	andi	ff, $10, $10
+0700d0f6	bne	6
+0700d0f8	jr	276
+0700d0fc	ld.b	-23901[$4], $11
+0700d100	ld.b	-23902[$4], $12
+0700d104	shl	6, $11
+0700d106	shl	5, $12
+0700d108	mov	$12, $30
+0700d10a	shl	1, $30
+0700d10c	movhi	500, $0, $1	;0x05000000 => $1
+0700d110	movea	2308, $1, $10
+0700d114	add	$30, $12
+0700d116	add	$10, $12
+0700d118	ld.w	0[$12], $12
+0700d11c	ld.b	0[$12], $12
+0700d120	movhi	100, $11, $1
+0700d124	st.b	$12, 1040[$1]
+0700d128	ld.b	-23902[$4], $11
+0700d12c	shl	5, $11
+0700d12e	mov	$11, $30
+0700d130	shl	1, $30
+0700d132	add	$30, $11
+0700d134	add	$10, $11
+0700d136	ld.w	0[$11], $11
+0700d13a	ld.b	1[$11], $11
+0700d13e	andi	ff, $11, $11
+0700d142	andi	80, $11, $11
+0700d146	bne	6
+0700d148	jr	10
+0700d152	mov	1, $11
+0700d154	ld.b	-23901[$4], $10
+0700d158	cmp	4, $10
+0700d15a	be	6
+0700d15c	jr	76
+0700d160	ld.b	-23899[$4], $10
+0700d164	cmp	0, $10
+0700d166	bne	6
+0700d16c	andi	ff, $11, $10
+0700d170	ld.h	-23874[$4], $11
+0700d174	andi	ffff, $11, $11
+0700d178	andi	ff, $11, $11
+0700d17c	or	$11, $10
+0700d17e	mov	$10, $11
+0700d180	shl	-8, $11
+0700d182	sar	-8, $11
+0700d184	jr	28
+0700d1a0	st.b	$0, -23892[$4]
+0700d1a4	jr	54
+0700d1a8	cmp	5, $10
+0700d1aa	be	6
+0700d1ac	jr	46
+0700d1da	ld.b	-23902[$4], $10
+0700d1de	shl	5, $10
+0700d1e0	mov	$10, $30
+0700d1e2	shl	1, $30
+0700d1e4	add	$30, $10
+0700d1e6	movhi	500, $10, $1
+0700d1ea	ld.w	8968[$1], $12
+0700d1ee	movhi	500, $10, $1
+0700d1f2	ld.w	8944[$1], $13
+0700d1f6	cmp	$13, $12
+0700d1f8	be	6
+0700d1fa	jr	18
+0700d1fe	ld.b	-23901[$4], $10
+0700d202	shl	6, $10
+0700d204	movhi	100, $10, $1
+0700d208	st.b	$11, 1044[$1]
+0700d20c	ld.b	-23892[$4], $10
+0700d210	andi	ff, $10, $10
+0700d214	bne	6
+0700d216	jr	152
+0700d2ae	ld.b	-23893[$4], $10
+0700d2b2	andi	ff, $10, $10
+0700d2b6	bne	6
+0700d2b8	jr	160
+0700d2bc	ld.b	-23901[$4], $10
+0700d2c0	cmp	5, $10
+0700d2c2	bne	6
+0700d2c8	shl	6, $10
+0700d2ca	ld.b	-23902[$4], $11
+0700d2ce	shl	5, $11
+0700d2d0	mov	$11, $30
+0700d2d2	shl	1, $30
+0700d2d4	add	$30, $11
+0700d2d6	movhi	500, $11, $1
+0700d2da	ld.b	8923[$1], $11
+0700d2de	movhi	100, $10, $1
+0700d2e2	st.b	$11, 1048[$1]
+0700d2e6	jr	114
+0700d358	ld.b	-23897[$4], $10
+0700d35c	andi	ff, $10, $10
+0700d360	cmp	1, $10
+0700d362	be	6
+0700d364	jr	22
+0700d368	ld.b	-23901[$4], $10
+0700d36c	shl	6, $10
+0700d36e	movea	ff80, $0, $11
+0700d372	movhi	100, $10, $1
+0700d376	st.b	$11, 1024[$1]
+0700d37a	add	12, $3
+0700d37c	jmp	[$31]	;return
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700d37e	movhi	500, $0, $1	;0x05000000 => $1
+0700d382	movea	230c, $1, $12
+0700d386	ld.b	-23902[$4], $10
+0700d38a	shl	5, $10
+0700d38c	mov	$10, $30
+0700d38e	shl	1, $30
+0700d390	add	$30, $10
+0700d392	add	$12, $10
+0700d394	ld.b	0[$10], $11
+0700d398	cmp	0, $11
+0700d39a	bne	6
+0700d39c	jr	110
+0700d3a0	addi	ffff, $11, $13
+0700d3a4	mov	$13, $11
+0700d3a6	shl	-8, $11
+0700d3a8	sar	-8, $11
+0700d3aa	st.b	$11, 0[$10]
+0700d3ae	mov	$11, $10
+0700d3b0	cmp	0, $10
+0700d3b2	be	6
+0700d3b4	jr	86
+0700d3b8	movhi	500, $0, $1	;0x05000000 => $1
+0700d3bc	movea	2308, $1, $11
+0700d3c0	ld.b	-23902[$4], $10
+0700d3c4	shl	5, $10
+0700d3c6	mov	$10, $30
+0700d3c8	shl	1, $30
+0700d3ca	add	$30, $10
+0700d3cc	add	$11, $10
+0700d3ce	ld.w	0[$10], $13
+0700d3d2	add	2, $13
+0700d3d4	st.w	$13, 0[$10]
+0700d3d8	ld.b	-23902[$4], $10
+0700d3dc	shl	5, $10
+0700d3de	mov	$10, $30
+0700d3e0	shl	1, $30
+0700d3e2	add	$30, $10
+0700d3e4	mov	$10, $13
+0700d3e6	add	$12, $13
+0700d3e8	mov	$10, $14
+0700d3ea	add	$11, $14
+0700d3ec	ld.w	0[$14], $14
+0700d3f0	ld.b	1[$14], $14
+0700d3f4	andi	ff, $14, $14
+0700d3f8	andi	7f, $14, $14
+0700d3fc	shl	-8, $14
+0700d3fe	sar	-8, $14
+0700d400	st.b	$14, 0[$13]
+0700d404	mov	1, $10
+0700d406	st.b	$10, -23894[$4]
+0700d40a	jmp	[$31]	;return
+//
+///////////////////////////////////
+
+;==========================================
+; --- Function: ??? ---
+;==========================================
+0700d40c	addi	ffec, $3, $3
+0700d410	st.w	$31, 16[$3]
+0700d414	ld.w	-23928[$4], $10	;var_???12 => $10
+0700d418	andi	8, $10, $11
+0700d41c	be	6
+0700d41e	jr	662
+0700d422	ori	8, $10, $10
+0700d426	st.w	$10, -23928[$4]	;$10 => var_???12
+0700d42a	movea	ffef, $0, $11
+0700d42e	and	$10, $11
+0700d430	st.w	$11, -23928[$4]	;$11 => var_???12
+0700d434	st.b	$0, -23904[$4]
+0700d438	st.b	$0, -23901[$4]
+0700d43c	mov	1, $10
+0700d43e	st.b	$10, -23900[$4]
+0700d442	st.b	$0, -23899[$4]
+0700d446	ld.b	-23878[$4], $10
+0700d44a	st.b	$10, -23877[$4]
+0700d44e	ld.b	-23876[$4], $10
+0700d452	st.b	$10, -23875[$4]
+0700d456	st.b	$0, -23902[$4]
+0700d45a	jr	574
+0700d45e	mov	$10, $11
+0700d460	shl	5, $11
+0700d462	mov	$11, $30
+0700d464	shl	1, $30
+0700d466	add	$30, $11
+0700d468	movhi	500, $0, $1	;0x05000000 => $1
+0700d46c	movea	22cc, $1, $10
+0700d470	add	$11, $10
+0700d472	ld.b	0[$10], $11
+0700d476	andi	ff, $11, $11
+0700d47a	bne	6
+0700d47c	jr	456
+
+///////////////////////////////////
+//
+0700d480	st.b	$0, -23897[$4]
+0700d484	st.b	$0, -23896[$4]
+0700d488	st.b	$0, -23895[$4]
+0700d48c	st.b	$0, -23894[$4]
+0700d490	st.b	$0, -23893[$4]
+0700d494	st.b	$0, -23892[$4]
+0700d498	ld.b	-23899[$4], $11
+0700d49c	cmp	0, $11
+0700d49e	bne	6
+0700d4a4	addi	13, $10, $10
+0700d4a8	ld.b	-23877[$4], $11
+0700d4ac	ld.b	0[$10], $12
+0700d4b0	andi	ff, $12, $12
+0700d4b4	andi	ff, $11, $13
+0700d4b8	cmp	$13, $12
+0700d4ba	bne	6
+0700d4bc	jr	14
+0700d4c0	st.b	$11, 0[$10]
+0700d4c4	mov	1, $10
+0700d4c6	st.b	$10, -23896[$4]
+0700d4ca	ld.b	-23902[$4], $10
+0700d4ce	shl	5, $10
+0700d4d0	mov	$10, $30
+0700d4d2	shl	1, $30
+0700d4d4	add	$30, $10
+0700d4d6	ld.b	-23875[$4], $11
+0700d4da	movhi	500, $10, $1
+0700d4de	st.b	$11, 8928[$1]
+0700d4e2	ld.h	-23880[$4], $10
+0700d4e6	cmp	0, $10
+0700d4e8	bne	6
+0700d4ea	jr	10
+0700d4f4	jal	-7120
+0700d4f8	ld.b	-23899[$4], $10
+0700d4fc	cmp	0, $10
+0700d4fe	bne	6
+0700d504	ld.w	-23928[$4], $10	;var_???12 => $10
+0700d508	andi	2, $10, $10
+0700d50c	be	6
+0700d512	ld.b	-23899[$4], $10
+0700d516	cmp	0, $10
+0700d518	bne	6
+0700d51e	ld.w	-23928[$4], $10	;var_???12 => $10
+0700d522	andi	10, $10, $11
+0700d526	bne	6
+0700d528	jr	192
+0700d5e8	ld.b	-23902[$4], $10
+0700d5ec	shl	5, $10
+0700d5ee	mov	$10, $30
+0700d5f0	shl	1, $30
+0700d5f2	add	$30, $10
+0700d5f4	movhi	500, $10, $1
+0700d5f8	ld.b	8908[$1], $10
+0700d5fc	andi	ff, $10, $10
+0700d600	bne	6
+0700d606	jal	-648
+0700d60a	ld.b	-23904[$4], $10
+0700d60e	ld.b	-23900[$4], $11
+0700d612	andi	ff, $10, $10
+0700d616	and	$11, $10
+0700d618	be	6
+0700d61e	jal	-2310
+0700d622	ld.b	-23899[$4], $10
+0700d626	cmp	0, $10
+0700d628	be	6
+0700d62a	jr	26
+//
+///////////////////////////////////
+
+0700d644	ld.b	-23900[$4], $10
+0700d648	shl	1, $10
+0700d64a	shl	-8, $10
+0700d64c	sar	-8, $10
+0700d64e	st.b	$10, -23900[$4]
+0700d652	ld.b	-23901[$4], $10
+0700d656	add	1, $10
+0700d658	mov	$10, $11
+0700d65a	shl	-8, $11
+0700d65c	sar	-8, $11
+0700d65e	mov	$11, $10
+0700d660	cmp	6, $10
+0700d662	st.b	$11, -23901[$4]
+0700d666	be	6
+0700d668	jr	34
+0700d66c	ld.b	-23883[$4], $10
+0700d670	andi	ff, $10, $10
+0700d674	be	6
+0700d67a	st.b	$0, -23901[$4]
+0700d67e	mov	1, $10
+0700d680	st.b	$10, -23900[$4]
+0700d684	mov	1, $10
+0700d686	st.b	$10, -23899[$4]
+0700d68a	ld.b	-23902[$4], $10
+0700d68e	add	1, $10
+0700d690	shl	-8, $10
+0700d692	sar	-8, $10
+0700d694	st.b	$10, -23902[$4]
+0700d698	ld.b	-23902[$4], $10
+0700d69c	cmp	12, $10
+0700d69e	bge	6
+0700d6a0	jr	-578
+0700d6a4	jal	-7664
+0700d6a8	ld.w	-23928[$4], $10	;var_???12 => $10
+0700d6ac	mov	-9, $1
+0700d6ae	and	$1, $10
+0700d6b0	st.w	$10, -23928[$4]	;$10 => var_???12
+0700d6b4	ld.w	16[$3], $31
+0700d6b8	addi	14, $3, $3
+0700d6bc	jmp	[$31]	;return
+
+;==========================================
+; --- Function: InitLinkPort ---
+;==========================================
+070102f8	movhi	500, $0, $1	;0x05000000 => $1
+;Pointer to HCREG
+070102fc	ld.w	20[$1], $10	;var_pHCREG => $10 (0x02000000)
+07010300	movea	ff80, $0, $11	;0xFFFFFF80 => $11
+;Write 0x80 to LPT (data to transmit)
+07010304	st.b	$11, 8[$10]	;0x80 => [0x02000008]
+07010308	movhi	500, $0, $1	;0x05000000 => $1
+;Pointer to HCREG
+0701030c	ld.w	20[$1], $10	;var_pHCREG => $10 (0x02000000)
+07010310	movea	14, $0, $11	;0x00000014 => $11
+;Write 0x14 to LPC (ComStart, External Clock)
+07010314	st.b	$11, 0[$10]	;0x14 => [0x02000000]
+07010318	movhi	500, $0, $1	;0x05000000 => $1
+;Pointer to HCREG
+0701031c	ld.w	20[$1], $10	;var_pHCREG => $10 (0x02000000)
+07010320	mov	-1, $11	;0xFFFFFFFF => $11
+;Write 0xFF to LPC2 (Disable Interupt, etc...)
+07010322	st.b	$11, 4[$10]	;0xFF => [0x02000004]
+07010326	st.b	$0, -22616[$4]	;0x00 => [0x05002780] var_???
+0701032a	mov	0, $10	;0x00000000 => $10
+0701032c	st.b	$10, -22587[$4]	;0x00 => [0x050027C5] var_???
+07010330	st.b	$10, -22598[$4]	;0x00 => [0x0500276A] var_???
+07010334	jmp	[$31]	;return
+
+;==========================================
+; --- Function:  LinkPortInt Helper ---
+;==========================================
+07010606	addi	ffec, $3, $3
+0701060a	st.w	$31, 16[$3]
+0701060e	ld.b	-22616[$4], $10
+07010612	andi	ff, $10, $12
+07010616	andi	1, $12, $10
+0701061a	bne	6
+0701061c	jr	  600
+07010620	andi	2, $12, $10
+07010624	bne	6
+07010626	jr	24
+0701062a	movhi	500, $0, $1
+0701062e	ld.w	20[$1], $10
+07010632	movea	ff80, $0, $11
+07010636	st.b	$11, 0[$10]
+0701063a	jr	20
+0701063e	movhi	500, $0, $1
+07010642	ld.w	20[$1], $10
+07010646	movea	ff90, $0, $11
+0701064a	st.b	$11, 0[$10]
+0701064e	ld.b	-22615[$4], $10
+07010652	andi	ff, $10, $10
+07010656	be	6
+07010658	jr	44
+0701065c	movhi	500, $0, $1
+07010660	ld.w	20[$1], $11
+07010664	ld.b	12[$11], $10
+07010668	andi	ff, $10, $11
+0701066c	movea	83, $0, $1
+07010670	cmp	$1, $11
+07010672	st.b	$10, -22588[$4]
+07010676	be	6
+07010678	jr	42
+
+;Call Fn_???
+0701067c	jal	-66918	;Jump 0x07000116, saving PC
+07010680	jr	34
+07010684	ld.w	-22592[$4], $10
+07010688	movhi	500, $0, $1
+0701068c	ld.w	20[$1], $11
+07010690	ld.b	12[$11], $11
+07010694	st.b	$11, 0[$10]
+07010698	ld.w	-22592[$4], $10
+0701069c	add	1, $10
+0701069e	st.w	$10, -22592[$4]
+070106a2	ld.b	-22615[$4], $10
+070106a6	andi	ff, $10, $10
+070106aa	cmp	9, $10
+070106ac	blt	6
+070106ae	jr	174
+070106b2	movhi	500, $0, $1
+070106b6	movea	14, $1, $10
+070106ba	ld.w	0[$10], $11
+070106be	ld.w	-22596[$4], $12
+070106c2	ld.b	0[$12], $12
+070106c6	st.b	$12, 8[$11]
+070106ca	ld.w	-22596[$4], $11
+070106ce	add	1, $11
+070106d0	st.w	$11, -22596[$4]
+070106d4	ld.b	-22616[$4], $11
+070106d8	andi	ff, $11, $11
+070106dc	andi	2, $11, $11
+070106e0	bne	6
+070106e2	jr	80
+070106e6	ld.w	0[$10], $11
+070106ea	mov	-1, $12
+070106ec	st.b	$12, 4[$11]
+070106f0	ld.b	-22615[$4], $11
+070106f4	andi	ff, $11, $12
+070106f8	andi	1, $12, $11
+070106fc	ld.w	0[$10], $12
+07010700	addi	4, $12, $10
+07010704	ld.b	0[$10], $12
+07010708	andi	ff, $12, $12
+0701070c	andi	1, $12, $12
+07010710	cmp	$11, $12
+07010712	bne	-14
+07010714	movhi	500, $0, $1
+07010718	ld.w	20[$1], $10
+0701071c	mov	4, $11
+0701071e	st.b	$11, 0[$10]
+07010722	movhi	500, $0, $1
+07010726	ld.w	20[$1], $10
+0701072a	st.b	$0, 0[$10]
+0701072e	jr	304
+07010732	ld.w	0[$10], $11
+07010736	ld.b	-22615[$4], $12
+0701073a	andi	ff, $12, $12
+0701073e	shl	1, $12
+07010740	ori	fd, $12, $12
+07010744	shl	-8, $12
+07010746	sar	-8, $12
+07010748	st.b	$12, 4[$11]
+0701074c	ld.w	0[$10], $11
+07010750	movea	14, $0, $12
+07010754	st.b	$12, 0[$11]
+07010758	jr	262
+0701075c	movhi	500, $0, $1
+07010760	movea	27aa, $1, $10
+07010764	st.w	$10, -22592[$4]
+07010768	mov	0, $10
+0701076a	mov	$10, $11
+0701076c	jr	46
+07010770	ld.w	-22592[$4], $12
+07010774	andi	ff, $10, $13
+07010778	ld.b	0[$12], $10
+0701077c	andi	ff, $10, $10
+07010780	add	$10, $13
+07010782	mov	$13, $10
+07010784	shl	-8, $10
+07010786	sar	-8, $10
+07010788	addi	1, $12, $13
+0701078c	st.w	$13, -22592[$4]
+07010790	addi	1, $11, $12
+07010794	mov	$12, $11
+07010796	shl	-8, $11
+07010798	sar	-8, $11
+0701079a	andi	ff, $11, $11
+0701079e	cmp	8, $11
+070107a0	blt	-48
+070107a2	andi	ff, $10, $10
+070107a6	andi	f, $10, $10
+070107aa	ld.b	-22588[$4], $11
+070107ae	andi	ff, $11, $11
+070107b2	andi	f, $11, $11
+070107b6	cmp	$11, $10
+070107b8	bne	6
+070107ba	jr	24
+070107be	ld.b	-22598[$4], $10
+070107c2	andi	ff, $10, $10
+070107c6	ori	1, $10, $10
+070107ca	shl	-8, $10
+070107cc	sar	-8, $10
+070107ce	st.b	$10, -22598[$4]
+070107d2	ld.b	-22588[$4], $10
+070107d6	ld.b	-22587[$4], $11
+070107da	andi	ff, $10, $10
+070107de	andi	70, $10, $10
+070107e2	andi	ff, $11, $11
+070107e6	cmp	$11, $10
+070107e8	bne	6
+070107ea	jr	24
+070107ee	ld.b	-22598[$4], $10
+070107f2	andi	ff, $10, $10
+070107f6	ori	2, $10, $10
+070107fa	shl	-8, $10
+070107fc	sar	-8, $10
+070107fe	st.b	$10, -22598[$4]
+07010802	ld.b	-22616[$4], $10
+07010806	andi	ff, $10, $10
+0701080a	andi	2, $10, $10
+0701080e	bne	6
+07010810	jr	24
+07010814	movhi	500, $0, $1
+07010818	ld.w	20[$1], $10
+0701081c	movea	ff80, $0, $11
+07010820	st.b	$11, 0[$10]
+07010824	jr	34
+07010828	movhi	500, $0, $1
+0701082c	ld.w	20[$1], $10
+07010830	mov	-1, $11
+07010832	st.b	$11, 4[$10]
+07010836	movhi	500, $0, $1
+0701083a	ld.w	20[$1], $10
+0701083e	movea	14, $0, $11
+07010842	st.b	$11, 0[$10]
+07010846	st.b	$0, -22615[$4]
+0701084a	ld.b	-22616[$4], $10
+0701084e	andi	ff, $10, $10
+07010852	andi	fb, $10, $10
+07010856	shl	-8, $10
+07010858	sar	-8, $10
+0701085a	st.b	$10, -22616[$4]
+0701085e	ld.b	-22615[$4], $10
+07010862	andi	ff, $10, $10
+07010866	add	1, $10
+07010868	shl	-8, $10
+0701086a	sar	-8, $10
+0701086c	st.b	$10, -22615[$4]
+07010870	jr	244
+07010874	movhi	500, $0, $1
+07010878	movea	14, $1, $10
+0701087c	ld.w	0[$10], $11
+07010880	ld.b	12[$11], $13
+07010884	andi	ff, $13, $13
+07010888	movea	81, $0, $1
+0701088c	cmp	$1, $13
+0701088e	bne	6
+07010890	jr	90
+07010894	ble	6
+07010896	jr	20
+0701089a	movea	80, $0, $1
+0701089e	cmp	$1, $13
+070108a0	bne	6
+070108a2	jr	24
+070108a6	jr	144
+070108aa	movea	82, $0, $1
+070108ae	cmp	$1, $13
+070108b0	bne	6
+070108b2	jr	116
+070108b6	jr	128
+070108ba	ld.b	8[$11], $12
+070108be	andi	ff, $12, $12
+070108c2	movea	81, $0, $1
+070108c6	cmp	$1, $12
+070108c8	be	6
+070108ca	jr	150
+070108ce	mov	3, $12
+070108d0	st.b	$12, -22616[$4]
+070108d4	mov	-1, $12
+070108d6	st.b	$12, 4[$11]
+070108da	ld.w	0[$10], $11
+070108de	movea	ff80, $0, $12
+070108e2	st.b	$12, 0[$11]
+070108e6	jr	122
+070108ea	ld.b	8[$11], $12
+070108ee	andi	ff, $12, $12
+070108f2	movea	80, $0, $1
+070108f6	cmp	$1, $12
+070108f8	be	6
+070108fa	jr	102
+070108fe	mov	1, $12
+07010900	st.b	$12, -22616[$4]
+07010904	mov	-1, $12
+07010906	st.b	$12, 4[$11]
+0701090a	ld.w	0[$10], $11
+0701090e	movea	ff90, $0, $12
+07010912	st.b	$12, 0[$11]
+07010916	ld.w	0[$10], $11
+0701091a	movea	14, $0, $12
+0701091e	st.b	$12, 0[$11]
+07010922	jr	62
+07010926	ori	8, $12, $10
+0701092a	shl	-8, $10
+0701092c	sar	-8, $10
+0701092e	st.b	$10, -22616[$4]
+07010932	jr	46
+07010936	mov	-1, $12
+07010938	st.b	$12, 4[$11]
+0701093c	ld.w	0[$10], $11
+07010940	movea	ff80, $0, $12
+07010944	st.b	$12, 8[$11]
+07010948	ld.w	0[$10], $11
+0701094c	movea	ff90, $0, $12
+07010950	st.b	$12, 0[$11]
+07010954	ld.w	0[$10], $11
+07010958	movea	14, $0, $12
+0701095c	st.b	$12, 0[$11]
+07010960	st.b	$0, -22615[$4]
+07010964	ld.w	16[$3], $31
+07010968	addi	14, $3, $3
+0701096c	jmp	[$31]
+
+;==========================================
+; Jump Table 1
+;==========================================
+07016000	dw. 0xFFF80216
+07016004	dw. 0xFFF8021E
+07016008	dw. 0xFFF80226
+0701600C	dw. 0xFFF8022E
+07016010	dw. 0xFFF80236
+07016014	dw. 0xFFF8023E
+07016018	dw. 0xFFF80246
+0701601C	dw. 0xFFF8024E
+07016020	dw. 0xFFF80256
+07016024	dw. 0xFFF8025E
+07016028	dw. 0xFFF80266
+0701602C	dw. 0xFFF8026E
+07016030	dw. 0xFFF80276
+07016034	dw. 0xFFF8027E
+07016038	dw. 0xFFF8027E
+
+;==========================================
+; jump table ???
+;==========================================
+0701603C	dw. 0xFFF8042E
+07016040	dw. 0xFFF80436
+07016044	dw. 0xFFF8043E
+07016048	dw. 0xFFF80446
+0701604C	dw. 0xFFF8044E
+07016050	dw. 0xFFF80456
+07016054	dw. 0xFFF8045E
+07016058	dw. 0xFFF80466
+0701605C	dw. 0xFFF8046E
+07016060	dw. 0xFFF80476
+07016064	dw. 0xFFF8047E
+07016068	dw. 0xFFF80486
+0701606C	dw. 0xFFF8042A
+07016070	dw. 0xFFF8042A
+07016074	dw. 0xFFF8048E
+07016078	dw. 0xFFF82F16
+0701607C	dw. 0xFFF82F16
+07016080	dw. 0xFFF82F1E
+07016084	dw. 0xFFF82F1E
+07016088	dw. 0xFFF82F26
+0701608C	dw. 0xFFF82F26
+07016090	dw. 0xFFF82F2C
+07016094	dw. 0xFFF82F34
+07016098	dw. 0xFFF83CE0
+0701609C	dw. 0xFFF83E02
+070160A0	dw. 0xFFF83E2A
+070160A4	dw. 0xFFF83E2A
+070160A8	dw. 0xFFF83E2A
+070160AC	dw. 0xFFF83E2A
+070160B0	dw. 0xFFF83E50
+070160B4	dw. 0xFFF83E50
+070160B8	dw. 0xFFF83EC0
+070160BC	dw. 0xFFF83EC0
+070160C0	dw. 0xFFF83FF0
+070160C4	dw. 0xFFF83E2A
+070160C8	dw. 0xFFF83E2A
+070160CC	dw. 0xFFF83E2A
+070160D0	dw. 0xFFF83E2A
+070160D4	dw. 0xFFF83E2A
+070160D8	dw. 0xFFF84018
+070160DC	dw. 0xFFF84018
+070160E0	dw. 0xFFF84018
+070160E4	dw. 0xFFF84018
+070160E8	dw. 0xFFF84032
+070160EC	dw. 0xFFF84082
+070160F0	dw. 0xFFF840D2
+070160F4	dw. 0xFFF84118
+070160F8	dw. 0xFFF868C6
+070160FC	dw. 0xFFF868D2
+07016100	dw. 0xFFF868C2
+07016104	dw. 0xFFF868DE
+07016108	dw. 0xFFF868EA
+0701610C	dw. 0xFFF86938
+
+;==========================================
+;Controller Interupt, Int 0
+;==========================================
+0707fe00	add	-4, $3	;Decriment Stack Pointer
+0707fe02	st.w	$11, 0[$3]	;Push Register 11
+0707fe06	movhi	fff8, $0, $11	;Load 0xFFF80000 in $11
+0707fe0a	movea	0, $11, $11
+0707fe0e	jmp	[$11]	;Jump to 0x07000000
+
+;==========================================
+;Timmer Interupt, Int 1
+;==========================================
+0707fe10	add	-4, $3	;Decriment Stack Pointer
+0707fe12	st.w	$11, 0[$3]	;Push Register 11
+0707fe16	movhi	fff8, $0, $11	;Load 0xFFF80024 in $11
+0707fe1a	movea	24, $11, $11
+0707fe1e	jmp	[$11]	;Jump to 0x07000024
+
+;==========================================
+;Expantion Port Interupt, Int 2
+;==========================================
+0707fe20	add	-4, $3	;Decriment Stack Pointer
+0707fe22	st.w	$11, 0[$3]	;Push Register 11
+0707fe26	movhi	fff8, $0, $11	;Load 0xFFF80026 in $11
+0707fe2a	movea	26, $11, $11
+0707fe2e	jmp	[$11]	;Jump to 0x07000026
+
+;==========================================
+;Link Port Interupt, Int 3
+;==========================================
+0707fe30	add	-4, $3	;Decriment Stack Pointer
+0707fe32	st.w	$11, 0[$3]	;Push Register 11
+0707fe36	movhi	fff8, $0, $11	;Load 0xFFF8004A in $11
+0707fe3a	movea	4a, $11, $11
+0707fe3e	jmp	[$11]	;Jump to 0x0700004A
+
+;==========================================
+;Display Interupt, Int 4
+;==========================================
+0707fe40	add	-4, $3	;Decriment Stack Pointer
+0707fe42	st.w	$11, 0[$3]	;Push Register 11
+0707fe46	movhi	fff8, $0, $11	;Load 0xFFF800AA in $11
+0707fe4a	movea	aa, $11, $11
+0707fe4e	jmp	[$11]	;Jump to 0x070000AA
+
+;==========================================
+;Reset Vector
+;==========================================
+0707fff0	movhi	fff8, $0, $11	;Load 0xFFF80120 in $11
+0707fff4	movea	120, $11, $11
+0707fff8	jmp	[$11]	;Jump to 0x07000120
+
