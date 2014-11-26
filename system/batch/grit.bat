@@ -1,5 +1,7 @@
-::SET ECHO OFF
+::SCRIPT INITIALIZATION
 @echo off
+SET VBDE=C:\vbde
+call %VBDE%\system\batch\init.bat
 
 ::SWITCH TO PROJECT DIRECTORY
 CD %1

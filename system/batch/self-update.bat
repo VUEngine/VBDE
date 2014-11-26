@@ -1,19 +1,13 @@
-::SET ECHO OFF
+::SCRIPT INITIALIZATION
 @echo off
-
-::SET TEMPORARY ENVIRONMENT VARIABLES
 SET VBDE=C:\vbde
-
-::SET TEMPORARY CYGWIN ENVIRONMENT VARIABLES
-SET CYGWIN=nodosfilewarning
-SET CHERE_INVOKING=1
+call %VBDE%\system\batch\init.bat
 
 ::GENERATE SSH KEYS IF NOT EXISTING YET
-%VBDE%\cygwin\bin\bash -l -c "[ -f ~/.ssh/id_rsa ] || (echo 'SINCE THIS IS THE FIRST TIME YOU TRY TO ACCESS GIT FROM THIS ACCOUNT, YOU NEED TO CREATE A SSH KEY PAIR.' && ssh-keygen)"
+call %VBDE%\system\batch\ssh-keygen.bat
 
 ::SWITCH TO ROOT DIRECTORY
 PUSHD %VBDE%
 
 ::PULL
 %VBDE%\cygwin\bin\bash -l -c "git pull"
-pause > nul
