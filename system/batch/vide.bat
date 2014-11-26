@@ -7,4 +7,5 @@ CALL %VBDE%\system\batch\init.bat
 CALL %VBDE%\system\batch\find-project-dir.bat %1
 
 ::LAUNCH VIDE
-START "" "%VBDE%\tools\graphics\vide\VIDE.EXE"
+PUSHD %VBDE%\tools\graphics\vide\
+START "" "VIDE.EXE"
