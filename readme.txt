@@ -1,21 +1,37 @@
-# VBDE - Virtual Boy Development Environment
++====================================================================+
+|                                                                    |
+| VBDE - Virtual Boy Development Environment                         |
+| Version 0.1.0 - 2014/11/26                                         |
+|                                                                    |
++====================================================================+
 
-## Introduction
++--------------------------------------------------------------------+
+| Introduction                                                       |
++--------------------------------------------------------------------+
 
 Blah
 
-## Installation
 
-If you're reading this, you have executed the VBDE installer, which has extracted a "vbde" folder to your C: drive. 
++--------------------------------------------------------------------+
+| Installation                                                       |
++--------------------------------------------------------------------+
+
+If you're reading this, you have executed the VBDE installer, which 
+has extracted a "vbde" folder to your C: drive. 
 Congratulations, you're ready to go! See below how to get started.
 
-## Usage
 
-VBDE comes with a the latest portable version of Notepad++ that has been 
-slightly modified to have a button bar on top.
++--------------------------------------------------------------------+
+| Usage                                                              |
++--------------------------------------------------------------------+
+
+VBDE comes with a the latest portable version of Notepad++ that has 
+been slightly modified to have a button bar on top.
 
 
-## Bundled Software
++--------------------------------------------------------------------+
+| Bundled Software                                                   |
++--------------------------------------------------------------------+
 
 ### Documentation
 * VB Sacred Tech Scroll - Virtual Boy Specifications
@@ -44,10 +60,6 @@ slightly modified to have a button bar on top.
 * vbimgc
 * vide
 
-#### Projects ####
-
-VBDE comes with a few example projects[...]
-
 #### ROM
 * FlashBoy
   Version 20101102 - For use with FlashBoy Plus
@@ -57,3 +69,10 @@ VBDE comes with a few example projects[...]
 * VBid - The VB ROM-image Tagger 1.0
   2010
   By Amos Bieler
+
+
++--------------------------------------------------------------------+
+| Projects                                                           |
++--------------------------------------------------------------------+
+
+VBDE comes with a few example projects[...]

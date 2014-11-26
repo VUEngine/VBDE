@@ -16,6 +16,7 @@
         <Command name="RUN in Reality Boy" Ctrl="no" Alt="no" Shift="yes" Key="121">C:\vbde\system\batch\reality_boy.bat $(CURRENT_DIRECTORY)</Command>
         <Command name="FLASH to FlashBoy" Ctrl="no" Alt="no" Shift="yes" Key="123">C:\vbde\system\batch\flash.bat $(CURRENT_DIRECTORY)</Command>
         <Command name="PULL latest vbJAEngine version from Git repository" Ctrl="no" Alt="no" Shift="yes" Key="125">C:\vbde\system\batch\git-pull-vbjaengine.bat</Command>
+        <Command name="SELF-UPDATE VBDE" Ctrl="no" Alt="no" Shift="yes" Key="130">C:\vbde\system\batch\self-update.bat</Command>
     </UserDefinedCommands>
     <PluginCommands />
     <ScintillaKeys />
