@@ -213,8 +213,3 @@ mkgroup )
   echo "Note that the -d switch is necessary for domain users."
   ;;
 esac
-
-
-
-export VBDE=/cygdrive/c/vbde
-export PATH=/cygdrive/c/vbde/cygwin/opt/gccvb/bin:$PATH

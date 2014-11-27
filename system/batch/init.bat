@@ -5,7 +5,7 @@
 SET VBDE=%~dp0\..\..\
 
 ::SET TEMPORARY ENVIRONMENT VARIABLES
-SET PATH=%PATH%;%VBDE%\cygwin\bin;%VBDE%\tools\rom\vbid-1.0-win
+SET PATH=%PATH%;%VBDE%\cygwin\bin;%VBDE%\cygwin\opt\gccvb\bin;%VBDE%\tools\rom\vbid-1.0-win
 SET C_INCLUDE_PATH=%VBDE%\libs\libgccvb
 
 ::SET TEMPORARY CYGWIN ENVIRONMENT VARIABLES
