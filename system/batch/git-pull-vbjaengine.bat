@@ -1,7 +1,8 @@
-::SCRIPT INITIALIZATION
+::SET ECHO OFF
 @echo off
-SET VBDE=C:\vbde
-CALL %VBDE%\system\batch\init.bat
+
+::SCRIPT INITIALIZATION
+CALL %~dp0\init.bat
 
 ::GENERATE SSH KEYS IF NOT EXISTING YET
 CALL %VBDE%\system\batch\ssh-keygen.bat

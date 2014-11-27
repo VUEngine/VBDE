@@ -1,3 +1,9 @@
+::SET ECHO OFF
+@echo off
+
+::SET DIRS
+SET VBDE=%~dp0\..\..\
+
 ::SET TEMPORARY ENVIRONMENT VARIABLES
 SET PATH=%PATH%;%VBDE%\cygwin\bin;%VBDE%\tools\rom\vbid-1.0-win
 SET C_INCLUDE_PATH=%VBDE%\libs\libgccvb
