@@ -1,6 +1,5 @@
 @echo off
 
-C:
-chdir C:\vbde\cygwin\bin
+PUSHD %cd%\bin
 
 bash --login -i
