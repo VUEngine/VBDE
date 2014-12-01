@@ -10,18 +10,18 @@ void languageSelectionScreen()
 	WA[31].h = 224;
 	WA[30].head = WRLD_END;
 
-	for(i=0; i<sizeof(LANG_LANGUAGE); i++) {
+	for(i=0; i<sizeof(languages); i++) {
 		if(i == currentLanguage) {
 			printString(0, 17, 10+i, ">");
 		}
-		printString(0, 18, 10+i, LANG_LANGUAGE[i]);
+		printString(0, 18, 10+i,  languages[i][STRING_LANGUAGE]);
 	}
 
 	vbFXFadeIn(0);
 
 	while(1) {
 		if(buttonsPressed(K_ANY, false)) {
-			break;   
+			break;
 		}
 	}
 

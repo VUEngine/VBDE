@@ -15,5 +15,5 @@ int main()
 
     gameLoop();
 
-    return 0;
+    return false;
 }

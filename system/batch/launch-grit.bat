@@ -1,16 +1,25 @@
-IF EXIST assets\graphics\ (
-	::switch to graphics directory
-	CD assets\graphics\
-	::pre clean
-	DEL graphics.h
-	DEL objects\* /q
-	::create graphics header file
-	ECHO // graphics >> graphics.h
-	::convert all graphics
-	FOR /r source\ %%F in (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) do (
-		C:\vbde\tools\graphics\grit-0.8.6\grit.exe %%F -o objects\%%~nF.s -gB2 -p! -mLs -mB16:p2hv_i11
-		ECHO #include "objects/%%~nF.h" >> graphics.h
+::SWITCH TO ASSETS DIRECTORY
+PUSHD %PROJECT_DIR%
+
+::CONVERT ASSETS
+IF EXIST assets\images\ (
+
+	::SWITCH TO IMAGES DIRECTORY
+	PUSHD assets\images\
+
+	::PREPARATIONS
+	IF EXIST _o (
+		DEL _o\* /q
+	) ELSE (
+		MKDIR _o
 	)
-	::switch back to project directory
-	PUSHD %PROJECT_DIR%
+
+	::CONVERT ALL IMAGES
+	FOR /r . %%F in (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) do (
+		%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o _o\%%~nF.s  -ftc -gB2 -gu8 -m -mB16:p2hv_i11 -mLs -mu8 -mRtf -p!
+		ECHO #include "%%~nF.h" >> _o\_index.h
+	)
 )
+
+::SWITCH TO ASSETS DIRECTORY
+PUSHD %PROJECT_DIR%
