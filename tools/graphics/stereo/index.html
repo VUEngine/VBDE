@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+    canvas {
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -o-crisp-edges;
+        image-rendering: optimize-contrast;
+        -ms-interpolation-mode: nearest-neighbor;
+    }
+    </style>
+</head>
+
+<body>
+    <p>
+        <form method="get" action="">
+            <label>Left image: </label>
+            <input type="text" name="img" id="img" size="20">_left.png
+            &nbsp;&nbsp;
+            <label>Zoom:</label>
+            <select name="zoom" id="zoom">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+            &nbsp;&nbsp;
+            <input type="submit" value="Load">
+        </form>
+    </p>
+    
+    <canvas></canvas>
+
+    <script type="text/javascript">
+    <!--
+    function getQueryParameter(name) {
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp( regexS );
+        var results = regex.exec( window.location.href );
+        if( results == null ) {
+            return "";
+        } else {
+            return results[1];
+        }
+    }
+
+    Anaglyph = {
+        imgLeft: null,
+        imgRight: null,
+
+        load : function() {
+            var left = 'left.png';
+            var right = 'right.png';
+            var img = getQueryParameter('img');
+            if(img != '') {
+                var left = img + '_left.png';
+                var right = img + '_right.png';
+                document.getElementById('img').value = img;
+            }
+
+            Anaglyph.imgLeft = document.createElement('img');
+            Anaglyph.imgLeft.src = left;
+            Anaglyph.imgRight = document.createElement('img');
+            Anaglyph.imgRight.src = right;
+            Anaglyph.wait();
+
+            //setTimeout("Anaglyph.load()", 300);
+            //console.log(new Date());
+        },
+
+        wait: function() {
+            //Wait for images to load
+            if (Anaglyph.imgLeft.complete && Anaglyph.imgRight.complete) {
+                Anaglyph.make();
+            } else {
+                setTimeout('Anaglyph.wait()', 100);
+            }
+        },
+
+        make: function() {
+
+            var w = Anaglyph.imgLeft.width;
+            var h = Anaglyph.imgRight.height;
+            var canvas = document.getElementsByTagName('canvas')[0];
+
+            var zoom = getQueryParameter('zoom') || 2;
+            if(zoom !== '') {
+                zoom = parseInt(zoom);
+                canvas.style.width = w * zoom + 'px';
+                canvas.style.height = h * zoom + 'px';
+                document.getElementById('zoom').value = zoom;
+            }
+
+            //Left image in temporary canvas
+            var canvasLeft = document.createElement('canvas');
+            canvasLeft.width = w;
+            canvasLeft.height = h;
+            var canvasContextLeft = canvasLeft.getContext('2d');
+            canvasContextLeft.drawImage(Anaglyph.imgLeft, 0, 0, w, h);
+            var dataLeft = canvasContextLeft.getImageData(0, 0, w, h);
+            
+            //Right image in result canvas
+            canvas.width = w;
+            canvas.height = h;
+            var canvasContext = canvas.getContext('2d');
+            canvasContext.drawImage(Anaglyph.imgRight, 0, 0, w, h);
+            var data = canvasContext.getImageData(0, 0, w, h);
+            
+            for (var i=0,l=dataLeft.data.length/4; i<l; i++) {
+                data.data[i * 4 + 0] = dataLeft.data[i * 4 + 0];
+            }
+            canvasContext.putImageData(data, 0, 0);
+        }
+    }
+
+    window.onload = function() {
+        Anaglyph.load();
+    }
+    -->
+    </script>
+</body>
+</html>
