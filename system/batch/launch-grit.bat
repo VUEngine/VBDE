@@ -43,3 +43,6 @@ IF EXIST assets\spritesheets\ (
 		ECHO #include "%%~nF.h" >> _o\_index.h
 	)
 )
+
+::SWITCH TO ASSETS DIRECTORY
+PUSHD %PROJECT_DIR%

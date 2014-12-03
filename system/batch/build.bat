@@ -14,9 +14,10 @@ PUSHD %PROJECT_DIR%
 IF EXIST output.vb DEL output.vb
 IF EXIST output_pad.vb DEL output_pad.vb
 IF EXIST output.o DEL output.o
+IF EXIST output.ram DEL output.ram
 
 ::CONVERT IMAGES
-::CALL %VBDE%\system\batch\launch-grit.bat
+CALL %VBDE%\system\batch\launch-grit.bat
 
 ::BUILD ROM
 IF EXIST makefile (
