@@ -10,5 +10,5 @@ void initSystem()
 	vbDisplayOn();
 	
 	//load font
-	copymem((void*)(CharSeg3+0x1000), (void*)FONT, 256*16);
+	copymem((void*)(CharSeg3+0x1000), (void*)FontTiles, 256*16);
 }

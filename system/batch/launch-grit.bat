@@ -1,48 +1,74 @@
-::SWITCH TO ASSETS DIRECTORY
-PUSHD %PROJECT_DIR%
+::ALLOW ACCESS TO VAR SET BY GET_TIMESTAMP_DIFF
+SETLOCAL ENABLEDELAYEDEXPANSION
 
 ::CONVERT ASSETS
-IF EXIST assets\images\ (
+FOR %%S IN (images, spritesheets) DO (
 
-	::SWITCH TO IMAGES DIRECTORY
-	PUSHD assets\images\
+	IF EXIST %PROJECT_DIR%\assets\%%S\ (
 
-	::PREPARATIONS
-	IF EXIST _o (
-		DEL _o\* /q
-	) ELSE (
-		MKDIR _o
-	)
+		::SWITCH TO IMAGES DIRECTORY
+		PUSHD %PROJECT_DIR%\assets\%%S\
 
-	::CONVERT ALL IMAGES
-	FOR /r . %%F in (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) do (
-		%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o _o\%%~nF -ftc -gB2 -mB16:hv_i11 -mRtf -p!
-		ECHO #include "%%~nF.h" >> _o\_index.h
+		::MAKE _O DIR IF DOES NOT EXISTS
+		IF NOT EXIST _o (
+			MKDIR _o
+		)
+
+		::DELETE ALL C FILES FOR WHICH THE RESPECTIVE IMAGE FILE WAS DELETED
+		::AS WELL AS THE INDEX
+		FOR /r _o %%F IN (*) DO (
+			SET OBSOLETE=1
+			FOR /r . %%I IN (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) DO (
+				IF "%%~nF" == "%%~nI" (
+					SET OBSOLETE=0
+				)
+			)
+			IF !OBSOLETE! == 1 (
+				DEL %%F
+			)
+		)
+
+		::CONVERT ALL IMAGES
+		FOR /r . %%F IN (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) DO (
+
+			::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
+			IF EXIST _o\%%~nF.c (
+				CALL :GET_TIMESTAMP_DIFF %%F _o\%%~nF.c TIMEDIFF
+			) ELSE (
+				SET TIMEDIFF=1
+			)
+
+			::CONVERT IMAGE IF IT HAS CHANGED
+			IF !TIMEDIFF! gtr 0 (
+				%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o _o\%%~nF -ff %VBDE%\system\config\%%S.grit
+			)
+		)
+
+		::CREATE INDEX
+		FOR /r _o %%F IN (*) DO (
+			ECHO #include "%%~nF.c" >> _o\_index.h 
+		)
 	)
 )
 
-::SWITCH TO ASSETS DIRECTORY
+
+::SWITCH BACK TO PROJECT DIRECTORY
 PUSHD %PROJECT_DIR%
 
-::CONVERT ASSETS
-IF EXIST assets\spritesheets\ (
 
-	::SWITCH TO IMAGES DIRECTORY
-	PUSHD assets\spritesheets\
+:GET_TIMESTAMP_DIFF
+IF NOT EXIST %~1 GOTO :EOF
+IF NOT EXIST %~2 GOTO :EOF
+IF "%~3" == "" GOTO :EOF
 
-	::PREPARATIONS
-	IF EXIST _o (
-		DEL _o\* /q
-	) ELSE (
-		MKDIR _o
-	)
+FOR %%A IN (%~1) DO SET DATE1=%%~tA
+FOR %%A IN (%~2) DO SET DATE2=%%~tA
 
-	::CONVERT ALL IMAGES
-	FOR /r . %%F in (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) do (
-		%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o _o\%%~nF -ftc -gB2 -mB16:i11 -mR! -p!
-		ECHO #include "%%~nF.h" >> _o\_index.h
-	)
-)
+SET /A TIMESTAMP1=%DATE1:~8,1%*60*24*31*12*10+%DATE1:~9,1%*60*24*31*12+%DATE1:~0,1%*60*24*31*10+%DATE1:~1,1%*60*24*31+%DATE1:~3,1%*60*24*10+%DATE1:~4,1%*60*24+%DATE1:~11,1%*60*10+%DATE1:~12,1%*60+%DATE1:~14,1%*10+%DATE1:~15,1%
+SET /A TIMESTAMP2=%DATE2:~8,1%*60*24*31*12*10+%DATE2:~9,1%*60*24*31*12+%DATE2:~0,1%*60*24*31*10+%DATE2:~1,1%*60*24*31+%DATE2:~3,1%*60*24*10+%DATE2:~4,1%*60*24+%DATE2:~11,1%*60*10+%DATE2:~12,1%*60+%DATE2:~14,1%*10+%DATE2:~15,1%
+IF "%DATE1:~17,1%" == "P" SET /A TIMESTAMP1=%TIMESTAMP1% +12*60
+IF "%DATE2:~17,1%" == "P" SET /A TIMESTAMP2=%TIMESTAMP2% +12*60
 
-::SWITCH TO ASSETS DIRECTORY
-PUSHD %PROJECT_DIR%
+SET /A %~3=%TIMESTAMP1% - %TIMESTAMP2%
+
+GOTO :EOF

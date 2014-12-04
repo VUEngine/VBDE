@@ -10,7 +10,7 @@ void printString(u8 bgmap, u16 x, u16 y, char* t_string)
 
 			case 9:
 				// Tab
-				x = (x << 2 + 1) >> 2;
+				x = (((x << 2) + 1) >> 2);
 				break;
 
 			case 10:
@@ -24,7 +24,7 @@ void printString(u8 bgmap, u16 x, u16 y, char* t_string)
 				break;
 
 			default:
-				BGMM[(0x1000 * bgmap) + pos] = (u8)t_string[i] + 0x700;
+				BGMM[(0x1000 * bgmap) + pos] = (u8)t_string[i] + 0x701;
 				if (x++ > 63)
 				{
 					x = col;
