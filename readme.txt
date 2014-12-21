@@ -42,7 +42,13 @@ and you're ready to start developing for the Virtual Boy.
 longer necessary.)
 
 VBDE comes with a current portable version of Notepad++ that has 
-been slightly modified to have a button bar on top.
+been slightly modified to have a button bar on top. With these, you
+can quickly compile the current project, start it in an emulator, et
+cetera. 
+
+These buttons simply trigger a bunch of batch file, which you can just 
+as well start from the command line or any other editor of choice. See
+editors/npp.6.5.bin.minimalist/shortcuts.xml for how to call these.
 
 
 +--------------------------------------------------------------------+
