@@ -1,6 +1,8 @@
 ::SET ECHO OFF
 @echo off
 
+ECHO CHECKING FOR VBJAENGINE UPDATES, PLEASE WAIT...
+
 ::SCRIPT INITIALIZATION
 CALL %~dp0\init.bat
 
@@ -12,3 +14,6 @@ PUSHD %VBDE%\libs\vbjaengine
 
 ::PULL
 %VBDE%\cygwin\bin\bash -l -c "git pull"
+
+::DELAY CLOSING OF WINDOW FOR 5 SECONDS
+timeout /t 5

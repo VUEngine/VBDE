@@ -1,4 +1,4 @@
-::ALLOW ACCESS TO VAR SET BY GET_TIMESTAMP_DIFF
+::ALLOW ACCESS TO VARIABLES SET BY "GET_TIMESTAMP_DIFF" FUNCTION
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 ::CONVERT ASSETS
@@ -41,6 +41,7 @@ FOR %%S IN (images, spritesheets) DO (
 			::CONVERT IMAGE IF IT HAS CHANGED
 			IF !TIMEDIFF! gtr 0 (
 				%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o _o\%%~nF -ff %VBDE%\system\config\%%S.grit
+				ECHO Converted "%%~nxF" in "%%S"
 			)
 		)
 
@@ -54,6 +55,9 @@ FOR %%S IN (images, spritesheets) DO (
 
 ::SWITCH BACK TO PROJECT DIRECTORY
 PUSHD %PROJECT_DIR%
+
+::DO NOT PROCESS "GET_TIMESTAMP_DIFF" FUNCTION
+GOTO :EOF
 
 
 :GET_TIMESTAMP_DIFF

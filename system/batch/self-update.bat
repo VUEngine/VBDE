@@ -1,14 +1,19 @@
 ::SET ECHO OFF
 @echo off
 
+ECHO CHECKING FOR VBDE UPDATES, PLEASE WAIT...
+
 ::SCRIPT INITIALIZATION
 CALL %~dp0\init.bat
 
 ::GENERATE SSH KEYS IF NOT EXISTING YET
-::CALL %VBDE%\system\batch\ssh-keygen.bat
+CALL %VBDE%\system\batch\ssh-keygen.bat
 
 ::SWITCH TO ROOT DIRECTORY
 PUSHD %VBDE%
 
 ::PULL
 %VBDE%\cygwin\bin\bash -l -c "git pull"
+
+::DELAY CLOSING OF WINDOW FOR 5 SECONDS
+timeout /t 5
