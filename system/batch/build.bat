@@ -36,7 +36,7 @@ IF EXIST output.vb IF EXIST header (
 )
 
 ::POST CLEAN
-IF EXIST output.o DEL output.o)
+IF EXIST output.o DEL output.o
 
 ::RUN IN EMULATOR IF ROM COULD BE COMPILED
 IF EXIST output.vb IF EXIST %VBDE%\system\batch\launch-%3.bat (

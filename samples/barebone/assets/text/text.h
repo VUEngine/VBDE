@@ -1,7 +1,7 @@
 
 enum {
      STR_LANGUAGE,
-     STR_PRECAUTION
+     STR_PRECAUTION,
 };
 
 #include "lang_en.h"
@@ -9,9 +9,9 @@ enum {
 
 enum {
      LANG_EN,
-     LANG_DE
+     LANG_DE,
 };
 char** languages[2] = {
 	Lang_EN, 
-	Lang_DE
+	Lang_DE,
 };
