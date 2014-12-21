@@ -1,9 +1,9 @@
 cygwin/home/*
+cygwin/tmp/*
 libs/vbjaengine/*
-samples/vbjaengine-skeleton/*
+samples/vbjaengine/*
 config.xml
 session.xml
 stdout.txt
 reality_boy.ini
-output.vb
-session.xml
+*.vb

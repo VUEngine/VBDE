@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\vbde\projects\GH-MidiPlayer\music</TargetPath>
+  <FilePath>C:\Users\cbusemann\Downloads\Meco - Star Wars Theme From Star Wars.mid</FilePath>
+  <Name>Meco___Star_Wars_Theme_From_Star_Wars</Name>
+  <Tempo>1260</Tempo>
+  <SongLength>21120</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>0</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>FINGERDBAS</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>4</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>BRASS 1</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>FR.HORN</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>3</Channel>
+      <Instrument>2</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>STRINGS</TrackName>
+      <TrackNumber>4</TrackNumber>
+      <Channel>5</Channel>
+      <Instrument>4</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>FLUTE</TrackName>
+      <TrackNumber>5</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>CLARINET</TrackName>
+      <TrackNumber>6</TrackNumber>
+      <Channel>2</Channel>
+      <Instrument>3</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>SYNBRASS 2</TrackName>
+      <TrackNumber>7</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>DRUMS</TrackName>
+      <TrackNumber>8</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>4</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\cygwin\home\thunder\fishbone\music</TargetPath>
+  <FilePath>C:\Files\VirtualBoy\FishBone\techno.MID</FilePath>
+  <Name>techno</Name>
+  <Tempo>980</Tempo>
+  <SongLength>38400</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>-1</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>Drum</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>4</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Bass</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>2</Channel>
+      <Instrument>4</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Bass</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>4</Channel>
+      <Instrument>4</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Saw Lead</TrackName>
+      <TrackNumber>4</TrackNumber>
+      <Channel>5</Channel>
+      <Instrument>1</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Drum</TrackName>
+      <TrackNumber>5</TrackNumber>
+      <Channel>3</Channel>
+      <Instrument>4</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

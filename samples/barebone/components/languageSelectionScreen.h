@@ -14,7 +14,7 @@ void languageSelectionScreen()
 		if(i == currentLanguage) {
 			printString(0, 17, 10+i, ">");
 		}
-		printString(0, 18, 10+i,  languages[i][STRING_LANGUAGE]);
+		printString(0, 18, 10+i,  languages[i][STR_LANGUAGE]);
 	}
 
 	vbFXFadeIn(0);

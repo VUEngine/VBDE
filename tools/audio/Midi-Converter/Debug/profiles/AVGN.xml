@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\Users\thunder\documents\visual studio 2010\Projects\MidiGui\MidiGui\bin\Debug\music\</TargetPath>
+  <FilePath>C:\Files\VirtualBoy\GameHero\MusicArchive\used\AVGN.mid</FilePath>
+  <Name>AVGN</Name>
+  <Tempo>0.00052083333333333333</Tempo>
+  <SongLength>289920</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>0</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>Vocals</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Electric Guitar</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Drums</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

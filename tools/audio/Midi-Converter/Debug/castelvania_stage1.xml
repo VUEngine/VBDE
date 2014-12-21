@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FilePath>C:\Files\VirtualBoy\GameHero\MusicArchive\used\castelvania_stage1.mid</FilePath>
+  <Name>castelvania_stage1</Name>
+  <Tempo>0.0048449583333333331</Tempo>
+  <SongLength>6104</SongLength>
+  <ReplayPause>101</ReplayPause>
+  <ReplayCode>-1</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>Castle Melody</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Steel Harmony</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Rich Bass</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>5</Channel>
+      <Instrument>2</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>8-Bit Percussion</TrackName>
+      <TrackNumber>4</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>16-Bit Percussion</TrackName>
+      <TrackNumber>5</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Shawn Lewis, 1996.</TrackName>
+      <TrackNumber>6</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>sjlst17+@pitt.edu</TrackName>
+      <TrackNumber>7</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>CSTLV1-1.MID:</TrackName>
+      <TrackNumber>8</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Please distribute ONLY</TrackName>
+      <TrackNumber>9</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>with CSTLV1-1.TXT.</TrackName>
+      <TrackNumber>10</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>www.pitt.edu/~sjlst17</TrackName>
+      <TrackNumber>11</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\cygwin\home\thunder\fishbone\music</TargetPath>
+  <FilePath>C:\Files\VirtualBoy\FishBone\SMW\underwater.mid</FilePath>
+  <Name>underwater</Name>
+  <Tempo>6260</Tempo>
+  <SongLength>15840</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>0</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>Lead &amp; mmm bop bop</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Accompaniment</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>2</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Ding ding ding</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>3</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

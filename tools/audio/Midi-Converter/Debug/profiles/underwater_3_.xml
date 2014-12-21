@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\cygwin\home\thunder\fishbone\music</TargetPath>
+  <FilePath>C:\Files\VirtualBoy\FishBone\smb3\underwater-3-.mid</FilePath>
+  <Name>underwater_3_</Name>
+  <Tempo>2800</Tempo>
+  <SongLength>19966</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>0</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>SMB3 underwater</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>sequenced by:</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>2</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>David Alberto</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>3</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>made for vgmusic.com</TrackName>
+      <TrackNumber>4</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>enjoy :)</TrackName>
+      <TrackNumber>5</TrackNumber>
+      <Channel>4</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

@@ -5,7 +5,7 @@ void precautionScreen()
 	WA[31].h = 224;
 	WA[30].head = WRLD_END;
 
-	printString(0, 14, 10, getString(STRING_PRECAUTION));
+	printString(0, 14, 10, getString(STR_PRECAUTION));
 
 	vbFXFadeIn(0);
 

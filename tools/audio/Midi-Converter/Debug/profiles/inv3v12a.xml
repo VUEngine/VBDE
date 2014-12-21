@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\cygwin\home\thunder\fishbone\music</TargetPath>
+  <FilePath>C:\Files\VirtualBoy\FishBone\Bach\inv3v12a.mid</FilePath>
+  <Name>inv3v12a</Name>
+  <Tempo>2900</Tempo>
+  <SongLength>23760</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>-1</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>Right Hand</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Middle Hand</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>2</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Left Hand</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>3</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

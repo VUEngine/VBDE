@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\cygwin\home\thunder\fishbone\music</TargetPath>
+  <FilePath>C:\Files\VirtualBoy\FishBone\Bjorn\used\zombie_chase.mid</FilePath>
+  <Name>zombie_chase</Name>
+  <Tempo>2020</Tempo>
+  <SongLength>43380</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>0</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>ChorusPiano</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Fretless Bass</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>2</Channel>
+      <Instrument>4</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Drums</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>3</Channel>
+      <Instrument>4</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>OrchHit L</TrackName>
+      <TrackNumber>4</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>OrchHit R</TrackName>
+      <TrackNumber>5</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Xylo L</TrackName>
+      <TrackNumber>6</TrackNumber>
+      <Channel>3</Channel>
+      <Instrument>1</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Xylo R</TrackName>
+      <TrackNumber>7</TrackNumber>
+      <Channel>4</Channel>
+      <Instrument>1</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Strings</TrackName>
+      <TrackNumber>8</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>UnderStrings Left</TrackName>
+      <TrackNumber>9</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Understrings Right</TrackName>
+      <TrackNumber>10</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>SawLead</TrackName>
+      <TrackNumber>11</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>SawLead Echo</TrackName>
+      <TrackNumber>12</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>DistGuitar</TrackName>
+      <TrackNumber>13</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>DistGuitar Echo</TrackName>
+      <TrackNumber>14</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

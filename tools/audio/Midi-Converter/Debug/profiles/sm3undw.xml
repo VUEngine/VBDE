@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\cygwin\home\thunder\GH-MidiPlayer\music</TargetPath>
+  <FilePath>C:\Files\VirtualBoy\GameHero\MusicArchive\Super_Mario_Bros_3\sm3undw.mid</FilePath>
+  <Name>sm3undw</Name>
+  <Tempo>5000</Tempo>
+  <SongLength>8160</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>0</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>Drums</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>4</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Lead</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>2</Channel>
+      <Instrument>1</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Detuned Lead</TrackName>
+      <TrackNumber>4</TrackNumber>
+      <Channel>3</Channel>
+      <Instrument>1</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>

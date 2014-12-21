@@ -3,12 +3,12 @@
  * Ensure this file is encoded in ANSI for umlauts to work.
  */
 
-const static char* lang_de[] = {
+const static char* Lang_DE[] = {
 
-// STRING_LANGUAGE
+// STR_LANGUAGE
 "Deutsch",
 
-// STRING_PRECAUTION
+// STR_PRECAUTION
 "    - WICHTIG -\n\nBITTE LESEN SIE VOR\n\n  DEM SPIELEN DIE\n\nANLEITUNG SOWIE DIE\n\nSICHERHEITSHINWEISE"
 
 };

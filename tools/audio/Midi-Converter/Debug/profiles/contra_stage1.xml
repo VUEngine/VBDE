@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TargetPath>C:\Users\thunder\documents\visual studio 2010\Projects\MidiGui\MidiGui\bin\Debug\music\</TargetPath>
+  <FilePath>C:\Files\VirtualBoy\GameHero\MusicArchive\used\contra_stage1.mid</FilePath>
+  <Name>contra_stage1</Name>
+  <Tempo>0.0016666666666666668</Tempo>
+  <SongLength>119988</SongLength>
+  <ReplayPause>0</ReplayPause>
+  <ReplayCode>0</ReplayCode>
+  <TrackConfig>
+    <ConfigTrack>
+      <TrackName>Contra - Stage 1</TrackName>
+      <TrackNumber>1</TrackNumber>
+      <Channel>2</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Written by Someone Else</TrackName>
+      <TrackNumber>2</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>true</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>Sequenced by Anthony Bellissimo</TrackName>
+      <TrackNumber>3</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+    <ConfigTrack>
+      <TrackName>(twon@ici.net) - 11/27/97</TrackName>
+      <TrackNumber>4</TrackNumber>
+      <Channel>1</Channel>
+      <Instrument>0</Instrument>
+      <Selected>false</Selected>
+    </ConfigTrack>
+  </TrackConfig>
+</ConfigSong>
