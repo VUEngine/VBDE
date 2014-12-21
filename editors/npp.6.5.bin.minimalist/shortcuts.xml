@@ -8,7 +8,6 @@
     </Macros>
     <UserDefinedCommands>
         <Command name="Start VIDE" Ctrl="no" Alt="no" Shift="yes" Key="112">..\..\system\batch\vide.bat</Command>
-        <Command name="Start VIRTUALBOX" Ctrl="no" Alt="no" Shift="yes" Key="113">..\..\tools\graphics\virtualbox\SpriteTool.exe $(CURRENT_DIRECTORY)</Command>
         <Command name="Compile images with GRIT" Ctrl="no" Alt="no" Shift="yes" Key="114">..\..\system\batch\grit.bat $(CURRENT_DIRECTORY)</Command>
         <Command name="COMPILE with gccVB" Ctrl="no" Alt="no" Shift="yes" Key="116">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART)</Command>
         <Command name="COMPILE with gccVB and RUN in Mednafen" Ctrl="no" Alt="no" Shift="yes" Key="117">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART) mednafen</Command>
@@ -16,7 +15,6 @@
         <Command name="RUN in Mednafen" Ctrl="no" Alt="no" Shift="yes" Key="120">..\..\system\batch\mednafen.bat $(CURRENT_DIRECTORY)</Command>
         <Command name="RUN in Reality Boy" Ctrl="no" Alt="no" Shift="yes" Key="121">..\..\system\batch\reality_boy.bat $(CURRENT_DIRECTORY)</Command>
         <Command name="FLASH to FlashBoy" Ctrl="no" Alt="no" Shift="yes" Key="123">..\..\system\batch\flash.bat $(CURRENT_DIRECTORY)</Command>
-        <Command name="PULL latest vbJAEngine version from Git repository" Ctrl="no" Alt="no" Shift="yes" Key="125">..\..\system\batch\git-pull-vbjaengine.bat</Command>
         <Command name="SELF-UPDATE VBDE" Ctrl="no" Alt="no" Shift="yes" Key="130">..\..\system\batch\self-update.bat</Command>
     </UserDefinedCommands>
     <PluginCommands />
