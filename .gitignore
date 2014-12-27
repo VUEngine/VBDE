@@ -1,7 +1,5 @@
 cygwin/home/*
 cygwin/tmp/*
-libs/vbjaengine/*
-samples/vbjaengine/*
 config.xml
 session.xml
 stdout.txt

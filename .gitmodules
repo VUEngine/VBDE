@@ -1,0 +1,6 @@
+[submodule "libs/vbjaengine"]
+	path = libs/vbjaengine
+	url = git@bitbucket.org:jorgeche/vbjaengine.git
+[submodule "samples/vbjaengine/platform-demo"]
+	path = samples/vbjaengine/platform-demo
+	url = git@bitbucket.org:jorgeche/vbjaengine-skeleton.git
