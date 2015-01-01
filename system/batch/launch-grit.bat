@@ -2,7 +2,7 @@
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 ::CONVERT ASSETS
-FOR %%S IN (images, spritesheets) DO (
+FOR %%S IN (fonts, images, spritesheets) DO (
 
 	IF EXIST %PROJECT_DIR%\assets\%%S\ (
 
