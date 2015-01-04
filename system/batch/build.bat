@@ -17,6 +17,7 @@ IF EXIST output.vb DEL output.vb
 IF EXIST output_pad.vb DEL output_pad.vb
 IF EXIST output.o DEL output.o
 IF EXIST output.ram DEL output.ram
+IF EXIST main.elf DEL main.elf
 
 ::BUILD ROM
 IF EXIST makefile (
@@ -39,6 +40,7 @@ IF EXIST output.vb IF EXIST header (
 
 ::POST CLEAN
 IF EXIST output.o DEL output.o
+IF EXIST main.elf DEL main.elf
 
 ::RUN IN EMULATOR IF ROM COULD BE COMPILED
 IF EXIST output.vb IF EXIST %VBDE%\system\batch\launch-%3.bat (
