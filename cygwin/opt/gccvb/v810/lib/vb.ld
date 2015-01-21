@@ -5,99 +5,69 @@ TARGET(elf32-v810)
 ENTRY(_start)
 SEARCH_DIR(.);
 
-MEMORY {
-	ram	(!r): ORIGIN = 0x05000000, LENGTH = 64k /*64k*/
+MEMORY 
+{
+	ram	(!r): ORIGIN = 0x05000000, LENGTH = 64k
 	rom	(rx): ORIGIN = 0x07000000, LENGTH = 16M
 }
-
-/* 
-   If not defined, define interupt
-   Handlers as system reset
-*/
-
-PROVIDE(_keyint   = 0x07FFFFF0);
-PROVIDE(_timerint = 0x07FFFE10);
-PROVIDE(_croint   = 0x07FFFFF0);
-PROVIDE(_comint   = 0x07FFFFF0);
-PROVIDE(_vpuint   = 0x07FFFFF0);
-
 
 __text_vma = 0x07000000;
 __data_vma = 0x05000000;
 
+__gp = __data_vma + 0x8000;
+
 SECTIONS
 {
-  /* Read-only sections, merged into text segment: */
-  .text __text_vma : {
-    *(.text)
-    *(.text.*)
-    /* .gnu.warning sections are handled specially by elf32.em.  */
-    *(.gnu.warning)
-    *(.gnu.linkonce.t*)
+  .text __text_vma :
+  {
+    *(.text*)
   } >rom = 0xFF
 
-  .rodata : {
-    *(.rodata)
-    *all.rodata*(*)
-    *(.roda)
-    *(.rodata.*)
-    *(.gnu.linkonce.r*)
-    /* SORT(CONSTRUCTORS) */
+  .rodata :
+  {
+    *(.rodata*)
   } >rom = 0xFF
-
-  /* C++ Constructor/Destructor table */
-  /*
-  .ctors : {
-    ___ctors = .;
-    KEEP (*(EXCLUDE_FILE (*crtend.o) .ctors))
-    KEEP (*(SORT(.ctors.*)))
-    KEEP (*crtend(.ctors))
-    ___ctors_end = .;
-  } >rom = 0xFF
-
-  .dtors : {
-    ___dtors = .;
-    KEEP (*(EXCLUDE_FILE (*crtend.o) .dtors))
-    KEEP (*(SORT(.dtors.*)))
-    KEEP (*crtend.o(.dtors))
-    ___dtors_end = .;
-  } >rom = 0xFF
-  */
 
   /* Stop empty section from causing a compiler error */
-  /DISCARD/ : {
-    *(.comment)
-  } 
-
-  /* Place orphan ROM data here */
-  /* . = .; */
-  
-v = .;
+  /DISCARD/ :
+  {
+    *(.comment*)
+  }
 
   /* Ram memory */
 
   __data_lma = .;
-  .data __data_vma : AT(__data_lma) {
-    *(.data)
-    *(.data.*)
-    *(.gnu.linkonce.d*)
-    /* CONSTRUCTORS */
+  .data __data_vma : AT(__data_lma) 
+  {
+    *(.data*)
+  } >ram = 0xFF
+
+  .sdata : 
+  {
+    *(.sdata)
+
   } >ram = 0xFF
 
   __data_end = .;
 
-  .bss : {
-    *(.dynbss)
-    *(.bss)
-    *(COMMON)
+  .sbss : 
+  {
+    *(.sbss)
+    *(.scommon)
+  } >ram
+
+  .bss : 
+  {
+    *(.bss*)
   } >ram = 0xFF
   /* These must appear regardless of  .  */
 
 
-  /* Compute the vector address */
+  /* Compute vector table address */
   /* This promotes . to a power of two */
 
-  v += 0x21F; 		/* add size of jump table */
+  v = __data_lma + (__data_end - __data_vma);
+  v += 0x21F;   /* add size of vector table and rom header */
   v &= 0x00FFFFFF;
   v |= v>>1;
   v |= v>>2;
@@ -107,11 +77,10 @@ v = .;
   __vbvectors_end = __text_vma + v;
   __vbvectors_lma = __vbvectors_end - 0x21F;
 
-/*  __vbvectors_lma = 0x07FFFFFF - 0x21F; */
+  /* Place interrupt and reset vector at end of rom */
 
-  /* Place interupt and reset vector at end of rom */
-
-  .vbvectors __vbvectors_lma : { 
+  .vbvectors __vbvectors_lma :
+  { 
     KEEP (*(.vbvectors))
   } >rom = 0xFF 
 }
