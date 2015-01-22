@@ -1,14 +1,12 @@
-void initSystem()
-{
-	//timer interrupts setup
-	setupTimer();
-	
-	//column table setup
-	//vbSetColTable();
-	
-	//display setup
-	vbDisplayOn();
-	
-	//load font
-	copymem((void*)(CharSeg3+0x1000), (void*)FontTiles, 256*16);
-}
+#ifndef functions_system_h
+#define functions_system_h
+
+
+#include <timer.h>
+
+extern BYTE FontTiles[];
+
+void initSystem();
+
+
+#endif

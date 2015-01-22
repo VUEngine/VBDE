@@ -1,29 +1,14 @@
-void languageSelectionScreen()
-{
-	u8 i = 0;
+#ifndef components_language_selection_screen_h
+#define components_language_selection_screen_h
 
-	setmem((void*)CharSeg0, 0x0000, 2048);
-	setmem((void*)BGMap(0), 0x0000, 8192);
 
-	WA[31].head = WRLD_ON|WRLD_OVR;
-	WA[31].w = 384;
-	WA[31].h = 224;
-	WA[30].head = WRLD_END;
+#include <constants.h>
+#include <input.h>
+#include <text.h>
 
-	for(i=0; i<sizeof(languages); i++) {
-		if(i == currentLanguage) {
-			printString(0, 17, 10+i, ">");
-		}
-		printString(0, 18, 10+i,  languages[i][STR_LANGUAGE]);
-	}
+#include <lang.h>
 
-	vbFXFadeIn(0);
+void languageSelectionScreen();
 
-	while(1) {
-		if(buttonsPressed(K_ANY, false)) {
-			break;
-		}
-	}
 
-	vbFXFadeOut(0);
-}
+#endif

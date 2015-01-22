@@ -21,11 +21,11 @@ IF EXIST main.elf DEL main.elf
 
 ::BUILD ROM
 IF EXIST makefile (
-	::allow project to have its own makefile
+	::allow projects to have their own makefile
 	%VBDE%\cygwin\bin\bash -l -c "export VBDE=$(cygpath -u '%VBDE%') && make all"
 ) ELSE (
 	::otherwise use default makefile
-	%VBDE%\cygwin\bin\bash -l -c "export VBDE=$(cygpath -u '%VBDE%') && make -f $VBDE/system/makefile SOURCE=%2"
+	%VBDE%\cygwin\bin\bash -l -c "export VBDE=$(cygpath -u '%VBDE%') && make all -f $VBDE/system/makefile CDIR=%1"
 )
 
 ::SET ROM HEADER
@@ -35,7 +35,7 @@ IF EXIST output.vb IF EXIST header (
 		SET /a N+=1
 		SET v!N!=%%a
 	)
-	vbid output.vb "!v4!" - !v6! !v8! !v10!
+	vbid output.vb "!v4!" - !v6! !v8! !v10! > nul
 )
 
 ::POST CLEAN
@@ -51,3 +51,13 @@ IF EXIST output.vb IF EXIST %VBDE%\system\batch\launch-%3.bat (
 IF NOT EXIST output.vb (
 	pause > nul
 )
+
+
+
+
+
+
+
+
+
+pause > nul

@@ -1,3 +1,6 @@
+#ifndef assets_lang_h
+#define assets_lang_h
+
 
 enum {
      STR_LANGUAGE,
@@ -15,3 +18,6 @@ char** languages[2] = {
 	Lang_EN, 
 	Lang_DE,
 };
+
+
+#endif

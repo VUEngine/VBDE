@@ -1,11 +1,10 @@
-u8 buttonsPressed(u16 buttons, u8 forceRelease)
-{
-	if(!(vbReadPad()&buttons)) lastPressedButtons = 0;
+#ifndef functions_input_h
+#define functions_input_h
 
-	if( (vbReadPad()&buttons) && ((!forceRelease) || (lastPressedButtons != vbReadPad()))) {
-		lastPressedButtons = vbReadPad();
-		return true;
-	} else {
-		return false;
-	}
-}
+
+#include <constants.h>
+
+u8 buttonsPressed(u16 buttons, u8 forceRelease);
+
+
+#endif

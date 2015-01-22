@@ -1,42 +1,13 @@
-void printString(u8 bgmap, u16 x, u16 y, char* t_string)
-{
-	// Font consists of the last 256 chars (1792-2047)
-	u16 i=0,pos=0,col=x;
+#ifndef functions_text_h
+#define functions_text_h
 
-	while(t_string[i]) {
-		pos = (y << 6) + x;
+ 
+#include <constants.h>
 
-		switch(t_string[i]) {
+#include <lang.h>
 
-			case 9:
-				// Tab
-				x = (((x << 2) + 1) >> 2);
-				break;
+void printString(u8 bgmap, u16 x, u16 y, char* t_string);
+char* getString(str);
 
-			case 10:
-				// Carriage Return
-				y++;
-				x = col;
-				break;
-
-			case 13:
-				x = col;
-				break;
-
-			default:
-				BGMM[(0x1000 * bgmap) + pos] = (u8)t_string[i] + 0x701;
-				if (x++ > 63)
-				{
-					x = col;
-					y++;
-				}
-				break;
-		}
-		i++;
-	}
-}
-
-char* getString(str)
-{
-	return languages[currentLanguage][str];
-}
+ 
+#endif

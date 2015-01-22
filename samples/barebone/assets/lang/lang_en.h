@@ -1,3 +1,7 @@
+#ifndef assets_lang_en_h
+#define assets_lang_en_h
+
+
 /*
  * ENGLISH LANGUAGE FILE
  * Ensure this file is encoded in ANSI for umlauts to work.
@@ -12,3 +16,6 @@ static char* Lang_EN[] = {
 "   - IMPORTANT -\n\nREAD INSTRUCTION AND\n\nPRECAUTION BOOKLETS\n\n  BEFORE OPERATING"
 	
 };
+
+
+#endif

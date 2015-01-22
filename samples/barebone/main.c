@@ -1,9 +1,8 @@
 #include <libgccvb.h>
 
-#include "constants.h"
-#include "assets/assets.h"
-#include "functions/functions.h"
-#include "components/components.h"
+#include <constants.h>
+#include <functions.h>
+#include <components.h>
 
 int main()
 {
