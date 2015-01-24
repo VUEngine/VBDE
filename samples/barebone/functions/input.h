@@ -1,5 +1,5 @@
-#ifndef functions_input_h
-#define functions_input_h
+#ifndef _FUNCTIONS_INPUT_H
+#define _FUNCTIONS_INPUT_H
 
 
 #include <constants.h>

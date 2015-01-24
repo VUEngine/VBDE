@@ -1,5 +1,5 @@
-#ifndef assets_lang_en_h
-#define assets_lang_en_h
+#ifndef _ASSETS_LANG_EN_H
+#define _ASSETS_LANG_EN_H
 
 
 /*

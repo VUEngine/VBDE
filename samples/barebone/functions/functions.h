@@ -1,5 +1,5 @@
-#ifndef pvb_functions_h
-#define pvb_functions_h
+#ifndef _FUNCTIONS_H
+#define _FUNCTIONS_H
 
 
 #include "input.h"

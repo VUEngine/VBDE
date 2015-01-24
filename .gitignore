@@ -5,3 +5,4 @@ session.xml
 stdout.txt
 reality_boy.ini
 *.vb
+.make-*

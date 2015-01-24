@@ -1,5 +1,5 @@
-#ifndef components_language_selection_screen_h
-#define components_language_selection_screen_h
+#ifndef _COMPONENTS_LANGUAGE_SELECTION_SCREEN_H
+#define _COMPONENTS_LANGUAGE_SELECTION_SCREEN_H
 
 
 #include <constants.h>

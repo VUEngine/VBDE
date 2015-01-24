@@ -1,5 +1,5 @@
-#ifndef functions_timer_h
-#define functions_timer_h
+#ifndef _FUNCTIONS_TIMER_H
+#define _FUNCTIONS_TIMER_H
 
 
 void timerHandle();

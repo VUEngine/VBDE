@@ -4,7 +4,7 @@
 #include "types.h"
 
 
-u8* const HW_REGS =			(u8*)0x02000000;
+extern u8* const HW_REGS;
 
 /***** Hardware Register Mnemonics *****/
 #define	CCR		0x00	// Communication Control Register	(0x0200 0000)
@@ -18,9 +18,5 @@ u8* const HW_REGS =			(u8*)0x02000000;
 #define	TCR		0x20	// Timer Control Register			(0x0200 0020)
 #define	WCR		0x24	// Wait-state Control Register		(0x0200 0024)
 #define	SCR		0x28	// Serial Control Register			(0x0200 0028)
-
-/********Cache Management***************/
-#define CACHE_ENABLE	asm("mov 2,r1 \n  ldsr r1,sr24": /* No Output */: /* No Input */: "r1" /* Reg r1 Used */) 
-#define CACHE_DISABLE	asm("ldsr r0,sr24")
 
 #endif

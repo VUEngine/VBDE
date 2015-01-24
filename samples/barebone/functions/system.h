@@ -1,5 +1,5 @@
-#ifndef functions_system_h
-#define functions_system_h
+#ifndef _FUNCTIONS_SYSTEM_H
+#define _FUNCTIONS_SYSTEM_H
 
 
 #include <timer.h>

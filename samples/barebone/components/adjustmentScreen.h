@@ -1,12 +1,15 @@
-#ifndef components_adjustment_screen_h
-#define components_adjustment_screen_h
+#ifndef _COMPONENTS_ADJUSTMENT_SCREEN_H
+#define _COMPONENTS_ADJUSTMENT_SCREEN_H
 
 
-#include <constants.h>
+#include <mem.h>
+#include <video.h>
+#include <world.h>
+
 #include <input.h>
 
-#include "chadjustment.h"
-#include "bgadjustment.h"
+extern BYTE AdjustmentScreenTiles[];
+extern BYTE AdjustmentScreenMap[];
 
 void adjustmentScreen();
 

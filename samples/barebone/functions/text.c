@@ -38,7 +38,7 @@ void printString(u8 bgmap, u16 x, u16 y, char* t_string)
 	}
 }
 
-char* getString(str)
+char* getString(int str)
 {
 	return languages[currentLanguage][str];
 }

@@ -1,5 +1,5 @@
-#ifndef constants_h
-#define constants_h
+#ifndef _CONSTANTS_H
+#define _CONSTANTS_H
 
 
 #define true 1

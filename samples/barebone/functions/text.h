@@ -1,5 +1,5 @@
-#ifndef functions_text_h
-#define functions_text_h
+#ifndef _FUNCTIONS_TEXT_H
+#define _FUNCTIONS_TEXT_H
 
  
 #include <constants.h>
@@ -7,7 +7,7 @@
 #include <lang.h>
 
 void printString(u8 bgmap, u16 x, u16 y, char* t_string);
-char* getString(str);
+char* getString(int str);
 
  
 #endif

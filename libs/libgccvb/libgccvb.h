@@ -21,7 +21,6 @@
 #include "affine.h"
 #include "audio.h"
 #include "asm.h"
-#include "bgmap.h"
 #include "interrupts.h"
 #include "hw.h"
 #include "joypad.h"

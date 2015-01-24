@@ -1,5 +1,5 @@
-#ifndef components_precaution_screen_h
-#define components_precaution_screen_h
+#ifndef _COMPONENTS_PRECAUTION_SCREEN_H
+#define _COMPONENTS_PRECAUTION_SCREEN_H
 
 
 #include <constants.h>

@@ -1,5 +1,5 @@
-#ifndef components_h
-#define components_h
+#ifndef _COMPONENTS_H
+#define _COMPONENTS_H
 
 
 #include "adjustmentScreen.h"

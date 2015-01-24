@@ -1,5 +1,5 @@
-#ifndef assets_h
-#define assets_h
+#ifndef _ASSETS_H
+#define _ASSETS_H
 
 
 #include "fonts/_o/_index.h"

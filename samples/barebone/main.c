@@ -1,7 +1,3 @@
-#include <libgccvb.h>
-
-#include <constants.h>
-#include <functions.h>
 #include <components.h>
 
 int main()
@@ -14,5 +10,5 @@ int main()
 
     gameLoop();
 
-    return false;
+    return 0;
 }

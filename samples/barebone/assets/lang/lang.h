@@ -1,5 +1,5 @@
-#ifndef assets_lang_h
-#define assets_lang_h
+#ifndef _ASSETS_LANG_H
+#define _ASSETS_LANG_H
 
 
 enum {
