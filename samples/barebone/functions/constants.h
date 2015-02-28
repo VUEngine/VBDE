@@ -9,8 +9,5 @@
 
 #define null (void *)0x00000000
 
-u8 currentLanguage = 0;
-u16 lastPressedButtons = 0;
-
 
 #endif

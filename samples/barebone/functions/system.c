@@ -1,4 +1,8 @@
+#include <libgccvb.h>
+#include <timer.h>
 #include "system.h"
+
+extern BYTE FontTiles[];
 
 void initSystem()
 {

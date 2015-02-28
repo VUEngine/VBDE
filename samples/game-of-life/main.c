@@ -43,18 +43,14 @@ u8 grid[HEIGHT][WIDTH] = {	{0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 
 u8 getNeighbourCount(int x, int y)
 {
-	u8 neighbourCount = 0;
-	
-	neighbourCount += grid[y-1][x-1];
-	neighbourCount += grid[y-1][x];
-	neighbourCount += grid[y-1][x+1];
-	neighbourCount += grid[y][x-1];
-	neighbourCount += grid[y][x+1];
-	neighbourCount += grid[y+1][x-1];
-	neighbourCount += grid[y+1][x];
-	neighbourCount += grid[y+1][x+1];
-	
-	return neighbourCount;
+	return grid[y-1][x-1];
+		+ grid[y-1][x];
+		+ grid[y-1][x+1];
+		+ grid[y][x-1];
+		+ grid[y][x+1];
+		+ grid[y+1][x-1];
+		+ grid[y+1][x];
+		+ grid[y+1][x+1];
 }
 						 
 u8 getNewCellState(int x, int y)

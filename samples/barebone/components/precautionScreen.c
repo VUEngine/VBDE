@@ -1,3 +1,9 @@
+#include <constants.h>
+#include <joypad.h>
+#include <world.h>
+#include <input.h>
+#include <text.h>
+#include <lang.h>
 #include "precautionScreen.h"
 
 void precautionScreen()

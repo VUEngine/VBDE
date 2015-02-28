@@ -1,3 +1,4 @@
+#include <functions.h>
 #include <components.h>
 
 int main()

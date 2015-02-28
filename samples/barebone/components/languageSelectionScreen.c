@@ -1,4 +1,15 @@
+#include <constants.h>
+#include <joypad.h>
+#include <mem.h>
+#include <video.h>
+#include <world.h>
+#include <input.h>
+#include <text.h>
+#include <lang.h>
 #include "languageSelectionScreen.h"
+
+extern u8 currentLanguage;
+extern char** languages;
 
 void languageSelectionScreen()
 {
@@ -16,7 +27,7 @@ void languageSelectionScreen()
 		if(i == currentLanguage) {
 			printString(0, 17, 10+i, ">");
 		}
-		printString(0, 18, 10+i,  languages[i][STR_LANGUAGE]);
+		printString(0, 18, 10+i, &languages[i][STR_LANGUAGE]);
 	}
 
 	vbFXFadeIn(0);

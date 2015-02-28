@@ -1,4 +1,15 @@
+#include <joypad.h>
+#include <mem.h>
+#include <video.h>
+#include <world.h>
+
+#include <constants.h>
+#include <input.h>
+
 #include "adjustmentScreen.h"
+
+extern BYTE AdjustmentScreenTiles[];
+extern BYTE AdjustmentScreenMap[];
 
 void adjustmentScreen()
 {
@@ -13,7 +24,7 @@ void adjustmentScreen()
 	WA[30].w = 384;
 	WA[30].h = 224;
 	WA[30].my = 224;
-	
+
 	WA[29].head = WRLD_END;
 
 	vbFXFadeIn(0);
