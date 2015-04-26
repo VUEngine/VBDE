@@ -2,30 +2,31 @@
 #include "vip.h"
 #include "video.h"
 
+
 /***** Display RAM *****/
-u32* const	L_FRAME0 =	(u32*)0x00000000;				// Left Frame Buffer 0
-u32* const	L_FRAME1 =	(u32*)0x00008000;				// Left Frame Buffer 1
-u32* const	R_FRAME0 =	(u32*)0x00010000;				// Right Frame Buffer 0
-u32* const	R_FRAME1 =	(u32*)0x00018000;				// Right Frame Buffer 1
-u16* const	BGMM =		(u16*)BGMMBase;					// Pointer to BGMM
-u16* const	WAM =		(u16*)WAMBase;					// Pointer to WAM
-u16* const	CLMN_TBL =	(u16*)0x0003DC00;				// Base address of Column Tables
-u16* const	OAM =		(u16*)OAMBase;					// Pointer to OAM
+u32* const	L_FRAME0 =	(u32*)0x00000000;	// Left Frame Buffer 0
+u32* const	L_FRAME1 =	(u32*)0x00008000;	// Left Frame Buffer 1
+u32* const	R_FRAME0 =	(u32*)0x00010000;	// Right Frame Buffer 0
+u32* const	R_FRAME1 =	(u32*)0x00018000;	// Right Frame Buffer 1
+u16* const	BGMM =		(u16*)BGMMBase;		// Pointer to BGMM
+u16* const	WAM =		(u16*)WAMBase;		// Pointer to WAM
+u16* const	CLMN_TBL =	(u16*)0x0003DC00;	// Base address of Column Tables
+u16* const	OAM =		(u16*)OAMBase;		// Pointer to OAM
+
+
+/* Macro to set the brightness registers */
+#define	SET_BRIGHT(a,b,c)       VIP_REGS[BRTA]=(u16)(a); VIP_REGS[BRTB]=(u16)(b); VIP_REGS[BRTC]=(u16)(c)
+
+/* Macro to set the GPLT (BGMap palette) */
+#define	SET_GPLT(n,pal)         VIP_REGS[GPLT0+n]=pal
+
+/* Macro to set the JPLT (OBJ palette) */
+#define	SET_JPLT(n,pal)         VIP_REGS[JPLT0+n]=pal
 
 
 /* Delay execution */
-/*
-void vbWaitFrame(u16 count) {
-	u16 i;
-
-	for (i = 0; i < count; i++) {
-		VIP_REGS[INTCLR] = VIP_REGS[INTPND];
-		while (!(VIP_REGS[INTPND] & XPEND)); //FRAMESTART
-	}
-}
-//*/
-//*
-void vbWaitFrame(u16 count) {
+void vbWaitFrame(u16 count) 
+{
 	u16 i;
 
 	for (i = 0; i <= count; i++) {
@@ -33,10 +34,10 @@ void vbWaitFrame(u16 count) {
 		while (VIP_REGS[XPSTTS] & XPBSYR);
 	}
 }
-//*/
 
 /* Turn the display on */
-void vbDisplayOn() {
+void vbDisplayOn() 
+{
 	VIP_REGS[REST] = 0;
 	VIP_REGS[XPCTRL] = VIP_REGS[XPSTTS] | XPEN;
 	VIP_REGS[DPCTRL] = VIP_REGS[DPSTTS] | (SYNCE | RE | DISP);
@@ -58,8 +59,9 @@ void vbDisplayOn() {
 	VIP_REGS[BKCOL] = 0;	/* Clear the screen to black before rendering */
 }
 
-/* Turn the display off */
-void vbDisplayOff() {
+// Turn the display off
+void vbDisplayOff() 
+{
 	VIP_REGS[REST] = 0;
 	VIP_REGS[XPCTRL] = 0;
 	VIP_REGS[DPCTRL] = 0;
@@ -67,21 +69,24 @@ void vbDisplayOff() {
 	VIP_REGS[INTCLR] = VIP_REGS[INTPND];
 }
 
-/* Call this after the display is on and you want the image to show up */
-void vbDisplayShow() {
+// Call this after the display is on and you want the image to show up
+void vbDisplayShow() 
+{
 	VIP_REGS[BRTA] = 32;
 	VIP_REGS[BRTB] = 64;
 	VIP_REGS[BRTC] = 32;
 }
 
-/* Call this to hide the image; e.g. while setting things up */
-void vbDisplayHide() {
+// Call this to hide the image; e.g. while setting things up
+void vbDisplayHide() 
+{
 	VIP_REGS[BRTA] = 0;
 	VIP_REGS[BRTB] = 0;
 	VIP_REGS[BRTC] = 0;
 }
 
-void vbFXFadeIn(u16 wait) {
+void vbFXFadeIn(u16 wait) 
+{
 	u8 i;
 
 	for (i = 0; i <= 32; i++) {
@@ -90,7 +95,8 @@ void vbFXFadeIn(u16 wait) {
 	}
 }
 
-void vbFXFadeOut(u16 wait) {
+void vbFXFadeOut(u16 wait) 
+{
 	s8 i;
 
 	for (i = 32; i >= 0; i--) {
@@ -99,8 +105,8 @@ void vbFXFadeOut(u16 wait) {
 	}
 }
 
-
-u8 const colTable[128] = {
+u8 const colTable[128] = 
+{
 	0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE,
 	0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE,
 	0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE,
@@ -120,7 +126,8 @@ u8 const colTable[128] = {
 };
 
 // Setup the default Column Table
-void vbSetColTable() {
+void vbSetColTable() 
+{
 	u8 i;
 
 	for (i = 0; i <= 127; i++) {

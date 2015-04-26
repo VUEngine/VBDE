@@ -1,5 +1,6 @@
-#ifndef __VIP_H
-#define __VIP_H
+#ifndef _LIBGCCVB_VIP_H
+#define _LIBGCCVB_VIP_H
+
 
 #include "types.h"
 
@@ -71,5 +72,6 @@ extern volatile u16* VIP_REGS;
 #define	JPLT3	0x37
 
 #define	BKCOL	0x38
+
 
 #endif

@@ -117,7 +117,7 @@ int main()
 	WA[30].head = WRLD_END;
 
 	vbDisplayShow();
-
+	
 	while(1) {
 		iterate();
 		render();

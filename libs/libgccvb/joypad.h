@@ -1,5 +1,6 @@
-#ifndef __KEYPAD_H
-#define __KEYPAD_H
+#ifndef _LIBGCCVB_KEYPAD_H
+#define _LIBGCCVB_KEYPAD_H
+
 
 #include "types.h"
 #include "hw.h"
@@ -21,8 +22,8 @@
 #define	K_RPAD	0xC0C0		// Right d-pad only
 #define	K_PWR	0x0001		// Low Battery
 #define	K_SGN	0x0002		// Signature; 1 = Standard Pad
-#define	K_A	0x0004		// A Button
-#define	K_B	0x0008		// B Button
+#define	K_A		0x0004		// A Button
+#define	K_B		0x0008		// B Button
 #define	K_RT	0x0010		// R Trigger
 #define	K_LT	0x0020		// L Trigger
 #define	K_RU	0x0040		// Right Pad, Up
@@ -36,13 +37,10 @@
 #define	K_RL	0x4000		// Right Pad, Left
 #define	K_RD	0x8000		// Right Pad, Down
 
-/* Reads the keypad, returns the 16 button bits */
+
 u16 vbReadPad();
-
-/* Check if a button has been pressed since the last read. If button state matches last read, it is returned as 'off' */
 u16 vbPadKeyDown();
-
-/* Check if a button has been released since the last read. If button state matches last read, it is returned as 'off'  */
 u16 vbPadKeyUp();
+
 
 #endif

@@ -1,11 +1,13 @@
-#ifndef __AUDIO_H
-#define __AUDIO_H
+#ifndef _LIBGCCVB_AUDIO_H
+#define _LIBGCCVB_AUDIO_H
+
 
 #include "types.h"
 
+
 typedef struct SOUNDREG
 {
-	//this table is for the most part untested, but looks to be accurate
+	// this table is for the most part untested, but looks to be accurate
 	//                 |      D7      ||      D6      ||      D5      ||      D4      ||      D3      ||      D2      ||      D1      ||      D0      |
 	u8 SxINT; //       [----Enable----][--XXXXXXXXXX--][-Interval/??--][--------------------------------Interval Data---------------------------------]
 	u8 spacer1[3];
@@ -17,18 +19,17 @@ typedef struct SOUNDREG
 	u8 spacer4[3];
 	u8 SxEV0; //       [---------------------Initial Envelope Value-------------------][------U/D-----][-----------------Envelope Step----------------]
 	u8 spacer5[3];
-		 //Ch. 1-4 [--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][------R/S-----][----On/Off----]
-	         //Ch. 5   [--XXXXXXXXXX--][------E/D-----][----?/Short---][--Mod./Sweep--][--XXXXXXXXXX--][--XXXXXXXXXX--][------R/S-----][----On/Off----]
+			 //Ch. 1-4 [--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][------R/S-----][----On/Off----]
+			 //Ch. 5   [--XXXXXXXXXX--][------E/D-----][----?/Short---][--Mod./Sweep--][--XXXXXXXXXX--][--XXXXXXXXXX--][------R/S-----][----On/Off----]
 	u8 SxEV1; //Ch. 6  [--XXXXXXXXXX--][----------------------E/D---------------------][--XXXXXXXXXX--][--XXXXXXXXXX--][------R/S-----][----On/Off----]
 	u8 spacer6[3];
-	//Ch. 1-5 only (I believe address is only 3 bits, but may be 4, needs testing)
+	// Ch. 1-5 only (I believe address is only 3 bits, but may be 4, needs testing)
 	u8 SxRAM; //       [--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--XXXXXXXXXX--][--------------Waveform RAM Address------------]
 	u8 spacer7[3];
-	//Ch. 5 only
+	// Ch. 5 only
 	u8 S5SWP; //       [------CLK-----][-------------Sweep/Modulation Time------------][------U/D-----][----------------Number of Shifts--------------]
 	u8 spacer8[35];
 } SOUNDREG;
-
 
 extern u8* const WAVEDATA1;
 extern u8* const WAVEDATA2;
@@ -36,7 +37,7 @@ extern u8* const WAVEDATA3;
 extern u8* const WAVEDATA4;
 extern u8* const WAVEDATA5;
 extern u8* const MODDATA;
-extern SOUNDREG* const SND_REGS; //(SOUNDREG*)0x010003C0;
+extern SOUNDREG* const SND_REGS;
 #define SSTOP				*(u8*)0x01000580
 
 /***** Sound Register Mnemonics *****/
@@ -46,5 +47,6 @@ extern SOUNDREG* const SND_REGS; //(SOUNDREG*)0x010003C0;
 #define	WAVE4	0x03	// Voluntary wave channel #4
 #define	SWEEP	0x04	// Sweep/modulation channel
 #define	NOISE	0x05	// Pseudorandom noise channel
+
 
 #endif

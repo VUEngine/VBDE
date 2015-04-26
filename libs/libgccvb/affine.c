@@ -1,7 +1,8 @@
 #include "types.h"
 #include "affine.h"
 
-//clear a world's affine param table based on world height
+
+// clear a world's affine param table based on world height
 void affine_clr_param(u8 world) {
 	int i,tmp;
 	s16 *param;
@@ -11,16 +12,16 @@ void affine_clr_param(u8 world) {
 	for (i = 0; i < (WAM[tmp+8]<<3); i++) param[i]=0;
 }
 
-//scale an affine background
-//world: number of the world to apply scaling to, must be using affine BGM
-//centerX/centerY: center point (relative to the world) to scale around.
-//imageW/imageH: original image width and height
-//scaleX/scaleY: scale factor per axis.
-//  lowest positive:  0.0156254
-//  highest positive: 512
-//  lowest negative:  -512
-//  highest negative: -0.015625
-//'1' is 100% scale, '2' is 200%, '0.05' is 5%, etc
+// scale an affine background
+// world: number of the world to apply scaling to, must be using affine BGM
+// centerX/centerY: center point (relative to the world) to scale around.
+// imageW/imageH: original image width and height
+// scaleX/scaleY: scale factor per axis.
+//   lowest positive:  0.0156254
+//   highest positive: 512
+//   lowest negative:  -512
+//   highest negative: -0.015625
+// '1' is 100% scale, '2' is 200%, '0.05' is 5%, etc
 void affine_scale(u8 world, s16 centerX, s16 centerY, u16 imageW, u16 imageH, float scaleX, float scaleY) {
 	int i,tmp;
 	s16 *param;
@@ -48,14 +49,14 @@ void affine_scale(u8 world, s16 centerX, s16 centerY, u16 imageW, u16 imageH, fl
 	}
 }
 
-//scale an affine background
-//world: number of the world to apply scaling to, must be using affine BGM
-//scale: scale factor.
-//  lowest positive:  0.0156254
-//  highest positive: 512
-//  lowest negative:  -512
-//  highest negative: -0.015625
-//'1' is 100% scale, '2' is 200%, '0.05' is 5%, etc
+// scale an affine background
+// world: number of the world to apply scaling to, must be using affine BGM
+// scale: scale factor.
+//   lowest positive:  0.0156254
+//   highest positive: 512
+//   lowest negative:  -512
+//   highest negative: -0.015625
+// '1' is 100% scale, '2' is 200%, '0.05' is 5%, etc
 void affine_fast_scale(u8 world, float scale) {
 	int i,tmp;
 	s16 *param;

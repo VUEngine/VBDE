@@ -1,5 +1,5 @@
-#ifndef __OBJECT_H
-#define __OBJECT_H
+#ifndef _LIBGCCVB_OBJECT_H
+#define _LIBGCCVB_OBJECT_H
 
 
 #include "types.h"
@@ -21,13 +21,14 @@
 // (Obsoleted by the OBJ_* macros...)
 void vbSetObject (u16 n, u8 header, s16 x, s16 p, s16 y, u16 chr);
 
-/* Object attributes */
+// Object attributes
 #define	JX			0				// Display pointer X
 #define	JP			2				// Paralax
 #define	JY			4				// Display pointer Y
 #define	JCA			6				// Character No.
 
-/***** "vbSetObject" header flags *****/	// (OR these together to build an Object Header)
+/***** "vbSetObject" header flags *****/	
+// (OR these together to build an Object Header)
 #define	JLON		0x8000
 #define	JRON		0x4000
 
@@ -42,5 +43,6 @@ void vbSetObject (u16 n, u8 header, s16 x, s16 p, s16 y, u16 chr);
 
 #define	OBJ_HFLIP	0x0008
 #define	OBJ_VFLIP	0x0004
+
 
 #endif

@@ -1,5 +1,6 @@
-#ifndef __HW_H
-#define __HW_H
+#ifndef _LIBGCCVB_HW_H
+#define _LIBGCCVB_HW_H
+
 
 #include "types.h"
 
@@ -18,5 +19,10 @@ extern u8* const HW_REGS;
 #define	TCR		0x20	// Timer Control Register			(0x0200 0020)
 #define	WCR		0x24	// Wait-state Control Register		(0x0200 0024)
 #define	SCR		0x28	// Serial Control Register			(0x0200 0028)
+
+/********Cache Management***************/
+#define CACHE_ENABLE	asm("mov 2,r1 \n  ldsr r1,sr24": /* No Output */: /* No Input */: "r1" /* Reg r1 Used */) 
+#define CACHE_DISABLE	asm("ldsr r0,sr24")
+
 
 #endif

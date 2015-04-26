@@ -44,11 +44,6 @@ FOR %%S IN (fonts, images, spritesheets) DO (
 				ECHO Converted "%%~nxF" in "%%S"
 			)
 		)
-
-		::CREATE INDEX
-		FOR /r _o %%F IN (*) DO (
-			ECHO #include "%%~nF.c" >> _o\_index.h 
-		)
 	)
 )
 

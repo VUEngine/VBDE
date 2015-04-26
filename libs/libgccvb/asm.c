@@ -1,9 +1,8 @@
-/* An asm function file written in C... the irony... */
-
 #include "types.h"
 #include "asm.h"
 
-//jump_addr
+
+//u32 jump_addr(void *addr);
     asm(".globl _jump_addr");
     asm("_jump_addr:");
     asm("add	-4,sp;");
@@ -14,9 +13,9 @@
     asm("jmp	[lp];");
     asm("__dojump:");
     asm("jmp	[r6];");
-    
-    
-void ASM_H_INLINE set_intlevel(u8 level) {
+
+void inline set_intlevel(u8 level) 
+{
 	asm(
 	    "stsr	sr5,r5;"
 	    "movhi	0xFFF1,r0,r6;"
@@ -33,8 +32,8 @@ void ASM_H_INLINE set_intlevel(u8 level) {
 	);
 }
 
-
-int ASM_H_INLINE get_intlevel() {
+int inline get_intlevel() 
+{
 	int level;
 
 	asm(
@@ -47,4 +46,4 @@ int ASM_H_INLINE get_intlevel() {
 	: "r5" /* Clobber */
 	);
 	return level;
-}    
+}

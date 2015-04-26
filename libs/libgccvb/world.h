@@ -1,11 +1,13 @@
-#ifndef __WORLD_H
-#define __WORLD_H
+#ifndef _LIBGCCVB_WORLD_H
+#define _LIBGCCVB_WORLD_H
+
 
 #include "types.h"
 #include "video.h"
 
 
-typedef struct WORLD {
+typedef struct WORLD 
+{
 	u16 head;
 	u16 gx;
 	s16 gp;
@@ -49,20 +51,16 @@ extern WORLD* const WA;
 
 /* Macros for world manipulation */
 // (Obsoleted by the WA array of WORLD structures...)
-#define	WORLD_HEAD(n,head)		WAM[(n << 4)    ] = head
-#define	WORLD_GSET(n,gx,gp,gy)	WAM[(n << 4) + 1] = gx;\
-								WAM[(n << 4) + 2] = gp;\
-								WAM[(n << 4) + 3] = gy
-#define	WORLD_MSET(n,mx,mp,my)	WAM[(n << 4) + 4] = mx;\
-								WAM[(n << 4) + 5] = mp;\
-								WAM[(n << 4) + 6] = my
-#define	WORLD_SIZE(n,w,h)		WAM[(n << 4) + 7] = w;\
-								WAM[(n << 4) + 8] = h
+#define	WORLD_HEAD(n,head)		WAM[(n << 4)] = head
+#define	WORLD_GSET(n,gx,gp,gy)	WAM[(n << 4) + 1] = gx; WAM[(n << 4) + 2] = gp; WAM[(n << 4) + 3] = gy
+#define	WORLD_MSET(n,mx,mp,my)	WAM[(n << 4) + 4] = mx; WAM[(n << 4) + 5] = mp; WAM[(n << 4) + 6] = my
+#define	WORLD_SIZE(n,w,h)		WAM[(n << 4) + 7] = w; WAM[(n << 4) + 8] = h
 #define WORLD_PARAM(n,p)		WAM[(n << 4) + 9] = ((p - 0x20000) >> 1) & 0xFFF0
 #define WORLD_OVER(n,o)			WAM[(n << 4) + 10] = o
 
 /***** World Functions *****/
 // (Obsoleted by the WORLD_* macros...)
 void vbSetWorld (s16 nw, u16 header, u16 gx, s16 gp, u16 gy, u16 mx, s16 mp, u16 my, u16 width, u16 height);
+
 
 #endif

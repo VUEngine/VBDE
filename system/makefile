@@ -15,21 +15,26 @@ DIRS := $(shell find . -type d -print)
 LIBS =
 ROMHEADER=lib/vb.hdr
 
+# first build the engine
+LIBGCCVB = libgccvb.a
+
 # Dynamic libraries
 DLIBS =
 
 # Obligatory headers
-GAME_ESSENTIALS = -include $(VBDE)/libs/libgccvb/libgccvb.h 
+LIBGCCVB_PATH = $(VBDE)/libs/libgccvb
+
+GAME_ESSENTIALS = -include $(LIBGCCVB_PATH)/libgccvb.h 
 
 # The next blocks change some variables depending on the build type
 ifeq ($(TYPE),debug)
-LDPARAM = -fno-builtin -ffreestanding -T$(VBDE)/cygwin/opt/gccvb/v810/lib/vb.ld -L/opt/gccvb/v810/lib/ -L/opt/gccvb/v810/include/
+LDPARAM = -fno-builtin -ffreestanding -T$(VBDE)/cygwin/opt/gccvb/v810/lib/vb.ld -L/opt/gccvb/v810/lib/ -L/opt/gccvb/v810/include/ -lm -lgccvb
 CCPARAM = -fno-builtin -ffreestanding -nodefaultlibs -mv810 -O -Wall $(GAME_ESSENTIALS) 
 MACROS = __DEBUG
 endif
 
 ifeq ($(TYPE), release)
-LDPARAM = -T$(VBDE)/cygwin/opt/gccvb/v810/lib/vb.ld -L/opt/gccvb/v810/lib/ -L/opt/gccvb/v810/include/
+LDPARAM = -T$(VBDE)/cygwin/opt/gccvb/v810/lib/vb.ld -L/opt/gccvb/v810/lib/ -L/opt/gccvb/v810/include/  -lm -lgccvb
 CCPARAM = -nodefaultlibs -mv810 -finline-functions -Wall -O3 -Winline $(GAME_ESSENTIALS) -I$(VBDE)/libs/libgccvb/
 MACROS = NDEBUG
 endif
@@ -80,9 +85,19 @@ $(TARGET).vb: main.elf
 	@echo Creating $@
 	@$(OBJCOPY) -O binary main.elf $@
 	@echo $(TARGET).vb done
+#	@echo Generating assembler code
+#	@$(OBJDUMP) -t main.elf > sections.txt
+#	@$(OBJDUMP) -S main.elf > machine.asm
 	
 
-main.elf: dirs $(OBJECTS)
+deleteLibgccvb:
+	@rm -f $(LIBGCCVB)
+
+$(LIBGCCVB): deleteLibgccvb
+	echo Building libgccvb
+	$(MAKE) -f $(LIBGCCVB_PATH)/makefile $@ -e TYPE=$(TYPE)
+
+main.elf: $(LIBGCCVB) dirs $(OBJECTS)
 		@echo Linking $(TARGET).
 		@$(GCC) -o $@ $(OBJECTS) $(LDPARAM) \
 			$(foreach LIBRARY, $(LIBS),-l$(LIBRARY)) $(foreach LIB,$(LIBPATH),-L$(LIB))

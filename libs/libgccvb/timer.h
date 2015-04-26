@@ -1,5 +1,6 @@
-#ifndef _TIMER_H_
-#define _TIMER_H_
+#ifndef _LIBGCCVB_TIMER_H_
+#define _LIBGCCVB_TIMER_H_
+
 
 #include "types.h"
 #include "hw.h"
@@ -29,4 +30,5 @@ void timer_int(int enb);
 int timer_getstat();
 void timer_clearstat();
 
-#endif //_TIMER_H_
+
+#endif
