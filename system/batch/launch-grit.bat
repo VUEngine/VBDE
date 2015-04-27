@@ -2,46 +2,50 @@
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 ::CONVERT ASSETS
-FOR %%S IN (fonts, images, spritesheets) DO (
+IF EXIST %PROJECT_DIR%\assets\images\ (
 
-	IF EXIST %PROJECT_DIR%\assets\%%S\ (
+	::SWITCH TO IMAGES DIRECTORY
+	PUSHD %PROJECT_DIR%\assets\images\
 
-		::SWITCH TO IMAGES DIRECTORY
-		PUSHD %PROJECT_DIR%\assets\%%S\
+	::MAKE _c DIR IF DOES NOT EXISTS
+	IF NOT EXIST _c (
+		MKDIR _c
+	)
 
-		::MAKE _O DIR IF DOES NOT EXISTS
-		IF NOT EXIST _o (
-			MKDIR _o
-		)
-
-		::DELETE ALL C FILES FOR WHICH THE RESPECTIVE IMAGE FILE WAS DELETED
-		::AS WELL AS THE INDEX
-		FOR /r _o %%F IN (*) DO (
-			SET OBSOLETE=1
-			FOR /r . %%I IN (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) DO (
-				IF "%%~nF" == "%%~nI" (
-					SET OBSOLETE=0
-				)
-			)
-			IF !OBSOLETE! == 1 (
-				DEL %%F
+	::DELETE ALL C FILES FOR WHICH THE RESPECTIVE IMAGE FILE WAS DELETED
+	::AS WELL AS THE INDEX
+	FOR /r _c %%F IN (*) DO (
+		SET OBSOLETE=1
+		FOR /r . %%I IN (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) DO (
+			IF "%%~nF" == "%%~nI" (
+				SET OBSOLETE=0
 			)
 		)
+		IF !OBSOLETE! == 1 (
+			DEL %%F
+		)
+	)
 
-		::CONVERT ALL IMAGES
-		FOR /r . %%F IN (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) DO (
+	::CONVERT ALL IMAGES
+	FOR /r . %%F IN (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) DO (
 
-			::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
-			IF EXIST _o\%%~nF.c (
-				CALL :GET_TIMESTAMP_DIFF %%F _o\%%~nF.c TIMEDIFF
+		::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
+		IF EXIST %PROJECT_DIR%\assets\images\_c\%%~nF.c (
+			CALL :GET_TIMESTAMP_DIFF %%F %PROJECT_DIR%\assets\images\_c\%%~nF.c TIMEDIFF
+		) ELSE (
+			SET TIMEDIFF=1
+		)
+
+		::CONVERT IMAGE IF IT HAS CHANGED
+		IF !TIMEDIFF! gtr 0 (
+			IF EXIST %%~npF.grit (
+				::USE FILE SPECIFIC GRIT CONFIG FILE IF IT EXISTS
+				%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o _c\%%~nF -ff %%~npF.grit
+				ECHO Converted "%%~nxF" using custom config
 			) ELSE (
-				SET TIMEDIFF=1
-			)
-
-			::CONVERT IMAGE IF IT HAS CHANGED
-			IF !TIMEDIFF! gtr 0 (
-				%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o _o\%%~nF -ff %VBDE%\system\config\%%S.grit
-				ECHO Converted "%%~nxF" in "%%S"
+				::OTHERWISE USE DEFAULT GRIT CONFIG FILE
+				%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o _c\%%~nF -ff %VBDE%\system\config\images.grit
+				ECHO Converted "%%~nxF"
 			)
 		)
 	)
