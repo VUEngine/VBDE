@@ -1,49 +1,21 @@
+::ALLOW %CD% TO CHANGE DURING RUNTIME
+SETLOCAL ENABLEDELAYEDEXPANSION
+
+::SET CURRENT DIRECTORY AS PROJECT DIRECTORY AND SWITCH TO IT
 SET PROJECT_DIR=%1
 
-IF EXIST %PROJECT_DIR%/../header SET res=1
-IF EXIST %PROJECT_DIR%/../makefile SET res=1
-IF DEFINED res (
-	SET PROJECT_DIR=%PROJECT_DIR%\..
-) ELSE (
-    IF EXIST %PROJECT_DIR%/../../header SET res=1
-    IF EXIST %PROJECT_DIR%/../../makefile SET res=1
+::SWITCH TO PROJECT DIRECTORY
+PUSHD %PROJECT_DIR%
+
+::GO UP UP TO 25 DIRECTORIES AND LOOK FOR header OR makefile
+FOR /L %%G IN (1,1,25) DO (
+    IF EXIST header SET res=1
+    IF EXIST makefile SET res=1
+
     IF DEFINED res (
-        SET PROJECT_DIR=%PROJECT_DIR%\..\..
+        GOTO :EOF
     ) ELSE (
-        IF EXIST %PROJECT_DIR%/../../../header SET res=1
-        IF EXIST %PROJECT_DIR%/../../../makefile SET res=1
-        IF DEFINED res (
-            SET PROJECT_DIR=%PROJECT_DIR%\..\..\..
-        ) ELSE (
-            IF EXIST %PROJECT_DIR%/../../../../header SET res=1
-            IF EXIST %PROJECT_DIR%/../../../../makefile SET res=1
-            IF DEFINED res (
-                SET PROJECT_DIR=%PROJECT_DIR%\..\..\..\..
-            ) ELSE (
-                IF EXIST %PROJECT_DIR%/../../../../../header SET res=1
-                IF EXIST %PROJECT_DIR%/../../../../../makefile SET res=1
-                IF DEFINED res (
-                    SET PROJECT_DIR=%PROJECT_DIR%\..\..\..\..\..
-                ) ELSE (
-                    IF EXIST %PROJECT_DIR%/../../../../../../header SET res=1
-                    IF EXIST %PROJECT_DIR%/../../../../../../makefile SET res=1
-                    IF DEFINED res (
-                        SET PROJECT_DIR=%PROJECT_DIR%\..\..\..\..\..\..
-                    ) ELSE (
-                        IF EXIST %PROJECT_DIR%/../../../../../../../header SET res=1
-                        IF EXIST %PROJECT_DIR%/../../../../../../../makefile SET res=1
-                        IF DEFINED res (
-                            SET PROJECT_DIR=%PROJECT_DIR%\..\..\..\..\..\..\..
-                        ) ELSE (
-                            IF EXIST %PROJECT_DIR%/../../../../../../../../header SET res=1
-                            IF EXIST %PROJECT_DIR%/../../../../../../../../makefile SET res=1
-                            IF DEFINED res (
-                                SET PROJECT_DIR=%PROJECT_DIR%\..\..\..\..\..\..\..\..
-                            )
-                        )
-                    )
-                )
-            )
-        )
+        PUSHD ..
+        SET PROJECT_DIR=!CD!
     )
 )
