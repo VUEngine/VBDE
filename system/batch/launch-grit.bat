@@ -7,32 +7,66 @@ IF EXIST %PROJECT_DIR%\assets\images\ (
 	::SWITCH TO IMAGES DIRECTORY
 	PUSHD %PROJECT_DIR%\assets\images\
 
-	::CONVERT ALL IMAGES
-	FOR /r . %%F IN (*.png *.bmp *.gif *.pcx *.jpg *.jpeg) DO (
+	::FIND ALL GRIT FILES
+	FOR /r . %%F IN (*.grit) DO (
 
-		::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
-		IF EXIST %%~npF.c (
-			CALL :GET_TIMESTAMP_DIFF %%F %%~npF.c TIMEDIFF
-		) ELSE (
-			SET TIMEDIFF=1
-		)
+	    ::SWITCH TO GRIT FILE DIRECTORY
+        PUSHD %%~dpF
 
-		::CONVERT IMAGE IF IT HAS CHANGED
-		IF !TIMEDIFF! gtr 0 (
-			IF EXIST %%~npF.grit (
-				::USE FILE SPECIFIC GRIT CONFIG FILE IF IT EXISTS
-				%VBDE%\tools\graphics\grit-0.8.6\grit.exe "%%F" -o "%%~npF" -ff %%~npF.grit
-				::%VBDE%\tools\graphics\grit-0.8.6\grit.exe "%%F" -O "%%~npF" -ff %%~npF.grit -gS
-				ECHO Converted "%%~nxF"
-			) ELSE (
-				::OTHERWISE USE DEFAULT GRIT CONFIG FILE
-				%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o %%~npF -ff %VBDE%\system\config\images.grit
-				ECHO Converted "%%~nxF"
-			)
-		)
+	    ::DETERMINE IF GRIT FILE BELONGS TO A SINGLE FILE OR TO WHOLE DIRECTORY
+        SET SHARED=1
+        FOR %%S IN (png bmp gif pcx jpg jpeg) DO (
+            IF EXIST %%~dnpF.%%S (
+                SET SHARED=0
+                SET SINGLE_IMAGE=%%~dnpF.%%S
+            )
+        )
+
+		::CONVERT IMAGE(S)
+        IF !SHARED! gtr 0 (
+
+            ::FIND ALL IMAGES IN CURRENT DIRECTORY
+            SET IMAGES=
+            SET IMAGES_CLEAN=
+            SET TIMEDIFF=1
+            FOR %%i IN (*.png *.bmp *.gif *.pcx *.jpg *.jpeg) DO (
+                SET IMAGES=!IMAGES! "%%i"
+                SET IMAGES_CLEAN=!IMAGES_CLEAN! "%%~nxi"
+
+                ::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
+                IF EXIST "%%~dnpi.c" (
+                    CALL :GET_TIMESTAMP_DIFF "%%i" "%%~dnpi.c" TIMEDIFF
+                )
+            )
+
+            ::CONVERT IMAGES ONLY IF AT LEAST ONE OF THEM HAS CHANGED
+            IF !TIMEDIFF! gtr 0 (
+                ::CONVERT
+                %VBDE%\tools\graphics\grit-0.8.6\grit.exe !IMAGES! -O "%%~dnpF" -ff "%%F"
+
+                ::ECHO
+                ECHO Converted!IMAGES_CLEAN!
+            )
+
+        ) ELSE (
+
+            ::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
+            SET TIMEDIFF=1
+            IF EXIST "%%~dnpF.c" (
+                CALL :GET_TIMESTAMP_DIFF "!SINGLE_IMAGE!" "%%~dnpF.c" TIMEDIFF
+            )
+
+            ::CONVERT IMAGE ONLY IF IT HAS CHANGED
+            IF !TIMEDIFF! gtr 0 (
+                ::CONVERT
+                %VBDE%\tools\graphics\grit-0.8.6\grit.exe "%%~dnpF.png" -o "%%~dnpF" -ff "%%F"
+
+                ::ECHO
+                ECHO Converted "%%~nF.png"
+            )
+        )
 	)
 )
-
 
 ::SWITCH BACK TO PROJECT DIRECTORY
 PUSHD %PROJECT_DIR%
