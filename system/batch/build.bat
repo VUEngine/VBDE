@@ -51,13 +51,3 @@ IF EXIST output.vb IF EXIST %VBDE%\system\batch\launch-%3.bat (
 IF NOT EXIST output.vb (
 	pause > nul
 )
-
-
-
-
-
-
-
-
-
-pause > nul

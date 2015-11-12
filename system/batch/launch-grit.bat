@@ -7,21 +7,8 @@ IF EXIST %PROJECT_DIR%\assets\images\ (
 	::SWITCH TO IMAGES DIRECTORY
 	PUSHD %PROJECT_DIR%\assets\images\
 
-	::DELETE ALL C FILES FOR WHICH THE RESPECTIVE IMAGE FILE WAS DELETED
-	FOR /r . %%F IN (*.c) DO (
-		SET OBSOLETE=1
-		FOR /r . %%I IN (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) DO (
-			IF "%%~nF" == "%%~nI" (
-				SET OBSOLETE=0
-			)
-		)
-		IF !OBSOLETE! == 1 (
-			DEL %%F
-		)
-	)
-
 	::CONVERT ALL IMAGES
-	FOR /r . %%F IN (*.png *.bmp *.jpg *.jpeg *.gif *.pcx) DO (
+	FOR /r . %%F IN (*.png *.bmp *.gif *.pcx *.jpg *.jpeg) DO (
 
 		::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
 		IF EXIST %%~npF.c (
@@ -34,8 +21,9 @@ IF EXIST %PROJECT_DIR%\assets\images\ (
 		IF !TIMEDIFF! gtr 0 (
 			IF EXIST %%~npF.grit (
 				::USE FILE SPECIFIC GRIT CONFIG FILE IF IT EXISTS
-				%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o %%~npF -ff %%~npF.grit
-				ECHO Converted "%%~nxF" using custom config
+				%VBDE%\tools\graphics\grit-0.8.6\grit.exe "%%F" -o "%%~npF" -ff %%~npF.grit
+				::%VBDE%\tools\graphics\grit-0.8.6\grit.exe "%%F" -O "%%~npF" -ff %%~npF.grit -gS
+				ECHO Converted "%%~nxF"
 			) ELSE (
 				::OTHERWISE USE DEFAULT GRIT CONFIG FILE
 				%VBDE%\tools\graphics\grit-0.8.6\grit.exe %%F -o %%~npF -ff %VBDE%\system\config\images.grit
@@ -51,6 +39,7 @@ PUSHD %PROJECT_DIR%
 
 ::DO NOT PROCESS "GET_TIMESTAMP_DIFF" FUNCTION
 GOTO :EOF
+
 
 
 :GET_TIMESTAMP_DIFF
