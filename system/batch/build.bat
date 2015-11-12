@@ -25,7 +25,7 @@ IF EXIST makefile (
 	%VBDE%\cygwin\bin\bash -l -c "export VBDE=$(cygpath -u '%VBDE%') && make all"
 ) ELSE (
 	::otherwise use default makefile
-	%VBDE%\cygwin\bin\bash -l -c "export VBDE=$(cygpath -u '%VBDE%') && make all -f $VBDE/system/makefile CDIR=%1"
+	%VBDE%\cygwin\bin\bash -l -c "export VBDE=$(cygpath -u '%VBDE%') && make all -f $VBDE/system/makefile CDIR=%PROJECT_DIR%"
 )
 
 ::SET ROM HEADER
