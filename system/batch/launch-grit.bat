@@ -28,14 +28,19 @@ IF EXIST %PROJECT_DIR%\assets\images\ (
             ::FIND ALL IMAGES IN CURRENT DIRECTORY
             SET IMAGES=
             SET IMAGES_CLEAN=
-            SET TIMEDIFF=1
+            SET TIMEDIFF=0
             FOR %%i IN (*.png *.bmp *.gif *.pcx *.jpg *.jpeg) DO (
                 SET IMAGES=!IMAGES! "%%i"
                 SET IMAGES_CLEAN=!IMAGES_CLEAN! "%%~nxi"
 
                 ::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
                 IF EXIST "%%~dnpi.c" (
-                    CALL :GET_TIMESTAMP_DIFF "%%i" "%%~dnpi.c" TIMEDIFF
+                    CALL :GET_TIMESTAMP_DIFF "%%i" "%%~dnpi.c" TIMEDIFF_CHECK
+                    IF !TIMEDIFF_CHECK! gtr 0 (
+                        SET TIMEDIFF=1
+                    )
+                ) ELSE (
+                    SET TIMEDIFF=1
                 )
             )
 
