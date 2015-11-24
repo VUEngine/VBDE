@@ -14,7 +14,7 @@ int main()
 	while(1) {
 		iterate();
 		render();
-		vbWaitFrame(5);
+		vbWaitFrame(3);
 	}
 
 	return 0;

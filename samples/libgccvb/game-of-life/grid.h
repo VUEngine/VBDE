@@ -2,8 +2,11 @@
 #define GRID_H_
 
 
-#define WIDTH 	48
-#define HEIGHT 	28
+#define o 0
+#define X 1
+
+#define WIDTH  96
+#define HEIGHT 56
 
 extern u8 grid[HEIGHT][WIDTH];
 
