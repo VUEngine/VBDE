@@ -4,3 +4,6 @@
 [submodule "samples/vbjaengine/platform-demo"]
 	path = samples/vbjaengine/platform-demo
 	url = git@bitbucket.org:jorgeche/vbjaengine-skeleton.git
+[submodule "samples/vbjaengine/barebone"]
+	path = samples/vbjaengine/barebone
+	url = git@bitbucket.org:jorgeche/vbjaengine-barebone.git
