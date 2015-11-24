@@ -7,3 +7,6 @@
 [submodule "samples/vbjaengine/barebone"]
 	path = samples/vbjaengine/barebone
 	url = git@bitbucket.org:jorgeche/vbjaengine-barebone.git
+[submodule "libs/libgccvb"]
+	path = libs/libgccvb
+	url = git@bitbucket.org:KR155E/libgccvb.git
