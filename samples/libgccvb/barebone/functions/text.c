@@ -1,10 +1,9 @@
 #include <libgccvb.h>
 #include <constants.h>
-#include <lang.h>
+#include <languages.h>
 #include "text.h"
 
 extern u8 currentLanguage;
-extern char** languages;
 
 void printString(u8 bgmap, u16 x, u16 y, char* t_string)
 {
@@ -44,7 +43,7 @@ void printString(u8 bgmap, u16 x, u16 y, char* t_string)
 	}
 }
 
-char* getString(int str)
+char* getString(int string)
 {
-	return &languages[currentLanguage][str];
+	return (char*)__LANGUAGES[currentLanguage][string];
 }

@@ -3,37 +3,45 @@
 #include <mem.h>
 #include <video.h>
 #include <world.h>
-#include <input.h>
-#include <text.h>
-#include <lang.h>
+#include <functions.h>
+#include <languages.h>
 #include "languageSelectionScreen.h"
 
 extern u8 currentLanguage;
-extern char** languages;
 
 void languageSelectionScreen()
 {
 	u8 i = 0;
+	int numLangs = 0;
 
-	setmem((void*)CharSeg0, 0x0000, 2048);
-	setmem((void*)BGMap(0), 0x0000, 8192);
+    clearScreen();
 
 	WA[31].head = WRLD_ON|WRLD_OVR;
 	WA[31].w = 384;
 	WA[31].h = 224;
 	WA[30].head = WRLD_END;
 
-	for(i=0; i<sizeof(languages); i++) {
-		if(i == currentLanguage) {
-			printString(0, 17, 10+i, ">");
-		}
-		printString(0, 18, 10+i, &languages[i][STR_LANGUAGE]);
+    printString(0, 17, 10 + currentLanguage, ">");
+
+	for(i = 0; __LANGUAGES[i]; i++) {
+		printString(0, 18, 10 + i, (char *)__LANGUAGES[i][STR_LANGUAGE]);
+		numLangs++;
 	}
 
 	vbFXFadeIn(0);
 
 	while(1) {
-		if(buttonsPressed(K_ANY, false)) {
+		if(buttonsPressed(K_LU|K_RU, true) && (currentLanguage > 0)) {
+            currentLanguage--;
+            printString(0, 17, 10 + currentLanguage + 1, " ");
+            printString(0, 17, 10 + currentLanguage, ">");
+            vbWaitFrame(3);
+		} else if(buttonsPressed(K_LD|K_RD, true) && (currentLanguage < (numLangs-1))) {
+            currentLanguage++;
+            printString(0, 17, 10 + currentLanguage - 1, " ");
+            printString(0, 17, 10 + currentLanguage, ">");
+            vbWaitFrame(3);
+		} else if(buttonsPressed(K_STA|K_A, true)) {
 			break;
 		}
 	}

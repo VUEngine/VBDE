@@ -2,6 +2,7 @@
 #define _FUNCTIONS_SYSTEM_H
 
 
+void clearScreen();
 void initSystem();
 
 

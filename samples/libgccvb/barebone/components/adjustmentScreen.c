@@ -13,8 +13,8 @@ extern BYTE AdjustmentScreenMap[];
 
 void adjustmentScreen()
 {
-	copymem((void*)CharSeg0, (void*)AdjustmentScreenTiles, 588);
-	copymem((void*)BGMap(0), (void*)AdjustmentScreenMap, 2688);
+	copymem((void*)CharSeg0, (void*)AdjustmentScreenTiles, 2336);
+	copymem((void*)BGMap(0), (void*)AdjustmentScreenMap, 7168);
 
 	WA[31].head = WRLD_LON|WRLD_OVR;
 	WA[31].w = 384;
