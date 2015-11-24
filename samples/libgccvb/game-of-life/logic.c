@@ -2,13 +2,13 @@
 
 u8 getNeighbourCount(int x, int y)
 {
-	return grid[y-1][x-1];
-		+ grid[y-1][x];
-		+ grid[y-1][x+1];
-		+ grid[y][x-1];
-		+ grid[y][x+1];
-		+ grid[y+1][x-1];
-		+ grid[y+1][x];
+	return grid[y-1][x-1]
+		+ grid[y-1][x]
+		+ grid[y-1][x+1]
+		+ grid[y][x-1]
+		+ grid[y][x+1]
+		+ grid[y+1][x-1]
+		+ grid[y+1][x]
 		+ grid[y+1][x+1];
 }
 
