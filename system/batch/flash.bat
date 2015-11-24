@@ -11,9 +11,7 @@ CALL %VBDE%\system\batch\find-project-dir.bat %1
 PUSHD %PROJECT_DIR%
 
 ::PAD ROM
-START %VBDE%\tools\rom\Pad_VB\Pad_VB.exe %PROJECT_DIR%\output.vb
+START %VBDE%\tools\rom\Pad_VB\Pad_VB.exe "%PROJECT_DIR%\output.vb"
 
 ::LAUNCH FLASHBOY LOADER
 START %VBDE%\tools\rom\FlashBoy_20101102\FlashBoy.exe
-
-EXIT

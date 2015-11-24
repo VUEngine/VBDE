@@ -11,7 +11,7 @@ void timerHandle()
 	
 	//clear timer state
 	timer_clearstat();
-	
+
 	//enable timer
 	timer_enable(1);
 	//enable interrupts
