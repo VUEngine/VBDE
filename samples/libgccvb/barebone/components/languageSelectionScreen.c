@@ -1,5 +1,5 @@
 #include <constants.h>
-#include <joypad.h>
+#include <controller.h>
 #include <mem.h>
 #include <video.h>
 #include <world.h>
