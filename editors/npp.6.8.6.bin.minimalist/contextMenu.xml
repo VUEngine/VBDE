@@ -55,14 +55,15 @@ http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Context_Menu
 		ItemNameAs can be used in any type of item. ItemNameAs value can be in any language.
 		-->
         <Item FolderName="Plugin commands" PluginEntryName="NppExport" PluginCommandItemName="Copy all formats to clipboard" ItemNameAs="Copy Text with Syntax Highlighting" />
-		
+		<Item id="0"/>
+        <Item MenuEntryName="Run" MenuItemName="Google Search"/>
         <Item id="0"/>
         <Item MenuEntryName="Edit" MenuItemName="UPPERCASE"/>
         <Item MenuEntryName="Edit" MenuItemName="lowercase"/>
         <Item id="0"/>
-        <Item MenuEntryName="Edit" MenuItemName="Toggle block comment"/>
-        <Item MenuEntryName="Edit" MenuItemName="Stream comment"/>
-        <Item MenuEntryName="Edit" MenuItemName="Stream uncomment"/>
+        <Item MenuEntryName="Edit" MenuItemName="Toggle Single Line Comment"/>
+        <Item MenuEntryName="Edit" MenuItemName="Block Comment"/>
+        <Item MenuEntryName="Edit" MenuItemName="Block Uncomment"/>
         <Item id="0"/>
         <Item MenuEntryName="View" MenuItemName="Hide lines"/>
     </ScintillaContextMenu>
