@@ -9,7 +9,7 @@
 |      @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@            |
 |                                                                    |
 |  VBDE - Virtual Boy Development Environment                        |
-|  Version 1.0.0 - November 26th, 2015                               |
+|  Version 1.0.0 - November 29th, 2015                               |
 |                                                                    |
 +====================================================================+
 
@@ -51,11 +51,22 @@
     buttons, you can quickly compile the current project, run the
     compiled ROM in an emulator, convert graphics, etc.
 
-  o Compiling
+  o Compiling and running
 
     Compiling a project is as simple as opening any project file and
     clicking the compile button. There's also buttons to automatically
     run the resulting ROM in an emulator.
+
+    The key mapping is as follows:
+
+    Left D-Pad (U, D, L, R): E, D, S, F
+    Right D-Pad (U, D, L, R): I, K, J, L
+    Left Trigger: G
+    Right Trigger: H
+    Select: V
+    Start: B
+    B: N
+    A: M
 
   o Graphics conversion
 
@@ -111,7 +122,7 @@
     various VBDE batch scripts. Although being aimed at web
     development, PHPStorm, being based on the great IDEA IDE, works
     like a charm for VB development, too. There's also a C specific
-    version of IDEA, called C-Lion, which you might want to try. As
+    version of IDEA, called C-Lion, which might work even better. As
     a free alternative, Eclipse is very well suited, too.
 
 
@@ -279,7 +290,7 @@
 | (06) Changelog                                                     |
 +--------------------------------------------------------------------+
 
-  o 1.0.0, November 26th, 2015
+  o 1.0.0, November 29th, 2015
     Initial release
 
 
