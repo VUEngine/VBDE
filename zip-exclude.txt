@@ -1,0 +1,17 @@
+.git
+.gitignore
+.gitmodules
+.idea
+.make-*
+cygwin\etc\setup\*
+cygwin\home\Chris
+cygwin\tmp\*
+cygwin\var\log\*
+libgccvb.a
+libvbjae.a
+mednafen*\sav\*
+output.ram
+output.vb
+setup-x86.exe
+zip-exclude.txt
+zip-release.bat
