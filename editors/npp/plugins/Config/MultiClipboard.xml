@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<MultiClipboardSettings>
+    <Group name="AutoCopy">
+        <Value name="AutoCopyTextSelection" type="bool">false</Value>
+        <Value name="AutoCopyUpdateTime" type="int">250</Value>
+    </Group>
+    <Group name="ClipboardList">
+        <Value name="MaxClipboardItems" type="int">10</Value>
+        <Value name="SaveClipboardSession" type="bool">false</Value>
+    </Group>
+    <Group name="MultiClipViewer">
+        <Value name="LargeTextDisplaySize" type="int">2048</Value>
+        <Value name="NoEditLargeText" type="bool">true</Value>
+        <Value name="NoEditLargeTextSize" type="int">10000</Value>
+        <Value name="PasteAllNewLine" type="bool">true</Value>
+        <Value name="PasteAllReverse" type="bool">true</Value>
+    </Group>
+    <Group name="OSClipboard">
+        <Value name="CopyFromOtherPrograms" type="bool">false</Value>
+        <Value name="IgnoreLargeText" type="bool">false</Value>
+        <Value name="IgnoreLargeTextSize" type="int">10000</Value>
+        <Value name="OnlyWhenPastedInNpp" type="bool">false</Value>
+    </Group>
+    <Group name="PasteMenu">
+        <Value name="MiddleClickPaste" type="bool">false</Value>
+        <Value name="PasteMenuWidth" type="int">40</Value>
+        <Value name="ShowNumberedPasteMenu" type="bool">true</Value>
+        <Value name="UsePasteMenu" type="bool">true</Value>
+    </Group>
+</MultiClipboardSettings>

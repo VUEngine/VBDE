@@ -9,7 +9,7 @@
 |      @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@            |
 |                                                                    |
 |  VBDE - Virtual Boy Development Environment                        |
-|  Version 1.0.0 - November 29th, 2015                               |
+|  Version 1.1.0 - January 1st, 2016                                 |
 |                                                                    |
 +====================================================================+
 
@@ -47,9 +47,10 @@
     no longer necessary, but still recommended.
 
     VBDE comes with a current portable version of Notepad++ that has
-    been slightly modified to have a button bar on top. With these
-    buttons, you can quickly compile the current project, run the
-    compiled ROM in an emulator, convert graphics, etc.
+    been pre-configured with selected plugins and slightly modified
+    to have a button bar on top. With these buttons, you can quickly
+    compile the current project, run the compiled ROM in an emulator,
+    convert images, etc.
 
   o Compiling and running
 
@@ -68,19 +69,19 @@
     B: N
     A: M
 
-  o Graphics conversion
+  o Image conversion
 
-    VBDE allows for hassle free, on-the-fly graphics conversion using
+    VBDE allows for hassle free, on-the-fly image conversion using
     grit. To use it, create a folder called "assets" in the root
     folder of your project, with a contained "images" folder. This
-    folder will hold all your graphics in any of the supported
+    folder will hold all your images in any of the supported
     formats: png, bmp, gif, pcx or jpg/jpeg (I recommend png.)
 
-    Graphics should use an indexed 4-color palette in the following
+    Images should use an indexed 4-color palette in the following
     order: Black, Dark Red, Medium Red, Light Red. An example palette
     for Photoshop can be found in {VBDE}/system/grit/.
 
-    In order to be detected and converted by the graphics conversion
+    In order to be detected and converted by the image conversion
     script, you also need a *.grit file of the same name as the
     graphic, which contains the conversion settings. You can find
     a number of example grit files in {VBDE}/system/grit/ which you
@@ -90,7 +91,7 @@
     having all images converted individually. Grit files which do not
     directly relate to an image file through their name, are applied
     to all images files in the current directory (not sub-directories.)
-    This is useful for generating tilemaps with shared tilesets.
+    This is useful for generating maps with shared tilesets.
 
     Example file structure:
     my-project/
@@ -105,9 +106,9 @@
           |- Hero.grit
           '- Hero.png
 
-    Finally, to start the graphics conversion, press the editor's
+    Finally, to start the image conversion, press the editor's
     grit button while having any project file opened. This will
-    convert all graphics that do not yet have a corresponding c file
+    convert all images that do not yet have a corresponding c file
     or are newer than their c file.
 
   o Custom editors
@@ -115,8 +116,7 @@
     The buttons of the VBDE default editor simply trigger a bunch of
     batch files, which you can just as well start from the command
     line or any other editor of choice.
-    See {VBDE}/editors/npp.6.8.6.bin.minimalist/shortcuts.xml for how
-    to call these.
+    See {VBDE}/editors/npp/shortcuts.xml for how to call these.
 
     Personally, I use PHPStorm with a custom toolbar to trigger the
     various VBDE batch scripts. Although being aimed at web
@@ -132,7 +132,7 @@
 
   o libgccvb
     Description: The default gccVB library.
-    Author: various
+    Authors: various
 
   o VBJaEngine
     Description: An advanced, object-oriented Virtual Boy game engine.
@@ -168,34 +168,34 @@
 
   o VBJaEngine
 
-    - VBJaEngine Platformer Demo
-      Description: A platform game demo which demonstrates usage and
-        features of the VBJaEngine.
-      Location: {VBDE}/samples/vbjaengine/platform-demo/
-      Authors: jorgeche, KR155E
-
     - VBJaEngine Barebone
       Description: A barebone VBJaEngine project that can be used as a
         starting point for your own project.
       Location: {VBDE}/samples/vbjaengine/barebone/
       Authors: jorgeche, KR155E
 
+    - VBJaEngine Platformer Demo
+      Description: A platform game demo which demonstrates usage and
+        features of the VBJaEngine.
+      Location: {VBDE}/samples/vbjaengine/platform-demo/
+      Authors: jorgeche, KR155E
+
 
 +--------------------------------------------------------------------+
-| (05) Bundled Tools                                         |
+| (05) Bundled Tools                                                 |
 +--------------------------------------------------------------------+
 
   o Environment
 
     - Cygwin
 
-  o Editors
+  o Editor
 
-    - Notepad++ v6.8.6 Minimalist with Customize Toolbar v3.4 plugin
+    - Notepad++ v6.8.8, pre-configured with several useful plugins
 
-  o gccVB
+  o Compiler
 
-    - v810-gcc-4.4.2 patched for VB
+    - v810-gcc-4.4.2 patched for Virtual Boy (gccVB)
 
   o Tools
 
@@ -274,14 +274,14 @@
 
     - VB Sacred Tech Scroll - Virtual Boy Specifications
       Version: Version 0.91 (WIP)
-      Description: The most complete and accurate Virtual Boy
-        hardware documentation. Note that this document uses
-        different terminology than libgccvb.
+      Description: The most complete and accurate Virtual Boy hardware
+        documentation. Note that this document uses different
+        terminology than libgccvb.
       Author: Guy Perfect
       Release Date: January 4th, 2013
 
     - VBJaEngine Development Manual
-      Description: VBJaEngine Documentation. Note that this is an
+      Description: VBJaEngine Documentation. Note that this is a very
         incomplete WIP.
       Authors: jorgeche, KR155E
 
@@ -289,6 +289,13 @@
 +--------------------------------------------------------------------+
 | (06) Changelog                                                     |
 +--------------------------------------------------------------------+
+
+  o 1.1.0, January 1st, 2016
+    - Updated Notepad++ from v6.8.6 Minimalist to a pre-configured
+      v6.8.8 with several useful plugins
+    - Added new button "Debug in Reality Boy"
+    - Updated VBJaEngine as well as its Barebone and Platformer Demo
+      to v4.0 beta 2
 
   o 1.0.0, November 29th, 2015
     Initial release
