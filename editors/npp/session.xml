@@ -1,0 +1,10 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="675" startPos="1008" endPos="1008" selMode="0" lang="Normal Text" encoding="-1" filename="C:\vbde\readme.txt" backupFilePath="" originalFileLastModifTimestamp="1452024444" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="263" startPos="0" endPos="0" selMode="0" lang="C" encoding="-1" filename="C:\vbde\samples\libgccvb\game-of-life\main.c" backupFilePath="" originalFileLastModifTimestamp="1448402980" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="751" startPos="0" endPos="0" selMode="0" lang="C" encoding="-1" filename="C:\vbde\samples\vbjaengine\platform-demo\source\game.c" backupFilePath="" originalFileLastModifTimestamp="1452023543" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

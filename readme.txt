@@ -9,7 +9,7 @@
 |      @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@            |
 |                                                                    |
 |  VBDE - Virtual Boy Development Environment                        |
-|  Version 1.1.0 - January 1st, 2016                                 |
+|  Version 1.0.1 - January 5th, 2016                                 |
 |                                                                    |
 +====================================================================+
 
@@ -68,6 +68,9 @@
     Start: B
     B: N
     A: M
+
+    In addition, you can trigger a low battery signal by holding W
+    (Reality Boy only).
 
   o Image conversion
 
@@ -228,7 +231,7 @@
 
       - Reality Boy
         Version: 0.84
-        Authord: David Tucker, Pat Daderko
+        Authors: David Tucker, Pat Daderko
         Release Date: December 9th, 2008
 
     - Graphics
@@ -290,7 +293,7 @@
 | (06) Changelog                                                     |
 +--------------------------------------------------------------------+
 
-  o 1.1.0, January 1st, 2016
+  o 1.0.1, January 5th, 2016
     - Updated Notepad++ from v6.8.6 Minimalist to a pre-configured
       v6.8.8 with several useful plugins
     - Added new button "Debug in Reality Boy"
