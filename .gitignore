@@ -4,8 +4,6 @@ cygwin/home/*
 cygwin/tmp/*
 cygwin/var/log/*
 cygwin/etc/setup/*
-config.xml
-session.xml
 stdout.txt
 reality_boy.ini
 *.vb
