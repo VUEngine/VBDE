@@ -11,3 +11,6 @@ SET C_INCLUDE_PATH=%VBDE%\cygwin\opt\gccvb\v810\include;%VBDE%\libs\libgccvb
 ::SET TEMPORARY CYGWIN ENVIRONMENT VARIABLES
 SET CYGWIN=nodosfilewarning
 SET CHERE_INVOKING=1
+
+::CHECK USER DIR
+CALL %~dp0\init-user.bat

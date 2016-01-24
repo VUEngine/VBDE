@@ -298,6 +298,7 @@
       cygwin director
     - Made VBDE fully portable by removed remaining hardcoded paths
       from Notepad++ directory
+    - Added script to initialize user folder on first run
     - Updated VBJaEngine as well as its Barebone and Platformer Demo
       to v4.0
 
