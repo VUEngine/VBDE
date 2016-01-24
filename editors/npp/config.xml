@@ -89,13 +89,13 @@
         <GUIConfig name="stylerTheme" path="C:\vbde\editors\npp\themes\Solarized.xml" />
         <GUIConfig name="delimiterSelection" leftmostDelimiter="40" rightmostDelimiter="41" delimiterSelectionOnEntireDocument="no" />
         <GUIConfig name="MISC" fileSwitcherWithoutExtColumn="yes" backSlashIsEscapeCharacterForSql="yes" newStyleSaveDlg="no" />
-        <GUIConfig name="DockingManager" leftWidth="358" rightWidth="229" topHeight="200" bottomHeight="200">
+        <GUIConfig name="DockingManager" leftWidth="292" rightWidth="229" topHeight="200" bottomHeight="200">
             <FloatingWindow cont="4" x="874" y="435" width="1093" height="991" />
             <PluginDlg pluginName="LightExplorer.dll" id="0" curr="0" prev="-1" isVisible="yes" />
-            <PluginDlg pluginName="MultiClipboard.dll" id="0" curr="0" prev="-1" isVisible="yes" />
+            <PluginDlg pluginName="MultiClipboard.dll" id="0" curr="0" prev="-1" isVisible="no" />
+            <PluginDlg pluginName="Notepad++::InternalFunction" id="44081" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44084" curr="1" prev="-1" isVisible="yes" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44080" curr="1" prev="4" isVisible="yes" />
-            <PluginDlg pluginName="Notepad++::InternalFunction" id="44081" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44070" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44082" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Explorer.dll" id="0" curr="0" prev="-1" isVisible="no" />
@@ -109,7 +109,8 @@
     </GUIConfigs>
     <!-- The History of opened files list -->
     <FindHistory nbMaxFindHistoryPath="10" nbMaxFindHistoryFilter="10" nbMaxFindHistoryFind="10" nbMaxFindHistoryReplace="10" matchWord="no" matchCase="no" wrap="yes" directionDown="yes" fifRecuisive="yes" fifInHiddenFolder="no" dlgAlwaysVisible="no" fifFilterFollowsDoc="no" fifFolderFollowsDoc="no" searchMode="0" transparencyMode="1" transparency="150" dotMatchesNewline="no" />
-    <History nbMaxFile="15" inSubMenu="no" customLength="-1" />
+    <History nbMaxFile="15" inSubMenu="no" customLength="-1">
+    </History>
     <ProjectPanels>
         <ProjectPanel id="0" workSpaceFile="" />
         <ProjectPanel id="1" workSpaceFile="" />
