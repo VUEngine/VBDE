@@ -295,12 +295,13 @@
 
   o 1.1.0, February 1st, 2016
     - Massively reduced package size by removing unneeded files from
-      cygwin director
-    - Made VBDE fully portable by removed remaining hardcoded paths
+      cygwin directory
+    - Made VBDE compatible with additional editors
+    - Made VBDE fully portable by removing remaining hardcoded paths
       from Notepad++ directory
     - Added script to initialize user folder on first run
     - Updated VBJaEngine as well as its Barebone and Platformer Demo
-      to v4.0
+      to v4.0 final
 
   o 1.0.1, January 5th, 2016
     - Updated Notepad++ from v6.8.6 Minimalist to a pre-configured
