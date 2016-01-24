@@ -86,16 +86,16 @@
         <GUIConfig name="ScintillaGlobalSettings" enableMultiSelection="yes" />
         <GUIConfig name="openSaveDir" value="0" defaultDirPath="" />
         <GUIConfig name="titleBar" short="no" />
-        <GUIConfig name="stylerTheme" path="C:\vbde\editors\npp\themes\Solarized.xml" />
+        <GUIConfig name="stylerTheme" path="themes\Solarized.xml" />
         <GUIConfig name="delimiterSelection" leftmostDelimiter="40" rightmostDelimiter="41" delimiterSelectionOnEntireDocument="no" />
         <GUIConfig name="MISC" fileSwitcherWithoutExtColumn="yes" backSlashIsEscapeCharacterForSql="yes" newStyleSaveDlg="no" />
         <GUIConfig name="DockingManager" leftWidth="292" rightWidth="229" topHeight="200" bottomHeight="200">
             <FloatingWindow cont="4" x="874" y="435" width="1093" height="991" />
             <PluginDlg pluginName="LightExplorer.dll" id="0" curr="0" prev="-1" isVisible="yes" />
-            <PluginDlg pluginName="MultiClipboard.dll" id="0" curr="0" prev="-1" isVisible="no" />
-            <PluginDlg pluginName="Notepad++::InternalFunction" id="44081" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44084" curr="1" prev="-1" isVisible="yes" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44080" curr="1" prev="4" isVisible="yes" />
+            <PluginDlg pluginName="MultiClipboard.dll" id="0" curr="0" prev="-1" isVisible="no" />
+            <PluginDlg pluginName="Notepad++::InternalFunction" id="44081" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44070" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44082" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Explorer.dll" id="0" curr="0" prev="-1" isVisible="no" />

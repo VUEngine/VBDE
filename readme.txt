@@ -9,7 +9,7 @@
 |      @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@            |
 |                                                                    |
 |  VBDE - Virtual Boy Development Environment                        |
-|  Version 1.0.1 - January 5th, 2016                                 |
+|  Version 1.1.0 - February 1st, 2016                                |
 |                                                                    |
 +====================================================================+
 
@@ -44,7 +44,7 @@
     unzip and you're ready to start developing for the Virtual Boy.
 
     Note: Previous versions needed to be placed in C:/vbde/. This is
-    no longer necessary, but still recommended.
+    no longer necessary.
 
     VBDE comes with a current portable version of Notepad++ that has
     been pre-configured with selected plugins and slightly modified
@@ -292,6 +292,14 @@
 +--------------------------------------------------------------------+
 | (06) Changelog                                                     |
 +--------------------------------------------------------------------+
+
+  o 1.1.0, February 1st, 2016
+    - Massively reduced package size by removing unneeded files from
+      cygwin director
+    - Made VBDE fully portable by removed remaining hardcoded paths
+      from Notepad++ directory
+    - Updated VBJaEngine as well as its Barebone and Platformer Demo
+      to v4.0
 
   o 1.0.1, January 5th, 2016
     - Updated Notepad++ from v6.8.6 Minimalist to a pre-configured
