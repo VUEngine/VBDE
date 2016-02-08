@@ -7,6 +7,7 @@ cygwin\etc\setup\*
 cygwin\home\Chris
 cygwin\tmp\*
 cygwin\var\log\*
+editors\idea
 libgccvb.a
 libvbjae.a
 mednafen*\sav\*

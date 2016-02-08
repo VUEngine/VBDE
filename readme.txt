@@ -300,6 +300,7 @@
     - Made VBDE fully portable by removing remaining hardcoded paths
       from Notepad++ directory
     - Added script to initialize user folder on first run
+    - Fixed and reduced Notepad++ toolbar
     - Updated VBJaEngine as well as its Barebone and Platformer Demo
       to v4.0 final
 
