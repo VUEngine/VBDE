@@ -7,7 +7,8 @@
         </Macro>
     </Macros>
     <UserDefinedCommands>
-        <Command name="Start VIDE" Ctrl="no" Alt="no" Shift="yes" Key="112">..\..\system\batch\vide.bat</Command>
+        <Command name="EDIT images with ASEPRITE" Ctrl="no" Alt="no" Shift="yes" Key="112">..\..\system\batch\aseprite.bat</Command>
+        <Command name="Start VIDE" Ctrl="no" Alt="no" Shift="yes" Key="113">..\..\system\batch\vide.bat</Command>
         <Command name="CONVERT images with GRIT" Ctrl="no" Alt="no" Shift="yes" Key="114">..\..\system\batch\grit.bat $(CURRENT_DIRECTORY)</Command>
         <Command name="COMPILE with gccVB" Ctrl="no" Alt="no" Shift="yes" Key="116">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART)</Command>
         <Command name="COMPILE with gccVB and RUN in Mednafen" Ctrl="no" Alt="no" Shift="yes" Key="117">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART) mednafen</Command>

@@ -1,0 +1,73 @@
+<!-- ASEPRITE -->
+<!-- Copyright (C) 2001-2012 by David Capello -->
+<gui>
+<window text="Options" id="options">
+  <box vertical="true">
+    <box horizontal="true">
+      <box vertical="true">
+
+      <!-- Editor -->
+
+      <separator text="Editor:" horizontal="true" />
+      <check text="Smooth auto-scroll" id="smooth" />
+      <check text="2 Click Movement" id="move_click2" disabled="true" />
+      <check text="2 Click Drawing" id="draw_click2" disabled="true" />
+      <grid columns="2">
+        <label text="Cursor:" />
+        <box id="cursor_color_box" /><!-- custom widget -->
+
+        <label text="Grid Color:" />
+        <box id="grid_color_box" /><!-- custom widget -->
+
+        <label text="Pixel Grid:" />
+        <box id="pixel_grid_color_box" /><!-- custom widget -->
+      </grid>
+
+      <!-- Undo -->
+
+      <separator text="Undo:" horizontal="true" />
+      <box horizontal="true">
+        <label text="Undo Limit:" />
+        <entry id="undo_size_limit" maxsize="4" tooltip="Limit of memory to be used&#10;for undo information per sprite.&#10;Specified in megabytes." />
+        <label text="MB" />
+      </box>
+
+      <box horizontal="true">
+        <check id="undo_goto_modified" text="Go to modified frame/layer" tooltip="When it's enabled each time you undo/redo&#10;the current frame &amp; layer will be modified&#10;to focus the undid/redid change." />
+      </box>
+
+      </box>
+      <separator vertical="true" />
+      <box vertical="true">
+
+      <!-- Checked Background -->
+
+      <separator text="Checked Background:" horizontal="true" />
+      <box horizontal="true">
+        <label text="Size:" />
+        <combobox id="checked_bg_size" expansive="true" />
+      </box>
+      <check text="Apply Zoom" id="checked_bg_zoom" />
+      <grid columns="2">
+        <label text="Color 1" />
+        <box horizontal="true" id="checked_bg_color1_box" />
+        <label text="Color 2" />
+        <box horizontal="true" id="checked_bg_color2_box" />
+      </grid>
+      <button id="checked_bg_reset" text="Reset" />
+
+      </box>
+    </box>
+
+    <separator horizontal="true" />
+
+    <box horizontal="true">
+      <box horizontal="true" expansive="true" />
+      <box horizontal="true" homogeneous="true">
+        <button text="&amp;OK" closewindow="true" id="button_ok" magnet="true" width="60" />
+        <button text="&amp;Cancel" closewindow="true" />
+      </box>
+    </box>
+  </box>
+</window>
+</gui>

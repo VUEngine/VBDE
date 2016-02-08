@@ -1,0 +1,27 @@
+<!-- ASEPRITE -->
+<!-- Copyright (C) 2001-2012 by David Capello -->
+<gui>
+  <box id="main" vertical="true">
+    <box horizontal="true">
+      <box horizontal="true" noborders="true">
+        <button text="" id="goback" bevel="2 0 2 0" tooltip="Go back one folder" />
+        <button text="" id="goforward" bevel="0 2 0 2" tooltip="Go forward one folder" />
+      </box>
+      <button text="" id="goup" tooltip="Up to parent folder&#10;(Backspace)" />
+      <combobox id="location" expansive="true" />
+    </box>
+    <view id="fileview_container" expansive="true"></view>
+    <box horizontal="true">
+      <label text="Name:" />
+      <filenameentry id="filename" expansive="true" magnet="true" />
+      <combobox id="filetype" minwidth="70" />
+    </box>
+    <box horizontal="true">
+      <box horizontal="true" expansive="true" />
+      <box horizontal="true" homogeneous="true">
+        <button text="&amp;OK" closewindow="true" id="ok" magnet="true" width="60" />
+        <button text="&amp;Cancel" closewindow="true" id="cancel" />
+      </box>
+    </box>
+  </box>
+</gui>
