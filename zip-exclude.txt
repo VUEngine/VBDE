@@ -7,7 +7,6 @@ cygwin\etc\setup\*
 cygwin\home\Chris
 cygwin\tmp\*
 cygwin\var\log\*
-editors\idea
 libgccvb.a
 libvbjae.a
 mednafen*\sav\*
@@ -15,4 +14,5 @@ output.ram
 output.vb
 setup-x86.exe
 zip-exclude.txt
-zip-release.bat
+zip-release-basic.bat
+zip-release-pro.bat

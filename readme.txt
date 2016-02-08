@@ -9,7 +9,7 @@
 |      @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@            |
 |                                                                    |
 |  VBDE - Virtual Boy Development Environment                        |
-|  Version 1.1.0 - February 1st, 2016                                |
+|  Version 1.1.0 - February 21st, 2016                               |
 |                                                                    |
 +====================================================================+
 
@@ -30,7 +30,7 @@
 +--------------------------------------------------------------------+
 
   VBDE is a complete, portable Virtual Boy development environment for
-  Windows. Only download, unzip and start working, no installation,
+  Windows. Only download, unzip and start working. No installation,
   no hassle.
 
 
@@ -51,6 +51,10 @@
     to have a button bar on top. With these buttons, you can quickly
     compile the current project, run the compiled ROM in an emulator,
     convert images, etc.
+
+    VBDE is also available in a Pro edition, which comes with a copy
+    of IntelliJ IDEA Community Edition, which has been modified and
+    pre-configured for VB development.
 
   o Compiling and running
 
@@ -121,13 +125,6 @@
     line or any other editor of choice.
     See {VBDE}/editors/npp/shortcuts.xml for how to call these.
 
-    Personally, I use PHPStorm with a custom toolbar to trigger the
-    various VBDE batch scripts. Although being aimed at web
-    development, PHPStorm, being based on the great IDEA IDE, works
-    like a charm for VB development, too. There's also a C specific
-    version of IDEA, called C-Lion, which might work even better. As
-    a free alternative, Eclipse is very well suited, too.
-
 
 +--------------------------------------------------------------------+
 | (03) Bundled Libraries                                             |
@@ -195,6 +192,8 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
+    - IntelliJ IDEA 15.0.3 Community Edition, pre-configured with
+      several useful plugins, templates, etc. (Pro version only)
 
   o Compiler
 
@@ -282,6 +281,10 @@
         Author: RunnerPack
         Release Date: August 8th, 2010
 
+    - Version Control
+
+      - PortableGit (Pro version only)
+
   o Documentation
 
     - VB Sacred Tech Scroll - Virtual Boy Specifications
@@ -302,12 +305,9 @@
 | (06) Changelog                                                     |
 +--------------------------------------------------------------------+
 
-  o 1.1.0, February 1st, 2016
+  o 1.1.0, February 21st, 2016
     - Massively reduced package size by removing unneeded files from
       cygwin directory
-    - Made VBDE compatible with additional editors
-    - VBDE now also available as "Pro" edition, bundled with IntelliJ
-      IDEA and GIT
     - Made VBDE fully portable by removing remaining hardcoded paths
       from Notepad++ directory
     - Added script to initialize user folder on first run
@@ -315,6 +315,8 @@
     - Added Aseprite graphics editor
     - Updated VBJaEngine as well as its Barebone and Platformer Demo
       to v4.0 final
+    - VBDE now also available as "Pro" edition, bundled with IntelliJ
+      IDEA and GIT
 
   o 1.0.1, January 5th, 2016
     - Updated Notepad++ from v6.8.6 Minimalist to a pre-configured
