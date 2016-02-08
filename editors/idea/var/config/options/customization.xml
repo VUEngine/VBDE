@@ -1,0 +1,190 @@
+<application>
+  <component name="com.intellij.ide.ui.customization.CustomActionsSchema">
+    <group value="HelpTopics" is_action="true" action_type="-1" position="18">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="RunMenu" is_group="true" action_type="-1" position="8">
+      <path value="root" />
+      <path value="Main menu" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="BuildMenu" is_group="true" action_type="-1" position="7">
+      <path value="root" />
+      <path value="Main menu" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="ShowProjectStructureSettings" is_action="true" action_type="-1" position="7">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="SearchEverywhere" is_action="true" action_type="-1" position="6">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="NavBarToolBarOthers" is_group="true" action_type="-1" position="4">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="NavBarVcsGroup" is_group="true" action_type="-1" position="2">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="ToolbarRunGroup" is_group="true" action_type="-1" position="0">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_EDIT images with ASEPRITE" is_action="true" action_type="1" position="0">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_Start VIDE" is_action="true" action_type="1" position="1">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_CONVERT images with GRIT" is_action="true" action_type="1" position="2">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE with gccVB" is_action="true" action_type="1" position="4">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" is_action="true" action_type="1" position="5">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" is_action="true" action_type="1" position="6">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_RUN in Mednafen" is_action="true" action_type="1" position="8">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_RUN in Reality Boy" is_action="true" action_type="1" position="9">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_DEBUG with Reality Boy" is_action="true" action_type="1" position="10">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_Visit Planet Virtual Boy" is_action="true" action_type="1" position="12">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_About VBDE" is_action="true" action_type="1" position="13">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group seperator="true" action_type="1" position="14">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group seperator="true" action_type="1" position="19">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_EDIT images with ASEPRITE" is_action="true" action_type="1" position="20">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_Start VIDE" is_action="true" action_type="1" position="21">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_CONVERT images with GRIT" is_action="true" action_type="1" position="22">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group seperator="true" action_type="1" position="23">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE with gccVB" is_action="true" action_type="1" position="24">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" is_action="true" action_type="1" position="25">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" is_action="true" action_type="1" position="26">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group seperator="true" action_type="1" position="27">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_RUN in Mednafen" is_action="true" action_type="1" position="28">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_RUN in Reality Boy" is_action="true" action_type="1" position="29">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_DEBUG with Reality Boy" is_action="true" action_type="1" position="30">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group seperator="true" action_type="1" position="31">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_Visit Planet Virtual Boy" is_action="true" action_type="1" position="32">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_About VBDE" is_action="true" action_type="1" position="33">
+      <path value="root" />
+      <path value="Main Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <action id="Tool_External Tools_Start VIDE" icon="../../../../../system/icon/16/vide.png" />
+    <action id="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" icon="../../../../../system/icon/16/comp_mednafen.png" />
+    <action id="Tool_External Tools_DEBUG with Reality Boy" icon="../../../../../system/icon/16/rboy_debug.png" />
+    <action id="Tool_External Tools_COMPILE with gccVB" icon="../../../../../system/icon/16/compile.png" />
+    <action id="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" icon="../../../../../system/icon/16/comp_rboy.png" />
+    <action id="Tool_External Tools_EDIT images with ASEPRITE" icon="../../../../../system/icon/16/aseprite.png" />
+    <action id="Tool_External Tools_RUN in Mednafen" icon="../../../../../system/icon/16/mednafen.png" />
+    <action id="Tool_External Tools_Visit Planet Virtual Boy" icon="../../../../../system/icon/16/pvb.png" />
+    <action id="Tool_External Tools_About VBDE" icon="../../../../../system/icon/16/vbde.png" />
+    <action id="Tool_External Tools_RUN in Reality Boy" icon="../../../../../system/icon/16/rboy.png" />
+    <action id="Tool_External Tools_CONVERT images with GRIT" icon="../../../../../system/icon/16/grit.png" />
+  </component>
+</application>

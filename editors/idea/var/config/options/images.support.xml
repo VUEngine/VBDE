@@ -1,0 +1,17 @@
+<application>
+  <component name="Images.OptionsManager">
+    <setting name="Editor.Grid.showDefault" value="false" />
+    <setting name="Editor.Grid.lineZoomFactor" value="2" />
+    <setting name="Editor.Grid.lineSpan" value="8" />
+    <setting name="Editor.Grid.lineColor" value="c0c0c0" />
+    <setting name="Editor.TransparencyChessboard.showDefault" value="true" />
+    <setting name="Editor.TransparencyChessboard.cellSize" value="8" />
+    <setting name="Editor.TransparencyChessboard.whiteColor" value="ffffff" />
+    <setting name="Editor.TransparencyChessboard.blackColor" value="c0c0c0" />
+    <setting name="Editor.Zoom.wheelZooming" value="true" />
+    <setting name="Editor.Zoom.smartZooming" value="true" />
+    <setting name="Editor.Zoom.prefferedWidth" value="512" />
+    <setting name="Editor.Zoom.prefferedHeight" value="512" />
+    <setting name="ExternalEditor.executablePath" value="../../../../../tools/graphics/aseprite-0.9.5-win32/aseprite.exe" />
+  </component>
+</application>

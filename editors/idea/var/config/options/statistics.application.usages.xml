@@ -1,0 +1,98 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="Git">
+      <project id="platformer-demo" values="config.push.autoupdate.disabled,data.remote.branches.count.2+,config.warn.about.detached.enabled,config.force.push.enabled,config.update.type.BRANCH_DEFAULT,config.warn.about.crlf.enabled,data.remotes.in.project.1,data.local.branches.count.2+,config.repo.sync.NOT_DECIDED,config.push.update.all.roots.enabled,config.save.policy.STASH,config.cherry-pick.autocommit.disabled,config.ssh.enabled" collectionTime="1453479628956" />
+      <project id="VBJaEngine Class.c" values="config.update.type.BRANCH_DEFAULT,config.push.autoupdate.disabled,config.cherry-pick.autocommit.disabled,config.push.update.all.roots.enabled,config.repo.sync.NOT_DECIDED,config.ssh.enabled,config.save.policy.STASH,config.warn.about.detached.enabled,config.force.push.enabled,config.warn.about.crlf.enabled" collectionTime="1453130080596" />
+      <project id="src" values="config.push.update.all.roots.enabled,config.ssh.enabled,config.cherry-pick.autocommit.disabled,config.push.autoupdate.disabled,config.warn.about.crlf.enabled,config.save.policy.STASH,config.repo.sync.NOT_DECIDED,config.warn.about.detached.enabled,config.update.type.BRANCH_DEFAULT,config.force.push.enabled" collectionTime="1454494800254" />
+      <project id="vbjaengine" values="data.local.branches.count.1,data.remotes.in.project.1,config.repo.sync.NOT_DECIDED,config.save.policy.STASH,config.push.autoupdate.disabled,config.warn.about.detached.enabled,config.update.type.BRANCH_DEFAULT,config.cherry-pick.autocommit.disabled,config.warn.about.crlf.enabled,config.push.update.all.roots.enabled,config.force.push.enabled,config.ssh.enabled,data.remote.branches.count.2+" collectionTime="1454927330663" />
+      <project id="vbjaengine-platformer-demo" values="config.cherry-pick.autocommit.disabled,config.warn.about.detached.enabled,config.force.push.enabled,config.ssh.enabled,config.update.type.BRANCH_DEFAULT,config.repo.sync.NOT_DECIDED,data.remote.branches.count.2+,data.remotes.in.project.1,data.local.branches.count.1,config.push.autoupdate.disabled,config.push.update.all.roots.enabled,config.save.policy.STASH,config.warn.about.crlf.enabled" collectionTime="1454936059653" />
+      <project id="platform-demo" values="config.push.autoupdate.disabled,config.save.policy.STASH,config.warn.about.crlf.enabled,config.cherry-pick.autocommit.disabled,config.warn.about.detached.enabled,config.update.type.BRANCH_DEFAULT,config.force.push.enabled,config.ssh.enabled,config.push.update.all.roots.enabled,config.repo.sync.NOT_DECIDED" collectionTime="1453736524511" />
+      <project id="j2ee" values="config.force.push.enabled,config.warn.about.crlf.enabled,config.push.update.all.roots.enabled,config.ssh.enabled,config.repo.sync.NOT_DECIDED,config.save.policy.STASH,config.warn.about.detached.enabled,config.push.autoupdate.disabled,config.cherry-pick.autocommit.disabled,config.update.type.BRANCH_DEFAULT" collectionTime="1453716562773" />
+      <project id="var" values="config.warn.about.detached.enabled,config.force.push.enabled,config.warn.about.crlf.enabled,config.ssh.enabled,config.push.autoupdate.disabled,config.push.update.all.roots.enabled,config.repo.sync.NOT_DECIDED,config.cherry-pick.autocommit.disabled,config.update.type.BRANCH_DEFAULT,config.save.policy.STASH" collectionTime="1453479196721" />
+      <project id="tasks" values="config.push.autoupdate.disabled,config.cherry-pick.autocommit.disabled,config.force.push.enabled,config.warn.about.detached.enabled,config.save.policy.STASH,config.update.type.BRANCH_DEFAULT,config.ssh.enabled,config.repo.sync.NOT_DECIDED,config.push.update.all.roots.enabled,config.warn.about.crlf.enabled" collectionTime="1453716519874" />
+      <project id="idea" values="config.warn.about.crlf.enabled,config.force.push.enabled,config.push.update.all.roots.enabled,config.repo.sync.NOT_DECIDED,config.ssh.enabled,config.save.policy.STASH,config.warn.about.detached.enabled,config.push.autoupdate.disabled,config.update.type.BRANCH_DEFAULT,config.cherry-pick.autocommit.disabled" collectionTime="1454934492811" />
+      <project id="vbde" values="config.save.policy.STASH,config.warn.about.detached.enabled,data.local.branches.count.1,config.push.autoupdate.disabled,data.remote.branches.count.2+,config.cherry-pick.autocommit.disabled,config.update.type.BRANCH_DEFAULT,data.remote.branches.count.2+,config.force.push.enabled,config.warn.about.crlf.enabled,data.remote.branches.count.1,data.remotes.in.project.1,data.local.branches.count.1,data.local.branches.count.1,config.ssh.enabled,data.remotes.in.project.1,config.repo.sync.NOT_DECIDED,config.push.update.all.roots.enabled,data.remotes.in.project.1" collectionTime="1454960874359" />
+    </group>
+    <group name="module type">
+      <project id="platformer-demo" values="JAVA_MODULE" collectionTime="1453479628916" />
+      <project id="VBJaEngine Class.c" values="JAVA_MODULE" collectionTime="1453130080556" />
+      <project id="src" values="JAVA_MODULE" collectionTime="1454494800244" />
+      <project id="vbjaengine" values="JAVA_MODULE" collectionTime="1454927330643" />
+      <project id="vbjaengine-platformer-demo" values="JAVA_MODULE" collectionTime="1454936059613" />
+      <project id="platform-demo" values="JAVA_MODULE" collectionTime="1453736524456" />
+      <project id="j2ee" values="JAVA_MODULE" collectionTime="1453716562763" />
+      <project id="var" values="JAVA_MODULE" collectionTime="1453479196681" />
+      <project id="tasks" values="JAVA_MODULE" collectionTime="1453716519854" />
+      <project id="idea" values="JAVA_MODULE" collectionTime="1454934492801" />
+      <project id="vbde" values="WEB_MODULE" collectionTime="1454960874327" />
+    </group>
+    <group name="vcs">
+      <project id="vbjaengine" values="Git" collectionTime="1454927330643" />
+      <project id="vbde" values="Git" collectionTime="1454960874326" />
+      <project id="platformer-demo" values="Git" collectionTime="1453479628916" />
+      <project id="vbjaengine-platformer-demo" values="Git" collectionTime="1454936059613" />
+    </group>
+    <group name="file-type">
+      <project id="platformer-demo" values="Images,C++,UNKNOWN,PLAIN_TEXT" collectionTime="1453479628946" />
+      <project id="VBJaEngine Class.c" values="UNKNOWN,C++" collectionTime="1453130080576" />
+      <project id="src" values="UNKNOWN,XML,ARCHIVE,PLAIN_TEXT" collectionTime="1454494800254" />
+      <project id="vbjaengine" values="UNKNOWN,PLAIN_TEXT,Native,IDEA_MODULE,PATCH,CSS,JavaScript,HTML,XML,C++,Images" collectionTime="1454927330643" />
+      <project id="vbjaengine-platformer-demo" values="PLAIN_TEXT,C++,Images,UNKNOWN" collectionTime="1454936059633" />
+      <project id="platform-demo" values="Images,UNKNOWN,C++,IDEA_MODULE,XML,PLAIN_TEXT" collectionTime="1453736524500" />
+      <project id="j2ee" values="PLAIN_TEXT,IDEA_MODULE,XML,UNKNOWN" collectionTime="1453716562773" />
+      <project id="var" values="IDEA_MODULE,UNKNOWN,PLAIN_TEXT,XML,Scratch,C++" collectionTime="1453479196711" />
+      <project id="tasks" values="IDEA_MODULE,UNKNOWN,XML,PLAIN_TEXT" collectionTime="1453716519874" />
+      <project id="idea" values="Images,ARCHIVE,Scratch,C++,XML,UNKNOWN,HTML,PLAIN_TEXT,CLASS,IDEA_MODULE" collectionTime="1454934492801" />
+      <project id="vbde" values="Images,Native,PLAIN_TEXT,CSS,IDEA_MODULE,Perl,Scratch,PATCH,XML,C++,UNKNOWN,C#,ARCHIVE,JavaScript,CLASS,HTML" collectionTime="1454960874344" />
+    </group>
+    <group name="language-level">
+      <project id="platformer-demo" values="JDK_1_6" collectionTime="1453479628956" />
+      <project id="VBJaEngine Class.c" values="JDK_1_6" collectionTime="1453130080596" />
+      <project id="src" values="JDK_1_6" collectionTime="1454494800254" />
+      <project id="vbjaengine" values="JDK_1_6" collectionTime="1454927330663" />
+      <project id="vbjaengine-platformer-demo" values="JDK_1_6" collectionTime="1454936059643" />
+      <project id="platform-demo" values="JDK_1_6" collectionTime="1453736524511" />
+      <project id="j2ee" values="JDK_1_6" collectionTime="1453716562773" />
+      <project id="var" values="JDK_1_6" collectionTime="1453479196721" />
+      <project id="tasks" values="JDK_1_6" collectionTime="1453716519874" />
+      <project id="idea" values="JDK_1_6" collectionTime="1454934492811" />
+      <project id="vbde" values="JDK_1_6" collectionTime="1454960874354" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="2" />
+      <entry feature="StripeButton[Structure].hidden" count="1" />
+      <entry feature="git.branch.checkout.local" count="2" />
+      <entry feature="git.branch.create.new" count="2" />
+      <entry feature="ide.help.editing.templates.defineTemplates.editTemplVars" count="1" />
+      <entry feature="ide.help.fileTemplates.templates" count="1" />
+      <entry feature="ide.settings.Appearance" count="1" />
+      <entry feature="ide.settings.C/C++" count="2" />
+      <entry feature="ide.settings.C_/_C++" count="1" />
+      <entry feature="ide.settings.CodeGlance" count="7" />
+      <entry feature="ide.settings.Code_Folding" count="2" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="1" />
+      <entry feature="ide.settings.Confirmation" count="1" />
+      <entry feature="ide.settings.External_Tools" count="28" />
+      <entry feature="ide.settings.File_Types" count="8" />
+      <entry feature="ide.settings.File_and_Code_Templates" count="81" />
+      <entry feature="ide.settings.General" count="2" />
+      <entry feature="ide.settings.Git" count="1" />
+      <entry feature="ide.settings.Images" count="9" />
+      <entry feature="ide.settings.Intentions" count="1" />
+      <entry feature="ide.settings.Keymap" count="11" />
+      <entry feature="ide.settings.Live_Templates" count="158" />
+      <entry feature="ide.settings.Menus_and_Toolbars" count="11" />
+      <entry feature="ide.settings.Path_Variables" count="1" />
+      <entry feature="ide.settings.Plugins" count="13" />
+      <entry feature="ide.settings.Postfix_Completion" count="1" />
+      <entry feature="ide.settings.Project_Structure" count="9" />
+      <entry feature="ide.settings.Spelling" count="6" />
+      <entry feature="ideaapp.started" count="87" />
+      <entry feature="tips.of.the.day.next" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.GetFromVcs" count="10" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="12" />
+    </counts>
+  </component>
+</application>

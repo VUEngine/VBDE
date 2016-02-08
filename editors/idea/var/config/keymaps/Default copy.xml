@@ -1,0 +1,58 @@
+<keymap version="1" name="Default copy" parent="$default">
+  <action id="Calulate">
+    <keyboard-shortcut first-keystroke="ctrl alt c" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="ctrl f4" />
+    <keyboard-shortcut first-keystroke="ctrl w" />
+  </action>
+  <action id="CompareTwoFiles" />
+  <action id="Console.History.Browse" />
+  <action id="Diff.ShowDiff" />
+  <action id="Diff.ShowSettingsPopup" />
+  <action id="EditorDuplicate">
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+  </action>
+  <action id="EditorSelectWord" />
+  <action id="EditorUnSelectWord" />
+  <action id="FileChooser.GotoDesktop" />
+  <action id="GotoTest" />
+  <action id="Images.EditExternally">
+    <keyboard-shortcut first-keystroke="ctrl alt f4" />
+    <keyboard-shortcut first-keystroke="ctrl alt e" />
+  </action>
+  <action id="Images.ShowThumbnails" />
+  <action id="ReopenClosedTab">
+    <keyboard-shortcut first-keystroke="shift ctrl t" />
+    <keyboard-shortcut first-keystroke="shift ctrl w" />
+  </action>
+  <action id="SelectAllOccurrences">
+    <keyboard-shortcut first-keystroke="shift ctrl alt j" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt d" />
+  </action>
+  <action id="SelectNextOccurrence">
+    <keyboard-shortcut first-keystroke="alt j" />
+    <keyboard-shortcut first-keystroke="ctrl d" />
+  </action>
+  <action id="SendEOF" />
+  <action id="ShelvedChanges.Diff" />
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="shift alt enter" />
+  </action>
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="shift alt left" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="shift alt right" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
+  <action id="UnselectPreviousOccurrence">
+    <keyboard-shortcut first-keystroke="shift alt j" />
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+  </action>
+</keymap>

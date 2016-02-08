@@ -241,6 +241,15 @@
         Author: Jasper Vijn, dasi (VB patches)
         Release Date: June 6th, 2010
 
+      - Aseprite
+        Version: 0.9.5
+        Author: David Capello
+        Release Date: August 25th, 2012
+        Description: Animated sprite editor & pixel art tool.
+          This is the last free version. If you like it, please
+          consider buying the much improved latest version from
+          http://www.aseprite.org.
+
       - Stereo Sprite Helper
         Version: 1
         Author: KR155E
@@ -297,10 +306,13 @@
     - Massively reduced package size by removing unneeded files from
       cygwin directory
     - Made VBDE compatible with additional editors
+    - VBDE now also available as "Pro" edition, bundled with IntelliJ
+      IDEA and GIT
     - Made VBDE fully portable by removing remaining hardcoded paths
       from Notepad++ directory
     - Added script to initialize user folder on first run
     - Fixed and reduced Notepad++ toolbar
+    - Added Aseprite graphics editor
     - Updated VBJaEngine as well as its Barebone and Platformer Demo
       to v4.0 final
 

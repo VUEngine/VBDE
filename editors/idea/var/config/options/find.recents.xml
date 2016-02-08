@@ -1,0 +1,9 @@
+<application>
+  <component name="FindRecents">
+    <findStrings>
+      <find>OR</find>
+      <find>OR</find>
+      <find>ELSE</find>
+    </findStrings>
+  </component>
+</application>
