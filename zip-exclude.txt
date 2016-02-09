@@ -14,5 +14,6 @@ output.ram
 output.vb
 setup-x86.exe
 zip-exclude.txt
+zip-exclude-basic.txt
 zip-release-basic.bat
 zip-release-pro.bat
