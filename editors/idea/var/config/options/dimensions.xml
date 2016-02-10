@@ -44,9 +44,12 @@
     <location key="CommitChangelistDialog2.0.0.1920.1080@120dpi" x="234" y="43" />
     <location key="FileChooserDialogImpl.0.0.1920.1080@120dpi" x="688" y="128" />
     <location key="WELCOME_SCREEN.0.0.1920.1080@120dpi" x="959" y="287" />
-    <location key="SettingsEditor.0.0.1920.1080@120dpi" x="320" y="79" />
+    <location key="SettingsEditor.0.0.1920.1080@120dpi" x="-342" y="57" />
     <location key="DiffContextDialog.0.0.1920.1080@120dpi" x="134" y="98" />
     <location key="RollbackChangesDialog.0.0.1920.1080@120dpi" x="689" y="224" />
+    <location key="OptionsEditor.0.0.1920.1080@120dpi" x="311" y="0" />
+    <location key="ProcessPopupWindow.0.0.1920.1080@120dpi" x="1439" y="869" />
+    <location key="Vcs.Push.Dialog.0.0.1920.1080@120dpi" x="566" y="170" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
     <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
     <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
@@ -65,5 +68,6 @@
     <size key="GridCell.Tab.0.right.0.0.1920.1080@120dpi" width="1893" height="207" />
     <size key="GridCell.Tab.0.bottom.0.0.1920.1080@120dpi" width="1893" height="207" />
     <size key="CommitChangelistDialog2.0.0.1920.1080@120dpi" width="1354" height="982" />
+    <size key="ProcessPopupWindow.0.0.1920.1080@120dpi" width="243" height="139" />
   </component>
 </application>
