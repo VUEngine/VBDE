@@ -281,10 +281,6 @@
         Author: RunnerPack
         Release Date: August 8th, 2010
 
-    - Version Control
-
-      - PortableGit (Pro version only)
-
   o Documentation
 
     - VB Sacred Tech Scroll - Virtual Boy Specifications
@@ -316,7 +312,7 @@
     - Updated VBJaEngine as well as its Barebone and Platformer Demo
       to v4.0 final
     - VBDE now also available as "Pro" edition, bundled with IntelliJ
-      IDEA and GIT
+      IDEA and (Portable)GIT
 
   o 1.0.1, January 5th, 2016
     - Updated Notepad++ from v6.8.6 Minimalist to a pre-configured

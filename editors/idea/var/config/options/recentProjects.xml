@@ -3,9 +3,9 @@
     <option name="recentPaths">
       <list>
         <option value="C:\vbde" />
+        <option value="C:\vbde\samples\vbjaengine\platform-demo" />
+        <option value="C:\vbde\samples\vbjaengine\platformer-demo" />
         <option value="C:\vbde\samples\vbjaengine\vbjaengine-platformer-demo" />
-        <option value="C:\vbde\editors\idea" />
-        <option value="C:\vbde\libs\vbjaengine" />
       </list>
     </option>
     <option name="openPaths">
@@ -22,7 +22,7 @@
               <option name="build" value="IC-143.1821" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="C:\vbde\editors\idea\bin" />
-              <option name="projectOpenTimestamp" value="1454960886569" />
+              <option name="projectOpenTimestamp" value="1455142731154" />
               <option name="buildTimestamp" value="1453158000000" />
             </RecentProjectMetaInfo>
           </value>
@@ -44,7 +44,29 @@
               <option name="build" value="IC-143.1821" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="C:\vbde\editors\idea\bin" />
-              <option name="projectOpenTimestamp" value="1454927148815" />
+              <option name="projectOpenTimestamp" value="1455100701873" />
+              <option name="buildTimestamp" value="1453190400000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="C:\vbde\samples\vbjaengine\platform-demo">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-143.1821" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="C:\vbde\editors\idea\bin" />
+              <option name="projectOpenTimestamp" value="1455142567836" />
+              <option name="buildTimestamp" value="1453158000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="C:\vbde\samples\vbjaengine\platformer-demo">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-143.1821" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="C:\vbde\editors\idea\bin" />
+              <option name="projectOpenTimestamp" value="1455112549287" />
               <option name="buildTimestamp" value="1453190400000" />
             </RecentProjectMetaInfo>
           </value>

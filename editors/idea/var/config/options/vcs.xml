@@ -16,7 +16,7 @@
         </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="C:\vbde\libs" />
+    <option name="cloneParentDir" value="C:\vbde\samples\vbjaengine" />
   </component>
   <component name="VcsApplicationSettings">
     <option name="SHOW_WHITESPACES_IN_LST" value="true" />

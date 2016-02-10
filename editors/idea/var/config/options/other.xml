@@ -1,4 +1,26 @@
 <application>
+  <component name="AppInspectionProfilesVisibleTreeState">
+    <entry key="Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Cpp Inspections</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="BackgroundImageConfiguration">
+    <option name="filename" value="C:\vbde\system\icon\vbde.png" />
+    <option name="localFile" value="true" />
+    <option name="enabled" value="false" />
+  </component>
+  <component name="CppTools.Settings" gccPath="C:\vbde\system\tools\TDM-GCC-32\bin\gcc.exe" clangPath="" mingwToolsDir="" msvcdir="" defines="" additionalIncludes="" launchGdbOnFailureCommand="$gdb$ --directory=&quot;c:/MingW/1.0/home/maxim/CF-C&quot;" gdbPath="" />
   <component name="CvsApplicationLevelConfiguration">
     <option name="EXT_CONFIGURATION">
       <value>

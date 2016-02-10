@@ -1,6 +1,9 @@
 <application>
   <component name="ExportableFileTemplateSettings">
     <default_templates>
+      <template name="C_Main.c" reformat="true" live-template-enabled="false" enabled="false" />
+      <template name="Cpp_Main.cpp" reformat="true" live-template-enabled="false" enabled="false" />
+      <template name="Makefile.empty" reformat="true" live-template-enabled="false" enabled="false" />
       <template name="Singleton.java" reformat="true" live-template-enabled="false" enabled="false" />
     </default_templates>
     <internal_templates>

@@ -1,0 +1,18 @@
+<application>
+  <component name="SexyEditor">
+    <option name="allConfigs">
+      <list>
+        <BackgroundConfiguration>
+          <option name="fileNames">
+            <array>
+              <option value="C:\vbde\system\icon\vbde_gray.png" />
+            </array>
+          </option>
+          <option name="opacity" value="0.07" />
+          <option name="position" value="8" />
+          <option name="positionOffset" value="40" />
+        </BackgroundConfiguration>
+      </list>
+    </option>
+  </component>
+</application>

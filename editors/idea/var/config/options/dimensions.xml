@@ -1,10 +1,10 @@
 <application>
   <component name="DimensionService">
     <location key="FileChooserDialogImpl.0.0.1920.931" x="760" y="146" />
-    <location key="WELCOME_SCREEN.0.0.1920.931" x="959" y="230" />
+    <location key="WELCOME_SCREEN.0.0.1920.931" x="1083" y="230" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.931" x="667" y="257" />
     <location key="#Browse_Repositories.0.0.1920.931" x="540" y="94" />
-    <location key="SettingsEditor.0.0.1920.931" x="154" y="13" />
+    <location key="SettingsEditor.0.0.1920.931" x="263" y="6" />
     <location key="#Updates.0.0.1920.931" x="738" y="316" />
     <location key="ProcessPopupWindow.0.0.1920.931" x="1438" y="561" />
     <location key="OptionsEditor.0.0.1920.931" x="440" y="14" />
@@ -40,11 +40,18 @@
     <location key="WELCOME_SCREEN.0.0.1680.1050" x="839" y="230" />
     <location key="SettingsEditor.0.0.1680.1050" x="321" y="154" />
     <location key="CommitChangelistDialog2.0.0.1680.1050" x="101" y="0" />
+    <location key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.1920.1080@120dpi" x="638" y="203" />
+    <location key="CommitChangelistDialog2.0.0.1920.1080@120dpi" x="234" y="43" />
+    <location key="FileChooserDialogImpl.0.0.1920.1080@120dpi" x="688" y="128" />
+    <location key="WELCOME_SCREEN.0.0.1920.1080@120dpi" x="959" y="287" />
+    <location key="SettingsEditor.0.0.1920.1080@120dpi" x="320" y="79" />
+    <location key="DiffContextDialog.0.0.1920.1080@120dpi" x="134" y="98" />
+    <location key="RollbackChangesDialog.0.0.1920.1080@120dpi" x="689" y="224" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
-    <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="235" />
-    <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="235" />
-    <size key="GridCell.Tab.0.right.0.0.1920.931" width="1898" height="235" />
-    <size key="GridCell.Tab.0.bottom.0.0.1920.931" width="1898" height="235" />
+    <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
+    <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
+    <size key="GridCell.Tab.0.right.0.0.1920.931" width="1898" height="232" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.931" width="1898" height="232" />
     <size key="CommitChangelistDialog2.0.0.1920.931" width="1277" height="847" />
     <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$1.0.0.1920.931" width="285" height="779" />
     <size key="findTextDialog.0.0.1920.931" width="1116" height="751" />
@@ -52,5 +59,11 @@
     <size key="SettingsEditor.0.0.1920.931" width="1393" height="878" />
     <size key="#com.intellij.codeInsight.template.impl.EditVariableDialog.0.0.1920.931" width="973" height="684" />
     <size key="CommitChangelistDialog2.0.0.1680.1050" width="1443" height="1010" />
+    <size key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.1920.1080@120dpi" width="760" height="624" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080@120dpi" width="1893" height="207" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080@120dpi" width="1893" height="207" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080@120dpi" width="1893" height="207" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080@120dpi" width="1893" height="207" />
+    <size key="CommitChangelistDialog2.0.0.1920.1080@120dpi" width="1354" height="982" />
   </component>
 </application>

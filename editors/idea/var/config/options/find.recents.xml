@@ -4,6 +4,10 @@
       <find>OR</find>
       <find>OR</find>
       <find>ELSE</find>
+      <find>Math.h</find>
+      <find>macros.h</find>
+      <find>macros.</find>
+      <find>macros</find>
     </findStrings>
   </component>
 </application>
