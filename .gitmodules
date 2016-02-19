@@ -1,11 +1,11 @@
 [submodule "libs/vbjaengine"]
 	path = libs/vbjaengine
 	url = git@bitbucket.org:jorgeche/vbjaengine.git
-[submodule "samples/vbjaengine/platform-demo"]
-	path = samples/vbjaengine/platform-demo
+[submodule "samples/vbjaengine/vbjaengine-platformer-demo"]
+	path = samples/vbjaengine/vbjaengine-platformer-demo
 	url = git@bitbucket.org:jorgeche/vbjaengine-platformer-demo.git
-[submodule "samples/vbjaengine/barebone"]
-	path = samples/vbjaengine/barebone
+[submodule "samples/vbjaengine/vbjaengine-barebone"]
+	path = samples/vbjaengine/vbjaengine-barebone
 	url = git@bitbucket.org:jorgeche/vbjaengine-barebone.git
 [submodule "libs/libgccvb"]
 	path = libs/libgccvb

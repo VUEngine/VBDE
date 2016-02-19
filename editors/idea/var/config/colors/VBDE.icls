@@ -2,6 +2,9 @@
   <option name="LINE_SPACING" value="1.0" />
   <option name="EDITOR_FONT_SIZE" value="12" />
   <option name="EDITOR_FONT_NAME" value="Monospaced" />
+  <colors>
+    <option name="RIGHT_MARGIN_COLOR" value="383838" />
+  </colors>
   <attributes>
     <option name="CPP.BRACES">
       <value>

@@ -50,6 +50,22 @@
     <location key="OptionsEditor.0.0.1920.1080@120dpi" x="311" y="0" />
     <location key="ProcessPopupWindow.0.0.1920.1080@120dpi" x="1439" y="869" />
     <location key="Vcs.Push.Dialog.0.0.1920.1080@120dpi" x="566" y="170" />
+    <location key="ProcessPopupWindow.0.0.1680.1050" x="1258" y="877" />
+    <location key="IdeErrosDialog.0.0.1680.1050" x="479" y="313" />
+    <location key="findTextDialog.0.0.1680.1050" x="594" y="219" />
+    <location key="replaceTextDialog.0.0.1680.1050" x="594" y="204" />
+    <location key="ReplaceDuplicatesPrompt.0.0.1680.1050" x="369" y="432" />
+    <location key="RollbackChangesDialog.0.0.1680.1050" x="601" y="213" />
+    <location key="SettingsEditor.0.0.2100.1313@120dpi" x="410" y="195" />
+    <location key="CommitChangelistDialog2.0.0.2100.1313@120dpi" x="78" y="38" />
+    <location key="Vcs.Push.Dialog.0.0.2100.1313@120dpi" x="739" y="286" />
+    <location key="RollbackChangesDialog.0.0.2100.1313@120dpi" x="838" y="324" />
+    <location key="DiffContextDialog.0.0.2100.1313@120dpi" x="211" y="105" />
+    <location key="ProcessPopupWindow.0.0.2100.1313@120dpi" x="1574" y="1007" />
+    <location key="replaceTextDialog.0.0.2100.1313@120dpi" x="803" y="266" />
+    <location key="ReplaceDuplicatesPrompt.0.0.2100.1313@120dpi" x="461" y="545" />
+    <location key="FileChooserDialogImpl.0.0.2100.1313@120dpi" x="779" y="303" />
+    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2100.1313@120dpi" x="754" y="400" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
     <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
     <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
@@ -69,5 +85,16 @@
     <size key="GridCell.Tab.0.bottom.0.0.1920.1080@120dpi" width="1893" height="207" />
     <size key="CommitChangelistDialog2.0.0.1920.1080@120dpi" width="1354" height="982" />
     <size key="ProcessPopupWindow.0.0.1920.1080@120dpi" width="243" height="139" />
+    <size key="ProcessPopupWindow.0.0.1680.1050" width="203" height="115" />
+    <size key="GridCell.Tab.0.left.0.0.1680.1050" width="1658" height="213" />
+    <size key="GridCell.Tab.0.center.0.0.1680.1050" width="1658" height="213" />
+    <size key="GridCell.Tab.0.right.0.0.1680.1050" width="1658" height="213" />
+    <size key="GridCell.Tab.0.bottom.0.0.1680.1050" width="1658" height="213" />
+    <size key="GridCell.Tab.0.left.0.0.2100.1313@120dpi" width="2073" height="267" />
+    <size key="GridCell.Tab.0.center.0.0.2100.1313@120dpi" width="2073" height="267" />
+    <size key="GridCell.Tab.0.right.0.0.2100.1313@120dpi" width="2073" height="267" />
+    <size key="GridCell.Tab.0.bottom.0.0.2100.1313@120dpi" width="2073" height="267" />
+    <size key="CommitChangelistDialog2.0.0.2100.1313@120dpi" width="1825" height="1225" />
+    <size key="ProcessPopupWindow.0.0.2100.1313@120dpi" width="243" height="234" />
   </component>
 </application>

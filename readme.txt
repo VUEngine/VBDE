@@ -171,13 +171,13 @@
     - VBJaEngine Barebone
       Description: A barebone VBJaEngine project that can be used as a
         starting point for your own project.
-      Location: {VBDE}/samples/vbjaengine/barebone/
+      Location: {VBDE}/samples/vbjaengine/vbjaengine-barebone/
       Authors: jorgeche, KR155E
 
     - VBJaEngine Platformer Demo
       Description: A platform game demo which demonstrates usage and
         features of the VBJaEngine.
-      Location: {VBDE}/samples/vbjaengine/platform-demo/
+      Location: {VBDE}/samples/vbjaengine/vbjaengine-platformer-demo/
       Authors: jorgeche, KR155E
 
 
