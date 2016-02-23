@@ -5,7 +5,7 @@
  * of the full extended ASCII character set including special characters of European languages.
  *
  * The following character is meant to prevent editors to load this file as UTF-8, since it doesn't
- * form part of a valid UTF-8 byte sequence: Â£
+ * form part of a valid UTF-8 byte sequence: £
  */
 
 const char* __LANGUAGE_EN[] = {
@@ -14,7 +14,7 @@ const char* __LANGUAGE_EN[] = {
     "English",
 
     // STR_PRECAUTION
-    "   - IMPORTANT -\n\nREAD INSTRUCTION AND\n\nPRECAUTION BOOKLETS\n\n  BEFORE OPERATING",
+    "     IMPORTANT\n\nREAD INSTRUCTION AND\n\nPRECAUTION BOOKLETS\n\n  BEFORE OPERATING",
 
     // STR_HELLO_WORLD
     "Hello World",

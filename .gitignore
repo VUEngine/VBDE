@@ -1,5 +1,6 @@
 /.make-*/
-/.idea/
+./.idea/
+/.idea/workspace.xml
 cygwin/home/*
 cygwin/tmp/*
 cygwin/var/log/*

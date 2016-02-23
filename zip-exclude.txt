@@ -1,7 +1,7 @@
 .git
 .gitignore
 .gitmodules
-.idea
+.\.idea
 .make-*
 cygwin\etc\setup\*
 cygwin\home\Chris
