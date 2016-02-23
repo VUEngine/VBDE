@@ -1,21 +1,23 @@
-+====================================================================+
-|  ____     ____  __________    __________    ___________            |
-|  @@@@     @@@@  @@@@@@@@@@__  @@@@@@@@@@__  @@@@@@@@@@@            |
-|  @@@@     @@@@  @@@@    @@@@  @@@@    @@@@  @@@@                   |
-|  @@@@     @@@@  @@@@____@@@@  @@@@    @@@@  @@@@_____              |
-|  @@@@     @@@@  @@@@@@@@@@__  @@@@    @@@@  @@@@@@@@@              |
-|  @@@@_   _@@@@  @@@@    @@@@  @@@@    @@@@  @@@@                   |
-|    @@@___@@@    @@@@____@@@@  @@@@____@@@@  @@@@_______            |
-|      @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@            |
-|                                                                    |
-|  VBDE - Virtual Boy Development Environment                        |
-|  Version 1.1.0 - February 21st, 2016                               |
-|                                                                    |
-+====================================================================+
++---------------------------------------------------------------------------------------------------------+
+|                                                                                                         |
+|                         ____     ____  __________    __________    ___________                          |
+|                         @@@@     @@@@  @@@@@@@@@@__  @@@@@@@@@@__  @@@@@@@@@@@                          |
+|                         @@@@     @@@@  @@@@    @@@@  @@@@    @@@@  @@@@                                 |
+|                         @@@@     @@@@  @@@@____@@@@  @@@@    @@@@  @@@@_____                            |
+|                         @@@@     @@@@  @@@@@@@@@@__  @@@@    @@@@  @@@@@@@@@                            |
+|                         @@@@_   _@@@@  @@@@    @@@@  @@@@    @@@@  @@@@                                 |
+|                           @@@___@@@    @@@@____@@@@  @@@@____@@@@  @@@@_______                          |
+|                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
+|                                                                                                         |
+|                               VBDE - Virtual Boy Development Environment                                |
+|                                    Version 1.1.0 - March 1st, 2016                                      |
+|                                                                                                         |
+|                                                                                                         |
++---------------------------------------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------+
-| (00) Contents                                                      |
-+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| (00) Contents                                                                                           |
++---------------------------------------------------------------------------------------------------------+
 
   (01) Introduction
   (02) Usage
@@ -25,42 +27,36 @@
   (06) Changelog
 
 
-+--------------------------------------------------------------------+
-| (01) Introduction                                                  |
-+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| (01) Introduction                                                                                       |
++---------------------------------------------------------------------------------------------------------+
 
-  VBDE is a complete, portable Virtual Boy development environment for
-  Windows. Only download, unzip and start working. No installation,
-  no hassle.
+  VBDE is a complete, portable Nintendo Virtual Boy development environment for Windows.
+  Only download, unzip and start working. No installation, no hassle.
 
 
-+--------------------------------------------------------------------+
-| (02) Usage                                                         |
-+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| (02) Usage                                                                                              |
++---------------------------------------------------------------------------------------------------------+
 
   o Setup
 
-    No installation or any extra steps are required. Just download,
-    unzip and you're ready to start developing for the Virtual Boy.
+    No installation or any extra steps are required. Just download, unzip and you're ready to start
+    developing for the Virtual Boy.
 
-    Note: Previous versions needed to be placed in C:/vbde/. This is
-    no longer necessary.
+    Note: Previous versions needed to be placed in C:/vbde/. This is no longer necessary.
 
-    VBDE comes with a current portable version of Notepad++ that has
-    been pre-configured with selected plugins and slightly modified
-    to have a button bar on top. With these buttons, you can quickly
-    compile the current project, run the compiled ROM in an emulator,
-    convert images, etc.
+    VBDE comes with a current portable version of Notepad++ that has been pre-configured with selected
+    plugins and slightly modified to have a button bar on top. With these buttons, you can quickly compile
+    the current project, run the compiled ROM in an emulator, convert images, etc.
 
-    VBDE is also available in a Pro edition, which comes with a copy
-    of IntelliJ IDEA Community Edition, which has been modified and
-    pre-configured for VB development.
+    VBDE is also available in a Pro edition, which comes with a copy of IntelliJ IDEA Community Edition,
+    which has been modified and pre-configured for VB development.
 
   o Compiling and running
 
-    Compiling a project is as simple as opening any project file and
-    clicking the compile button. There's also buttons to automatically
-    run the resulting ROM in an emulator.
+    Compiling a project is as simple as opening any project file and clicking the compile button. There's
+    also buttons to automatically run the resulting ROM in an emulator.
 
     The key mapping is as follows:
 
@@ -73,32 +69,25 @@
     B: N
     A: M
 
-    In addition, you can trigger a low battery signal by holding W
-    (Reality Boy only).
+    In addition, you can trigger a low battery signal by holding W (Reality Boy only).
 
   o Image conversion
 
-    VBDE allows for hassle free, on-the-fly image conversion using
-    grit. To use it, create a folder called "assets" in the root
-    folder of your project, with a contained "images" folder. This
-    folder will hold all your images in any of the supported
-    formats: png, bmp, gif, pcx or jpg/jpeg (I recommend png.)
+    VBDE allows for hassle free, on-the-fly image conversion using grit. To use it, create a folder named
+    "assets" in the root folder of your project, with a contained "images" folder. This folder will hold
+    all your images in any of the supported formats: png, bmp, gif, pcx or jpg/jpeg (I recommend png.)
 
-    Images should use an indexed 4-color palette in the following
-    order: Black, Dark Red, Medium Red, Light Red. An example palette
-    for Photoshop can be found in {VBDE}/system/grit/.
+    Images should use an indexed 4-color palette in the following order: Black, Dark Red, Medium Red,
+    Light Red. Example palettes for Aseprite and Photoshop can be found in {VBDE}/system/.
 
-    In order to be detected and converted by the image conversion
-    script, you also need a *.grit file of the same name as the
-    graphic, which contains the conversion settings. You can find
-    a number of example grit files in {VBDE}/system/grit/ which you
-    can just copy and paste (and rename) into your images folder.
+    In order to be detected and converted by the image conversion script, you also need a *.grit file of the
+    same name as the image, which contains the conversion settings. You can find a number of example grit
+    files in {VBDE}/system/grit/ which you can just copy and paste (and rename) into your images folder.
 
-    You can also make several files convert at once instead of
-    having all images converted individually. Grit files which do not
-    directly relate to an image file through their name, are applied
-    to all images files in the current directory (not sub-directories.)
-    This is useful for generating maps with shared tilesets.
+    You can also make several files convert at once instead of having all images converted individually.
+    Grit files which do not directly relate to an image file through their name, are applied to all images
+    files in the current directory (not sub-directories.) This is useful for generating maps with shared
+    tilesets.
 
     Example file structure:
     my-project/
@@ -113,22 +102,40 @@
           |- Hero.grit
           '- Hero.png
 
-    Finally, to start the image conversion, press the editor's
-    grit button while having any project file opened. This will
-    convert all images that do not yet have a corresponding c file
-    or are newer than their c file.
+    Finally, to start the image conversion, press the editor's grit button. This will convert all images
+    that do not yet have a corresponding c file or are newer than their c file.
 
   o Custom editors
 
-    The buttons of the VBDE default editor simply trigger a bunch of
-    batch files, which you can just as well start from the command
-    line or any other editor of choice.
-    See {VBDE}/editors/npp/shortcuts.xml for how to call these.
+    The buttons of the VBDE default editor simply trigger a bunch of batch files, which you can just as
+    well start from the command line or any other editor of choice.
+
+    - EDIT images with ASEPRITE:
+      {VBDE}/system/batch/aseprite.bat
+    - Start VIDE:
+      {VBDE}/system/batch/vide.bat
+    - CONVERT images with GRIT:
+      {VBDE}/system/batch/grit.bat {CURRENT_DIRECTORY}
+    - COMPILE with gccVB:
+      {VBDE}/system/batch/build.bat {CURRENT_DIRECTORY} {CURRENT_FILENAME_WITHOUT_EXTENSION}
+    - COMPILE with gccVB and RUN in Mednafen:
+      {VBDE}/system/batch/build.bat {CURRENT_DIRECTORY} {CURRENT_FILENAME_WITHOUT_EXTENSION} mednafen
+    - COMPILE with gccVB and RUN in Reality Boy:
+      {VBDE}/system/batch/build.bat {CURRENT_DIRECTORY} {CURRENT_FILENAME_WITHOUT_EXTENSION} reality_boy
+    - RUN in Mednafen:
+      {VBDE}/system/batch/mednafen.bat {CURRENT_DIRECTORY}
+    - RUN in Reality Boy:
+      {VBDE}/system/batch/reality_boy.bat {CURRENT_DIRECTORY}
+    - DEBUG with Reality Boy:
+      {VBDE}/system/batch/reality_boy_debug.bat {CURRENT_DIRECTORY}
+    - FLASH to FlashBoy:
+      {VBDE}/system/batch/flash.bat {CURRENT_DIRECTORY}
 
 
-+--------------------------------------------------------------------+
-| (03) Bundled Libraries                                             |
-+--------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------+
+| (03) Bundled Libraries                                                                                  |
++---------------------------------------------------------------------------------------------------------+
 
   o libgccvb
     Description: The default gccVB library.
@@ -139,25 +146,22 @@
     Authors: jorgeche, KR155E
 
 
-+--------------------------------------------------------------------+
-| (04) Bundled Sample Projects                                       |
-+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| (04) Bundled Sample Projects                                                                            |
++---------------------------------------------------------------------------------------------------------+
 
-  VBDE comes with a few sample projects you can use to test VBDE
-  functionality, for reference or as a boilerplate for your own
-  project.
+  VBDE comes with a few sample projects you can use to test VBDE functionality, for reference or as a
+  boilerplate for your own project.
 
   o libgccvb
 
     - Barebone Demo
-      Description: Barebone code that can be used as a starting point
-        for your own VB project.
+      Description: Barebone code that can be used as a starting point for your own VB project.
       Location: {VBDE}/samples/libgccvb/barebone/
       Author: KR155E
 
     - Beginner Samples
-      Description: A total of 6 simple Virtual Boy demos which
-        introduce you to various aspects of Virtual Boy development.
+      Description: A total of 6 simple VB demos which introduce you to various aspects of VB development.
       Location: {VBDE}/samples/libgccvb/demos/*
       Author: Fwirt
 
@@ -169,21 +173,19 @@
   o VBJaEngine
 
     - VBJaEngine Barebone
-      Description: A barebone VBJaEngine project that can be used as a
-        starting point for your own project.
+      Description: A barebone VBJaEngine project that can be used as a starting point for your own project.
       Location: {VBDE}/samples/vbjaengine/vbjaengine-barebone/
       Authors: jorgeche, KR155E
 
     - VBJaEngine Platformer Demo
-      Description: A platform game demo which demonstrates usage and
-        features of the VBJaEngine.
+      Description: A platform game demo which demonstrates usage and features of the VBJaEngine.
       Location: {VBDE}/samples/vbjaengine/vbjaengine-platformer-demo/
       Authors: jorgeche, KR155E
 
 
-+--------------------------------------------------------------------+
-| (05) Bundled Tools                                                 |
-+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| (05) Bundled Tools                                                                                      |
++---------------------------------------------------------------------------------------------------------+
 
   o Environment
 
@@ -192,8 +194,8 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 15.0.3 Community Edition, pre-configured with
-      several useful plugins, templates, etc. (Pro version only)
+    - IntelliJ IDEA 15.0.3 Community Edition, pre-configured with several useful plugins, templates, etc.
+      (Pro version only)
 
   o Compiler
 
@@ -244,10 +246,8 @@
         Version: 0.9.5
         Author: David Capello
         Release Date: August 25th, 2012
-        Description: Animated sprite editor & pixel art tool.
-          This is the last free version. If you like it, please
-          consider buying the much improved latest version from
-          http://www.aseprite.org.
+        Description: Animated sprite editor & pixel art tool. This is the last free version. If you like
+          it, please consider buying the much improved latest version from http://www.aseprite.org.
 
       - Stereo Sprite Helper
         Version: 1
@@ -285,46 +285,38 @@
 
     - VB Sacred Tech Scroll - Virtual Boy Specifications
       Version: Version 0.91 (WIP)
-      Description: The most complete and accurate Virtual Boy hardware
-        documentation. Note that this document uses different
-        terminology than libgccvb.
+      Description: The most complete and accurate Virtual Boy hardware documentation. Note that this
+        document uses different terminology than libgccvb.
       Author: Guy Perfect
       Release Date: January 4th, 2013
 
     - VBJaEngine Development Manual
-      Description: VBJaEngine Documentation. Note that this is a very
-        incomplete WIP.
+      Description: VBJaEngine Documentation. Note that this is a very incomplete WIP.
       Authors: jorgeche, KR155E
 
 
-+--------------------------------------------------------------------+
-| (06) Changelog                                                     |
-+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| (06) Changelog                                                                                          |
++---------------------------------------------------------------------------------------------------------+
 
-  o 1.1.0, February 21st, 2016
-    - Massively reduced package size by removing unneeded files from
-      cygwin directory
-    - Made VBDE fully portable by removing remaining hardcoded paths
-      from Notepad++ directory
+  o 1.1.0, March 1st, 2016
+    - Massively reduced package size by removing unneeded files from cygwin directory
+    - Made VBDE fully portable by removing remaining hardcoded paths from Notepad++ directory
     - Added script to initialize user folder on first run
     - Fixed and reduced Notepad++ toolbar
     - Added Aseprite graphics editor
-    - Updated VBJaEngine as well as its Barebone and Platformer Demo
-      to v4.0 final
-    - VBDE now also available as "Pro" edition, bundled with IntelliJ
-      IDEA and (Portable)GIT
+    - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.0 final
+    - VBDE now also available as "Pro" edition, bundled with IntelliJ IDEA and Git
 
   o 1.0.1, January 5th, 2016
-    - Updated Notepad++ from v6.8.6 Minimalist to a pre-configured
-      v6.8.8 with several useful plugins
+    - Updated Notepad++ from v6.8.6 Minimalist to a pre-configured v6.8.8 with several useful plugins
     - Added new button "Debug in Reality Boy"
-    - Updated VBJaEngine as well as its Barebone and Platformer Demo
-      to v4.0 beta 2
+    - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.0 beta 2
 
   o 1.0.0, November 29th, 2015
     Initial release
 
 
-+--------------------------------------------------------------------+
-| EOF                                                                |
-+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| EOF                                                                                                     |
++---------------------------------------------------------------------------------------------------------+
