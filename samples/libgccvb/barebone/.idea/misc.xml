@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CppTools.Loader" reportImplicitCastToBool="false" reportNameNeverReferenced="false" reportNameReferencedOnce="false" reportRedundantCast="false" reportRedundantQualifier="false" reportStaticCallFromInstance="false" reportDuplicatedSymbols="false" warnedAboutFileOutOfSourceRoot="true" version="3" currentProject="$PROJECT_DIR$/makefile" sdkErrorReported="true" additionalPreprocessorDefs="" automaticallyIncludedHeaderFiles="  C:\vbde\libs\libgccvb\affine.h;  C:\vbde\libs\libgccvb\asm.h;  C:\vbde\libs\libgccvb\audio.h;  C:\vbde\libs\libgccvb\bgmap.h;  C:\vbde\libs\libgccvb\controller.h;  C:\vbde\libs\libgccvb\hw.h;  C:\vbde\libs\libgccvb\interrupts.h;  C:\vbde\libs\libgccvb\libgccvb.h;  C:\vbde\libs\libgccvb\math.h;  C:\vbde\libs\libgccvb\mem.h;  C:\vbde\libs\libgccvb\misc.h;  C:\vbde\libs\libgccvb\object.h;  C:\vbde\libs\libgccvb\random.h;  C:\vbde\libs\libgccvb\stdarg.h;  C:\vbde\libs\libgccvb\timer.h;  C:\vbde\libs\libgccvb\types.h;  C:\vbde\libs\libgccvb\video.h;  C:\vbde\libs\libgccvb\vip.h;  C:\vbde\libs\libgccvb\world.h;  C:\vbde\samples\libgccvb\barebone\assets\languages\languages.h;  C:\vbde\samples\libgccvb\barebone\components\adjustmentScreen.h;  C:\vbde\samples\libgccvb\barebone\components\bgadjustment.h;  C:\vbde\samples\libgccvb\barebone\components\chadjustment.h;  C:\vbde\samples\libgccvb\barebone\components\components.h;  C:\vbde\samples\libgccvb\barebone\components\gameLoop.h;  C:\vbde\samples\libgccvb\barebone\components\languageSelectionScreen.h;  C:\vbde\samples\libgccvb\barebone\components\precautionScreen.h;  C:\vbde\samples\libgccvb\barebone\functions\constants.h;  C:\vbde\samples\libgccvb\barebone\functions\functions.h;  C:\vbde\samples\libgccvb\barebone\functions\input.h;  C:\vbde\samples\libgccvb\barebone\functions\system.h;  C:\vbde\samples\libgccvb\barebone\functions\text.h;  C:\vbde\samples\libgccvb\barebone\functions\timer.h;  " compilerSelect="GCC" javaIncludes="false">
+    <system-include-dir path="$PROJECT_DIR$/../../../system/batch//../..//libs/libgccvb" />
+    <system-include-dir path="$PROJECT_DIR$" />
+    <system-include-dir path="$PROJECT_DIR$/assets" />
+    <system-include-dir path="$PROJECT_DIR$/components" />
+    <system-include-dir path="$PROJECT_DIR$/functions" />
+    <system-include-dir path="$PROJECT_DIR$/assets/images" />
+    <system-include-dir path="$PROJECT_DIR$/assets/languages" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" />
+</project>
