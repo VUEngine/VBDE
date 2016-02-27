@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/barebone.iml" filepath="$PROJECT_DIR$/.idea/barebone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/libgccvb.iml" filepath="$PROJECT_DIR$/.idea/libgccvb.iml" />
     </modules>
   </component>
 </project>

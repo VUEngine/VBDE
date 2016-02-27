@@ -1,10 +1,13 @@
-/.make-*/
-.idea/
+.make-*/
+/.idea/
 cygwin/home/*
 cygwin/tmp/*
 stdout.txt
 reality_boy.ini
+libgccvb.a
+libvbjae.a
 *.vb
 output*.sav
 workspace.xml
 *.statistics.xml
+CppTools/logs/

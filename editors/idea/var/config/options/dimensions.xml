@@ -76,6 +76,7 @@
     <location key="NewModule_or_Project.wizard.0.0.1920.1080@120dpi" x="568" y="190" />
     <location key="#Project_Structure.0.0.1920.1080@120dpi" x="311" y="0" />
     <location key="new project wizard.0.0.1920.1080@120dpi" x="584" y="190" />
+    <location key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.2100.1313@120dpi" x="695" y="205" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
     <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
     <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
@@ -100,13 +101,14 @@
     <size key="GridCell.Tab.0.center.0.0.1680.1050" width="1658" height="213" />
     <size key="GridCell.Tab.0.right.0.0.1680.1050" width="1658" height="213" />
     <size key="GridCell.Tab.0.bottom.0.0.1680.1050" width="1658" height="213" />
-    <size key="GridCell.Tab.0.left.0.0.2100.1313@120dpi" width="2073" height="763" />
-    <size key="GridCell.Tab.0.center.0.0.2100.1313@120dpi" width="2073" height="763" />
-    <size key="GridCell.Tab.0.right.0.0.2100.1313@120dpi" width="2073" height="763" />
-    <size key="GridCell.Tab.0.bottom.0.0.2100.1313@120dpi" width="2073" height="763" />
+    <size key="GridCell.Tab.0.left.0.0.2100.1313@120dpi" width="2073" height="341" />
+    <size key="GridCell.Tab.0.center.0.0.2100.1313@120dpi" width="2073" height="341" />
+    <size key="GridCell.Tab.0.right.0.0.2100.1313@120dpi" width="2073" height="341" />
+    <size key="GridCell.Tab.0.bottom.0.0.2100.1313@120dpi" width="2073" height="341" />
     <size key="CommitChangelistDialog2.0.0.2100.1313@120dpi" width="1825" height="1225" />
     <size key="ProcessPopupWindow.0.0.2100.1313@120dpi" width="243" height="234" />
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.2100.1313@120dpi" width="875" height="396" />
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.1920.1080@120dpi" width="481" height="396" />
+    <size key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.2100.1313@120dpi" width="1134" height="970" />
   </component>
 </application>
