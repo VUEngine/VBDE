@@ -1,6 +1,5 @@
 /.make-*/
 .idea/
-/.idea/workspace.xml
 cygwin/home/*
 cygwin/tmp/*
 cygwin/var/log/*
@@ -9,3 +8,4 @@ stdout.txt
 reality_boy.ini
 *.vb
 output*.sav
+workspace.xml

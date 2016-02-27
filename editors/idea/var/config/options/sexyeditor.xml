@@ -8,7 +8,7 @@
               <option value="C:\vbde\system\icon\vbde_gray.png" />
             </array>
           </option>
-          <option name="opacity" value="0.25" />
+          <option name="opacity" value="0.15" />
           <option name="position" value="4" />
           <option name="positionOffset" value="50" />
         </BackgroundConfiguration>

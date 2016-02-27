@@ -1,1 +1,5 @@
-HexView
+com.intellij.plugins.watcher
+Subversion
+hg4idea
+org.editorconfig.editorconfigjetbrains
+CVS

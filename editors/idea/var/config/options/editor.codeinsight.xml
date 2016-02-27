@@ -18,8 +18,4 @@
     <option name="COLLAPSE_END_OF_LINE_COMMENTS" value="true" />
     <option name="INLINE_PARAMETER_NAMES_FOR_LITERAL_CALL_ARGUMENTS" value="true" />
   </component>
-  <component name="XmlFoldingSettings">
-    <option name="collapseXmlTags" value="true" />
-    <option name="COLLAPSE_XML_TAGS" value="true" />
-  </component>
 </application>
