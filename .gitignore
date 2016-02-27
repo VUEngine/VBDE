@@ -2,10 +2,9 @@
 .idea/
 cygwin/home/*
 cygwin/tmp/*
-cygwin/var/log/*
-cygwin/etc/setup/*
 stdout.txt
 reality_boy.ini
 *.vb
 output*.sav
 workspace.xml
+*.statistics.xml

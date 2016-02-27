@@ -194,7 +194,7 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 15.0.3 Community Edition, pre-configured with several useful plugins, templates, etc.
+    - IntelliJ IDEA 15.0.4 Community Edition, pre-configured with several useful plugins, templates, etc.
       (Pro version only)
 
   o Compiler
