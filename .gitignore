@@ -9,5 +9,5 @@ libvbjae.a
 *.vb
 output*.sav
 workspace.xml
-*.statistics.xml
-CppTools/logs/
+*statistics.xml
+/editors/idea/var/config/plugins/CppTools/logs/

@@ -1,8 +1,9 @@
 .git
 .gitignore
 .gitmodules
-.\.idea
+\.idea
 .make-*
+CppTools\logs
 cygwin\home\Chris
 cygwin\tmp\*
 libgccvb.a
