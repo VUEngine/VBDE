@@ -15,7 +15,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="CppTools.Settings" gccPath="..\..\..\..\..\system\tools\TDM-GCC-32\bin\gcc.exe" clangPath="" mingwToolsDir="" msvcdir="" defines="" additionalIncludes="" launchGdbOnFailureCommand="$gdb$ --directory=&quot;c:/MingW/1.0/home/maxim/CF-C&quot;" gdbPath="" />
+  <component name="CppTools.Settings" gccPath="C:\vbde\system\tools\TDM-GCC-32\bin\gcc.exe" clangPath="" mingwToolsDir="" msvcdir="" defines="" additionalIncludes="" launchGdbOnFailureCommand="$gdb$ --directory=&quot;c:/MingW/1.0/home/maxim/CF-C&quot;" gdbPath="" />
   <component name="CvsApplicationLevelConfiguration">
     <option name="EXT_CONFIGURATION">
       <value>

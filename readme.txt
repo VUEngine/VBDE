@@ -44,14 +44,17 @@
     No installation or any extra steps are required. Just download, unzip and you're ready to start
     developing for the Virtual Boy.
 
-    Note: Previous versions needed to be placed in C:/vbde/. This is no longer necessary.
-
     VBDE comes with a current portable version of Notepad++ that has been pre-configured with selected
     plugins and slightly modified to have a button bar on top. With these buttons, you can quickly compile
     the current project, run the compiled ROM in an emulator, convert images, etc.
 
     VBDE is also available in a Pro edition, which comes with a copy of IntelliJ IDEA Community Edition,
     which has been modified and pre-configured for VB development.
+
+    Note: If you're using VBDE Pro and want to use it from another directory than C:/vbde, you'll have to
+    adjust the path to GCC accordingly under Settings > Other Settings > C/C++ > Path to GCC, and point it
+    to {VBDE}\system\tools\TDM-GCC-32\bin\gcc.exe. This separate GCC version is needed by the C/C++ Plugin
+    for indexing and can not be relative.
 
   o Compiling and running
 
