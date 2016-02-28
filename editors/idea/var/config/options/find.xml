@@ -1,7 +1,5 @@
 <application>
   <component name="FindSettings">
-    <option name="caseSensitive" value="false" />
-    <option name="CASE_SENSITIVE_SEARCH" value="false" />
     <recentFileMasks>
       <mask>*.h</mask>
       <mask>*.c</mask>
