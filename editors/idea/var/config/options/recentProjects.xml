@@ -7,11 +7,11 @@
         <option value="..\..\..\..\..\samples\libgccvb\game-of-life" />
         <option value="..\..\..\..\..\samples\libgccvb\barebone" />
         <option value="..\..\..\..\..\samples\libgccvb\demos\demo1" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo6" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo5" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo4" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo3" />
         <option value="..\..\..\..\..\samples\libgccvb\demos\demo2" />
+        <option value="..\..\..\..\..\samples\libgccvb\demos\demo3" />
+        <option value="..\..\..\..\..\samples\libgccvb\demos\demo4" />
+        <option value="..\..\..\..\..\samples\libgccvb\demos\demo5" />
+        <option value="..\..\..\..\..\samples\libgccvb\demos\demo6" />
       </list>
     </option>
   </component>
