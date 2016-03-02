@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.1.0 - March 1st, 2016                                      |
+|                                    Version 1.1.0 - March 3rd, 2016                                      |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -48,7 +48,7 @@
     plugins and slightly modified to have a button bar on top. With these buttons, you can quickly compile
     the current project, run the compiled ROM in an emulator, convert images, etc.
 
-    VBDE is also available in a Pro edition, which comes with a copy of IntelliJ IDEA Community Edition,
+    VBDE is also available as a Pro edition, which comes with a copy of IntelliJ IDEA Community Edition,
     which has been modified and pre-configured for VB development.
 
     Note: If you're using VBDE Pro and want to use it from another directory than C:/vbde, you'll have to
@@ -302,7 +302,7 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.1.0, March 1st, 2016
+  o 1.1.0, March 3rd, 2016
     - Massively reduced package size by removing unneeded files from cygwin directory
     - Made VBDE fully portable by removing remaining hardcoded paths from Notepad++ directory
     - Added script to initialize user folder on first run
