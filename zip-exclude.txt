@@ -13,6 +13,7 @@ output.ram
 output.vb
 *.statistics.xml
 workspace.xml
+security.xml
 zip-exclude.txt
 zip-exclude-basic.txt
 zip-release-basic.bat
