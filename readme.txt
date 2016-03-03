@@ -43,6 +43,8 @@
 
     No installation or any extra steps are required. Just download, unzip and you're ready to start
     developing for the Virtual Boy.
+    
+    VBDE is fully portable and can run from anywhere. Just make sure the root directory is called "vbde".
 
     VBDE comes with a current portable version of Notepad++ that has been pre-configured with selected
     plugins and slightly modified to have a button bar on top. With these buttons, you can quickly compile
@@ -54,7 +56,8 @@
     Note: If you're using VBDE Pro and want to use it from another directory than C:/vbde, you'll have to
     adjust the path to GCC accordingly under Settings > Other Settings > C/C++ > Path to GCC, and point it
     to {VBDE}\system\tools\TDM-GCC-32\bin\gcc.exe. This separate GCC version is needed by the C/C++ Plugin
-    for indexing and can not be relative.
+    for indexing and can not be relative. You'll also have to reindex the sample projects using the 
+    respective button in the toolbar.
 
   o Compiling and running
 
