@@ -1,8 +1,10 @@
 .git
 .gitignore
 .gitmodules
-\.idea
 .make-*
+.\.idea
+.idea\vcs.xml
+.idea\workspace.xml
 CppTools\logs
 cygwin\home\Chris
 cygwin\tmp\*
@@ -12,7 +14,6 @@ mednafen*\sav\*
 output.ram
 output.vb
 *.statistics.xml
-workspace.xml
 security.xml
 zip-exclude.txt
 zip-exclude-basic.txt
