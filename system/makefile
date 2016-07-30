@@ -1,46 +1,48 @@
 #Makefile taken from Wikipedia.org
 #
+
 # Specify the main target
-TARGET = output
+BUILD_DIR = build
+
+# Specify the main target
+TARGET = $(BUILD_DIR)/output
 
 # Default build type
 #TYPE = debug
 TYPE = release
 #TYPE = preprocessor
 
+# Libgccvb's home
+LIBGCCVB_PATH = $(VBDE)/libs/libgccvb
+
 # Which directories contain source files
-DIRS := $(shell find . -type d -print)
+DIRS := $(shell find . $(LIBGCCVB_PATH) -type d -print)
 		
 # Which libraries are linked
 LIBS =
 ROMHEADER=lib/vb.hdr
 
-# first build the engine
-LIBGCCVB = libgccvb.a
-
 # Dynamic libraries
 DLIBS =
 
-# Obligatory headers
-LIBGCCVB_PATH = $(VBDE)/libs/libgccvb
 
 GAME_ESSENTIALS = -include $(LIBGCCVB_PATH)/libgccvb.h 
 
 # The next blocks change some variables depending on the build type
 ifeq ($(TYPE),debug)
-LDPARAM = -fno-builtin -ffreestanding -T$(VBDE)/cygwin/opt/gccvb/v810/lib/vb.ld -L/opt/gccvb/v810/lib/ -L/opt/gccvb/v810/include/ -lm -lgccvb
+LDPARAM = -T$(LIBGCCVB_PATH)/compiler/vb.ld -lm
 CCPARAM = -fno-builtin -ffreestanding -nodefaultlibs -mv810 -O -Wall $(GAME_ESSENTIALS) 
 MACROS = __DEBUG
 endif
 
 ifeq ($(TYPE), release)
-LDPARAM = -T$(VBDE)/cygwin/opt/gccvb/v810/lib/vb.ld -L/opt/gccvb/v810/lib/ -L/opt/gccvb/v810/include/  -lm -lgccvb
+LDPARAM = -T$(LIBGCCVB_PATH)/compiler/vb.ld -lm
 CCPARAM = -nodefaultlibs -mv810 -finline-functions -Wall -O3 -Winline $(GAME_ESSENTIALS) -I$(VBDE)/libs/libgccvb/
 MACROS = NDEBUG
 endif
 
 ifeq ($(TYPE),preprocessor)
-LDPARAM = -T$(VBDE)/cygwin/opt/gccvb/v810/lib/vb.ld -L/opt/gccvb/v810/lib/ -L/opt/gccvb/v810/include/ 
+LDPARAM = -T$(LIBGCCVB_PATH)/compiler/vb.ld -lm
 CCPARAM = -nodefaultlibs -mv810 -Wall -Winline $(GAME_ESSENTIALS) -E
 MACROS = __DEBUG
 endif
@@ -55,20 +57,27 @@ EXTRA_FILES = makefile
 
 # The compiler
 GCC = v810-gcc
+AS = v810-as
 OBJCOPY = v810-objcopy
 OBJDUMP = v810-objdump
 
 # Where to store object and dependancy files.
-STORE = .make-$(TYPE)
+STORE = $(BUILD_DIR)/$(TYPE)
 
 # Makes a list of the source (.cpp) files.
 SOURCE := $(foreach DIR,$(DIRS),$(wildcard $(DIR)/*.c))
+
+# Makes a list of the source (.s) files.
+ASM := $(foreach DIR,$(DIRS),$(wildcard $(DIR)/*.s))
 
 # List of header files.
 HEADERS := $(foreach DIR,$(DIRS),$(wildcard $(DIR)/*.h))
 
 # Makes a list of the object files that will have to be created.
-OBJECTS := $(addprefix $(STORE)/, $(SOURCE:.c=.o))
+C_OBJECTS := $(addprefix $(STORE)/, $(SOURCE:.c=.o))
+
+# Makes a list of the object files that will have to be created.
+ASM_OBJECTS := $(addprefix $(STORE)/, $(ASM:.s=.o))
 
 # Same for the .d (dependancy) files.
 DFILES := $(addprefix $(STORE)/,$(SOURCE:.c=.d))
@@ -90,18 +99,10 @@ $(TARGET).vb: main.elf
 #	@$(OBJDUMP) -S main.elf > machine.asm
 	
 
-deleteLibgccvb:
-	@rm -f $(LIBGCCVB)
-
-$(LIBGCCVB): deleteLibgccvb
-	echo Building libgccvb
-	$(MAKE) -f $(LIBGCCVB_PATH)/makefile $@ -e TYPE=$(TYPE)
-
-main.elf: $(LIBGCCVB) dirs $(OBJECTS)
+main.elf: dirs $(C_OBJECTS) $(ASM_OBJECTS)
 		@echo Linking $(TARGET).
-		@$(GCC) -o $@ $(OBJECTS) $(LDPARAM) \
+		@$(GCC) -o $@ -nostartfiles $(C_OBJECTS) $(ASM_OBJECTS) $(LDPARAM) \
 			$(foreach LIBRARY, $(LIBS),-l$(LIBRARY)) $(foreach LIB,$(LIBPATH),-L$(LIB))
-
 
 # Rule for creating object file and .d file, the sed magic is to add
 # the object path at the start of the file because the files gcc
@@ -112,7 +113,11 @@ $(STORE)/%.o: %.c
                 $(foreach MACRO,$(MACROS),-D$(MACRO)) -c $< -o $@
 		@sed -e '1s/^\(.*\)$$/$(subst /,\/,$(dir $@))\1/' $(STORE)/$*.dd > $(STORE)/$*.d
 		@rm -f $(STORE)/$*.dd
-
+		
+$(STORE)/%.o: %.s
+	@echo Creating object file for $*
+	@$(AS) -o $@ $<
+		
 # Empty rule to prevent problems when a header is deleted.
 %.h: ;
 
@@ -130,7 +135,7 @@ backup:
 
 # Create necessary directories
 dirs:
-		@-if [ ! -e $(STORE) ]; then mkdir $(STORE); fi;
+		@-if [ ! -e $(STORE) ]; then mkdir -p $(STORE); fi;
 		@-$(foreach DIR,$(DIRS), if [ ! -e $(STORE)/$(DIR) ]; \
          then mkdir -p $(STORE)/$(DIR); fi; )
 

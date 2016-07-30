@@ -1,1 +1,1 @@
-START "" "%VBDE%\tools\emus\rboy_084_win\reality_boyD.exe" "%PROJECT_DIR%\output.vb" -display frame -dspmode normal -palette red -brite 1.3 -altkbd -sclscr 3 -debug
+START "" "%VBDE%\tools\emus\rboy_084_win\reality_boyD.exe" "%PROJECT_DIR%\build\output.vb" -display frame -dspmode normal -palette red -brite 1.3 -altkbd -sclscr 2 -debug

@@ -34,7 +34,7 @@ ECHO ^<project version="4"^> >> %CONFIG_FILE%
 ECHO ^<component name="CppTools.Loader" reportImplicitCastToBool="false" reportNameNeverReferenced="false" reportNameReferencedOnce="false" reportRedundantCast="false" reportRedundantQualifier="false" reportStaticCallFromInstance="false" reportDuplicatedSymbols="false" warnedAboutFileOutOfSourceRoot="true" version="3" currentProject="$PROJECT_DIR$/makefile" sdkErrorReported="true" additionalPreprocessorDefs="" automaticallyIncludedHeaderFiles=^" >> %CONFIG_FILE%
 
 ::PRINT H FILES THAT HAVE NO CORRESPONDING C FILE, IGNORE FOLDERS STARTING WITH .
-FOR /f "delims=" %%D IN ('dir /s /b /o:n /a-d "%VBDE%\cygwin\opt\gccvb\v810\include\<.h" %LIBRARY_SEARCH_STRING_H% "%PROJECT_DIR%\<.h" ^| find ^"\.^" /v /i') DO (
+FOR /f "delims=" %%D IN ('dir /s /b /o:n /a-d "%VBDE%\v810-win32\v810\include\<.h" %LIBRARY_SEARCH_STRING_H% "%PROJECT_DIR%\<.h" ^| find ^"\.^" /v /i') DO (
     ::IF NOT EXIST %%~dpnD.c
     ECHO %%D; >> %CONFIG_FILE%
 )

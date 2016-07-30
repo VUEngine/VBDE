@@ -1,7 +1,5 @@
-.make-*/
 /.idea/
-cygwin/home/*
-cygwin/tmp/*
+/.mednafen/
 stdout.txt
 reality_boy.ini
 libgccvb.a
@@ -9,6 +7,7 @@ libvbjae.a
 *.vb
 output*.sav
 security.xml
+stdout.txt
 workspace.xml
 *statistics.xml
 /editors/idea/var/config/plugins/CppTools/logs/
