@@ -1,0 +1,13 @@
+%FILES%
+mingw32.exe
+mingw32.ini
+mingw64.exe
+mingw64.ini
+msys2.exe
+msys2.ini
+
+%BACKUP%
+mingw32.ini	3581a9d0d9c0fdd18bc617a15c3809f6
+mingw64.ini	8f05887a2aac98066349367459ec0867
+msys2.ini	a725c24a12ef629b7861275d12fc6544
+

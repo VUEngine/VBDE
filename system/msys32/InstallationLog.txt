@@ -1,0 +1,142 @@
+************************************* Invoked: Sat Jul 30 08:43:37 2016
+[0] Arguments:  C:\vbde\samples\vbjaengine\vbjaengine-platformer-demo\msys2-i686-20160205.exe
+[177] Operations sanity check succeeded.
+[58224] backup  operation: Mkdir
+[58224] \t- arguments: C:/vbde/msys32
+[58224] Done
+[58224] perform  operation: Mkdir
+[58224] \t- arguments: C:/vbde/msys32
+[58225] Done
+[58225] Install size: 2 components
+[58268] backup com.msys2.root.base operation: Extract
+[58268] \t- arguments: installer://com.msys2.root.base/20160205msys32.7z, C:\\vbde\\msys32
+[58268] Done
+[58270] perform com.msys2.root.base operation: Extract
+[58270] \t- arguments: installer://com.msys2.root.base/20160205msys32.7z, C:\\vbde\\msys32
+[189582] Done
+[189582] backup com.msys2.root.base operation: CreateShortcut
+[189582] \t- arguments: C:\\Windows\\system32\\cmd.exe, C:\\Users\\VB\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup/MSYS2 Shell.lnk, /A /Q /K C:\\vbde\\msys32\\msys2_shell.bat
+[189583] Done
+[189583] perform com.msys2.root.base operation: CreateShortcut
+[189583] \t- arguments: C:\\Windows\\system32\\cmd.exe, C:\\Users\\VB\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup/MSYS2 Shell.lnk, /A /Q /K C:\\vbde\\msys32\\msys2_shell.bat
+[189653] Done
+[189654] backup com.msys2.root.base operation: CreateShortcut
+[189654] \t- arguments: C:\\Windows\\system32\\cmd.exe, C:\\Users\\VB\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup/MinGW-w64 Win32 Shell.lnk, /A /Q /K C:\\vbde\\msys32\\mingw32_shell.bat
+[189654] Done
+[189654] perform com.msys2.root.base operation: CreateShortcut
+[189654] \t- arguments: C:\\Windows\\system32\\cmd.exe, C:\\Users\\VB\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup/MinGW-w64 Win32 Shell.lnk, /A /Q /K C:\\vbde\\msys32\\mingw32_shell.bat
+[189944] Done
+[189944] backup com.msys2.root.base operation: CreateShortcut
+[189944] \t- arguments: C:\\Windows\\system32\\cmd.exe, C:\\Users\\VB\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup/MinGW-w64 Win64 Shell.lnk, /A /Q /K C:\\vbde\\msys32\\mingw64_shell.bat
+[189945] Done
+[189945] perform com.msys2.root.base operation: CreateShortcut
+[189945] \t- arguments: C:\\Windows\\system32\\cmd.exe, C:\\Users\\VB\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup/MinGW-w64 Win64 Shell.lnk, /A /Q /K C:\\vbde\\msys32\\mingw64_shell.bat
+[190048] Done
+[190049] backup com.msys2.root.base operation: Execute
+[190050] \t- arguments: C:\\vbde\\msys32\\autorebase.bat
+[190050] Done
+[190050] perform com.msys2.root.base operation: Execute
+[190050] \t- arguments: C:\\vbde\\msys32\\autorebase.bat
+[190050] ElevatedExecuteOperation setNativeArguments to start: "C:\\vbde\\msys32\\autorebase.bat"
+[190210] C:\\vbde\\msys32\\autorebase.bat" started, arguments: "
+[192418] Done
+[192419] backup com.msys2.root.base operation: Execute
+[192419] \t- arguments: C:\\vbde\\msys32\\usr\\bin\\bash.exe, --login, -c, exit
+[192419] Done
+[192419] perform com.msys2.root.base operation: Execute
+[192419] \t- arguments: C:\\vbde\\msys32\\usr\\bin\\bash.exe, --login, -c, exit
+[192464] C:\\vbde\\msys32\\usr\\bin\\bash.exe" started, arguments: "--login -c exit
+[193538] Copying skeleton files.\n
+[193554] These files are for the users to personalise their msys2 experience.\n\nThey will never be overwritten nor automatically updated.\n\n
+[193648] './.bashrc' -> '/home/VB//.bashrc'\n
+[193742] './.bash_logout' -> '/home/VB//.bash_logout'\n
+[193758] './.bash_profile' -> '/home/VB//.bash_profile'\n
+[194116] './.inputrc' -> '/home/VB//.inputrc'\n
+[194131] './.profile' -> '/home/VB//.profile'\n
+[194817] 'C:\\\\Windows\\\\system32\\\\drivers\\\\etc\\\\hosts' -> '/etc/hosts'\n
+[195005] 'C:\\\\Windows\\\\system32\\\\drivers\\\\etc\\\\protocol' -> '/etc/protocols'\n
+[195227] 'C:\\\\Windows\\\\system32\\\\drivers\\\\etc\\\\services' -> '/etc/services'\n
+[195317] 'C:\\\\Windows\\\\system32\\\\drivers\\\\etc\\\\networks' -> '/etc/networks'\n
+[197079] ==> Updating trust database...\n
+[197329] ==> Appending keys from msys2.gpg...\n
+[197564] ==> Locally signing trusted keys in keyring...\n
+[197610]   -> Locally signing key D55E7A6D7CE9BA1587C0ACACF40D263ECA25678A...\n
+[197969]   -> Locally signing key 123D4D51A1793859C2BE916BBBE514E53E0D0813...\n
+[198016]   -> Locally signing key B91BCF3303284BF90CC043CA9F418C233E652008...\n
+[198203]   -> Locally signing key 9DD0D4217D75A33B896159E6DA7EF2ABAEEA755C...\n
+[198391] ==> Importing owner trust values...\n
+[198424] ==> Updating trust database...\n
+[202477] gpgkeys: key 
+[202493] BEE6E3097B5709943D4F197065A25F86CD6E8A7A not found on keyserver\n
+[204411] --> Installing /usr/share/info/autosprintf.info.gz ...
+[204602]  done\n
+[204614] --> Installing /usr/share/info/bash.info.gz ... done\n--> Installing /usr/share/info/configure.info.gz ...
+[204712]  done\n
+[204723] --> Installing /usr/share/info/coreutils.info.gz ...
+[204776]  done\n
+[204787] --> Installing /usr/share/info/find.info.gz ...
+[204884]  done\n
+[204895] --> Installing /usr/share/info/find-maint.info.gz ...
+[204942]  done\n
+[204958] --> Installing /usr/share/info/flex.info.gz ...
+[205005]  done\n
+[205020] --> Installing /usr/share/info/gawk.info.gz ...
+[205211]  done\n
+[205223] --> Installing /usr/share/info/gawkinet.info.gz ... done\n--> Installing /usr/share/info/gettext.info.gz ...
+[205316]  done\n
+[205332] --> Installing /usr/share/info/gmp.info.gz ...
+[205379]  done\n
+[205394] --> Installing /usr/share/info/gnupg1.info.gz ...
+[205488]  done\n
+[205503] --> Installing /usr/share/info/grep.info.gz ...
+[205597]  done\n
+[205613] --> Installing /usr/share/info/gzip.info.gz ...
+[205660]  done\n
+[205675] --> Installing /usr/share/info/history.info.gz ...
+[205723]  done\n
+[205737] --> Installing /usr/share/info/inetutils.info.gz ...
+[205836]  done\n
+[205847] --> Installing /usr/share/info/info.info.gz ...
+[205895]  done\n
+[205909] --> Installing /usr/share/info/info-stnd.info.gz ...
+[205959]  done\n
+[205972] --> Installing /usr/share/info/libffi.info.gz ...
+[206068]  done\n
+[206081] --> Installing /usr/share/info/libgomp.info.gz ...
+[206128]  done\n
+[206146] --> Installing /usr/share/info/libidn.info.gz ...
+[206191]  done\n
+[206205] --> Installing /usr/share/info/libquadmath.info.gz ...
+[206303]  done\n
+[206315] --> Installing /usr/share/info/libtasn1.info.gz ...
+[206362]  done\n
+[206381] --> Installing /usr/share/info/m4.info.gz ...
+[206425]  done\n
+[206439] --> Installing /usr/share/info/mpfr.info.gz ...
+[206537]  done\n
+[206549] --> Installing /usr/share/info/readline.info.gz ...
+[206643]  done\n
+[206658] --> Installing /usr/share/info/rluserman.info.gz ...
+[206705]  done\n
+[206720] --> Installing /usr/share/info/sed.info.gz ...
+[206768]  done\n
+[206783] --> Installing /usr/share/info/standards.info.gz ...
+[206876]  done\n
+[206892] --> Installing /usr/share/info/time.info.gz ...
+[206939]  done\n
+[206954] --> Installing /usr/share/info/which.info.gz ...
+[207005]  done\n
+[210137] \x1B[3J\x1B[H\x1B[2J
+[210137] \n\n###################################################################\n#                                                                 #\n#                                                                 #\n#                   C   A   U   T   I   O   N                     #\n#                                                                 #\n#                  This is first start of MSYS2.                  #\n#       You MUST restart shell to apply necessary actions.        #\n#                                                                 #\n#                                                                 #\n###################################################################\n\n\n\x1B[3J\x1B[H\x1B[2J
+[210137] Done
+[210185] Writing maintenance tool: "C:\\vbde\\msys32/maintenancetool.exe.new"
+[210487] Wrote permissions for maintenance tool.
+[214288] Maintenance tool restart: false.
+[214292] SHOW FINISHED PAGE
+[248577] starting "C:\\vbde\\msys32/msys2_shell.bat" ()
+************************************* Invoked: Sat Jul 30 08:51:05 2016
+[0] Arguments:  C:\vbde\msys32\maintenancetool.exe
+[428] Operations sanity check succeeded.
+************************************* Invoked: Sat Jul 30 09:37:59 2016
+[0] Arguments:  C:\vbde\msys32\maintenancetool.exe
+[536] Operations sanity check succeeded.
