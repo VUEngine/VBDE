@@ -1,16 +1,13 @@
 ::SET ECHO OFF
 @echo off
 
-::SET DIRS
-SET VBDE=%~dp0\..\..\
-
-::SET TEMPORARY ENVIRONMENT VARIABLES
-SET PATH=%PATH%;%VBDE%\cygwin\bin;%VBDE%\cygwin\opt\gccvb\bin;%VBDE%\tools\rom\vbid-1.0-win
-SET C_INCLUDE_PATH=%VBDE%\cygwin\opt\gccvb\v810\include;%VBDE%\libs\libgccvb
-
-::SET TEMPORARY CYGWIN ENVIRONMENT VARIABLES
-SET CYGWIN=nodosfilewarning
-SET CHERE_INVOKING=1
-
-::CHECK USER DIR
-CALL %~dp0\init-user.bat
+::SET VBDE PATH BY FINDING THE PARENT DIR TWICE FROM THIS SCRIPT'S PATH
+set "VBDE=%~dp0"
+:char1
+set VBDE=%VBDE:~0,-1%
+IF "%VBDE:~-1%"=="\" ( goto end1 ) else ( goto char1 )
+:end1
+:char2
+set VBDE=%VBDE:~0,-1%
+IF "%VBDE:~-1%"=="\" ( goto end2 ) else ( goto char2 )
+:end2
