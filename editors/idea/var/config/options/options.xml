@@ -2,8 +2,8 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
     <property name="DefaultHtmlDoctype.Refreshed" value="2" />
-    <property name="installed.kotlin.plugin.version" value="1.0.0-beta-2428-IJ143-18" />
-    <property name="file.chooser.recent.files" value="" />
+    <property name="installed.kotlin.plugin.version" value="1.0.2-1-release-IJ145-20" />
+    <property name="file.chooser.recent.files" value="C:/vbde/system/icon&#10;" />
     <property name="toolwindow.stripes.buttons.info.shown" value="true" />
     <property name="lastTip" value="2" />
     <property name="PLUGIN_FILTER" value="hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server&#10;calc" />
@@ -11,7 +11,7 @@
     <property name="plugins.preselection.path" value="$USER_HOME$/Downloads" />
     <property name="fileTypeChangedCounter" value="59" />
     <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
-    <property name="selected.color.option.type" value="BAD_CHARACTER" />
+    <property name="selected.color.option.type" value="GUTTER_BACKGROUND" />
     <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.80825245" />
     <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.78618115" />
     <property name="CommitChangeListDialog.DETAILS_SHOW_OPTION_" value="true" />
@@ -55,5 +55,8 @@
     <property name="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.splitter" value="0.77372265" />
     <property name="last.imported.location" value="" />
     <property name="project.wizard.group" value="C++" />
+    <property name="android-component-compatibility-check" value="1469993163873" />
+    <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="C:/vbde/samples/vbjaengine/vbjaengine-platformer-demo/assets/images/AdjustmentScreen/AdjustmentScreenBG.png&#10;C:/vbde/system/icon/vbde_gray.png&#10;../../../../system/icon/vbde_gray.png" />
+    <property name="idea.background.editor" value="../../../../system/icon/vbde_gray.png,15,plain,center" />
   </component>
 </application>

@@ -82,6 +82,11 @@
     <location key="replaceTextDialog.0.0.1920.1080@120dpi" x="713" y="133" />
     <location key="#com.intellij.tools.ToolEditorDialog.0.0.2100.1313@120dpi" x="599" y="363" />
     <location key="Vcs.Push.Dialog.0.0.1680.1050" x="448" y="212" />
+    <location key="WELCOME_SCREEN.0.0.3840.2160@144dpi" x="1920" y="345" />
+    <location key="SettingsEditor.0.0.3840.2160@144dpi" x="1148" y="527" />
+    <location key="org.intellij.images.editor.actions.SetBackgroundImageDialog.0.0.3840.2160@144dpi" x="1348" y="391" />
+    <location key="FileChooserDialogImpl.0.0.3840.2160@144dpi" x="1597" y="444" />
+    <location key="#Project_Structure.0.0.3840.2160@144dpi" x="1141" y="403" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
     <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
     <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
@@ -115,5 +120,9 @@
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.2100.1313@120dpi" width="875" height="396" />
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.1920.1080@120dpi" width="481" height="396" />
     <size key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.2100.1313@120dpi" width="1134" height="970" />
+    <size key="GridCell.Tab.0.left.0.0.3840.2160@144dpi" width="3805" height="396" />
+    <size key="GridCell.Tab.0.center.0.0.3840.2160@144dpi" width="3805" height="396" />
+    <size key="GridCell.Tab.0.right.0.0.3840.2160@144dpi" width="3805" height="396" />
+    <size key="GridCell.Tab.0.bottom.0.0.3840.2160@144dpi" width="3805" height="396" />
   </component>
 </application>

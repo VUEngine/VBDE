@@ -1,5 +1,6 @@
 /.idea/
 /.mednafen/
+/build/
 stdout.txt
 reality_boy.ini
 libgccvb.a
