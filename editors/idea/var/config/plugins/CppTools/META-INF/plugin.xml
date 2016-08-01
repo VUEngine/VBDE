@@ -2,7 +2,7 @@
 <idea-plugin>
   <name>C/C++</name>
   <version>0.8 build 8</version>
-  <idea-version since-build="139.1" until-build="160.0"/>
+  <idea-version since-build="139.1" until-build="9999.0"/>
   <depends>com.intellij.modules.lang</depends>
   <depends optional="true" config-file="exended_platform.xml">com.intellij.modules.java</depends>
   <vendor url="http://bugs.cpptools.com" email="support@adv-tools.com">AdvancedTools</vendor>
