@@ -7,13 +7,12 @@
     <property name="toolwindow.stripes.buttons.info.shown" value="true" />
     <property name="lastTip" value="2" />
     <property name="PLUGIN_FILTER" value="hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server&#10;calc" />
-    <property name="ChangesViewManager.DETAILS_SPLITTER_PROPORTION" value="0.5" />
     <property name="plugins.preselection.path" value="$USER_HOME$/Downloads" />
-    <property name="fileTypeChangedCounter" value="59" />
+    <property name="fileTypeChangedCounter" value="68" />
     <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
     <property name="selected.color.option.type" value="GUTTER_BACKGROUND" />
     <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.80825245" />
-    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.78618115" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.5831202" />
     <property name="CommitChangeListDialog.DETAILS_SHOW_OPTION_" value="true" />
     <property name="CommittedChanges.SplitterProportions.0" value="700" />
     <property name="CommittedChanges.SplitterProportions.1" value="500" />
@@ -58,5 +57,6 @@
     <property name="android-component-compatibility-check" value="1469993163873" />
     <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="C:/vbde/samples/vbjaengine/vbjaengine-platformer-demo/assets/images/AdjustmentScreen/AdjustmentScreenBG.png&#10;C:/vbde/system/icon/vbde_gray.png&#10;../../../../system/icon/vbde_gray.png" />
     <property name="idea.background.editor" value="../../../../system/icon/vbde_gray.png,15,plain,center" />
+    <property name="com.intellij.history.integration.ui.views.DirectoryHistoryDialog.0" value="300" />
   </component>
 </application>
