@@ -1,13 +1,10 @@
 .git
 .gitignore
 .gitmodules
-.make-*
 .\.idea
 .idea\vcs.xml
 .idea\workspace.xml
 CppTools\logs
-cygwin\home\Chris
-cygwin\tmp\*
 libgccvb.a
 libvbjae.a
 mednafen*\sav\*

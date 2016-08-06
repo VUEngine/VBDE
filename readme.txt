@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.1.0 - March 3rd, 2016                                      |
+|                                    Version 1.2.0 - ? ?, 2016                                      |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -304,6 +304,11 @@
 +---------------------------------------------------------------------------------------------------------+
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
+
+  o 1.2.0, ? ?, 2016
+    - Updated IDEA to 2106.2.1
+    - ...
+    - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.1
 
   o 1.1.0, March 3rd, 2016
     - Massively reduced package size by removing unneeded files from cygwin directory
