@@ -13,8 +13,6 @@ CALL %VBDE%\system\batch\find-project-dir.bat %1
 PUSHD %PROJECT_DIR%
 
 ::PREPARE ENV VARS
-SET HOME=%PROJECT_DIR%
-
 SET VBDE_UNIX=%VBDE:\=/%
 SET VBDE_UNIX=%VBDE_UNIX:c:=/c%
 ECHO VBDE directory: %VBDE_UNIX%
