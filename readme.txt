@@ -306,7 +306,7 @@
 +---------------------------------------------------------------------------------------------------------+
 
   o 1.2.0, ? ?, 2016
-    - Updated IDEA to 2106.2.1
+    - Updated IDEA to 2106.2.2
     - ...
     - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.1
 

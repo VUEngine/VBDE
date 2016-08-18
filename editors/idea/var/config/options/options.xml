@@ -8,11 +8,11 @@
     <property name="lastTip" value="2" />
     <property name="PLUGIN_FILTER" value="hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server&#10;calc" />
     <property name="plugins.preselection.path" value="$USER_HOME$/Downloads" />
-    <property name="fileTypeChangedCounter" value="68" />
+    <property name="fileTypeChangedCounter" value="70" />
     <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
     <property name="selected.color.option.type" value="GUTTER_BACKGROUND" />
     <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.80825245" />
-    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.5831202" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.5863171" />
     <property name="CommitChangeListDialog.DETAILS_SHOW_OPTION_" value="true" />
     <property name="CommittedChanges.SplitterProportions.0" value="700" />
     <property name="CommittedChanges.SplitterProportions.1" value="500" />
