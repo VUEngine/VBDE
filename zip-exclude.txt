@@ -4,7 +4,6 @@
 .\.idea
 .idea\vcs.xml
 .idea\workspace.xml
-CppTools\logs
 libgccvb.a
 libvbjae.a
 mednafen*\sav\*

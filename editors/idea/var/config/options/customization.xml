@@ -40,11 +40,6 @@
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_INDEX project" is_action="true" action_type="1" position="0">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
     <group value="Tool_External Tools_CLEAN project folder" is_action="true" action_type="1" position="1">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
@@ -136,7 +131,6 @@
     <action id="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" icon="../../../../../system/icon/16/comp_mednafen.png" />
     <action id="Tool_External Tools_RUN in Reality Boy" icon="../../../../../system/icon/16/rboy.png" />
     <action id="Tool_External Tools_CONVERT images with GRIT" icon="../../../../../system/icon/16/grit.png" />
-    <action id="Tool_External Tools_INDEX project" icon="../../../../../system/icon/16/update.png" />
     <action id="Tool_External Tools_DEBUG with Reality Boy" icon="../../../../../system/icon/16/rboy_debug.png" />
     <action id="Tool_External Tools_COMPILE with gccVB" icon="../../../../../system/icon/16/compile.png" />
     <action id="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" icon="../../../../../system/icon/16/comp_rboy.png" />

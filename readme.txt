@@ -53,12 +53,6 @@
     VBDE is also available as a Pro edition, which comes with a copy of IntelliJ IDEA Community Edition,
     which has been modified and pre-configured for VB development.
 
-    Note: If you're using VBDE Pro and want to use it from another directory than C:/vbde, you'll have to
-    adjust the path to GCC accordingly under Settings > Other Settings > C/C++ > Path to GCC, and point it
-    to {VBDE}\system\tools\TDM-GCC-32\bin\gcc.exe. This separate GCC version is needed by the C/C++ Plugin
-    for indexing and can not be relative. You'll also have to reindex the sample projects using the 
-    respective button in the toolbar.
-
   o Compiling and running
 
     Compiling a project is as simple as opening any project file and clicking the compile button. There's
@@ -306,8 +300,9 @@
 +---------------------------------------------------------------------------------------------------------+
 
   o 1.2.0, ? ?, 2016
-    - Updated IDEA to 2106.2.3
-    - ...
+    - Updated gcc to 4.7, now using msys instead of cygwin (Huge thank yous to Jorgeche and ElmerPCFX!)
+    - [Pro] Updated IDEA to 2106.2.4
+    - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
     - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.1
 
   o 1.1.0, March 3rd, 2016

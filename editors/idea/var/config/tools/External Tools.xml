@@ -76,13 +76,6 @@
       <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
     </exec>
   </tool>
-  <tool name="INDEX project" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="false">
-    <exec>
-      <option name="COMMAND" value="$FileParentDir(vbde)$\vbde\system\batch\reindex.bat" />
-      <option name="PARAMETERS" value="$ProjectFileDir$" />
-      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
-    </exec>
-  </tool>
   <tool name="CLEAN project folder" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="false">
     <exec>
       <option name="COMMAND" value="$FileParentDir(vbde)$\vbde\system\batch\clean.bat" />
