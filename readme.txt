@@ -300,7 +300,8 @@
 +---------------------------------------------------------------------------------------------------------+
 
   o 1.2.0, ? ?, 2016
-    - Updated gcc to 4.7, now using msys instead of cygwin (Huge thank yous to Jorgeche and ElmerPCFX!)
+    - Updated gcc to 4.7 with patches by ElmerPCFX, also a huge thank you to Jorgeche!
+    - Now using msys instead of cygwin
     - [Pro] Updated IDEA to 2106.2.4
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
     - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.1
