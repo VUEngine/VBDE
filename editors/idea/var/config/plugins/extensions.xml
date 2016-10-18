@@ -1211,7 +1211,7 @@
               <option name="myBundled" value="true" />
             </plugin>
             <plugin>
-              <option name="myPluginId" value="MaxComputeStudio" />
+              <option name="myPluginId" value="OdpsStudio" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -3049,11 +3049,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.plugins.markdown" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -3518,7 +3513,7 @@
         <option name="myPlugins">
           <set>
             <plugin>
-              <option name="myPluginId" value="MaxComputeStudio" />
+              <option name="myPluginId" value="OdpsStudio" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -3544,7 +3539,7 @@
         <option name="myPlugins">
           <set>
             <plugin>
-              <option name="myPluginId" value="MaxComputeStudio" />
+              <option name="myPluginId" value="OdpsStudio" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -3719,6 +3714,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="org.apache.pig.plugin.idea" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.pilar">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.argus.cit.intellij" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -4091,7 +4099,7 @@
         <option name="myPlugins">
           <set>
             <plugin>
-              <option name="myPluginId" value="MaxComputeStudio" />
+              <option name="myPluginId" value="OdpsStudio" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -4786,7 +4794,7 @@
               <option name="myBundled" value="false" />
             </plugin>
             <plugin>
-              <option name="myPluginId" value="MaxComputeStudio" />
+              <option name="myPluginId" value="OdpsStudio" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
