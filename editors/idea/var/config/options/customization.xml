@@ -60,32 +60,37 @@
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_COMPILE with gccVB" is_action="true" action_type="1" position="7">
+    <group value="Tool_External Tools_CONVERT stages" is_action="true" action_type="1" position="6">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" is_action="true" action_type="1" position="8">
+    <group value="Tool_External Tools_COMPILE with gccVB" is_action="true" action_type="1" position="8">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" is_action="true" action_type="1" position="9">
+    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" is_action="true" action_type="1" position="9">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_RUN in Mednafen" is_action="true" action_type="1" position="11">
+    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" is_action="true" action_type="1" position="10">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_RUN in Reality Boy" is_action="true" action_type="1" position="12">
+    <group value="Tool_External Tools_RUN in Mednafen" is_action="true" action_type="1" position="12">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_DEBUG with Reality Boy" is_action="true" action_type="1" position="13">
+    <group value="Tool_External Tools_RUN in Reality Boy" is_action="true" action_type="1" position="13">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_DEBUG with Reality Boy" is_action="true" action_type="1" position="14">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
@@ -95,32 +100,32 @@
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_FLASH to FlashBoy" is_action="true" action_type="1" position="15">
+    <group value="Tool_External Tools_FLASH to FlashBoy" is_action="true" action_type="1" position="16">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group seperator="true" action_type="1" position="16">
+    <group seperator="true" action_type="1" position="17">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_Visit Planet Virtual Boy" is_action="true" action_type="1" position="17">
+    <group value="Tool_External Tools_Visit Planet Virtual Boy" is_action="true" action_type="1" position="18">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_About VBDE" is_action="true" action_type="1" position="18">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
-    <group seperator="true" action_type="1" position="18">
+    <group value="Tool_External Tools_About VBDE" is_action="true" action_type="1" position="19">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
     <group seperator="true" action_type="1" position="19">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group seperator="true" action_type="1" position="20">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
@@ -131,6 +136,7 @@
     <action id="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" icon="../../../../../system/icon/16/comp_mednafen.png" />
     <action id="Tool_External Tools_RUN in Reality Boy" icon="../../../../../system/icon/16/rboy.png" />
     <action id="Tool_External Tools_CONVERT images with GRIT" icon="../../../../../system/icon/16/grit.png" />
+    <action id="Tool_External Tools_CONVERT stages" icon="../../../../../system/icon/16/tiled.png" />
     <action id="Tool_External Tools_DEBUG with Reality Boy" icon="../../../../../system/icon/16/rboy_debug.png" />
     <action id="Tool_External Tools_COMPILE with gccVB" icon="../../../../../system/icon/16/compile.png" />
     <action id="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" icon="../../../../../system/icon/16/comp_rboy.png" />

@@ -116,6 +116,8 @@
       {VBDE}/system/batch/vide.bat
     - CONVERT images with GRIT:
       {VBDE}/system/batch/grit.bat {CURRENT_DIRECTORY}
+    - CONVERT Tiled stages:
+      {VBDE}/system/batch/tmx-converter.bat {CURRENT_DIRECTORY}
     - COMPILE with gccVB:
       {VBDE}/system/batch/build.bat {CURRENT_DIRECTORY} {CURRENT_FILENAME_WITHOUT_EXTENSION}
     - COMPILE with gccVB and RUN in Mednafen:
@@ -305,6 +307,7 @@
     - [Pro] Updated IDEA to 2106.2.5
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
     - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.1
+    - Added tools to convert Tiled (http://www.mapeditor.org/) maps to VBJaEngine stages
 
   o 1.1.0, March 3rd, 2016
     - Massively reduced package size by removing unneeded files from cygwin directory
