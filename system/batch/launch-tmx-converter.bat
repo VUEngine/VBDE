@@ -25,10 +25,7 @@ IF EXIST %PROJECT_DIR%\assets\stages\ (
                 ::CONVERT
                 IF NOT EXIST "%%~dpF\Definition" MKDIR "%%~dpF\Definition"
                 PUSHD "%%~dpF\Definition"
-                "%VBDE%/system/tools/php/php.exe" "%VBDE%/system/tools/vbjaengine-tools/convert-tmx.php" "-f%%F" "-o%%~dpFDefinition\%%~nFDefinition.c"
-
-                ::ECHO
-                ECHO Converted "%%~nxF"
+                "%VBDE%/system/tools/php/php.exe" "%VBDE%/system/tools/vbjaengine-tools/convert-tmx.php" "-f%%F" "-o%%~dpFDefinition\%%~nFDefinition.c" "-vtrue"
             )
 	)
 )

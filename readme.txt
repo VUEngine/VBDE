@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.2.0 - ? ?, 2016                                      |
+|                                    Version 1.2.0 - ? ?, 2016                                            |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -58,7 +58,7 @@
     Compiling a project is as simple as opening any project file and clicking the compile button. There's
     also buttons to automatically run the resulting ROM in an emulator.
 
-    The key mapping is as follows:
+    The pre-configured emulator key mapping is as follows:
 
     Left D-Pad (U, D, L, R): E, D, S, F
     Right D-Pad (U, D, L, R): I, K, J, L
@@ -82,7 +82,8 @@
 
     In order to be detected and converted by the image conversion script, you also need a *.grit file of the
     same name as the image, which contains the conversion settings. You can find a number of example grit
-    files in {VBDE}/system/grit/ which you can just copy and paste (and rename) into your images folder.
+    files in {VBDE}/system/tools/vbjaengine-tools/templates/grit which you can just copy and paste
+    (and rename) into your images folder.
 
     You can also make several files convert at once instead of having all images converted individually.
     Grit files which do not directly relate to an image file through their name, are applied to all images
@@ -104,6 +105,10 @@
 
     Finally, to start the image conversion, press the editor's grit button. This will convert all images
     that do not yet have a corresponding c file or are newer than their c file.
+
+  o Stage conversion
+
+    [tbd]
 
   o Custom editors
 
@@ -191,17 +196,18 @@
 
   o Environment
 
-    - Cygwin
+    - MSYS32
 
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 15.0.4 Community Edition, pre-configured with several useful plugins, templates, etc.
+    - IntelliJ IDEA 2016.2.5 Community Edition, pre-configured with several useful plugins, templates, etc.
       (Pro version only)
 
   o Compiler
 
-    - v810-gcc-4.4.2 patched for Virtual Boy (gccVB)
+    - GCC 4.7 patched for Virtual Boy (gccVB)
+      Author: ElmerPCFX, various
 
   o Tools
 
@@ -303,7 +309,7 @@
 
   o 1.2.0, ? ?, 2016
     - Updated gcc to 4.7 with patches by ElmerPCFX, also a huge thank you to Jorgeche!
-    - Now using msys instead of cygwin
+    - Now using MSYS instead of Cygwin
     - [Pro] Updated IDEA to 2106.2.5
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
     - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.1
