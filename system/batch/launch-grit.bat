@@ -1,4 +1,4 @@
-::ALLOW ACCESS TO VARIABLES SET BY "GET_TIMESTAMP_DIFF" FUNCTION
+::ALLOW ACCESS TO VARIABLES SET BY "GET_TIMESTAMP_DIFF" FUNCTION AS WELL AS REMOVING TIME STAMP FROM GENERATED BINARY FILES
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 ::CONVERT ASSETS
@@ -72,6 +72,16 @@ IF EXIST %PROJECT_DIR%\assets\images\ (
 
                 ::ECHO
                 ECHO Converted "%%~nF.png"
+            )
+        )
+
+        ::REMOVE TIME STAMP LINE FROM GENERATED BINARY FILE(S)
+        IF !TIMEDIFF! gtr 0 (
+            PUSHD "%%~dpF/Binary"
+            FOR %%B IN (*.c) DO (
+                FINDSTR /v Time-stamp: %%B > %%B.temp
+                TYPE %%B.temp > %%B
+                DEL %%B.temp
             )
         )
 	)
