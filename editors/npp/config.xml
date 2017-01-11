@@ -89,7 +89,7 @@
         <GUIConfig name="stylerTheme" path="themes\Solarized.xml" />
         <GUIConfig name="delimiterSelection" leftmostDelimiter="40" rightmostDelimiter="41" delimiterSelectionOnEntireDocument="no" />
         <GUIConfig name="MISC" fileSwitcherWithoutExtColumn="yes" backSlashIsEscapeCharacterForSql="yes" newStyleSaveDlg="no" />
-        <GUIConfig name="DockingManager" leftWidth="292" rightWidth="229" topHeight="200" bottomHeight="200">
+        <GUIConfig name="DockingManager" leftWidth="412" rightWidth="258" topHeight="200" bottomHeight="200">
             <FloatingWindow cont="4" x="874" y="435" width="1093" height="991" />
             <PluginDlg pluginName="LightExplorer.dll" id="0" curr="0" prev="-1" isVisible="yes" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44084" curr="1" prev="-1" isVisible="yes" />

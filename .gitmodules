@@ -1,12 +1,15 @@
-[submodule "libs/vbjaengine"]
-	path = libs/vbjaengine
+[submodule "libs/vuengine"]
+	path = libs/vuengine
 	url = git@bitbucket.org:jorgeche/vbjaengine.git
-[submodule "samples/vbjaengine/vbjaengine-platformer-demo"]
-	path = samples/vbjaengine/vbjaengine-platformer-demo
+[submodule "samples/vuengine/vuengine-platformer-demo"]
+	path = samples/vuengine/vuengine-platformer-demo
 	url = git@bitbucket.org:jorgeche/vbjaengine-platformer-demo.git
-[submodule "samples/vbjaengine/vbjaengine-barebone"]
-	path = samples/vbjaengine/vbjaengine-barebone
+[submodule "samples/vuengine/vuengine-barebone"]
+	path = samples/vuengine/vuengine-barebone
 	url = git@bitbucket.org:jorgeche/vbjaengine-barebone.git
 [submodule "libs/libgccvb"]
 	path = libs/libgccvb
 	url = git@bitbucket.org:KR155E/libgccvb.git
+[submodule "system/tools/vuengine-tools"]
+	path = system/tools/vuengine-tools
+	url = git@bitbucket.org:KR155E/tiled-vuengine-converter.git

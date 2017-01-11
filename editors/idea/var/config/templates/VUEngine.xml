@@ -1,4 +1,4 @@
-<templateSet group="VBJaEngine">
+<templateSet group="VUEngine">
   <template name="ass" value="ASSERT($VAR$, &quot;$CLS$::$FNC$: $MSG$&quot;);&#10;$END$" description="ASSERT check" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="" defaultValue="&quot;this&quot;" alwaysStopAt="true" />
     <variable name="CLS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />

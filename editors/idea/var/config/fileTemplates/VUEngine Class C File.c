@@ -14,7 +14,7 @@
 #set ($InstanceName = $NAME.substring(0,1).toLowerCase() + $NAME.substring(1))
 ##
 ## include default engine file header
-#parse("VBJaEngine Header.c")
+#parse("VUEngine Header.c")
 
 
 //---------------------------------------------------------------------------------------------------------

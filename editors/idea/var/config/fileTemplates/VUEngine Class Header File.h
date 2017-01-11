@@ -12,7 +12,7 @@
 #end
 ##
 ## include default engine file header
-#parse("VBJaEngine Header.c")
+#parse("VUEngine Header.c")
 
 #ifndef ${NameUpper}_H_
 \#define ${NameUpper}_H_

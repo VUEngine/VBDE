@@ -22,6 +22,7 @@ libgccvb
 memberof
 mult
 noinline
+noninfringement
 offsetof
 platformer
 preload
@@ -40,6 +41,7 @@ vbde
 vbjaengine
 vect
 vpu
+vuengine
 wram
 wrld
 xaxis

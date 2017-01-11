@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.2.0 - ? ?, 2016                                            |
+|                                    Version 1.2.0 - ? ?, 2017                                            |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -82,7 +82,7 @@
 
     In order to be detected and converted by the image conversion script, you also need a *.grit file of the
     same name as the image, which contains the conversion settings. You can find a number of example grit
-    files in {VBDE}/system/tools/vbjaengine-tools/templates/grit which you can just copy and paste
+    files in {VBDE}/system/tools/vuengine-tools/templates/grit which you can just copy and paste
     (and rename) into your images folder.
 
     You can also make several files convert at once instead of having all images converted individually.
@@ -148,7 +148,7 @@
     Description: The default gccVB library.
     Authors: various
 
-  o VBJaEngine
+  o VUEngine
     Description: An advanced, object-oriented Virtual Boy game engine.
     Authors: jorgeche, KR155E
 
@@ -177,16 +177,16 @@
       Location: {VBDE}/samples/libgccvb/game-of-life/
       Author: KR155E
 
-  o VBJaEngine
+  o VUEngine
 
-    - VBJaEngine Barebone
-      Description: A barebone VBJaEngine project that can be used as a starting point for your own project.
-      Location: {VBDE}/samples/vbjaengine/vbjaengine-barebone/
+    - VUEngine Barebone
+      Description: A barebone VUEngine project that can be used as a starting point for your own project.
+      Location: {VBDE}/samples/vuengine/vuengine-barebone/
       Authors: jorgeche, KR155E
 
-    - VBJaEngine Platformer Demo
-      Description: A platform game demo which demonstrates usage and features of the VBJaEngine.
-      Location: {VBDE}/samples/vbjaengine/vbjaengine-platformer-demo/
+    - VUEngine Platformer Demo
+      Description: A platform game demo which demonstrates usage and features of the VUEngine.
+      Location: {VBDE}/samples/vuengine/vuengine-platformer-demo/
       Authors: jorgeche, KR155E
 
 
@@ -298,8 +298,8 @@
       Author: Guy Perfect
       Release Date: January 4th, 2013
 
-    - VBJaEngine Development Manual
-      Description: VBJaEngine Documentation. Note that this is a very incomplete WIP.
+    - VUEngine Development Manual
+      Description: VUEngine Documentation. Note that this is a very incomplete WIP.
       Authors: jorgeche, KR155E
 
 
@@ -307,13 +307,13 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.2.0, ? ?, 2016
+  o 1.2.0, ? ?, 2017
     - Updated gcc to 4.7 with patches by ElmerPCFX, also a huge thank you to Jorgeche!
     - Now using MSYS instead of Cygwin
     - [Pro] Updated IDEA to 2106.2.5
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
-    - Updated VBJaEngine as well as its Barebone and Platformer Demo to v4.1
-    - Added tools to convert Tiled (http://www.mapeditor.org/) maps to VBJaEngine stages
+    - The VBJaEngine has been renamed to VUEngine and updated to version 5.0, including its Barebone and Platformer Demo
+    - Added tools to convert Tiled (http://www.mapeditor.org/) maps to VUEngine stages
 
   o 1.1.0, March 3rd, 2016
     - Massively reduced package size by removing unneeded files from cygwin directory

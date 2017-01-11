@@ -4,7 +4,7 @@ build/
 stdout.txt
 reality_boy.ini
 libgccvb.a
-libvbjae.a
+libvuengine.a
 *.vb
 output*.sav
 security.xml
