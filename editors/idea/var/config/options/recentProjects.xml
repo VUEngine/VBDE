@@ -2,8 +2,8 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
-        <option value="..\..\..\..\..\samples\vbjaengine\vbjaengine-platformer-demo" />
-        <option value="..\..\..\..\..\samples\vbjaengine\vbjaengine-barebone" />
+        <option value="..\..\..\..\..\samples\vuengine\vuengine-platformer-demo" />
+        <option value="..\..\..\..\..\samples\vuengine\vuengine-barebone" />
         <option value="..\..\..\..\..\samples\libgccvb\game-of-life" />
         <option value="..\..\..\..\..\samples\libgccvb\barebone" />
         <option value="..\..\..\..\..\samples\libgccvb\demos\demo1" />

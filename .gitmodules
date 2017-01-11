@@ -1,12 +1,12 @@
 [submodule "libs/vuengine"]
 	path = libs/vuengine
-	url = git@bitbucket.org:jorgeche/vbjaengine.git
+	url = git@bitbucket.org:jorgeche/vuengine.git
 [submodule "samples/vuengine/vuengine-platformer-demo"]
 	path = samples/vuengine/vuengine-platformer-demo
-	url = git@bitbucket.org:jorgeche/vbjaengine-platformer-demo.git
+	url = git@bitbucket.org:jorgeche/vuengine-platformer-demo.git
 [submodule "samples/vuengine/vuengine-barebone"]
 	path = samples/vuengine/vuengine-barebone
-	url = git@bitbucket.org:jorgeche/vbjaengine-barebone.git
+	url = git@bitbucket.org:jorgeche/vuengine-barebone.git
 [submodule "libs/libgccvb"]
 	path = libs/libgccvb
 	url = git@bitbucket.org:KR155E/libgccvb.git

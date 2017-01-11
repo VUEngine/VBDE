@@ -55,7 +55,7 @@
     <property name="last.imported.location" value="" />
     <property name="project.wizard.group" value="C++" />
     <property name="android-component-compatibility-check" value="1469993163873" />
-    <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="C:/vbde/samples/vbjaengine/vbjaengine-platformer-demo/assets/images/AdjustmentScreen/AdjustmentScreenBG.png&#10;C:/vbde/system/icon/vbde_gray.png&#10;../../../../system/icon/vbde_gray.png" />
+    <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="../../../../system/icon/vbde_gray.png" />
     <property name="idea.background.editor" value="../../../../system/icon/vbde_gray.png,15,plain,center" />
     <property name="com.intellij.history.integration.ui.views.DirectoryHistoryDialog.0" value="300" />
   </component>
