@@ -4,13 +4,13 @@
 ECHO Starting build process...
 
 ::SCRIPT INITIALIZATION
-CALL %~dp0\init.bat
+CALL "%~dp0\init.bat"
 
 ::FIND PROJECT DIRECTORY
-CALL %VBDE%\system\batch\find-project-dir.bat %1
+CALL "%VBDE%\system\batch\find-project-dir.bat" %1
 
 ::SWITCH TO PROJECT DIRECTORY
-PUSHD %PROJECT_DIR%
+PUSHD "%PROJECT_DIR%"
 
 ::PREPARE ENV VARS
 SET VBDE_UNIX=%VBDE:\=/%
@@ -31,12 +31,12 @@ IF EXIST build\output.vb (
 IF EXIST makefile (
 	::allow projects to have their own makefile
     ECHO Using custom makefile
-	%VBDE%\system\msys32\usr\bin\bash.exe --login -c "export MSYSTEM=MSYS && cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && /usr/bin/make all"
+	"%VBDE%\system\msys32\usr\bin\bash.exe" --login -c "export MSYSTEM=MSYS && cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && /usr/bin/make all"
 ) ELSE (
 	::otherwise use default makefile
     ECHO Using default makefile
-	%VBDE%\system\msys32\usr\bin\bash.exe --login -c "cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && /usr/bin/make all -f $VBDE/system/makefile"
-	)
+	"%VBDE%\system\msys32\usr\bin\bash.exe" --login -c "cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && /usr/bin/make all -f $VBDE/system/makefile"
+)
 
 ::SET ROM HEADER
 IF EXIST build\output.vb IF EXIST header (
@@ -45,12 +45,12 @@ IF EXIST build\output.vb IF EXIST header (
 		SET /a N+=1
 		SET v!N!=%%a
 	)
-	%VBDE%\tools\rom\vbid-1.0-win\vbid build\output.vb "!v4!" - !v6! !v8! !v10! > nul
+	"%VBDE%\tools\rom\vbid-1.0-win\vbid" build\output.vb "!v4!" - !v6! !v8! !v10! > nul
 )
 
 ::RUN IN EMULATOR IF ROM COULD BE COMPILED
-IF EXIST build\output.vb IF EXIST %VBDE%\system\batch\launch-%3.bat (
-	CALL %VBDE%\system\batch\launch-%3.bat %PROJECT_DIR%
+IF EXIST build\output.vb IF EXIST "%VBDE%\system\batch\launch-%3.bat" (
+	CALL "%VBDE%\system\batch\launch-%3.bat" "%PROJECT_DIR%"
 )
 
 ::DO NOT CLOSE CMD WINDOW IF ROM COULD NOT BE COMPILED

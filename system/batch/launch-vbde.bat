@@ -2,7 +2,7 @@
 @echo off
 
 ::SCRIPT INITIALIZATION
-CALL %~dp0\init.bat
+CALL "%~dp0\init.bat"
 
 ::LAUNCH VBDE EDITOR
 IF EXIST "%VBDE%\editors\idea\" (

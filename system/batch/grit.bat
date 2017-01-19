@@ -4,16 +4,16 @@
 ECHO CONVERTING IMAGES...
 
 ::SCRIPT INITIALIZATION
-CALL %~dp0\init.bat
+CALL "%~dp0\init.bat"
 
 ::FIND PROJECT DIRECTORY
-CALL %VBDE%\system\batch\find-project-dir.bat %1
+CALL "%VBDE%\system\batch\find-project-dir.bat" %1
 
 ::SWITCH TO PROJECT DIRECTORY
-PUSHD %PROJECT_DIR%
+PUSHD "%PROJECT_DIR%"
 
 ::COMPILE GRAPHICS WITH GRIT
-CALL %VBDE%\system\batch\launch-grit.bat
+CALL "%VBDE%\system\batch\launch-grit.bat"
 
 ::DELAY CLOSING OF WINDOW FOR 5 SECONDS
 timeout /t 5

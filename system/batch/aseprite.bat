@@ -2,10 +2,10 @@
 @echo off
 
 ::SCRIPT INITIALIZATION
-CALL %~dp0\init.bat
+CALL "%~dp0\init.bat"
 
 ::GO TO ASEPRITE DIRECTORY
-PUSHD %VBDE%\tools\graphics\aseprite-0.9.5-win32\
+PUSHD "%VBDE%\tools\graphics\aseprite-0.9.5-win32\"
 
 ::CHECK IF PASSED FILE IS IMAGE AND LAUNCH ASEPRITE
 FOR %%i IN ("%1") DO (

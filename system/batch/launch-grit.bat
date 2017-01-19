@@ -2,10 +2,10 @@
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 ::CONVERT ASSETS
-IF EXIST %PROJECT_DIR%\assets\images\ (
+IF EXIST "%PROJECT_DIR%\assets\images\" (
 
 	::SWITCH TO IMAGES DIRECTORY
-	PUSHD %PROJECT_DIR%\assets\images\
+	PUSHD "%PROJECT_DIR%\assets\images\"
 
 	::FIND ALL GRIT FILES
 	FOR /r . %%F IN (*.grit) DO (
@@ -49,7 +49,7 @@ IF EXIST %PROJECT_DIR%\assets\images\ (
                 ::CONVERT
                 IF NOT EXIST "%%~dpF\Binary" MKDIR "%%~dpF\Binary"
                 PUSHD "%%~dpF\Binary"
-                %VBDE%\tools\graphics\grit-0.8.6\grit.exe !IMAGES! -O "%%~nF" -ff "%%F"
+                "%VBDE%\tools\graphics\grit-0.8.6\grit.exe" !IMAGES! -O "%%~nF" -ff "%%F"
 
                 ::ECHO
                 ECHO Converted!IMAGES_CLEAN!
@@ -68,7 +68,7 @@ IF EXIST %PROJECT_DIR%\assets\images\ (
                 ::CONVERT
                 IF NOT EXIST "%%~dpF\Binary" MKDIR "%%~dpF\Binary"
                 PUSHD "%%~dpF\Binary"
-                %VBDE%\tools\graphics\grit-0.8.6\grit.exe "..\%%~nF.png" -ff "%%F"
+                "%VBDE%\tools\graphics\grit-0.8.6\grit.exe" "..\%%~nF.png" -ff "%%F"
 
                 ::ECHO
                 ECHO Converted "%%~nF.png"
@@ -79,16 +79,16 @@ IF EXIST %PROJECT_DIR%\assets\images\ (
         IF !TIMEDIFF! gtr 0 (
             PUSHD "%%~dpF/Binary"
             FOR %%B IN (*.c) DO (
-                FINDSTR /v Time-stamp: %%B > %%B.temp
-                TYPE %%B.temp > %%B
-                DEL %%B.temp
+                FINDSTR /v Time-stamp: "%%B" > "%%B.temp"
+                TYPE "%%B.temp" > "%%B"
+                DEL "%%B.temp"
             )
         )
 	)
 )
 
 ::SWITCH BACK TO PROJECT DIRECTORY
-PUSHD %PROJECT_DIR%
+PUSHD "%PROJECT_DIR%"
 
 ::DO NOT PROCESS "GET_TIMESTAMP_DIFF" FUNCTION
 GOTO :EOF
