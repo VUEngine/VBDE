@@ -27,7 +27,7 @@
         <option name="ROOT_SYNC" value="DONT_SYNC" />
       </component>
       <component name="ProjectDictionaryState">
-        <dictionary name="IEUser" />
+        <dictionary name="VBDE" />
       </component>
       <component name="ProjectInspectionProfilesVisibleTreeState">
         <entry key="Project Default">
@@ -130,9 +130,6 @@
         </configuration>
       </component>
       <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="1" Folder0="$APPLICATION_CONFIG_DIR$" Dictionaries="0" />
-      <component name="SvnConfiguration">
-        <configuration>C:\Users\IEUser\AppData\Roaming\Subversion</configuration>
-      </component>
       <component name="VcsContentAnnotationSettings">
         <option name="myLimit" value="2678400000" />
       </component>

@@ -36,6 +36,7 @@ strcmp
 strncmp
 strlen
 struct
+tileset
 unregister
 vbde
 vbjaengine
