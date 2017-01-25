@@ -321,7 +321,7 @@
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
     - The VBJaEngine has been renamed to VUEngine and updated to version 5.0, including its Barebone and
       Platformer Demo
-    - Added tools to convert Tiled (http://www.mapeditor.org/) maps to VUEngine stages
+    - Added script for converting Tiled (http://www.mapeditor.org/) maps to VUEngine stages
 
   o 1.1.0, March 3rd, 2016
     - Massively reduced package size by removing unneeded files from cygwin directory
