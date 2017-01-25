@@ -139,7 +139,6 @@
       {VBDE}/system/batch/flash.bat {CURRENT_DIRECTORY}
 
 
-
 +---------------------------------------------------------------------------------------------------------+
 | (03) Bundled Libraries                                                                                  |
 +---------------------------------------------------------------------------------------------------------+
@@ -302,17 +301,26 @@
       Description: VUEngine Documentation. Note that this is a very incomplete WIP.
       Authors: jorgeche, KR155E
 
+  o Other
+
+    - VUEngine Tools
+      Description: Script that converts a Tiled (http://www.mapeditor.org/) map to a VUEngine Stage.
+      Version: 0.01
+      Authors: KR155E
+
 
 +---------------------------------------------------------------------------------------------------------+
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
   o 1.2.0, ? ?, 2017
-    - Updated gcc to 4.7 with patches by ElmerPCFX, also a huge thank you to Jorgeche!
+    - Updated gcc to 4.7 with patches by ElmerPCFX, also thank you to Jorgeche for helping with getting it
+      up and running!
     - Now using MSYS instead of Cygwin
-    - [Pro] Updated IDEA to 2106.2.5
+    - [Pro] Updated IDEA to 2106.3.3
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
-    - The VBJaEngine has been renamed to VUEngine and updated to version 5.0, including its Barebone and Platformer Demo
+    - The VBJaEngine has been renamed to VUEngine and updated to version 5.0, including its Barebone and
+      Platformer Demo
     - Added tools to convert Tiled (http://www.mapeditor.org/) maps to VUEngine stages
 
   o 1.1.0, March 3rd, 2016

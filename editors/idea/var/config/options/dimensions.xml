@@ -126,6 +126,7 @@
     <location key="ReplaceDuplicatesPrompt.0.0.2560.1440" x="486" y="444" />
     <location key="CommitChangelistDialog2.0.0.2560.1440" x="843" y="297" />
     <location key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.3840.2160@144dpi" x="1092" y="649" />
+    <location key="GitCloneDialog.0.0.3840.2160@144dpi" x="1633" y="692" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
     <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
     <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
@@ -159,10 +160,10 @@
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.2100.1313@120dpi" width="875" height="396" />
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.1920.1080@120dpi" width="481" height="396" />
     <size key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.2100.1313@120dpi" width="1134" height="970" />
-    <size key="GridCell.Tab.0.left.0.0.3840.2160@144dpi" width="3805" height="439" />
-    <size key="GridCell.Tab.0.center.0.0.3840.2160@144dpi" width="3805" height="439" />
-    <size key="GridCell.Tab.0.right.0.0.3840.2160@144dpi" width="3805" height="439" />
-    <size key="GridCell.Tab.0.bottom.0.0.3840.2160@144dpi" width="3805" height="439" />
+    <size key="GridCell.Tab.0.left.0.0.3840.2160@144dpi" width="3770" height="439" />
+    <size key="GridCell.Tab.0.center.0.0.3840.2160@144dpi" width="3770" height="439" />
+    <size key="GridCell.Tab.0.right.0.0.3840.2160@144dpi" width="3770" height="439" />
+    <size key="GridCell.Tab.0.bottom.0.0.3840.2160@144dpi" width="3770" height="439" />
     <size key="CommitChangelistDialog2.0.0.3840.2160@144dpi" width="3542" height="2050" />
     <size key="findTextDialog.0.0.3840.2160@144dpi" width="1537" height="1648" />
     <size key="MergeDialog.0.0.3840.2160@144dpi" width="3723" height="2028" />
