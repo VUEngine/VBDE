@@ -10,6 +10,8 @@ dimm
 disp
 eremiev
 extern
+framebuffer
+framebuffers
 framerate
 ftofix
 gccvb
