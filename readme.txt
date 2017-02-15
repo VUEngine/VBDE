@@ -60,16 +60,22 @@
 
     The pre-configured emulator key mapping is as follows:
 
-    Left D-Pad (U, D, L, R): E, D, S, F
-    Right D-Pad (U, D, L, R): I, K, J, L
-    Left Trigger: G
-    Right Trigger: H
-    Select: V
-    Start: B
-    B: N
-    A: M
-
-    In addition, you can trigger a low battery signal by holding W (Reality Boy only).
+    L-Trigger: G       (G)                       (H)        R-Trigger: H
+                     ________                 ________
+    Left D-Pad:     /   _    \_______________/    _   \     Right D-Pad:
+    E, D, S, F     /  _|E|_        _____        _|I|_  \    I, K, J, L
+                  |  |S o F|  _    \|||/    _  |J o L|  |
+    Select: V     |   ¯|D|¯  (V) _  ¯¯¯  _ (M)  ¯|K|¯   |   A: M
+    Start: B       \    ¯     ¯ (B)     (N) ¯     ¯    /    B: N
+                    |      __    ¯       ¯    __      |
+                    /     /  |               |  \     \
+                   |      |  |  VIRTUAL BOY  |  |      |
+                   |      |  |_______________|  |      |
+                   |      |  |_______________|  |      |
+                   |      |                     |      |
+                   |      |                     |      |
+                   |      |    Low Battery: W   |      |
+                    \____/   (Reality Boy only)  \____/
 
   o Image conversion
 
@@ -200,7 +206,7 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 2016.2.5 Community Edition, pre-configured with several useful plugins, templates, etc.
+    - IntelliJ IDEA 2016.3.4 Community Edition, pre-configured with several useful plugins, templates, etc.
       (Pro version only)
 
   o Compiler
@@ -314,10 +320,9 @@
 +---------------------------------------------------------------------------------------------------------+
 
   o 1.2.0, ? ?, 2017
-    - Updated gcc to 4.7 with patches by ElmerPCFX, also thank you to Jorgeche for helping with getting it
-      up and running!
+    - Updated gcc to 4.7 with patches by ElmerPCFX
     - Now using MSYS instead of Cygwin
-    - [Pro] Updated IDEA to 2106.3.3
+    - [Pro] Updated IDEA to 2106.3.4
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
     - The VBJaEngine has been renamed to VUEngine and updated to version 5.0, including its Barebone and
       Platformer Demo
