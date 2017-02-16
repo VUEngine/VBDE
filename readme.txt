@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.2.0 - ? ?, 2017                                            |
+|                                    Version 1.2.0 - February ?, 2017                                            |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -304,7 +304,7 @@
       Release Date: January 4th, 2013
 
     - VUEngine Development Manual
-      Description: VUEngine Documentation. Note that this is a very incomplete WIP.
+      Description: VUEngine Documentation.
       Authors: jorgeche, KR155E
 
   o Other
@@ -319,9 +319,8 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.2.0, ? ?, 2017
-    - Updated gcc to 4.7 with patches by ElmerPCFX
-    - Now using MSYS instead of Cygwin
+  o 1.2.0, February ?, 2017
+    - Updated gcc to 4.7 with patches by ElmerPCFX; now using MSYS instead of Cygwin
     - [Pro] Updated IDEA to 2106.3.4
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
     - The VBJaEngine has been renamed to VUEngine and updated to version 5.0, including its Barebone and

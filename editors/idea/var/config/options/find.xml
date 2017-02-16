@@ -2,8 +2,10 @@
   <component name="FindSettings">
     <option name="customScope" value="Open Files" />
     <option name="defaultScopeName" value="Open Files" />
-    <option name="localCaseSensitive" value="true" />
-    <option name="LOCAL_CASE_SENSITIVE_SEARCH" value="true" />
     <option name="SEARCH_SCOPE" value="Open Files" />
+    <option name="FILE_MASK" value="*.c, *.h" />
+    <recentFileMasks>
+      <mask>*.c, *.h</mask>
+    </recentFileMasks>
   </component>
 </application>
