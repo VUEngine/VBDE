@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.2.0 - February ?, 2017                                            |
+|                                    Version 1.2.0 - February ?, 2017                                     |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -311,7 +311,7 @@
 
     - VUEngine Tools
       Description: Script that converts a Tiled (http://www.mapeditor.org/) map to a VUEngine Stage.
-      Version: 0.01
+      Version: 0.1
       Authors: KR155E
 
 

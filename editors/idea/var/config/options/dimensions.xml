@@ -91,7 +91,7 @@
     <location key="RollbackChangesDialog.0.0.3840.2160@144dpi" x="1286" y="426" />
     <location key="IdeErrosDialog.0.0.3840.2160@144dpi" x="1422" y="827" />
     <location key="DiffContextDialog.0.0.3840.2160@144dpi" x="131" y="24" />
-    <location key="findTextDialog.0.0.3840.2160@144dpi" x="1974" y="142" />
+    <location key="findTextDialog.0.0.3840.2160@144dpi" x="519" y="181" />
     <location key="git4idea.branch.GitSmartOperationDialog.0.0.3840.2160@144dpi" x="1597" y="593" />
     <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.3840.2160@144dpi" x="1570" y="874" />
     <location key="MergeDialog.0.0.3840.2160@144dpi" x="2" y="70" />
@@ -104,7 +104,7 @@
     <location key="#Browse_JetBrains_Plugins_.0.0.3840.2160@144dpi" x="1231" y="632" />
     <location key="#Browse_Repositories.0.0.3840.2160@144dpi" x="1231" y="632" />
     <location key="#com.intellij.tools.ToolEditorDialog.0.0.3840.2160@144dpi" x="1032" y="633" />
-    <location key="#com.intellij.ide.macro.MacrosDialog.0.0.3840.2160@144dpi" x="1331" y="557" />
+    <location key="#com.intellij.ide.macro.MacrosDialog.0.0.3840.2160@144dpi" x="1518" y="558" />
     <location key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.3840.2160@144dpi" x="1528" y="792" />
     <location key="SettingsEditor.0.0.1920.1080@144dpi" x="188" y="0" />
     <location key="findTextDialog.0.0.1920.1080@144dpi" x="320" y="81" />
@@ -160,12 +160,12 @@
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.2100.1313@120dpi" width="875" height="396" />
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.1920.1080@120dpi" width="481" height="396" />
     <size key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.2100.1313@120dpi" width="1134" height="970" />
-    <size key="GridCell.Tab.0.left.0.0.3840.2160@144dpi" width="3805" height="603" />
-    <size key="GridCell.Tab.0.center.0.0.3840.2160@144dpi" width="3805" height="603" />
-    <size key="GridCell.Tab.0.right.0.0.3840.2160@144dpi" width="3805" height="603" />
-    <size key="GridCell.Tab.0.bottom.0.0.3840.2160@144dpi" width="3805" height="603" />
+    <size key="GridCell.Tab.0.left.0.0.3840.2160@144dpi" width="3805" height="602" />
+    <size key="GridCell.Tab.0.center.0.0.3840.2160@144dpi" width="3805" height="602" />
+    <size key="GridCell.Tab.0.right.0.0.3840.2160@144dpi" width="3805" height="602" />
+    <size key="GridCell.Tab.0.bottom.0.0.3840.2160@144dpi" width="3805" height="602" />
     <size key="CommitChangelistDialog2.0.0.3840.2160@144dpi" width="3542" height="2050" />
-    <size key="findTextDialog.0.0.3840.2160@144dpi" width="1537" height="1648" />
+    <size key="findTextDialog.0.0.3840.2160@144dpi" width="2298" height="1648" />
     <size key="MergeDialog.0.0.3840.2160@144dpi" width="3723" height="2028" />
     <size key="replaceTextDialog.0.0.3840.2160@144dpi" width="1838" height="1253" />
     <size key="SettingsEditor.0.0.3840.2160@144dpi" width="2100" height="1588" />
@@ -192,5 +192,6 @@
     <size key="GridCell.Tab.0.center.0.0.2880.1620@144dpi" width="2845" height="655" />
     <size key="GridCell.Tab.0.right.0.0.2880.1620@144dpi" width="2845" height="655" />
     <size key="GridCell.Tab.0.bottom.0.0.2880.1620@144dpi" width="2845" height="655" />
+    <size key="#com.intellij.ide.macro.MacrosDialog.0.0.3840.2160@144dpi" width="1490" height="891" />
   </component>
 </application>

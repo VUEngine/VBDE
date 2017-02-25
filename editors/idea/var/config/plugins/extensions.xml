@@ -4554,19 +4554,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.r">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="the.r.plugin" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.rake">
       <plugins>
         <option name="myPlugins">

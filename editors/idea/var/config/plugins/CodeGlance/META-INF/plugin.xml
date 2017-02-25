@@ -1,13 +1,24 @@
 <idea-plugin url="https://github.com/Vektah/CodeGlance">
   <id>net.vektah.codeglance</id>
   <name>CodeGlance</name>
-  <version>1.4.4</version>
+  <version>1.4.6</version>
   <vendor email="adam@vektah.net" url="https://github.com/Vektah/CodeGlance">Vektah</vendor>
   <description>
 		Embeds a code minimap similar to the one found in Sublime into the editor pane. Works with both light and dark
 		themes using your customized colors for syntax highlighting.
 	</description>
   <change-notes>
+		&lt;h3&gt;1.4.6&lt;/h3&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Add min and max width&lt;/li&gt;
+			&lt;li&gt;Remove a useless warning&lt;/li&gt;
+			&lt;li&gt;Fix a bug when encountering tokens past the end of the document&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;h3&gt;1.4.5&lt;/h3&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Add support for 171.3556 EAPs&lt;/li&gt;
+			&lt;li&gt;Fix a race condition when folding&lt;/li&gt;
+		&lt;/ul&gt;
 		&lt;h3&gt;1.4.4&lt;/h3&gt;
 		&lt;ul&gt;
 			&lt;li&gt;Increase maximum file size to 1MB, up from 20k&lt;/li&gt;
