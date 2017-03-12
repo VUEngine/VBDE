@@ -206,7 +206,7 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 2016.3.4 Community Edition, pre-configured with several useful plugins, templates, etc.
+    - IntelliJ IDEA 2016.3.5 Community Edition, pre-configured with several useful plugins, templates, etc.
       (Pro version only)
 
   o Compiler
@@ -321,7 +321,7 @@
 
   o 1.2.0, February ?, 2017
     - Updated gcc to 4.7 with patches by ElmerPCFX; now using MSYS instead of Cygwin
-    - [Pro] Updated IDEA to 2106.3.4
+    - [Pro] Updated IDEA to 2016.3.5
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
     - The VBJaEngine has been renamed to VUEngine and updated to version 5.0, including its Barebone and
       Platformer Demo

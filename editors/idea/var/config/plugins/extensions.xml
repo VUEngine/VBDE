@@ -4357,11 +4357,6 @@
         <option name="myPlugins">
           <set>
             <plugin>
-              <option name="myPluginId" value="com.nmatveev.idea-plugin-protobuf" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
               <option name="myPluginId" value="io.protostuff.protostuff-jetbrains-plugin" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
@@ -4944,11 +4939,6 @@
       <plugins>
         <option name="myPlugins">
           <set>
-            <plugin>
-              <option name="myPluginId" value="de.monticore.lang.montisecarc" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
             <plugin>
               <option name="myPluginId" value="de.monticore.lang.montisecarc.MontiSecArcLanguagePlugin" />
               <option name="myPluginName" />
@@ -6713,19 +6703,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="de.sgalinski.typoscript.plugin.id" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="Appfile">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.plugins.hcl" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
