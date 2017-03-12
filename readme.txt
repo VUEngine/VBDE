@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.2.0 - February ?, 2017                                     |
+|                                    Version 1.2.0 - March 12th, 2017                                     |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -319,7 +319,7 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.2.0, February ?, 2017
+  o 1.2.0, March 12th, 2017
     - Updated gcc to 4.7 with patches by ElmerPCFX; now using MSYS instead of Cygwin
     - [Pro] Updated IDEA to 2016.3.5
     - [Pro] Removed C/C++ IDEA plugin since it was causing slow-downs and broke auto-completion
