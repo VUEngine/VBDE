@@ -3,7 +3,7 @@
     <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
     <property name="DefaultHtmlDoctype.Refreshed" value="2" />
     <property name="installed.kotlin.plugin.version" value="1.0.5-release-IJ2016.3-1" />
-    <property name="file.chooser.recent.files" value="$APPLICATION_HOME_DIR$/var/config" />
+    <property name="file.chooser.recent.files" value="$APPLICATION_CONFIG_DIR$" />
     <property name="toolwindow.stripes.buttons.info.shown" value="true" />
     <property name="lastTip" value="2" />
     <property name="PLUGIN_FILTER" value="hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server&#10;calc" />
@@ -12,7 +12,7 @@
     <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
     <property name="selected.color.option.type" value="GUTTER_BACKGROUND" />
     <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.8305085" />
-    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.4398074" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.44408774" />
     <property name="CommittedChanges.SplitterProportions.0" value="700" />
     <property name="CommittedChanges.SplitterProportions.1" value="500" />
     <property name="Copy.OpenInEditor" value="true" />

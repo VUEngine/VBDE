@@ -1,4 +1,4 @@
-<keymap version="1" name="Default copy" parent="$default">
+<keymap version="1" name="VBDE" parent="$default">
   <action id="Calulate">
     <keyboard-shortcut first-keystroke="ctrl alt c" />
   </action>
