@@ -31,7 +31,7 @@ IF EXIST build\output.vb (
 IF EXIST makefile (
 	::allow projects to have their own makefile
     ECHO Using custom makefile
-	"%VBDE%\system\msys32\usr\bin\bash.exe" --login -c "export MSYSTEM=MSYS && cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && /usr/bin/make all"
+	"%VBDE%\system\msys32\usr\bin\bash.exe" --login -c "export MSYSTEM=MSYS && cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && export BUILD_MODE=$BUILD_MODE && /usr/bin/make all"
 ) ELSE (
 	::otherwise use default makefile
     ECHO Using default makefile

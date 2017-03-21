@@ -7,8 +7,8 @@
 libgccvb.a
 libvuengine.a
 mednafen*\sav\*
-output.ram
-output.vb
+build\
+release.bat
 *.statistics.xml
 security.xml
 stdout.txt
