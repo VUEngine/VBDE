@@ -79,12 +79,11 @@
 
   o Image conversion
 
-    VBDE allows for hassle free, on-the-fly image conversion using grit. To use it, create a folder named
-    "assets" in the root folder of your project, with a contained "images" folder. This folder will hold
-    all your images in any of the supported formats: png, bmp, gif, pcx or jpg/jpeg (I recommend png.)
+    VBDE allows for hassle free, on-the-fly image conversion using grit. Supported formats are: png (recommended), bmp,
+    gif, pcx and jpg/jpeg.
 
     Images should use an indexed 4-color palette in the following order: Black, Dark Red, Medium Red,
-    Light Red. Example palettes for Aseprite and Photoshop can be found in {VBDE}/system/.
+    Light Red. Example palettes in various formats can be found in {VBDE}/system/palette/.
 
     In order to be detected and converted by the image conversion script, you also need a *.grit file of the
     same name as the image, which contains the conversion settings. You can find a number of example grit
@@ -321,6 +320,8 @@
 
   o 1.2.1, ??? ??, ????
     - [Pro] Updated IDEA to 2017.1
+    - Rewrote batch files so that images and stages no longer have to reside in assets/images/ and
+      assets/stages/, but can be anywhere under the project root.
     - Extended image conversion tools to support new VUEngine's new "__ANIMATED_SINGLE_OPTIMIZED"
       animation type
 

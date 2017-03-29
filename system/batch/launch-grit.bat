@@ -1,90 +1,86 @@
 ::ALLOW ACCESS TO VARIABLES SET BY "GET_TIMESTAMP_DIFF" FUNCTION AS WELL AS REMOVING TIME STAMP FROM GENERATED BINARY FILES
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-::CONVERT ASSETS
-IF EXIST "%PROJECT_DIR%\assets\images\" (
+::SWITCH TO PROJECT DIRECTORY
+PUSHD "%PROJECT_DIR%"
 
-	::SWITCH TO IMAGES DIRECTORY
-	PUSHD "%PROJECT_DIR%\assets\images\"
+::FIND ALL GRIT FILES
+FOR /r . %%F IN (*.grit) DO (
 
-	::FIND ALL GRIT FILES
-	FOR /r . %%F IN (*.grit) DO (
+    ::SWITCH TO GRIT FILE DIRECTORY
+    PUSHD "%%~dpF"
 
-	    ::SWITCH TO GRIT FILE DIRECTORY
-        PUSHD "%%~dpF"
-
-	    ::DETERMINE IF GRIT FILE BELONGS TO A SINGLE FILE OR TO WHOLE DIRECTORY
-        SET SHARED=1
-        FOR %%S IN (png bmp gif pcx jpg jpeg) DO (
-            IF EXIST %%~dnpF.%%S (
-                SET SHARED=0
-                SET SINGLE_IMAGE=%%~nF.%%S
-            )
+    ::DETERMINE IF GRIT FILE BELONGS TO A SINGLE FILE OR TO WHOLE DIRECTORY
+    SET SHARED=1
+    FOR %%S IN (png bmp gif pcx jpg jpeg) DO (
+        IF EXIST %%~dnpF.%%S (
+            SET SHARED=0
+            SET SINGLE_IMAGE=%%~nF.%%S
         )
+    )
 
-		::CONVERT IMAGE(S)
-        IF !SHARED! gtr 0 (
+    ::CONVERT IMAGE(S)
+    IF !SHARED! gtr 0 (
 
-            ::FIND ALL IMAGES IN CURRENT DIRECTORY
-            SET IMAGES=
-            SET IMAGES_CLEAN=
-            SET TIMEDIFF=0
-            FOR %%i IN (*.png *.bmp *.gif *.pcx *.jpg *.jpeg) DO (
-                SET IMAGES=!IMAGES! "..\%%i"
-                SET IMAGES_CLEAN=!IMAGES_CLEAN! "%%~nxi"
-
-                ::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
-                IF EXIST "Binary\%%~ni.c" (
-                    CALL :GET_TIMESTAMP_DIFF "%%i" "Binary\%%~ni.c" TIMEDIFF_CHECK
-                    IF !TIMEDIFF_CHECK! gtr 0 (
-                        SET TIMEDIFF=1
-                    )
-                ) ELSE (
-                    SET TIMEDIFF=1
-                )
-            )
-
-            ::CONVERT IMAGES ONLY IF AT LEAST ONE OF THEM HAS CHANGED
-            IF !TIMEDIFF! gtr 0 (
-                ::CONVERT
-                IF NOT EXIST "%%~dpF\Binary" MKDIR "%%~dpF\Binary"
-                PUSHD "%%~dpF\Binary"
-                "%VBDE%\tools\graphics\grit-0.8.6\grit.exe" !IMAGES! -O "%%~nF" -ff "%%F"
-
-                ::ECHO
-                ECHO Converted!IMAGES_CLEAN!
-            )
-
-        ) ELSE (
+        ::FIND ALL IMAGES IN CURRENT DIRECTORY
+        SET IMAGES=
+        SET IMAGES_CLEAN=
+        SET TIMEDIFF=0
+        FOR %%i IN (*.png *.bmp *.gif *.pcx *.jpg *.jpeg) DO (
+            SET IMAGES=!IMAGES! "..\%%i"
+            SET IMAGES_CLEAN=!IMAGES_CLEAN! "%%~nxi"
 
             ::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
-            SET TIMEDIFF=1
-            IF EXIST "Binary\%%~nF.c" (
-                CALL :GET_TIMESTAMP_DIFF "!SINGLE_IMAGE!" "Binary\%%~nF.c" TIMEDIFF
-            )
-
-            ::CONVERT IMAGE ONLY IF IT HAS CHANGED
-            IF !TIMEDIFF! gtr 0 (
-                ::CONVERT
-                IF NOT EXIST "%%~dpF\Binary" MKDIR "%%~dpF\Binary"
-                PUSHD "%%~dpF\Binary"
-                "%VBDE%\tools\graphics\grit-0.8.6\grit.exe" "..\%%~nF.png" -ff "%%F"
-
-                ::ECHO
-                ECHO Converted "%%~nF.png"
+            IF EXIST "Binary\%%~ni.c" (
+                CALL :GET_TIMESTAMP_DIFF "%%i" "Binary\%%~ni.c" TIMEDIFF_CHECK
+                IF !TIMEDIFF_CHECK! gtr 0 (
+                    SET TIMEDIFF=1
+                )
+            ) ELSE (
+                SET TIMEDIFF=1
             )
         )
 
-        ::REMOVE TIME STAMP LINE FROM GENERATED BINARY FILE(S)
+        ::CONVERT IMAGES ONLY IF AT LEAST ONE OF THEM HAS CHANGED
         IF !TIMEDIFF! gtr 0 (
-            PUSHD "%%~dpF/Binary"
-            FOR %%B IN (*.c) DO (
-                FINDSTR /v Time-stamp: "%%B" > "%%B.temp"
-                TYPE "%%B.temp" > "%%B"
-                DEL "%%B.temp"
-            )
+            ::CONVERT
+            IF NOT EXIST "%%~dpF\Binary" MKDIR "%%~dpF\Binary"
+            PUSHD "%%~dpF\Binary"
+            "%VBDE%\tools\graphics\grit-0.8.6\grit.exe" !IMAGES! -O "%%~nF" -ff "%%F"
+
+            ::ECHO
+            ECHO Converted!IMAGES_CLEAN!
         )
-	)
+
+    ) ELSE (
+
+        ::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
+        SET TIMEDIFF=1
+        IF EXIST "Binary\%%~nF.c" (
+            CALL :GET_TIMESTAMP_DIFF "!SINGLE_IMAGE!" "Binary\%%~nF.c" TIMEDIFF
+        )
+
+        ::CONVERT IMAGE ONLY IF IT HAS CHANGED
+        IF !TIMEDIFF! gtr 0 (
+            ::CONVERT
+            IF NOT EXIST "%%~dpF\Binary" MKDIR "%%~dpF\Binary"
+            PUSHD "%%~dpF\Binary"
+            "%VBDE%\tools\graphics\grit-0.8.6\grit.exe" "..\%%~nF.png" -ff "%%F"
+
+            ::ECHO
+            ECHO Converted "%%~nF.png"
+        )
+    )
+
+    ::REMOVE TIME STAMP LINE FROM GENERATED BINARY FILE(S)
+    IF !TIMEDIFF! gtr 0 (
+        PUSHD "%%~dpF/Binary"
+        FOR %%B IN (*.c) DO (
+            FINDSTR /v Time-stamp: "%%B" > "%%B.temp"
+            TYPE "%%B.temp" > "%%B"
+            DEL "%%B.temp"
+        )
+    )
 )
 
 ::SWITCH BACK TO PROJECT DIRECTORY

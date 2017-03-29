@@ -1,33 +1,29 @@
 ::ALLOW ACCESS TO VARIABLES SET BY "GET_TIMESTAMP_DIFF" FUNCTION
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-::CONVERT ASSETS
-IF EXIST "%PROJECT_DIR%\assets\stages\" (
+::SWITCH TO PROJECT DIRECTORY
+PUSHD "%PROJECT_DIR%"
 
-	::SWITCH TO IMAGES DIRECTORY
-	PUSHD "%PROJECT_DIR%\assets\stages\"
+::FIND ALL TMX FILES
+FOR /r . %%F IN (*.tmx) DO (
 
-	::FIND ALL TMX FILES
-	FOR /r . %%F IN (*.tmx) DO (
-
-	    ::SWITCH TO TMX FILE DIRECTORY
-        PUSHD "%%~dpF"
+    ::SWITCH TO TMX FILE DIRECTORY
+    PUSHD "%%~dpF"
 
 
-            ::GET TIME DIFFERENCE BETWEEN TMX FILE AND C FILE
-            SET TIMEDIFF=1
-            IF EXIST "Definition\%%~nFDefinition.c" (
-                CALL :GET_TIMESTAMP_DIFF "%%~nxF" "Definition\%%~nFDefinition.c" TIMEDIFF
-            )
+        ::GET TIME DIFFERENCE BETWEEN TMX FILE AND C FILE
+        SET TIMEDIFF=1
+        IF EXIST "Definition\%%~nFDefinition.c" (
+            CALL :GET_TIMESTAMP_DIFF "%%~nxF" "Definition\%%~nFDefinition.c" TIMEDIFF
+        )
 
-            ::CONVERT TMX FILE ONLY IF IT HAS CHANGED
-            IF !TIMEDIFF! gtr 0 (
-                ::CONVERT
-                IF NOT EXIST "%%~dpF\Definition" MKDIR "%%~dpF\Definition"
-                PUSHD "%%~dpF\Definition"
-                "%VBDE%/system/tools/php/php.exe" "%VBDE%/system/tools/vuengine-tools/convert-tmx.php" "-f%%F" "-o%%~dpFDefinition\%%~nFDefinition.c" "-vtrue"
-            )
-	)
+        ::CONVERT TMX FILE ONLY IF IT HAS CHANGED
+        IF !TIMEDIFF! gtr 0 (
+            ::CONVERT
+            IF NOT EXIST "%%~dpF\Definition" MKDIR "%%~dpF\Definition"
+            PUSHD "%%~dpF\Definition"
+            "%VBDE%/system/tools/php/php.exe" "%VBDE%/system/tools/vuengine-tools/convert-tmx.php" "-f%%F" "-o%%~dpFDefinition\%%~nFDefinition.c" "-vtrue"
+        )
 )
 
 ::SWITCH BACK TO PROJECT DIRECTORY
