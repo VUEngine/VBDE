@@ -2,6 +2,7 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
+        <option value="C:\vbde\editors\idea\..\..\samples\vuengine\vuengine-platformer-demo" />
         <option value="$APPLICATION_HOME_DIR$/../../samples/vuengine/vuengine-platformer-demo" />
         <option value="$APPLICATION_HOME_DIR$/../../samples/vuengine/vuengine-barebone" />
         <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/game-of-life" />
@@ -13,6 +14,22 @@
         <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo5" />
         <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo6" />
       </list>
+    </option>
+    <option name="lastPath" value="C:\vbde\editors\idea\..\..\samples\vuengine\vuengine-platformer-demo" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="C:\vbde\editors\idea\..\..\samples\vuengine\vuengine-platformer-demo">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-171.3780.107" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="C:\vbde\editors\idea\bin" />
+              <option name="projectOpenTimestamp" value="1490782373600" />
+              <option name="buildTimestamp" value="1490174867198" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
 </application>

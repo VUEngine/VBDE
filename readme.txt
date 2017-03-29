@@ -238,9 +238,9 @@
     - Emulators
 
       - Mednafen
-        Version: 0.9.38.7
+        Version: 0.9.43
         Author: Mednafen
-        Release Date: October 1st, 2015
+        Release Date: February 26th, 2017
 
       - Reality Boy
         Version: 0.84
@@ -322,8 +322,8 @@
     - [Pro] Updated IDEA to 2017.1
     - Rewrote batch files so that images and stages no longer have to reside in assets/images/ and
       assets/stages/, but can be anywhere under the project root.
-    - Extended image conversion tools to support new VUEngine's new "__ANIMATED_SINGLE_OPTIMIZED"
-      animation type
+    - Extended conversion tools to support VUEngine's new "__ANIMATED_SINGLE_OPTIMIZED" animation type
+    - Updated Mednafen to 0.9.43
 
   o 1.2.0, March 12th, 2017
     - Updated gcc to 4.7 with patches by ElmerPCFX; now using MSYS instead of Cygwin
