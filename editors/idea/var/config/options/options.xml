@@ -2,8 +2,8 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
     <property name="DefaultHtmlDoctype.Refreshed" value="2" />
-    <property name="installed.kotlin.plugin.version" value="1.0.5-release-IJ2016.3-1" />
-    <property name="file.chooser.recent.files" value="$APPLICATION_CONFIG_DIR$" />
+    <property name="installed.kotlin.plugin.version" value="1.1.1-release-IJ2017.1-1" />
+    <property name="file.chooser.recent.files" value="$APPLICATION_HOME_DIR$" />
     <property name="toolwindow.stripes.buttons.info.shown" value="true" />
     <property name="lastTip" value="2" />
     <property name="PLUGIN_FILTER" value="hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server&#10;calc" />
@@ -53,9 +53,9 @@
     <property name="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.splitter" value="0.77372265" />
     <property name="last.imported.location" value="" />
     <property name="project.wizard.group" value="C++" />
-    <property name="android-component-compatibility-check" value="1485328076368" />
-    <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="../../../../system/icon/vbde_gray.png" />
-    <property name="idea.background.editor" value="../../../../system/icon/vbde_gray.png,15,plain,center" />
+    <property name="android-component-compatibility-check" value="1490777980184" />
+    <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="$APPLICATION_HOME_DIR$/../../system/icon/vbde_gray.png" />
+    <property name="idea.background.editor" value="$APPLICATION_HOME_DIR$/../../system/icon/vbde_gray.png,15,plain,center" />
     <property name="com.intellij.history.integration.ui.views.DirectoryHistoryDialog.0" value="300" />
   </component>
 </application>

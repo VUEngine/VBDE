@@ -53,8 +53,7 @@
       </component>
       <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="true" />
       <component name="PropertiesComponent">
-        <property name="settings.editor.selected.configurable" value="net.intellij.plugins.sexyeditor.SexyEditor" />
-        <property name="settings.editor.splitter.proportion" value="0.2" />
+        <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
         <property name="project.structure.proportion" value="0.15" />
         <property name="project.structure.side.proportion" value="0.2" />
       </component>

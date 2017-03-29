@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.2.0 - March 12th, 2017                                     |
+|                                    Version 1.2.1 - ???? ??, ????                                      |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -318,6 +318,11 @@
 +---------------------------------------------------------------------------------------------------------+
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
+
+  o 1.2.1, ??? ??, ????
+    - [Pro] Updated IDEA to 2017.1
+    - Extended image conversion tools to support new VUEngine's new "__ANIMATED_SINGLE_OPTIMIZED"
+      animation type
 
   o 1.2.0, March 12th, 2017
     - Updated gcc to 4.7 with patches by ElmerPCFX; now using MSYS instead of Cygwin

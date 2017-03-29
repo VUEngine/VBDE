@@ -127,6 +127,13 @@
     <location key="CommitChangelistDialog2.0.0.2560.1440" x="843" y="297" />
     <location key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.3840.2160@144dpi" x="1092" y="649" />
     <location key="GitCloneDialog.0.0.3840.2160@144dpi" x="1633" y="692" />
+    <location key="#Plugins.0.0.2560.1440" x="875" y="210" />
+    <location key="WELCOME_SCREEN.0.0.2560.1440" x="1282" y="244" />
+    <location key="#com.intellij.ide.macro.MacrosDialog.0.0.2560.1440" x="1062" y="256" />
+    <location key="#com.intellij.tools.ToolEditorDialog.0.0.2560.1440" x="862" y="308" />
+    <location key="SettingsEditor.0.0.2560.1440" x="764" y="207" />
+    <location key="FileChooserDialogImpl.0.0.2560.1440" x="1062" y="306" />
+    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2560.1440" x="1038" y="489" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
     <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
     <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
@@ -183,10 +190,10 @@
     <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1898" height="327" />
     <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1898" height="327" />
     <size key="findTextDialog.0.0.2560.1440" width="1450" height="759" />
-    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="2538" height="398" />
-    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="2538" height="398" />
-    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="2538" height="398" />
-    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="2538" height="398" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="2538" height="326" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="2538" height="326" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="2538" height="326" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="2538" height="326" />
     <size key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.3840.2160@144dpi" width="1148" height="847" />
     <size key="GridCell.Tab.0.left.0.0.2880.1620@144dpi" width="2845" height="655" />
     <size key="GridCell.Tab.0.center.0.0.2880.1620@144dpi" width="2845" height="655" />

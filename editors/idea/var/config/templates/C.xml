@@ -11,11 +11,11 @@
     <variable name="COND" expression="" defaultValue="&quot;condition&quot;" alwaysStopAt="true" />
     <variable name="INCDEC" expression="" defaultValue="&quot;increment/decrement&quot;" alwaysStopAt="true" />
     <context>
-      <option name="OTHER" value="true" />
       <option name="HTML" value="false" />
       <option name="JAVA_CODE" value="false" />
-      <option name="XML" value="false" />
       <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
     </context>
   </template>
   <template name="if" value="if($COND$) &#10;{&#10;    $END$&#10;}" description="if condition" toReformat="false" toShortenFQNames="true">

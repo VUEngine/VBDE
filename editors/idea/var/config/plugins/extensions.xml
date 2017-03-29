@@ -1,19 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <exts>
   <option name="myExtensions">
-    <entry key="*./\\NO_SUCH_EXT/\\">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.9.png">
       <plugins>
         <option name="myPlugins">
@@ -180,11 +166,6 @@
               <option name="myBundled" value="false" />
             </plugin>
             <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
               <option name="myPluginId" value="org.jetbrains.erlang" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
@@ -238,11 +219,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -360,11 +336,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -582,30 +553,12 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.cachePartition">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.callCenter">
       <plugins>
         <option name="myPlugins">
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -843,11 +796,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -931,37 +879,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.communityTemplateDefinition">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.communityThemeDefinition">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -985,11 +902,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -1322,19 +1234,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="ru.mipt.acsl.decode.idea.plugin" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.devkit">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -1743,24 +1642,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.flowDefinition">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -2047,11 +1928,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -2208,11 +2084,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -2223,11 +2094,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -2323,32 +2189,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.hx">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.intellij.plugins.haxe" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.hxml">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.intellij.plugins.haxe" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.ids">
       <plugins>
         <option name="myPlugins">
@@ -2414,19 +2254,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.impossibleext">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.inc">
       <plugins>
         <option name="myPlugins">
@@ -2469,11 +2296,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -2997,11 +2819,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -3038,11 +2855,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -3338,11 +3150,6 @@
         <option name="myPlugins">
           <set>
             <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
               <option name="myPluginId" value="com.thoughtworks.gauge" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
@@ -3460,90 +3267,12 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.mpb">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.mpl">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.mpr">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.mps">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.mpsr">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.mq4">
       <plugins>
         <option name="myPlugins">
           <set>
             <plugin>
               <option name="myPluginId" value="ru.investflow.mql" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.msd">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -3707,19 +3436,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.nmml">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.intellij.plugins.haxe" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.nodemonignore">
       <plugins>
         <option name="myPlugins">
@@ -3820,11 +3536,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -3835,11 +3546,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -3921,11 +3627,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -3949,24 +3650,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.pex">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.intellij.plugins.pants" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -4197,32 +3880,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.portal">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.postTemplate">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.pot">
       <plugins>
         <option name="myPlugins">
@@ -4301,11 +3958,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -4522,11 +4174,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -4537,11 +4184,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -4649,11 +4291,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -4664,11 +4301,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -4731,11 +4363,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -4970,11 +4597,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -5014,11 +4636,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -5029,11 +4646,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -5060,11 +4672,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -5449,11 +5056,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -5758,11 +5360,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -5773,11 +5370,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -6046,11 +5638,6 @@
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
-            <plugin>
-              <option name="myPluginId" value="com.jedide.apex" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
           </set>
         </option>
       </plugins>
@@ -6110,127 +5697,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.xq">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="uk.co.reecedunn.intellij.plugin.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.xqi">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.xql">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="uk.co.reecedunn.intellij.plugin.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.xqm">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="uk.co.reecedunn.intellij.plugin.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.xquery">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="uk.co.reecedunn.intellij.plugin.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.xqws">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="uk.co.reecedunn.intellij.plugin.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.xqy">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.intellij.xquery" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-            <plugin>
-              <option name="myPluginId" value="uk.co.reecedunn.intellij.plugin.xquery" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -6586,19 +6052,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="mobi.hsz.idea.gitignore" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key=".model">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="jetbrains.mps.core" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -7323,4 +6776,3 @@
     </entry>
   </option>
 </exts>
-

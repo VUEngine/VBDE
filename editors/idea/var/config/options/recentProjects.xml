@@ -2,16 +2,16 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
-        <option value="..\..\..\..\..\samples\vuengine\vuengine-platformer-demo" />
-        <option value="..\..\..\..\..\samples\vuengine\vuengine-barebone" />
-        <option value="..\..\..\..\..\samples\libgccvb\game-of-life" />
-        <option value="..\..\..\..\..\samples\libgccvb\barebone" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo1" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo2" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo3" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo4" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo5" />
-        <option value="..\..\..\..\..\samples\libgccvb\demos\demo6" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/vuengine/vuengine-platformer-demo" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/vuengine/vuengine-barebone" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/game-of-life" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/barebone" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo1" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo2" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo3" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo4" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo5" />
+        <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo6" />
       </list>
     </option>
   </component>

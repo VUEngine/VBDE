@@ -6,17 +6,15 @@ CALL "%~dp0\init.bat"
 
 ::LAUNCH VBDE EDITOR
 IF EXIST "%VBDE%\editors\idea\" (
+
+    ::DETERMINE SYSTEM ARCHITECTURE
+    reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > NUL && set OS=32BIT || set OS=64BIT
+
     ::SWITCH TO IDEA DIRECTORY
     PUSHD "%VBDE%\editors\idea\bin\"
 
-    ::DETERMINE SYSTEM ARCHITECTURE
-    SET "ARCH=x64"
-    IF NOT EXIST "%SystemRoot%\SysWOW64\cmd.exe" (
-        IF NOT DEFINED PROCESSOR_ARCHITEW6432 SET "ARCH=x86"
-    )
-
     ::LAUNCH RESP. IDEA VERSION FOR SYSTEM ARCHITECTURE
-    IF "%ARCH%"=="x64" (
+    IF %OS%==64BIT (
         START "" "idea64.exe"
     ) ELSE (
         START "" "idea.exe"

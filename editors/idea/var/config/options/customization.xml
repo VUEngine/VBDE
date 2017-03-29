@@ -130,19 +130,19 @@
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <action id="Tool_External Tools_CLEAN project folder" icon="../../../../../system/icon/16/clean.png" />
-    <action id="Tool_External Tools_Start VIDE" icon="../../../../../system/icon/16/vide.png" />
-    <action id="Tool_External Tools_FLASH to FlashBoy" icon="../../../../../system/icon/16/flashboy.png" />
-    <action id="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" icon="../../../../../system/icon/16/comp_mednafen.png" />
-    <action id="Tool_External Tools_RUN in Reality Boy" icon="../../../../../system/icon/16/rboy.png" />
-    <action id="Tool_External Tools_CONVERT images with GRIT" icon="../../../../../system/icon/16/grit.png" />
-    <action id="Tool_External Tools_CONVERT stages" icon="../../../../../system/icon/16/tiled.png" />
-    <action id="Tool_External Tools_DEBUG with Reality Boy" icon="../../../../../system/icon/16/rboy_debug.png" />
-    <action id="Tool_External Tools_COMPILE with gccVB" icon="../../../../../system/icon/16/compile.png" />
-    <action id="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" icon="../../../../../system/icon/16/comp_rboy.png" />
-    <action id="Tool_External Tools_EDIT images with ASEPRITE" icon="../../../../../system/icon/16/aseprite.png" />
-    <action id="Tool_External Tools_RUN in Mednafen" icon="../../../../../system/icon/16/mednafen.png" />
-    <action id="Tool_External Tools_Visit Planet Virtual Boy" icon="../../../../../system/icon/16/pvb.png" />
-    <action id="Tool_External Tools_About VBDE" icon="../../../../../system/icon/16/vbde.png" />
+    <action id="Tool_External Tools_CLEAN project folder" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/clean.png" />
+    <action id="Tool_External Tools_Start VIDE" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/vide.png" />
+    <action id="Tool_External Tools_FLASH to FlashBoy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/flashboy.png" />
+    <action id="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/comp_mednafen.png" />
+    <action id="Tool_External Tools_RUN in Reality Boy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/rboy.png" />
+    <action id="Tool_External Tools_CONVERT images with GRIT" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/grit.png" />
+    <action id="Tool_External Tools_CONVERT stages" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/tiled.png" />
+    <action id="Tool_External Tools_DEBUG with Reality Boy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/rboy_debug.png" />
+    <action id="Tool_External Tools_COMPILE with gccVB" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile.png" />
+    <action id="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/comp_rboy.png" />
+    <action id="Tool_External Tools_EDIT images with ASEPRITE" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/aseprite.png" />
+    <action id="Tool_External Tools_RUN in Mednafen" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/mednafen.png" />
+    <action id="Tool_External Tools_Visit Planet Virtual Boy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/pvb.png" />
+    <action id="Tool_External Tools_About VBDE" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/vbde.png" />
   </component>
 </application>
