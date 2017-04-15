@@ -16,7 +16,7 @@ TYPE = release
 LIBGCCVB_PATH = $(VBDE)/libs/libgccvb
 
 # Which directories contain source files
-DIRS := $(shell find . $(LIBGCCVB_PATH) -type d -print)
+DIRS := $(shell find . $(LIBGCCVB_PATH) -path ./build -prune -o -type d -print)
 		
 # Which libraries are linked
 LIBS =
