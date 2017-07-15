@@ -51,7 +51,7 @@
         <ConfirmationsSetting value="2" id="Add" />
         <ConfirmationsSetting value="2" id="Remove" />
       </component>
-      <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="true" />
+      <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" />
       <component name="PropertiesComponent">
         <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
         <property name="project.structure.proportion" value="0.15" />

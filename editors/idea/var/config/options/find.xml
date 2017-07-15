@@ -1,12 +1,15 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Open Files" />
-    <option name="defaultScopeName" value="Open Files" />
-    <option name="SEARCH_SCOPE" value="Open Files" />
+    <option name="customScope" value="All Places" />
+    <option name="defaultScopeName" value="All Places" />
+    <option name="SEARCH_SCOPE" value="All Places" />
+    <option name="FILE_MASK" value="*.h" />
     <recentFileMasks>
       <mask>*.c, *.h</mask>
-      <mask>*.h</mask>
+      <mask>*.x</mask>
+      <mask>*.</mask>
       <mask>*.c</mask>
+      <mask>*.h</mask>
     </recentFileMasks>
   </component>
 </application>
