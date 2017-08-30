@@ -7,19 +7,14 @@
         </Macro>
     </Macros>
     <UserDefinedCommands>
-        <Command name="EDIT images with ASEPRITE" Ctrl="no" Alt="no" Shift="yes" Key="112">..\..\system\batch\aseprite.bat</Command>
-        <Command name="Start VIDE" Ctrl="no" Alt="no" Shift="yes" Key="113">..\..\system\batch\vide.bat</Command>
-        <Command name="CONVERT images with GRIT" Ctrl="no" Alt="no" Shift="yes" Key="114">..\..\system\batch\grit.bat $(CURRENT_DIRECTORY)</Command>
+        <Command name="EDIT images" Ctrl="no" Alt="no" Shift="yes" Key="112">..\..\system\batch\aseprite.bat</Command>
+        <Command name="CONVERT images" Ctrl="no" Alt="no" Shift="yes" Key="114">..\..\system\batch\grit.bat $(CURRENT_DIRECTORY)</Command>
         <Command name="CONVERT stages" Ctrl="no" Alt="no" Shift="yes" Key="115">..\..\system\batch\tmx.converter.bat $(CURRENT_DIRECTORY)</Command>
-        <Command name="COMPILE with gccVB" Ctrl="no" Alt="no" Shift="yes" Key="116">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART)</Command>
-        <Command name="COMPILE with gccVB and RUN in Mednafen" Ctrl="no" Alt="no" Shift="yes" Key="117">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART) mednafen</Command>
-        <Command name="COMPILE with gccVB and RUN in Reality Boy" Ctrl="no" Alt="no" Shift="yes" Key="118">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART) reality_boy</Command>
-        <Command name="RUN in Mednafen" Ctrl="no" Alt="no" Shift="yes" Key="120">..\..\system\batch\mednafen.bat $(CURRENT_DIRECTORY)</Command>
-        <Command name="RUN in Reality Boy" Ctrl="no" Alt="no" Shift="yes" Key="121">..\..\system\batch\reality_boy.bat $(CURRENT_DIRECTORY)</Command>
-        <Command name="DEBUG with Reality Boy" Ctrl="no" Alt="no" Shift="yes" Key="122">..\..\system\batch\reality_boy_debug.bat $(CURRENT_DIRECTORY)</Command>
+        <Command name="COMPILE" Ctrl="no" Alt="no" Shift="yes" Key="116">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART)</Command>
+        <Command name="COMPILE and RUN" Ctrl="no" Alt="no" Shift="yes" Key="117">..\..\system\batch\build.bat $(CURRENT_DIRECTORY) $(NAME_PART) mednafen</Command>
+        <Command name="RUN" Ctrl="no" Alt="no" Shift="yes" Key="120">..\..\system\batch\mednafen.bat $(CURRENT_DIRECTORY)</Command>
+        <Command name="DEBUG" Ctrl="no" Alt="no" Shift="yes" Key="122">..\..\system\batch\reality_boy_debug.bat $(CURRENT_DIRECTORY)</Command>
         <Command name="FLASH to FlashBoy" Ctrl="no" Alt="no" Shift="yes" Key="123">..\..\system\batch\flash.bat $(CURRENT_DIRECTORY)</Command>
-        <Command name="VISIT Planet Virtual Boy" Ctrl="no" Alt="yes" Shift="no" Key="110">http://www.planetvb.com/</Command>
-        <Command name="ABOUT VBDE" Ctrl="no" Alt="yes" Shift="no" Key="111">http://vbde.planetvb.com/</Command>
     </UserDefinedCommands>
     <PluginCommands />
     <ScintillaKeys />

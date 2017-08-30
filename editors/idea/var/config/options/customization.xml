@@ -45,104 +45,64 @@
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_EDIT images with ASEPRITE" is_action="true" action_type="1" position="3">
+    <group value="Tool_External Tools_EDIT images" is_action="true" action_type="1" position="3">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_Start VIDE" is_action="true" action_type="1" position="4">
+    <group value="Tool_External Tools_CONVERT images" is_action="true" action_type="1" position="4">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_CONVERT images with GRIT" is_action="true" action_type="1" position="5">
+    <group value="Tool_External Tools_CONVERT stages" is_action="true" action_type="1" position="5">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_CONVERT stages" is_action="true" action_type="1" position="6">
+    <group value="Tool_External Tools_COMPILE" is_action="true" action_type="1" position="7">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_COMPILE with gccVB" is_action="true" action_type="1" position="8">
+    <group value="Tool_External Tools_COMPILE and RUN" is_action="true" action_type="1" position="8">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" is_action="true" action_type="1" position="9">
+    <group value="Tool_External Tools_RUN" is_action="true" action_type="1" position="9">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" is_action="true" action_type="1" position="10">
+    <group value="Tool_External Tools_DEBUG" is_action="true" action_type="1" position="10">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_RUN in Mednafen" is_action="true" action_type="1" position="12">
+    <group seperator="true" action_type="1" position="11">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_RUN in Reality Boy" is_action="true" action_type="1" position="13">
+    <group value="Tool_External Tools_FLASH to FlashBoy" is_action="true" action_type="1" position="12">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group value="Tool_External Tools_DEBUG with Reality Boy" is_action="true" action_type="1" position="14">
+    <group seperator="true" action_type="1" position="13">
       <path value="root" />
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
-    <group seperator="true" action_type="1" position="14">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
-    <group value="Tool_External Tools_FLASH to FlashBoy" is_action="true" action_type="1" position="16">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
-    <group seperator="true" action_type="1" position="17">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
-    <group value="Tool_External Tools_Visit Planet Virtual Boy" is_action="true" action_type="1" position="18">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
-    <group value="Tool_External Tools_About VBDE" is_action="true" action_type="1" position="19">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
-    <group seperator="true" action_type="1" position="19">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
-    <group seperator="true" action_type="1" position="20">
-      <path value="root" />
-      <path value="Navigation Bar Toolbar" />
-      <option name="myInitialPosition" value="-1" />
-    </group>
+    <action id="Tool_External Tools_FLASH to FlashBoy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/flash.png" />
+    <action id="Tool_External Tools_COMPILE and RUN" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile-run.png" />
+    <action id="Tool_External Tools_CONVERT stages" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/stages.png" />
+    <action id="Tool_External Tools_DEBUG" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/debug.png" />
     <action id="Tool_External Tools_CLEAN project folder" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/clean.png" />
-    <action id="Tool_External Tools_Start VIDE" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/vide.png" />
-    <action id="Tool_External Tools_FLASH to FlashBoy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/flashboy.png" />
-    <action id="Tool_External Tools_COMPILE with gccVB and RUN in Mednafen" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/comp_mednafen.png" />
-    <action id="Tool_External Tools_RUN in Reality Boy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/rboy.png" />
-    <action id="Tool_External Tools_CONVERT images with GRIT" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/grit.png" />
-    <action id="Tool_External Tools_CONVERT stages" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/tiled.png" />
-    <action id="Tool_External Tools_DEBUG with Reality Boy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/rboy_debug.png" />
-    <action id="Tool_External Tools_COMPILE with gccVB" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile.png" />
-    <action id="Tool_External Tools_COMPILE with gccVB and RUN in Reality Boy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/comp_rboy.png" />
-    <action id="Tool_External Tools_EDIT images with ASEPRITE" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/aseprite.png" />
-    <action id="Tool_External Tools_RUN in Mednafen" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/mednafen.png" />
-    <action id="Tool_External Tools_Visit Planet Virtual Boy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/pvb.png" />
-    <action id="Tool_External Tools_About VBDE" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/vbde.png" />
+    <action id="Tool_External Tools_COMPILE" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile.png" />
+    <action id="Tool_External Tools_EDIT images" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/image-edit.png" />
+    <action id="Tool_External Tools_RUN" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/run.png" />
+    <action id="Tool_External Tools_CONVERT images" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/images.png" />
   </component>
 </application>
