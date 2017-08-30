@@ -95,14 +95,42 @@
       <path value="Navigation Bar Toolbar" />
       <option name="myInitialPosition" value="-1" />
     </group>
+    <group seperator="true" action_type="1" position="14">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group seperator="true" action_type="1" position="15">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE (Release Mode) and RUN" is_action="true" action_type="1" position="16">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE (Tools Mode) and RUN" is_action="true" action_type="1" position="17">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <group value="Tool_External Tools_COMPILE (Debug Mode) and RUN" is_action="true" action_type="1" position="18">
+      <path value="root" />
+      <path value="Navigation Bar Toolbar" />
+      <option name="myInitialPosition" value="-1" />
+    </group>
+    <action id="Tool_External Tools_COMPILE (Debug Mode) and RUN" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile-run-debug-mode.png" />
+    <action id="Tool_External Tools_COMPILE (Release Mode) and RUN" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile-run-release-mode.png" />
     <action id="Tool_External Tools_FLASH to FlashBoy" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/flash.png" />
     <action id="Tool_External Tools_COMPILE and RUN" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile-run.png" />
     <action id="Tool_External Tools_CONVERT stages" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/stages.png" />
     <action id="Tool_External Tools_DEBUG" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/debug.png" />
     <action id="Tool_External Tools_CLEAN project folder" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/clean.png" />
+    <action id="Tool_External Tools_RUN" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/run.png" />
+    <action id="Tool_External Tools_COMPILE (Tools Mode) and RUN" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile-run-tools-mode.png" />
+    <action id="Tool_External Tools_CONVERT images" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/images.png" />
     <action id="Tool_External Tools_COMPILE" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/compile.png" />
     <action id="Tool_External Tools_EDIT images" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/image-edit.png" />
-    <action id="Tool_External Tools_RUN" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/run.png" />
-    <action id="Tool_External Tools_CONVERT images" icon="$APPLICATION_HOME_DIR$/../../system/icon/16/images.png" />
   </component>
 </application>

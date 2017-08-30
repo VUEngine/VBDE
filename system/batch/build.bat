@@ -27,6 +27,11 @@ IF EXIST build\output.vb (
 	DEL build\output.vb
 )
 
+::OPTIONALLY SET BUILD MODE
+IF NOT "%4"=="" (
+    SET BUILD_MODE=%4
+)
+
 ::BUILD ROM
 IF EXIST makefile (
 	::allow projects to have their own makefile
