@@ -324,6 +324,7 @@
     - [Pro] New toolbar button icons
     - [Pro] Made compiler output clickable
     - Bugfix: default makefile caused build folder to be nested into itself recursively
+    - Bugfix: libgccvb projects were not setting up the column table
     - Rewrote batch files so that images and stages no longer have to reside in assets/images/ and
       assets/stages/, but can be anywhere under the project root
     - Extended conversion tools to support VUEngine's new "__ANIMATED_SINGLE_OPTIMIZED" animation type

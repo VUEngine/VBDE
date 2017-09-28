@@ -12,6 +12,7 @@
 int main()
 {
     //Initial setup
+	vbSetColTable();
     vbDisplayOn();
 
     //Copy tileset and tilemap into memory
@@ -24,7 +25,7 @@ int main()
     WA[31].w = 384;
     WA[31].h = 224;
     //vbSetWorld(31, (WRLD_LON|WRLD_OVR), 0, 0, 0, 0, 0, 0, 384, 224);
-    
+
     WA[30].head = (WRLD_RON|WRLD_OVR);
     WA[30].my = 224;
     WA[30].w = 384;

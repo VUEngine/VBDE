@@ -16,7 +16,7 @@ void initSystem()
 	setupTimer();
 
 	//column table setup
-	//vbSetColTable();
+	vbSetColTable();
 
 	//display setup
 	vbDisplayOn();

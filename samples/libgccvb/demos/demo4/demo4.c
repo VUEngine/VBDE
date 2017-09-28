@@ -25,8 +25,9 @@ int main()
     HWORD pad;
 
     //Initialize registers
+	vbSetColTable();
     vbDisplayOn();
-    
+
     //Copy graphics to memory
     copymem((void*)CharSeg0, (void*)CHARSET, 22*16);
 
@@ -49,7 +50,7 @@ int main()
     vbDisplayShow();
 
     //Main game loop
-    for(;;) 
+    for(;;)
     {
 	pad = vbReadPad();
 
@@ -72,7 +73,7 @@ int main()
 	    moving=1;
 	    direction=1;
 	}
-	
+
 	//Update the frame
 	if (moving && cyclecount==0) {
 	    if (legs)
@@ -91,7 +92,7 @@ int main()
 	    }
 	}
 	moving=0;
-	
+
 	//Update the group of objects based on current variable values
 	if (direction)
 	{

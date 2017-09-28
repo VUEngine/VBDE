@@ -28,6 +28,7 @@ int main()
     //We want to copy bytes to the BGMap
     BYTE* BGMLOC = (void*)BGMap(0);
 
+	vbSetColTable();
     vbDisplayOn();
 
     //Copy the charset
@@ -55,7 +56,7 @@ int main()
 	    }
 	}
     }
-    
+
     //We don't want to reach the end...
     for(;;);
 

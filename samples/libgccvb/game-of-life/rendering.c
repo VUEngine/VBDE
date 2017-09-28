@@ -4,6 +4,7 @@ extern BYTE TilesTiles[];
 
 void setup()
 {
+	vbSetColTable();
 	vbDisplayOn();
 
 	copymem((void*)CharSeg0, (void*)TilesTiles, 2*16);

@@ -25,8 +25,9 @@ int main()
     HWORD pad;
 
     //Initialize registers
+	vbSetColTable();
     vbDisplayOn();
-    
+
     //Copy graphics to memorys
     copymem((void*)CharSeg0, (void*)CHARSET, 22*16);
     copymem((void*)BGMap(0), (void*)CHARMAP, 262*16);
@@ -75,7 +76,7 @@ int main()
 	    frame--;
 	    cyclecount=3;
 	}*/
-	
+
 	//Update the frame number
 	if (moving && cyclecount==0) {
 	    if (legs)
@@ -93,9 +94,9 @@ int main()
 		    legs=1;
 	    }
 	}
-	
+
 	moving=0;
-	
+
 	//Update the world using new values
 	if (direction)
 	    vbSetWorld(31, WRLD_ON | WRLD_BGMAP, x, 0, y, frame*16, 0, 0, 15, 40);

@@ -25,6 +25,7 @@ int main()
     //(Even though it's so small you could almost generate it procedurally)
     copymem((void*)CharSeg0, (void*)CHARSET, 16*10);
 
+	vbSetColTable();
     vbDisplayOn();
 
     //Setup a single object world
@@ -44,7 +45,7 @@ int main()
     }
 
     vbDisplayShow();
-    
+
     for(;;)
     {
 	for (i=0; i<20; i++)

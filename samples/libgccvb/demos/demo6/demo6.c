@@ -21,7 +21,7 @@ BYTE hours;
 //Function prototypes
 void update_clock(void);
 void tim_handler(void);
-extern u32 tim_vector;
+extern u32 timVector;
 
 int main(void)
 {
@@ -32,6 +32,7 @@ int main(void)
     HWORD i;
 
     //Set up display registers
+	vbSetColTable();
     vbDisplayOn();
 
     //Copy the font to character memory
@@ -55,9 +56,9 @@ int main(void)
 
     //Turn the display on
     vbDisplayShow();
- 
+
     //Enable interrupts
-    tim_vector = (u32)(tim_handler);
+    timVector = (u32)(tim_handler);
     INT_ENABLE;
 
     //Setup timer interrupt for a 1 second interval
@@ -69,8 +70,8 @@ int main(void)
     timer_clearstat();
     //Enable the interrupt
     timer_int(1);
-    //Start the timer 
-    timer_enable(1); 
+    //Start the timer
+    timer_enable(1);
 
     for(;;)
     {

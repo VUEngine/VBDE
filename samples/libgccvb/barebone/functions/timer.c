@@ -1,14 +1,14 @@
 #include <libgccvb.h>
 #include "timer.h"
 
-void timerHandle() 
+void timerHandle()
 {
 	//disable interrupts
 	timer_int(0);
 	VIP_REGS[INTCLR] = VIP_REGS[INTPND];
 	//disable timer
 	timer_enable(0);
-	
+
 	//clear timer state
 	timer_clearstat();
 
@@ -16,7 +16,7 @@ void timerHandle()
 	timer_enable(1);
 	//enable interrupts
 	timer_int(1);
-	
+
 	set_intlevel(0);
 }
 
@@ -24,7 +24,7 @@ void setupTimer()
 {
 	//setup timer interrupts
 	//timerHandle(): function that gets called when the interrupt fires (e.g. when the timer reaches 0)
-	tim_vector = (u32)(timerHandle); 
+	timVector = (u32)(timerHandle);
 	VIP_REGS[INTCLR] = VIP_REGS[INTPND];
 	VIP_REGS[INTENB] = 0x0000; //this is only for enabling\disabling different kinds of vpu and error ints
 	set_intlevel(0);

@@ -4,6 +4,7 @@
 
 void clearScreen();
 void initSystem();
+void setupTimer();
 
 
 #endif
