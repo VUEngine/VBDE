@@ -1264,6 +1264,19 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.csv">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="net.seesharpsoft.intellij.plugins.csv" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.ctpl">
       <plugins>
         <option name="myPlugins">
@@ -7145,19 +7158,6 @@
           <set>
             <plugin>
               <option name="myPluginId" value="org.eclipse.xtend.idea" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.xtext">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="org.eclipse.xtext.xtext.idea" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
