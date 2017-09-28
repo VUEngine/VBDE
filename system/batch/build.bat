@@ -19,8 +19,8 @@ SET PROJECT_DIR_UNIX=%PROJECT_DIR:\=/%
 SET PROJECT_DIR_UNIX=%PROJECT_DIR_UNIX:c:=/c%
 SET MSYSTEM=MINGW32
 
-ECHO VBDE directory: %VBDE_UNIX%
-ECHO Project directory: %PROJECT_DIR_UNIX%
+ECHO VBDE directory: %VBDE%
+ECHO Project directory: %PROJECT_DIR%
 
 ::PRE CLEAN
 IF EXIST build\output.vb (
