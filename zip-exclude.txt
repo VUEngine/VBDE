@@ -12,6 +12,7 @@ release.bat
 *.statistics.xml
 security.xml
 stdout.txt
+watchdog
 zip-exclude.txt
 zip-exclude-basic.txt
 zip-release-basic.bat

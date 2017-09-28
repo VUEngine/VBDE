@@ -322,12 +322,13 @@
     - [Pro] Updated IDEA to 2017.1
     - Condensed toolbar
     - [Pro] New toolbar button icons
+    - [Pro] Made compiler output clickable
+    - Bugfix: default makefile caused build folder to be nested into itself recursively
     - Rewrote batch files so that images and stages no longer have to reside in assets/images/ and
       assets/stages/, but can be anywhere under the project root
     - Extended conversion tools to support VUEngine's new "__ANIMATED_SINGLE_OPTIMIZED" animation type
     - Updated Mednafen to 0.9.43
     - New launcher by thunderstruck
-    - Bugfix: default makefile caused build folder to be nested into itself recursively
     - Updated VUEngine as well as its Barebone and Platformer Demo to v5.1
 
   o 1.2.0, March 12th, 2017

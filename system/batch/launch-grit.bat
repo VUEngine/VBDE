@@ -48,6 +48,16 @@ FOR /r . %%F IN (*.grit) DO (
             PUSHD "%%~dpF\Binary"
             "%VBDE%\tools\graphics\grit-0.8.6\grit.exe" !IMAGES! -O "%%~nF" -ff "%%F"
 
+            ::FURTHER PROCESS IMAGES IF RESPECTIVE MARKER FILE EXISTS
+            IF EXIST "%%~dnpF.compress" (
+                FOR /f "delims=" %%x IN (%%~dnpF.compress) DO SET NAME=%%x
+                SET "BINARY_FOLDER=!cd!"
+                SET "BINARY_FOLDER_UNIX=!BINARY_FOLDER:\=/!"
+
+                ::COMPRESS FOR VUENGINE ANIMATION TYPE "__ANIMATED_SINGLE_OPTIMIZED"
+                "%VBDE%\system\msys32\usr\bin\sh.exe" --login -c "export MSYSTEM=MSYS && cd !BINARY_FOLDER_UNIX! && export VBDE=$VBDE_UNIX && export PATH=$PATH:/usr/bin && %VBDE_UNIX%system/bash/compress.sh !NAME! !BINARY_FOLDER_UNIX! !BINARY_FOLDER_UNIX!"
+            )
+
             ::ECHO
             ECHO Converted!IMAGES_CLEAN!
         )
