@@ -3,11 +3,7 @@
     <option name="customScope" value="All Places" />
     <option name="defaultScopeName" value="All Places" />
     <option name="SEARCH_SCOPE" value="All Places" />
-    <option name="FILE_MASK" value="*.h" />
     <recentFileMasks>
-      <mask>*.c, *.h</mask>
-      <mask>*.x</mask>
-      <mask>*.</mask>
       <mask>*.c</mask>
       <mask>*.h</mask>
     </recentFileMasks>

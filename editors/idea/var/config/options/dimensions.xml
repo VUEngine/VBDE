@@ -134,12 +134,12 @@
     <location key="SettingsEditor.0.0.2560.1440" x="764" y="207" />
     <location key="FileChooserDialogImpl.0.0.2560.1440" x="1062" y="306" />
     <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2560.1440" x="1038" y="489" />
-    <location key="find.popup.0.0.2560.1440" x="542" y="54" />
+    <location key="find.popup.0.0.2560.1440" x="62" y="11" />
     <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$1.0.0.2560.1440" x="766" y="277" />
     <location key="Vcs.Push.Dialog.0.0.2560.1440" x="1035" y="430" />
     <location key="RollbackChangesDialog.0.0.2560.1440" x="943" y="414" />
     <location key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.2560.1440" x="942" y="544" />
-    <location key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog.0.0.2560.1440" x="1077" y="440" />
+    <location key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog.0.0.2560.1440" x="540" y="440" />
     <location key="DiffContextDialog.0.0.2560.1440" x="164" y="128" />
     <location key="MergeDialog.0.0.2560.1440" x="472" y="92" />
     <location key="MultipleFileMergeDialog.0.0.2560.1440" x="1618" y="427" />
@@ -147,6 +147,9 @@
     <location key="VcsDiffUtil.ChangesDialog.0.0.2560.1440" x="1029" y="432" />
     <location key="#Browse_Repositories.0.0.2560.1440" x="863" y="206" />
     <location key="#Updates.0.0.2560.1440" x="1057" y="553" />
+    <location key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog.0.0.2560.1440" x="1100" y="306" />
+    <location key="com.intellij.ide.ui.customization.CustomizableActionsPanel$EditIconDialog.0.0.2560.1440" x="1163" y="494" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2560.1440" x="1058" y="575" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
     <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
     <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
@@ -198,22 +201,23 @@
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.3840.2160@144dpi" width="1043" height="495" />
     <size key="MultipleFileMergeDialog.0.0.3840.2160@144dpi" width="2191" height="832" />
     <size key="CommitChangelistDialog2.0.0.1920.1080" width="1539" height="970" />
-    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="2538" height="283" />
-    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="2538" height="283" />
-    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="2538" height="283" />
-    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="2538" height="283" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="1898" height="477" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="1898" height="477" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1898" height="477" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1898" height="477" />
     <size key="findTextDialog.0.0.2560.1440" width="1450" height="759" />
-    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="2538" height="283" />
-    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="2538" height="283" />
-    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="2538" height="283" />
-    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="2538" height="283" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="2538" height="141" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="2538" height="141" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="2538" height="141" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="2538" height="141" />
     <size key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.3840.2160@144dpi" width="1148" height="847" />
     <size key="GridCell.Tab.0.left.0.0.2880.1620@144dpi" width="2845" height="655" />
     <size key="GridCell.Tab.0.center.0.0.2880.1620@144dpi" width="2845" height="655" />
     <size key="GridCell.Tab.0.right.0.0.2880.1620@144dpi" width="2845" height="655" />
     <size key="GridCell.Tab.0.bottom.0.0.2880.1620@144dpi" width="2845" height="655" />
     <size key="#com.intellij.ide.macro.MacrosDialog.0.0.3840.2160@144dpi" width="1490" height="891" />
-    <size key="find.popup.0.0.2560.1440" width="1716" height="1043" />
+    <size key="find.popup.0.0.2560.1440" width="2232" height="1318" />
     <size key="CommitChangelistDialog2.0.0.2560.1440" width="2088" height="1324" />
+    <size key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog.0.0.2560.1440" width="774" height="534" />
   </component>
 </application>
