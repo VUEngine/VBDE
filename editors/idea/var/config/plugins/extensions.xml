@@ -1882,6 +1882,71 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.f">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.jetbrains.fortran" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.f03">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.jetbrains.fortran" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.f08">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.jetbrains.fortran" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.f90">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.jetbrains.fortran" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.f95">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.jetbrains.fortran" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.fan">
       <plugins>
         <option name="myPlugins">
@@ -1999,6 +2064,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="org.siani.javafmi" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.for">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.jetbrains.fortran" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -5093,6 +5171,19 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.qianim">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.softbank.robot.sdkplugin" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.ql">
       <plugins>
         <option name="myPlugins">
@@ -6697,6 +6788,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.perl5" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.typoscript">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="de.sgalinski.typoscript.plugin.id" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>

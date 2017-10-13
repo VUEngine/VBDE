@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                    Version 1.2.1 - ???? ??, ????                                      |
+|                                   Version 1.2.1 - October 15th, 2017                                    |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -153,7 +153,7 @@
     Authors: various
 
   o VUEngine
-    Description: An advanced, object-oriented Virtual Boy game engine.
+    Description: An powerful, versatile object-oriented Virtual Boy game engine.
     Authors: jorgeche, KR155E
 
 
@@ -205,7 +205,7 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 2016.3.5 Community Edition, pre-configured with several useful plugins, templates, etc.
+    - IntelliJ IDEA 2017.1 Community Edition, pre-configured with several useful plugins, templates, etc.
       (Pro version only)
 
   o Compiler
@@ -318,13 +318,13 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.2.1, ??? ??, ????
+  o 1.2.1, October 15th, 2017
     - [Pro] Updated IDEA to 2017.1
     - Condensed toolbar
     - [Pro] New toolbar button icons
     - [Pro] Made compiler output clickable
     - Bugfix: default makefile caused build folder to be nested into itself recursively
-    - Bugfix: libgccvb projects were not setting up the column table
+    - Bugfix: libgccvb projects were not setting up the column table and thus not ran on hardware
     - Rewrote batch files so that images and stages no longer have to reside in assets/images/ and
       assets/stages/, but can be anywhere under the project root
     - Extended conversion tools to support VUEngine's new "__ANIMATED_SINGLE_OPTIMIZED" animation type

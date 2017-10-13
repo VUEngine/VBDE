@@ -8,6 +8,7 @@ libvuengine.a
 *.vb
 output*.sav
 security.xml
-stdout.txt
+watchdog/
 workspace.xml
 *statistics.xml
+*.elf
