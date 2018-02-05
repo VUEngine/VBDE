@@ -2,6 +2,8 @@
   <component name="FileBasedIndex">
     <option name="registeredIndices">
       <list>
+        <option value="java.class.shortname" />
+        <option value="java.method.parameter.types" />
         <option value="java.anonymous.baseref" />
         <option value="jvm.static.member.type" />
         <option value="jvm.static.member.name" />
@@ -13,8 +15,6 @@
         <option value="dom.namespaceKey" />
         <option value="java.module.name" />
         <option value="java.class.fqn" />
-        <option value="java.class.shortname" />
-        <option value="java.method.parameter.types" />
       </list>
     </option>
   </component>

@@ -10,5 +10,5 @@ output*.sav
 security.xml
 watchdog/
 workspace.xml
-*statistics.xml
+*statistics*.xml
 *.elf

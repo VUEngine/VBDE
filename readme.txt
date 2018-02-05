@@ -205,7 +205,7 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 2017.1 Community Edition, pre-configured with several useful plugins, templates, etc.
+    - IntelliJ IDEA 2017.3.3 Community Edition, pre-configured with several useful plugins, templates, etc.
       (Pro version only)
 
   o Compiler
@@ -319,6 +319,7 @@
 +---------------------------------------------------------------------------------------------------------+
 
   o 1.2.2, February 5th, 2018
+    - [Pro] Updated IDEA to 2017.3.3
     - Updated Mednafen to 0.9.48
     - Updated VUEngine as well as its Barebone and Platformer Demo to v5.2
 

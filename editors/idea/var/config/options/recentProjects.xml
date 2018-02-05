@@ -14,5 +14,6 @@
         <option value="$APPLICATION_HOME_DIR$/../../samples/libgccvb/demos/demo6" />
       </list>
     </option>
+    <option name="pid" value="" />
   </component>
 </application>

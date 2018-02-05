@@ -9,7 +9,7 @@ libvuengine.a
 mednafen*\sav\*
 build\
 release.bat
-*.statistics.xml
+*statistics*.xml
 security.xml
 stdout.txt
 watchdog
