@@ -1,3 +1,3 @@
 .idea
-editors\idea
-system\tools
+vbde\editors\idea
+vbde\system\tools

@@ -6,6 +6,8 @@ bgmap
 bgmaps
 bgms
 collectable
+defrag
+defragmentation
 dimm
 disp
 eremiev
@@ -39,6 +41,8 @@ strncmp
 strlen
 struct
 tileset
+unpause
+unpaused
 unregister
 vbde
 vbjaengine
