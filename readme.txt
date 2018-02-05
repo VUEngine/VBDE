@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                   Version 1.2.1 - October 15th, 2017                                    |
+|                                   Version 1.2.2 - February 5th, 2018                                    |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -238,9 +238,9 @@
     - Emulators
 
       - Mednafen
-        Version: 0.9.43
+        Version: 0.9.48
         Author: Mednafen
-        Release Date: February 26th, 2017
+        Release Date: September 18th, 2017
 
       - Reality Boy
         Version: 0.84
@@ -317,6 +317,10 @@
 +---------------------------------------------------------------------------------------------------------+
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
+
+  o 1.2.2, February 5th, 2018
+    - Updated Mednafen to 0.9.48
+    - Updated VUEngine as well as its Barebone and Platformer Demo to v5.2
 
   o 1.2.1, October 15th, 2017
     - [Pro] Updated IDEA to 2017.1
