@@ -1,11 +1,8 @@
 <scheme name="VBDE" version="142" parent_scheme="Darcula">
-  <option name="LINE_SPACING" value="1.0" />
-  <option name="EDITOR_FONT_SIZE" value="18" />
-  <option name="EDITOR_LIGATURES" value="true" />
+  <option name="FONT_SCALE" value="1.5" />
   <option name="CONSOLE_FONT_NAME" value="Monospaced" />
-  <option name="CONSOLE_FONT_SIZE" value="16" />
+  <option name="CONSOLE_FONT_SIZE" value="22" />
   <option name="CONSOLE_LIGATURES" value="true" />
-  <option name="EDITOR_FONT_NAME" value="Monospaced" />
   <colors>
     <option name="RIGHT_MARGIN_COLOR" value="383838" />
   </colors>
