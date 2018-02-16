@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                   Version 1.2.2 - February 5th, 2018                                    |
+|                                   Version 1.2.2 - February 16th, 2018                                   |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -153,7 +153,7 @@
     Authors: various
 
   o VUEngine
-    Description: An powerful, versatile object-oriented Virtual Boy game engine.
+    Description: A powerful, versatile object-oriented Virtual Boy game engine.
     Authors: jorgeche, KR155E
 
 
@@ -192,6 +192,11 @@
       Description: A platform game demo which demonstrates usage and features of the VUEngine.
       Location: {VBDE}/samples/vuengine/vuengine-platformer-demo/
       Authors: jorgeche, KR155E
+
+    - VUE-MASTER
+      Description: A stereo image viewer template including a demo reel which you can replace with your own images.
+      Location: {VBDE}/samples/vuengine/vue-master/
+      Authors: STEREO BOY, KR155E
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -318,10 +323,11 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.2.2, February 5th, 2018
+  o 1.2.2, February 17th, 2018
     - [Pro] Updated IDEA to 2017.3.3
     - Updated Mednafen to 0.9.48
     - Updated VUEngine as well as its Barebone and Platformer Demo to v5.2
+    - Added an additional VUEngine sample project: VUE-MASTER
 
   o 1.2.1, October 15th, 2017
     - [Pro] Updated IDEA to 2017.1

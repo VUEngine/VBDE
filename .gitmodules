@@ -7,6 +7,9 @@
 [submodule "samples/vuengine/vuengine-barebone"]
 	path = samples/vuengine/vuengine-barebone
 	url = git@bitbucket.org:jorgeche/vuengine-barebone.git
+[submodule "samples/vuengine/vue-master"]
+	path = samples/vuengine/vue-master
+	url = git@bitbucket.org:KR155E/vue-master.git
 [submodule "libs/libgccvb"]
 	path = libs/libgccvb
 	url = git@bitbucket.org:KR155E/libgccvb.git
