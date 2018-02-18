@@ -620,6 +620,19 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.beam.asm">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.elixir_lang" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.bib">
       <plugins>
         <option name="myPlugins">
@@ -4961,6 +4974,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="org.jetbrains.idea.grammar" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.prj">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.ky-proj.spjplugin" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>

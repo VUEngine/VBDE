@@ -1,9 +1,7 @@
 <NotepadPlus>
     <Session activeView="0">
         <mainView activeIndex="0">
-            <File firstVisibleLine="0" xOffset="0" scrollWidth="1309" startPos="2688" endPos="2688" selMode="0" lang="Normal Text" encoding="-1" filename="..\..\readme.txt" backupFilePath="" originalFileLastModifTimestamp="1517826546" />
-            <File firstVisibleLine="0" xOffset="0" scrollWidth="321" startPos="0" endPos="0" selMode="0" lang="C" encoding="-1" filename="..\..\samples\libgccvb\game-of-life\main.c" backupFilePath="" originalFileLastModifTimestamp="1448377782" />
-            <File firstVisibleLine="0" xOffset="0" scrollWidth="1179" startPos="0" endPos="0" selMode="0" lang="C" encoding="-1" filename="..\..\samples\vuengine\vuengine-platformer-demo\source\game.c" backupFilePath="" originalFileLastModifTimestamp="1517825544" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1309" startPos="0" endPos="0" selMode="0" lang="Normal Text" encoding="-1" filename="..\..\readme.txt" backupFilePath="" originalFileLastModifTimestamp="1518814940" />
         </mainView>
         <subView activeIndex="0" />
     </Session>
