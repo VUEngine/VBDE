@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                   Version 1.2.2 - February 16th, 2018                                   |
+|                                   Version 1.2.2 - February 18th, 2018                                   |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -210,7 +210,7 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 2017.3.3 Community Edition, pre-configured with several useful plugins, templates, etc.
+    - IntelliJ IDEA 2017.3.4 Community Edition, pre-configured with several useful plugins, templates, etc.
       (Pro version only)
 
   o Compiler
@@ -323,8 +323,8 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.2.2, February 17th, 2018
-    - [Pro] Updated IDEA to 2017.3.3
+  o 1.2.2, February 18th, 2018
+    - [Pro] Updated IDEA to 2017.3.4
     - Updated Mednafen to 0.9.48
     - Updated VUEngine as well as its Barebone and Platformer Demo to v5.2
     - Added an additional VUEngine sample project: VUE-MASTER
