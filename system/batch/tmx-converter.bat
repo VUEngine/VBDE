@@ -14,6 +14,3 @@ PUSHD "%PROJECT_DIR%"
 
 ::CONVERT TILED STAGES
 CALL "%VBDE%\system\batch\launch-tmx-converter.bat"
-
-::DELAY CLOSING OF WINDOW FOR 5 SECONDS
-timeout /t 5

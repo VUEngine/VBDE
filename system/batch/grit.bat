@@ -20,6 +20,3 @@ PUSHD "%PROJECT_DIR%"
 
 ::COMPILE GRAPHICS WITH GRIT
 CALL "%VBDE%\system\batch\launch-grit.bat"
-
-::DELAY CLOSING OF WINDOW FOR 5 SECONDS
-timeout /t 5
