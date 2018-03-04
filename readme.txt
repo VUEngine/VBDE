@@ -50,8 +50,9 @@
     plugins and slightly modified to have a button bar on top. With these buttons, you can quickly compile
     the current project, run the compiled ROM in an emulator, convert images, etc.
 
-    VBDE is also available as a Pro edition, which comes with a copy of IntelliJ IDEA Community Edition
-    that has been modified and pre-configured for VB development.
+    VBDE is also available as a Pro version, which comes with a copy of IntelliJ IDEA Community Edition
+    that has been modified and pre-configured for VB development. Note that, for the Pro version, VBDE has to be
+    located in C:/vbde for all features to work out of the box.
 
   o Compiling and running
 

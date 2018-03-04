@@ -2,6 +2,7 @@
 .mednafen/
 build/
 stdout.txt
+v810_err.txt
 reality_boy.ini
 libgccvb.a
 libvuengine.a

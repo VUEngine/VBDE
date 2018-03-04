@@ -1,6 +1,0 @@
-
-Reality Boy emu v0.84 (12/09/2008),  By the VB-98 Team
-
-  Copyright (C) 1997-2008 David Tucker
-  all rights reserved
-
