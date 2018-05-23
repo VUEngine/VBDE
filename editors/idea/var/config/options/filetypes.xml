@@ -2,16 +2,16 @@
   <component name="FileTypeManager" version="17">
     <ignoreFiles list="*.hprof;*.o;*.obj;*.pyc;*.pyo;*.rbc;*~;.DS_Store;.git;.hg;.svn;CVS;RCS;SCCS;__pycache__;_svn;rcs;vssver.scc;vssver2.scc;" />
     <extensionMap>
+      <mapping ext="ase" type="Native" />
       <mapping pattern="makefile" type="PLAIN_TEXT" />
       <mapping pattern="LICENSE" type="PLAIN_TEXT" />
-      <mapping ext="ld" type="PLAIN_TEXT" />
       <mapping ext="make" type="PLAIN_TEXT" />
       <mapping ext="ram" type="PLAIN_TEXT" />
       <mapping ext="grit" type="PLAIN_TEXT" />
       <mapping ext="compress" type="PLAIN_TEXT" />
-      <mapping ext="a" type="PLAIN_TEXT" />
+      <mapping ext="ld" type="PLAIN_TEXT" />
       <mapping ext="bak" type="PLAIN_TEXT" />
-      <removed_mapping ext="a" type="UNKNOWN" />
+      <mapping ext="stackdump" type="PLAIN_TEXT" />
       <mapping ext="tmx" type="XML" />
       <mapping ext="tsx" type="XML" />
     </extensionMap>

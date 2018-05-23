@@ -1,61 +1,71 @@
 <application>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
-    <property name="DefaultHtmlDoctype.Refreshed" value="2" />
-    <property name="installed.kotlin.plugin.version" value="1.1.1-release-IJ2017.1-1" />
-    <property name="file.chooser.recent.files" value="$APPLICATION_HOME_DIR$" />
-    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
-    <property name="lastTip" value="2" />
-    <property name="PLUGIN_FILTER" value="hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server&#10;calc" />
-    <property name="plugins.preselection.path" value="$USER_HOME$/Downloads" />
-    <property name="fileTypeChangedCounter" value="75" />
-    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
-    <property name="selected.color.option.type" value="GUTTER_BACKGROUND" />
-    <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.8305085" />
-    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.44408774" />
+    <property name="AFTER.DISTRACTION.MODE.ARE_LINE_NUMBERS_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.EDITOR_TAB_PLACEMENT" value="0" />
+    <property name="AFTER.DISTRACTION.MODE.HIDE_TOOL_STRIPES" value="true" />
+    <property name="AFTER.DISTRACTION.MODE.IS_FOLDING_OUTLINE_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.IS_INDENT_GUIDES_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.IS_RIGHT_MARGIN_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.IS_WHITESPACES_SHOWN" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_BREADCRUMBS" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_METHOD_SEPARATORS" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_NAVIGATION_BAR" value="false" />
+    <property name="AFTER.DISTRACTION.MODE.SHOW_STATUS_BAR" value="false" />
+    <property name="BEFORE.DISTRACTION.MODE.ARE_LINE_NUMBERS_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.EDITOR_TAB_PLACEMENT" value="1" />
+    <property name="BEFORE.DISTRACTION.MODE.HIDE_TOOL_STRIPES" value="false" />
+    <property name="BEFORE.DISTRACTION.MODE.IS_FOLDING_OUTLINE_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.IS_INDENT_GUIDES_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.IS_RIGHT_MARGIN_SHOWN" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.IS_WHITESPACES_SHOWN" value="false" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_BREADCRUMBS" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR" value="false" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_METHOD_SEPARATORS" value="false" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_NAVIGATION_BAR" value="true" />
+    <property name="BEFORE.DISTRACTION.MODE.SHOW_STATUS_BAR" value="true" />
+    <property name="ColorChooser.RecentColors" value="145-154-85-255,,,198-65-78-255,,,169-183-198-255,,,60-60-60-255,,,50-50-50-255,,,56-56-56-255" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.647405" />
+    <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.84754264" />
     <property name="CommittedChanges.SplitterProportions.0" value="700" />
     <property name="CommittedChanges.SplitterProportions.1" value="500" />
     <property name="Copy.OpenInEditor" value="true" />
-    <property name="com.intellij.diagnostic.IdeErrorsDialogactiveTab" value="0" />
-    <property name="KEYMAP" value="external editor&#10;calc&#10;scratch&#10;template&#10;duplicate" />
+    <property name="Darcula.savedEditorTheme" value="VBDE" />
+    <property name="Default.savedEditorTheme" value="_@user_Default" />
+    <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
+    <property name="DefaultHtmlDoctype.Refreshed" value="2" />
+    <property name="ExternalToolDialog.advanced.expanded" value="true" />
     <property name="FileTemplates.SelectedTemplate" value="package-info" />
-    <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.0" value="300" />
     <property name="INTENTION_FILTER_HISTORY" value="" />
-    <property name="settings.code.style.selected.tab.XML" value="Other" />
-    <property name="settings.code.style.selected.tab.JAVA" value="Code Generation" />
-    <property name="ColorChooser.RecentColors" value="145-154-85-255,,,198-65-78-255,,,169-183-198-255,,,60-60-60-255,,,50-50-50-255,,,56-56-56-255" />
-    <property name="map.external.resource.selected.tab" value="0" />
-    <property name="settings.code.style.selected.tab.JSON" value="Spaces" />
-    <property name="BEFORE.DISTRACTION.MODE.SHOW_STATUS_BAR" value="true" />
-    <property name="BEFORE.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR" value="false" />
-    <property name="BEFORE.DISTRACTION.MODE.SHOW_NAVIGATION_BAR" value="true" />
-    <property name="BEFORE.DISTRACTION.MODE.IS_FOLDING_OUTLINE_SHOWN" value="true" />
-    <property name="BEFORE.DISTRACTION.MODE.IS_WHITESPACES_SHOWN" value="false" />
-    <property name="BEFORE.DISTRACTION.MODE.ARE_LINE_NUMBERS_SHOWN" value="true" />
-    <property name="BEFORE.DISTRACTION.MODE.IS_RIGHT_MARGIN_SHOWN" value="true" />
-    <property name="BEFORE.DISTRACTION.MODE.IS_INDENT_GUIDES_SHOWN" value="true" />
-    <property name="BEFORE.DISTRACTION.MODE.SHOW_BREADCRUMBS" value="true" />
-    <property name="BEFORE.DISTRACTION.MODE.SHOW_METHOD_SEPARATORS" value="false" />
-    <property name="BEFORE.DISTRACTION.MODE.HIDE_TOOL_STRIPES" value="false" />
-    <property name="BEFORE.DISTRACTION.MODE.EDITOR_TAB_PLACEMENT" value="1" />
-    <property name="AFTER.DISTRACTION.MODE.SHOW_STATUS_BAR" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.SHOW_NAVIGATION_BAR" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.IS_FOLDING_OUTLINE_SHOWN" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.IS_WHITESPACES_SHOWN" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.ARE_LINE_NUMBERS_SHOWN" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.IS_RIGHT_MARGIN_SHOWN" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.IS_INDENT_GUIDES_SHOWN" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.SHOW_BREADCRUMBS" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.SHOW_METHOD_SEPARATORS" value="false" />
-    <property name="AFTER.DISTRACTION.MODE.HIDE_TOOL_STRIPES" value="true" />
-    <property name="AFTER.DISTRACTION.MODE.EDITOR_TAB_PLACEMENT" value="0" />
-    <property name="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.splitter" value="0.77372265" />
-    <property name="last.imported.location" value="" />
-    <property name="project.wizard.group" value="C++" />
-    <property name="android-component-compatibility-check" value="1490777980184" />
-    <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="$APPLICATION_HOME_DIR$/../../system/icon/vbde_gray.png" />
-    <property name="idea.background.editor" value="$APPLICATION_HOME_DIR$/../../system/icon/vbde_gray.png,15,plain,center" />
+    <property name="KEYMAP" value="external editor&#10;calc&#10;scratch&#10;template&#10;duplicate" />
+    <property name="PLUGIN_FILTER" value="hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server&#10;calc" />
+    <property name="SearchEveryWhereHistory" value="printing&#10;entity&#10;stage.c&#10;paramtablema&#10;spritemanager" />
+    <property name="SplitFileEditor.Proportion" value="0.7001605" />
+    <property name="android-component-compatibility-check" value="1527099683422" />
+    <property name="com.intellij.diagnostic.IdeErrorsDialogactiveTab" value="0" />
     <property name="com.intellij.history.integration.ui.views.DirectoryHistoryDialog.0" value="300" />
+    <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.0" value="300" />
+    <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.1" value="800" />
+    <property name="com.intellij.history.integration.ui.views.SelectionHistoryDialog.0" value="300" />
+    <property name="com.intellij.history.integration.ui.views.SelectionHistoryDialog.1" value="800" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
+    <property name="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.splitter" value="0.77372265" />
+    <property name="delete.locally.added.files" value="true" />
+    <property name="file.gist.reindex.count" value="134" />
+    <property name="fileTypeChangedCounter" value="80" />
+    <property name="idea.background.editor" value="$APPLICATION_HOME_DIR$/../../system/icon/vbde_gray.png,15,plain,center" />
+    <property name="installed.kotlin.plugin.version" value="1.2.31-release-IJ2018.1-1" />
+    <property name="last.imported.location" value="" />
+    <property name="lastTip" value="2" />
+    <property name="map.external.resource.selected.tab" value="0" />
+    <property name="markdown.do.not.ask.to.change.preview.provider" value="true" />
+    <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="$APPLICATION_HOME_DIR$/../../system/icon/vbde_gray.png" />
+    <property name="plugins.preselection.path" value="$USER_HOME$/Downloads" />
+    <property name="project.wizard.group" value="C++" />
+    <property name="selected.color.option.type" value="GUTTER_BACKGROUND" />
+    <property name="settings.code.style.selected.tab.JAVA" value="Code Generation" />
+    <property name="settings.code.style.selected.tab.JSON" value="Spaces" />
+    <property name="settings.code.style.selected.tab.XML" value="Other" />
+    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
   </component>
 </application>
