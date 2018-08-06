@@ -186,12 +186,12 @@
 
     - VUEngine Barebone
       Description: A barebone VUEngine project that can be used as a starting point for your own project.
-      Location: {VBDE}/samples/vuengine/vuengine-barebone/
+      Location: {VBDE}/samples/vuengine/barebone/
       Authors: jorgeche, KR155E
 
     - VUEngine Platformer Demo
       Description: A platform game demo which demonstrates usage and features of the VUEngine.
-      Location: {VBDE}/samples/vuengine/vuengine-platformer-demo/
+      Location: {VBDE}/samples/vuengine/platformer/
       Authors: jorgeche, KR155E
 
     - VUE-MASTER
@@ -327,6 +327,7 @@
   o 1.2.3, ???? ????, 2018
     - [Pro] Updated IDEA to 2018.1.4
     - Updated VUEngine and its demo projects to v6
+    - Changed some folder names
 
   o 1.2.2, February 18th, 2018
     - [Pro] Updated IDEA to 2017.3.4

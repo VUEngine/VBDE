@@ -1,11 +1,14 @@
-[submodule "libs/vuengine"]
-	path = libs/vuengine
+[submodule "libs/vuengine/core"]
+	path = libs/vuengine/core
 	url = git@bitbucket.org:jorgeche/vuengine.git
-[submodule "samples/vuengine/vuengine-platformer-demo"]
-	path = samples/vuengine/vuengine-platformer-demo
+[submodule "libs/vuengine/plugins"]
+	path = libs/vuengine/plugins
+	url = git@bitbucket.org:KR155E/vuengine-plugins.git
+[submodule "samples/vuengine/platformer"]
+	path = samples/vuengine/platformer
 	url = git@bitbucket.org:jorgeche/vuengine-platformer-demo.git
-[submodule "samples/vuengine/vuengine-barebone"]
-	path = samples/vuengine/vuengine-barebone
+[submodule "samples/vuengine/barebone"]
+	path = samples/vuengine/barebone
 	url = git@bitbucket.org:jorgeche/vuengine-barebone.git
 [submodule "samples/vuengine/vue-master"]
 	path = samples/vuengine/vue-master
