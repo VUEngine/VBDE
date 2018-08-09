@@ -39,8 +39,13 @@ IF EXIST makefile (
 	"%VBDE%\system\msys32\usr\bin\bash.exe" --login -c "export MSYSTEM=MSYS && cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && export BUILD_MODE=$BUILD_MODE && /usr/bin/make all"
 ) ELSE (
 	::otherwise use default makefile
-    ECHO Using default makefile
-	"%VBDE%\system\msys32\usr\bin\bash.exe" --login -c "cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && /usr/bin/make all -f $VBDE/system/makefile"
+    IF EXIST config.make (
+        ECHO Using default VUEngine makefile
+	    "%VBDE%\system\msys32\usr\bin\bash.exe" --login -c "cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && /usr/bin/make all -f $VBDE/libs/vuengine/core/makefile-game"
+    ) ELSE (
+        ECHO Using default libgccvb makefile
+        "%VBDE%\system\msys32\usr\bin\bash.exe" --login -c "cd %PROJECT_DIR_UNIX% && export VBDE=$VBDE_UNIX && export PATH=$PATH:/v810/v810-win32/bin && /usr/bin/make all -f $VBDE/libs/libgccvb/makefile-game"
+    )
 )
 
 ::SET ROM HEADER
