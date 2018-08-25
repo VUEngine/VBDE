@@ -211,7 +211,7 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 2018.1.4 Community Edition, pre-configured with several useful plugins, templates, etc.
+    - IntelliJ IDEA 2018.2.2 Community Edition, pre-configured with several useful plugins, templates, etc.
       (Pro version only)
 
   o Compiler
@@ -325,7 +325,7 @@
 +---------------------------------------------------------------------------------------------------------+
 
   o 1.2.3, ???? ????, 2018
-    - [Pro] Updated IDEA to 2018.1.4
+    - [Pro] Updated IDEA to 2018.2.2
     - Updated Mednafen to 1.21.3
     - Updated VUEngine and its demo projects to version 6.0
     - Changed some folder names

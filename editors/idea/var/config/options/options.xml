@@ -38,7 +38,7 @@
     <property name="FileTemplates.SelectedTemplate" value="package-info" />
     <property name="INTENTION_FILTER_HISTORY" value="" />
     <property name="KEYMAP" value="external editor&#10;calc&#10;scratch&#10;template&#10;duplicate" />
-    <property name="PLUGIN_FILTER" value="hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server&#10;calc" />
+    <property name="PLUGIN_FILTER" value="cmd&#10;hex&#10;sexy editor&#10;Configuration Server&#10;IntelliJ Configuration Server" />
     <property name="SearchEveryWhereHistory" value="printing&#10;entity&#10;stage.c&#10;paramtablema&#10;spritemanager" />
     <property name="SplitFileEditor.Proportion" value="0.7001605" />
     <property name="android-component-compatibility-check" value="1527099683422" />
