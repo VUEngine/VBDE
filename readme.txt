@@ -244,9 +244,9 @@
     - Emulators
 
       - Mednafen
-        Version: 0.9.48
+        Version: 1.21.3
         Author: Mednafen
-        Release Date: September 18th, 2017
+        Release Date: April 29th, 2018
 
       - Reality Boy
         Version: 0.84
@@ -326,7 +326,8 @@
 
   o 1.2.3, ???? ????, 2018
     - [Pro] Updated IDEA to 2018.1.4
-    - Updated VUEngine and its demo projects to v6
+    - Updated Mednafen to 1.21.3
+    - Updated VUEngine and its demo projects to version 6.0
     - Changed some folder names
 
   o 1.2.2, February 18th, 2018
