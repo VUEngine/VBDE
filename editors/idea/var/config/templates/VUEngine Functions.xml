@@ -1,0 +1,60 @@
+<templateSet group="VUEngine Functions">
+  <template name=".fcn" value="void $CLASSNAME$::constructor()&#10;{&#10;&#9;// construct base object&#10;&#9;Base::constructor();&#10;&#9;&#10;&#9;$END$&#10;}" description="VUEngine Function: constructor              " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".fds" value="void $CLASSNAME$::destructor()&#10;{&#10;&#9;$END$&#10;&#10;&#9;// destroy the super object&#10;&#9;// must always be called at the end of the destructor&#10;&#9;Base::destructor();&#10;}" description="VUEngine Function: destructor               " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".fhm" value="bool $CLASSNAME$::handleMessage(Telegram telegram)&#10;{&#10;&#9;switch(Telegram::getMessage(telegram))&#10;&#9;{&#10;&#9;&#9;case $CASENAME$:&#10;&#9;&#9;{&#10;&#9;&#9;&#9;$END$&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;break;&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;&#9;return $RETURN$;&#10;}" description="VUEngine Function: handleMessage            " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <variable name="CASENAME" expression="&quot;kCaseIdentifier&quot;" defaultValue="&quot;kCaseIdentifier&quot;" alwaysStopAt="true" />
+    <variable name="RETURN" expression="enum(&quot;Base::handleMessage(this, telegram)&quot;, &quot;true&quot;, &quot;false&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".fen" value="void $CLASSNAME$::enter(void* owner)&#10;{&#10;&#9;// call base&#10;&#9;Base::enter(this, owner);&#10;&#10;&#9;$END$&#10;}" description="VUEngine Function: enter                    " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".fex" value="void $CLASSNAME$::exit(void* owner)&#10;{&#10;&#9;$END$&#10;&#10;&#9;// call base&#10;&#9;Base::exit(this, owner);&#10;}" description="VUEngine Function: exit                     " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".fpm" value="bool $CLASSNAME$::processMessage(void* owner, Telegram telegram)&#10;{&#10;&#9;switch(Telegram::getMessage(telegram))&#10;&#9;{&#10;&#9;&#9;case $CASENAME$:&#10;&#9;&#9;{&#10;&#9;&#9;&#9;$END$&#10;&#10;&#9;&#9;&#9;break;&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;&#9;return $RETURN$;&#10;}" description="VUEngine Function: processMessage           " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <variable name="CASENAME" expression="&quot;kCaseIdentifier&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN" expression="enum(&quot;Base::processMessage(this, owner, telegram)&quot;, &quot;true&quot;, &quot;false&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".fpu" value="void $CLASSNAME$::processUserInput(UserInput userInput)&#10;{&#10;&#9;$END$&#10;}" description="VUEngine Function: processUserInput         " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".fsu" value="void $CLASSNAME$::suspend(void* owner)&#10;{&#10;&#9;// call base&#10;&#9;Base::suspend(this, owner);&#10;}" description="VUEngine Function: suspend                  " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".fre" value="void $CLASSNAME$::resume(void* owner)&#10;{&#10;&#9;// call base&#10;&#9;Base::resume(this, owner);&#10;}" description="VUEngine Function: resume                   " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>

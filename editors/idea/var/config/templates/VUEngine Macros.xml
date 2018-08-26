@@ -1,0 +1,29 @@
+<templateSet group="VUEngine Macros">
+  <template name=".mass" value="ASSERT($VAR$, &quot;$CLS$::$FNC$: $MSG$&quot;);&#10;$END$" description="VUEngine Macro: ASSERT                   " toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;this&quot;" alwaysStopAt="true" />
+    <variable name="CLS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="FNC" expression="" defaultValue="&quot;function&quot;" alwaysStopAt="true" />
+    <variable name="MSG" expression="" defaultValue="&quot;null this&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".mftf1913" value="FTOFIX19_13($VAL$)$END$" description="VUEngine Macro: FTOFIX19_13              " toReformat="false" toShortenFQNames="true">
+    <variable name="VAL" expression="" defaultValue="&quot;Value&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".mgcl" value="__GET_CLASS_NAME($VAL$)$END$" description="VUEngine Macro: __GET_CLASS_NAME         " toReformat="false" toShortenFQNames="true">
+    <variable name="VAL" expression="" defaultValue="&quot;Object&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".mitf1913" value="ITOFIX19_13($VAL$)$END$" description="VUEngine Macro: ITOFIX19_13              " toReformat="false" toShortenFQNames="true">
+    <variable name="VAL" expression="" defaultValue="&quot;Value&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>

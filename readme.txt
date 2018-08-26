@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                   Version 1.2.3 - ???? ????, 2018                                   |
+|                                   Version 1.3.0 - ???? ????, 2018                                   |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -324,10 +324,11 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.2.3, ???? ????, 2018
+  o 1.3.0, ???? ????, 2018
     - [Pro] Updated IDEA to 2018.2.2
     - Updated Mednafen to 1.21.3
     - Updated VUEngine and its demo projects to version 6.0
+    - [Pro] New feature: VUEngine templates (Live and Files)
     - Changed some folder names
 
   o 1.2.2, February 18th, 2018

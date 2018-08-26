@@ -1,0 +1,108 @@
+<templateSet group="VUEngine Partials">
+  <template name=".pitv" value="for(node = VirtualList_begin($VLIST$); node; node = VirtualNode_getNext(node))&#10;{&#10;    $END$&#10;}&#10;" description="VUEngine Partial: VirtualList for loop     " toReformat="false" toShortenFQNames="true">
+    <variable name="VLIST" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".mnma" value="NM_ASSERT($VAR$, &quot;$CLS$::$FNC$: $MSG$&quot;);&#10;$END$" description="VUEngine Macro: NM_ASSERT                " toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;this&quot;" alwaysStopAt="true" />
+    <variable name="CLS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="FNC" expression="" defaultValue="&quot;function&quot;" alwaysStopAt="true" />
+    <variable name="MSG" expression="" defaultValue="&quot;null this&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pgti" value="$NAME$::getInstance()$END$" description="VUEngine Partial: get instance method      " toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;Class&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".peed" value="extern EntityDefinition $NAME$;&#10;" description="VUEngine Partial: extern EntityDefinition  " toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="capitalizeAndUnderscore(String)" defaultValue="&quot;ENTITY_EN&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pecd" value="extern CharSetDefinition $NAME$;&#10;" description="VUEngine Partial: extern CharSetDefinition " toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="capitalizeAndUnderscore(String)" defaultValue="&quot;CHARSET_CH&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pdiv" value="//---------------------------------------------------------------------------------------------------------&#10;// &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;$LABEL$&#10;//---------------------------------------------------------------------------------------------------------&#10;&#10;$END$" description="VUEngine Partial: visual divider           " toReformat="false" toShortenFQNames="true">
+    <variable name="LABEL" expression="enum(&quot;ASSETS&quot;, &quot;CLASS'S DEFINITION&quot;, &quot;CLASS'S METHODS&quot;, &quot;DECLARATIONS&quot;, &quot;DEFINITIONS&quot;, &quot;ENTRY POINTS&quot;, &quot;INCLUDES&quot;, &quot;MACROS&quot;, &quot;PROTOTYPES&quot;, &quot;STAGE DEFINITION&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pv3d" value="Vector3D $VAR$ = {&#10;    $X$, &#10;    $Y$, &#10;    $Z$,&#10;};&#10;$END$" description="VUEngine Partial: Vector3D def.            " toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="snakeCase(String)" defaultValue="&quot;position&quot;" alwaysStopAt="true" />
+    <variable name="X" expression="" defaultValue="0" alwaysStopAt="true" />
+    <variable name="Y" expression="" defaultValue="0" alwaysStopAt="true" />
+    <variable name="Z" expression="" defaultValue="0" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pv3dc" value="Vector3D $VAR$ = {$X$, $Y$, $Z$};&#10;$END$" description="VUEngine Partial: Vector3D def. (compact)  " toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="snakeCase(String)" defaultValue="&quot;position&quot;" alwaysStopAt="true" />
+    <variable name="X" expression="" defaultValue="0" alwaysStopAt="true" />
+    <variable name="Y" expression="" defaultValue="0" alwaysStopAt="true" />
+    <variable name="Z" expression="" defaultValue="0" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pfnc" value="$STATIC$$RET$ $CLS$::$FNC$($ARG$)&#10;{&#10;&#9;$END$&#10;}&#10;" description="VUEngine Partial: function definition      " toReformat="true" toShortenFQNames="true">
+    <variable name="STATIC" expression="enum(&quot;&quot;, &quot;static &quot;, &quot;inline &quot;, &quot;inline static &quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="RET" expression="enum(&quot;void&quot;, &quot;int&quot;, &quot;bool&quot;, &quot;u8&quot;, &quot;u16&quot;, &quot;u32&quot;, &quot;s8&quot;, &quot;s16&quot;, &quot;s32&quot;, &quot;BYTE*&quot;, &quot;BgmapTexture&quot;, &quot;CharSet&quot;, &quot;Object&quot;, &quot;VBVec3D&quot;, &quot;VBVec3D*&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="FNC" expression="" defaultValue="&quot;functionName&quot;" alwaysStopAt="true" />
+    <variable name="ARG" expression="" defaultValue="&quot;, Additional arguments&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".panf" value="AnimationFunction $NAME$_$ANIMNAME$_ANIM =&#10;{&#10;&#9;// number of frames of this animation function&#10;&#9;$FRAMENUM$,&#10;&#9;&#10;&#9;// frames to play in animation&#10;&#9;{$FRAME1$$FRAMES$},&#10;&#9;&#10;&#9;// number of cycles a frame of animation is displayed&#10;&#9;$FRAMECYC$,&#10;&#9;&#10;&#9;// whether to play it in loop or not&#10;&#9;$LOOP$,&#10;&#9;&#10;&#9;// method to call on function completion&#10;&#9;$CALLBACK$,&#10;&#9;&#10;&#9;// function's name&#10;&#9;&quot;$FUNCNAME$&quot;,&#10;};&#10;&#10;$END$" description="VUEngine Partial: AnimationFunction def.   " toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="groovyScript(&quot;return _1.toUpperCase().replaceAll('_DEFINITION', '')&quot;, snakeCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
+    <variable name="ANIMNAME" expression="" defaultValue="&quot;ANIMATION_NAME&quot;" alwaysStopAt="true" />
+    <variable name="FRAMENUM" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
+    <variable name="FRAME1" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true" />
+    <variable name="FRAMES" expression="groovyScript(&quot;result=''; for(i=1; i&lt;_1.toInteger(); i++) result=result+', '+(_2.toInteger() + i).toString(); return result;&quot;, FRAMENUM, FRAME1)" defaultValue="" alwaysStopAt="true" />
+    <variable name="FRAMECYC" expression="" defaultValue="&quot;8&quot;" alwaysStopAt="true" />
+    <variable name="LOOP" expression="enum(&quot;true&quot;, &quot;false&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="CALLBACK" expression="" defaultValue="&quot;NULL&quot;" alwaysStopAt="true" />
+    <variable name="FUNCNAME" expression="capitalize(underscoresToCamelCase(ANIMNAME))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".petd" value="extern TextureDefinition $NAME$;&#10;" description="VUEngine Partial: extern TextureDefinition " toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="capitalizeAndUnderscore(String)" defaultValue="&quot;TEXTURE_TX&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pcmd" value="/**&#10; * $END$&#10; *&#10; * @memberof $CLASSNAME$&#10; */" description="VUEngine Partial: comment block (def.)     " toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="capitalize(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pcmf" value="/**&#10; * $END$&#10; *&#10; * @param $PNAME$&#9;$PDESCRIPTION$&#10; * @return&#9;&#9;&#9;$RETURN$&#10; */" description="VUEngine Partial: comment block (function) " toReformat="false" toShortenFQNames="true">
+    <variable name="PNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PDESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name=".pvfh" value="/* VUEngine - Virtual Utopia Engine &lt;http://vuengine.planetvb.com/&gt;&#10; * A universal game engine for the Nintendo Virtual Boy&#10; *&#10; * Copyright (C) 2007, 2018 by Jorge Eremiev &lt;jorgech3@gmail.com&gt; and Christian Radke &lt;chris@vr32.de&gt;&#10; *&#10; * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and&#10; * associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including&#10; * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell&#10; * copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to&#10; * the following conditions:&#10; *&#10; * The above copyright notice and this permission notice shall be included in all copies or substantial&#10; * portions of the Software.&#10; *&#10; * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT&#10; * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN&#10; * NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,&#10; * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE&#10; * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&#10; */&#10;&#10;&#10;" description="VUEngine Partial: VUEngine file header     " toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>
