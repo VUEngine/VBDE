@@ -166,6 +166,9 @@
     <location key="#Updates.0.0.3840.2160@144dpi" x="1589" y="831" />
     <location key="git4idea.ui.GitUnstashDialog.0.0.3840.2160@144dpi" x="1391" y="810" />
     <location key="#Plugins.0.0.3840.2160@144dpi" x="1313" y="320" />
+    <location key="#com.intellij.codeInsight.template.impl.EditVariableDialog.0.0.3840.2160@144dpi" x="657" y="561" />
+    <location key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog.0.0.3840.2160@144dpi" x="1370" y="692" />
+    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.3840.2160@144dpi" x="1442" y="654" />
     <size key="ProcessPopupWindow.0.0.1920.931" width="203" height="179" />
     <size key="GridCell.Tab.0.left.0.0.1920.931" width="1898" height="232" />
     <size key="GridCell.Tab.0.center.0.0.1920.931" width="1898" height="232" />
@@ -199,15 +202,15 @@
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.2100.1313@120dpi" width="875" height="396" />
     <size key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.1920.1080@120dpi" width="481" height="396" />
     <size key="com.intellij.openapi.vcs.changes.UnversionedViewDialog.0.0.2100.1313@120dpi" width="1134" height="970" />
-    <size key="GridCell.Tab.0.left.0.0.3840.2160@144dpi" width="3807" height="590" />
-    <size key="GridCell.Tab.0.center.0.0.3840.2160@144dpi" width="3807" height="590" />
-    <size key="GridCell.Tab.0.right.0.0.3840.2160@144dpi" width="3807" height="590" />
-    <size key="GridCell.Tab.0.bottom.0.0.3840.2160@144dpi" width="3807" height="590" />
+    <size key="GridCell.Tab.0.left.0.0.3840.2160@144dpi" width="3807" height="615" />
+    <size key="GridCell.Tab.0.center.0.0.3840.2160@144dpi" width="3807" height="615" />
+    <size key="GridCell.Tab.0.right.0.0.3840.2160@144dpi" width="3807" height="615" />
+    <size key="GridCell.Tab.0.bottom.0.0.3840.2160@144dpi" width="3807" height="615" />
     <size key="CommitChangelistDialog2.0.0.3840.2160@144dpi" width="3542" height="2050" />
     <size key="findTextDialog.0.0.3840.2160@144dpi" width="2298" height="1648" />
     <size key="MergeDialog.0.0.3840.2160@144dpi" width="3723" height="2028" />
     <size key="replaceTextDialog.0.0.3840.2160@144dpi" width="1838" height="1253" />
-    <size key="SettingsEditor.0.0.3840.2160@144dpi" width="2100" height="1588" />
+    <size key="SettingsEditor.0.0.3840.2160@144dpi" width="2100" height="1767" />
     <size key="GridCell.Tab.0.left.0.0.1920.1080@144dpi" width="1885" height="228" />
     <size key="GridCell.Tab.0.center.0.0.1920.1080@144dpi" width="1885" height="228" />
     <size key="GridCell.Tab.0.right.0.0.1920.1080@144dpi" width="1885" height="228" />
@@ -237,7 +240,7 @@
     <size key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog.0.0.2560.1440" width="774" height="534" />
     <size key="ProcessPopupWindow.0.0.2560.1440" width="201" height="118" />
     <size key="git4idea.branch.GitSmartOperationDialog.0.0.2560.1440" width="448" height="576" />
-    <size key="find.popup.0.0.3840.2160@144dpi" width="3153" height="2094" />
+    <size key="find.popup.0.0.3840.2160@144dpi" width="3840" height="2070" />
     <size key="find.popup.0.0.3840.2160@192dpi" width="1645" height="1266" />
     <size key="GridCell.Tab.0.left.0.0.3840.2160@192dpi" width="3796" height="357" />
     <size key="GridCell.Tab.0.center.0.0.3840.2160@192dpi" width="3796" height="357" />
@@ -249,5 +252,6 @@
     <size key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog.0.0.3840.2160@144dpi" width="1354" height="847" />
     <size key="git4idea.branch.GitSmartOperationDialog.0.0.3840.2160@144dpi" width="630" height="1125" />
     <size key="GitCloneDialog.0.0.3840.2160@144dpi" width="842" height="326" />
+    <size key="#com.intellij.codeInsight.template.impl.EditVariableDialog.0.0.3840.2160@144dpi" width="2018" height="1007" />
   </component>
 </application>
