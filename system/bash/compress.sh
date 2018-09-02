@@ -105,6 +105,10 @@ for file in $FILES; do
 	done < $file
 done
 
+for file in $FILES; do
+	rm $file
+done
+
 rm -f $OUTPUT_FILE
 let numberOfTiles=biggerTilesArray/4
 echo "// Number of frames: ${numberOfFrames}" > $OUTPUT_FILE
