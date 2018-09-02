@@ -20,7 +20,7 @@ TILES_OUTPUT_FILE=${NAME}Tiles.cc
 MAP_OUTPUT_FILE=${NAME}Map.cc
 
 cd $WORKING_FOLDER
-FILES=`ls *.c`
+FILES=`ls -1v *.c`
 
 biggerTilesArrayFile=0
 biggerTilesArray=0
