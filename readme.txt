@@ -10,7 +10,7 @@
 |                             @@@@@      @@@@@@@@@@    @@@@@@@@@@    @@@@@@@@@@@                          |
 |                                                                                                         |
 |                               VBDE - Virtual Boy Development Environment                                |
-|                                   Version 1.3.0 - ???? ????, 2018                                   |
+|                                   Version 1.3.0 - September 6th, 2018                                   |
 |                                                                                                         |
 |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------+
@@ -51,8 +51,8 @@
     the current project, run the compiled ROM in an emulator, convert images, etc.
 
     VBDE is also available as a Pro version, which comes with a copy of IntelliJ IDEA Community Edition
-    that has been modified and pre-configured for VB development. Note that, for the Pro version, VBDE has to be
-    located in C:/vbde for all features to work out of the box.
+    that has been modified and pre-configured for VB development. Note that, for the Pro version, VBDE has
+    to be located in C:/vbde for all features to work out of the box.
 
   o Compiling and running
 
@@ -80,15 +80,15 @@
 
   o Image conversion
 
-    VBDE allows for hassle free, on-the-fly image conversion using grit. Supported formats are: png (recommended), bmp,
-    gif, pcx and jpg/jpeg.
+    VBDE allows for hassle free, on-the-fly image conversion using grit. Supported formats are:
+    PNG (recommended), BMP, GIF, PCX and JPG/JPEG.
 
     Images should use an indexed 4-color palette in the following order: Black, Dark Red, Medium Red,
     Light Red. Example palettes in various formats can be found in {VBDE}/system/palette/.
 
-    In order to be detected and converted by the image conversion script, you also need a *.grit file of the
-    same name as the image, which contains the conversion settings. You can find a number of example grit
-    files in {VBDE}/system/tools/vuengine-tools/templates/grit which you can just copy and paste
+    In order to be detected and converted by the image conversion script, you also need a *.grit file of
+    the same name as the image, which contains the conversion settings. You can find a number of example
+    grit files in {VBDE}/system/tools/vuengine-tools/templates/grit which you can just copy and paste
     (and rename) into your images folder.
 
     You can also make several files convert at once instead of having all images converted individually.
@@ -151,10 +151,12 @@
 
   o libgccvb
     Description: The default gccVB library.
+    Location: {VBDE}/libs/libgccvb/
     Authors: various
 
   o VUEngine
     Description: A powerful, versatile object-oriented Virtual Boy game engine.
+    Location: {VBDE}/libs/vuengine/
     Authors: jorgeche, KR155E
 
 
@@ -195,7 +197,8 @@
       Authors: jorgeche, KR155E
 
     - VUE-MASTER
-      Description: A stereo image viewer template including a demo reel which you can replace with your own images.
+      Description: A stereo image viewer template including a demo reel which you can replace with your
+                   own images.
       Location: {VBDE}/samples/vuengine/vue-master/
       Authors: STEREO BOY, KR155E
 
@@ -211,8 +214,8 @@
   o Editor
 
     - Notepad++ v6.8.8, pre-configured with several useful plugins
-    - IntelliJ IDEA 2018.2.2 Community Edition, pre-configured with several useful plugins, templates, etc.
-      (Pro version only)
+    - IntelliJ IDEA 2018.2.3 Community Edition, pre-configured with several useful plugins, templates,
+      etc. (Pro version only)
 
   o Compiler
 
@@ -324,12 +327,13 @@
 | (06) Changelog                                                                                          |
 +---------------------------------------------------------------------------------------------------------+
 
-  o 1.3.0, ???? ????, 2018
-    - [Pro] Updated IDEA to 2018.2.2
+  o 1.3.0, September 6th, 2018
+    - [Pro] Updated IDEA to 2018.2.3
     - Updated Mednafen to 1.21.3
     - Updated VUEngine and its demo projects to version 6.0
     - [Pro] New feature: VUEngine templates (Live and Files)
     - Changed some folder names
+    - New lib: VUEngine plugin library
 
   o 1.2.2, February 18th, 2018
     - [Pro] Updated IDEA to 2017.3.4

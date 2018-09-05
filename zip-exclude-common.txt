@@ -7,7 +7,6 @@ libgccvb.a
 libvuengine.a
 mednafen*\sav\*
 mednafen*\snaps\*
-build\
 release.bat
 *statistics*.xml
 security.xml
