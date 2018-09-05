@@ -511,6 +511,19 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.atomdu">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.atomdu.plugin" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.auradoc">
       <plugins>
         <option name="myPlugins">
