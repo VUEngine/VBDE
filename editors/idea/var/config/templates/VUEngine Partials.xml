@@ -66,20 +66,6 @@
       <option name="OTHER" value="true" />
     </context>
   </template>
-  <template name=".panf" value="AnimationFunction $NAME$_$ANIMNAME$_ANIM =&#10;{&#10;&#9;// number of frames of this animation function&#10;&#9;$FRAMENUM$,&#10;&#9;&#10;&#9;// frames to play in animation&#10;&#9;{$FRAME1$$FRAMES$},&#10;&#9;&#10;&#9;// number of cycles a frame of animation is displayed&#10;&#9;$FRAMECYC$,&#10;&#9;&#10;&#9;// whether to play it in loop or not&#10;&#9;$LOOP$,&#10;&#9;&#10;&#9;// method to call on function completion&#10;&#9;$CALLBACK$,&#10;&#9;&#10;&#9;// function's name&#10;&#9;&quot;$FUNCNAME$&quot;,&#10;};&#10;&#10;$END$" description="VUEngine Partial: AnimationFunction def.   " toReformat="false" toShortenFQNames="true">
-    <variable name="NAME" expression="groovyScript(&quot;return _1.toUpperCase().replaceAll('_DEFINITION', '')&quot;, snakeCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
-    <variable name="ANIMNAME" expression="" defaultValue="&quot;ANIMATION_NAME&quot;" alwaysStopAt="true" />
-    <variable name="FRAMENUM" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
-    <variable name="FRAME1" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true" />
-    <variable name="FRAMES" expression="groovyScript(&quot;result=''; for(i=1; i&lt;_1.toInteger(); i++) result=result+', '+(_2.toInteger() + i).toString(); return result;&quot;, FRAMENUM, FRAME1)" defaultValue="" alwaysStopAt="true" />
-    <variable name="FRAMECYC" expression="" defaultValue="&quot;8&quot;" alwaysStopAt="true" />
-    <variable name="LOOP" expression="enum(&quot;true&quot;, &quot;false&quot;)" defaultValue="" alwaysStopAt="true" />
-    <variable name="CALLBACK" expression="" defaultValue="&quot;NULL&quot;" alwaysStopAt="true" />
-    <variable name="FUNCNAME" expression="capitalize(underscoresToCamelCase(ANIMNAME))" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="OTHER" value="true" />
-    </context>
-  </template>
   <template name=".petd" value="extern TextureDefinition $NAME$;&#10;" description="VUEngine Partial: extern TextureDefinition " toReformat="false" toShortenFQNames="true">
     <variable name="NAME" expression="capitalizeAndUnderscore(String)" defaultValue="&quot;TEXTURE_TX&quot;" alwaysStopAt="true" />
     <context>

@@ -2,4 +2,6 @@
 ## include default engine file header
 #parse("VUEngine Header.c")
 
-InanimatedInGameEntity#[[$END$]]#
+
+
+// Press TAB to expand AnimatedEntity Definition template#[[$END$]]#

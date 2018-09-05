@@ -76,6 +76,10 @@
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="Zen HTML" />
+          <option name="key" value="a:tel" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="Zen HTML" />
           <option name="key" value="abbr" />
         </TemplateKey>
         <TemplateKey>
@@ -168,11 +172,19 @@
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="Zen HTML" />
+          <option name="key" value="meta:edge" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="Zen HTML" />
           <option name="key" value="meta:vp" />
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="Zen HTML" />
           <option name="key" value="meta:compat" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="Zen HTML" />
+          <option name="key" value="meta:redirect" />
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="Zen HTML" />
@@ -840,6 +852,10 @@
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="Zen XSL" />
+          <option name="key" value="tm" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="Zen XSL" />
           <option name="key" value="par" />
         </TemplateKey>
         <TemplateKey>
@@ -888,7 +904,7 @@
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="Zen XSL" />
-          <option name="key" value="choose+" />
+          <option name="key" value="choose" />
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="Zen XSL" />
@@ -897,6 +913,10 @@
         <TemplateKey>
           <option name="groupName" value="Zen XSL" />
           <option name="key" value="tname" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="Zen XSL" />
+          <option name="key" value="tn" />
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="Zen XSL" />
@@ -1100,6 +1120,10 @@
         </TemplateKey>
         <TemplateKey>
           <option name="groupName" value="plain" />
+          <option name="key" value="prsf" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="plain" />
           <option name="key" value="psfi" />
         </TemplateKey>
         <TemplateKey>
@@ -1133,10 +1157,6 @@
         <TemplateKey>
           <option name="groupName" value="surround" />
           <option name="key" value="I" />
-        </TemplateKey>
-        <TemplateKey>
-          <option name="groupName" value="surround" />
-          <option name="key" value="TR" />
         </TemplateKey>
       </list>
     </option>

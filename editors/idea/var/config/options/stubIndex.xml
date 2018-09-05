@@ -2,8 +2,8 @@
   <component name="FileBasedIndex">
     <option name="registeredIndices">
       <list>
-        <option value="dom.elementClass" />
-        <option value="dom.namespaceKey" />
+        <option value="java.annotations" />
+        <option value="markdown.header" />
         <option value="java.module.name" />
         <option value="java.class.fqn" />
         <option value="java.class.shortname" />
@@ -14,7 +14,8 @@
         <option value="java.method.name" />
         <option value="java.field.name" />
         <option value="java.class.extlist" />
-        <option value="java.annotations" />
+        <option value="dom.elementClass" />
+        <option value="dom.namespaceKey" />
       </list>
     </option>
   </component>
