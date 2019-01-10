@@ -48,7 +48,7 @@ IF EXIST makefile (
     )
 )
 
-::SET ROM HEADER
+::SET ROM HEADER FOR NON-VUENGINE PROJECTS
 IF EXIST build\output.vb IF EXIST header (
 	SETLocal EnableDelayedExpansion
 	FOR /f "tokens=* delims= " %%a in (header) do (

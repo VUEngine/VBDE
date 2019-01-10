@@ -82,13 +82,19 @@ FOR /r . %%F IN (*.grit) DO (
         )
     )
 
-    ::REMOVE TIME STAMP LINE FROM GENERATED BINARY FILE(S)
+    ::POST-PROCESS
     IF !TIMEDIFF! gtr 0 (
         PUSHD "%%~dpF/Binary"
         FOR %%B IN (*.c) DO (
+            ::REMOVE TIME STAMP LINE FROM GENERATED BINARY FILE(S)
             FINDSTR /v Time-stamp: "%%B" > "%%B.temp"
             TYPE "%%B.temp" > "%%B"
             DEL "%%B.temp"
+            ::REMOVE PREPENDED EMPTY TILE
+            SET FILEPATH=%%~dpnxB
+            SET FILEPATH_UNIX=!FILEPATH:\=/!
+            SET FILEPATH_UNIX=!FILEPATH_UNIX:c:=/c!
+            "%VBDE%\system\msys32\usr\bin\sh.exe" --login -c "export MSYSTEM=MSYS && cd !BINARY_FOLDER_UNIX! && export VBDE=$VBDE_UNIX && export PATH=$PATH:/usr/bin && %VBDE_UNIX%libs/vuengine/core/lib/utilities/cleanGritBinaries.sh '!FILEPATH_UNIX!'"
         )
     )
 )

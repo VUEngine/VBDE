@@ -91,4 +91,9 @@
       <option name="OTHER" value="true" />
     </context>
   </template>
+  <template name=".pau" value="__attribute__ ((unused))" description="VUEngine Partial: attribute unused         " toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
 </templateSet>
