@@ -28,7 +28,7 @@ FOR /r . %%F IN (*.grit) DO (
         SET TIMEDIFF=0
         FOR %%i IN (*.png *.bmp *.gif *.pcx *.jpg *.jpeg) DO (
             SET IMAGES=!IMAGES! "..\%%i"
-            SET IMAGES_CLEAN=!IMAGES_CLEAN! "%%~nxi"
+            SET IMAGES_CLEAN=!IMAGES_CLEAN! %%~nxi
 
             ::GET TIME DIFFERENCE BETWEEN IMAGE AND C FILE
             IF EXIST "Binary\%%~ni.c" (
@@ -78,7 +78,7 @@ FOR /r . %%F IN (*.grit) DO (
             "%VBDE%\tools\graphics\grit-0.8.6\grit.exe" "..\%%~nF.png" -ff "%%F"
 
             ::ECHO
-            ECHO Converted "%%~nF.png"
+            ECHO Converted %%~nF.png
         )
     )
 
@@ -86,10 +86,6 @@ FOR /r . %%F IN (*.grit) DO (
     IF !TIMEDIFF! gtr 0 (
         PUSHD "%%~dpF/Binary"
         FOR %%B IN (*.c) DO (
-            ::REMOVE TIME STAMP LINE FROM GENERATED BINARY FILE(S)
-            FINDSTR /v Time-stamp: "%%B" > "%%B.temp"
-            TYPE "%%B.temp" > "%%B"
-            DEL "%%B.temp"
             ::REMOVE PREPENDED EMPTY TILE
             SET FILEPATH=%%~dpnxB
             SET FILEPATH_UNIX=!FILEPATH:\=/!
