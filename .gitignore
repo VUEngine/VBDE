@@ -16,11 +16,5 @@ workspace.xml
 editors/idea/jre32/
 editors/idea/jre64/
 editors/idea/lib/
-editors/idea/plugins/git4idea/lib/
-editors/idea/redist/
-editors/idea/jre32/
-editors/idea/jre64/
-editors/idea/jre64/
-editors/idea/lib/
-editors/idea/plugins/git4idea/lib/
+editors/idea/plugins/
 editors/idea/redist/
